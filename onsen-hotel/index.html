@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>飛騨高山温泉 ホテル千樹 | 湯けむりと匠の町に泊まる</title>
+  <meta name="description" content="飛騨高山の古い町並みまで徒歩圏内。天然温泉と飛騨牛の会席料理でおもてなしする温泉ホテル（ポートフォリオ用の架空サイトです）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho:wght@400;500;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="ホテル千樹 トップへ">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 7 L20 33 M20 12 L13 19 M20 12 L27 19 M20 19 L11 27 M20 19 L29 27" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__text">
+          <span class="logo__sub">飛騨高山温泉</span>
+          <span class="logo__name">ホテル千樹</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#concept">宿の想い<span>Concept</span></a></li>
+          <li><a href="cuisine.html">お料理<span>Cuisine</span></a></li>
+          <li><a href="rooms.html">客室<span>Room</span></a></li>
+          <li><a href="onsen.html">温泉<span>Onsen</span></a></li>
+          <li><a href="#sightseeing">周辺観光<span>Sightseeing</span></a></li>
+          <li><a href="access.html">アクセス<span>Access</span></a></li>
+        </ul>
+        <div class="nav__sp-info">
+          <p class="nav__tel">ご予約・お問い合わせ<br><a href="tel:0000000000">0000-00-0000</a></p>
+        </div>
+      </nav>
+
+      <div class="header__actions">
+        <p class="header__tel"><span>ご予約・お問い合わせ（9:00〜20:00）</span><a href="tel:0000000000">0000-00-0000</a></p>
+        <a href="#reserve" class="header__reserve">ご予約</a>
+        <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero slideshow ===== -->
+    <section class="hero" aria-label="メインビジュアル">
+      <div class="hero__slides">
+        <img src="img/hero1.jpg" alt="紅葉に彩られた飛騨の家並み" class="hero__slide is-active">
+        <img src="img/bath.jpg" alt="庭を望む石造りの湯殿" class="hero__slide">
+        <img src="img/hero3.jpg" alt="秋の合掌造りの家" class="hero__slide">
+      </div>
+      <div class="hero__overlay"></div>
+      <h1 class="hero__copy">
+        <span>湯けむりと、</span>
+        <span>匠の町に泊まる。</span>
+      </h1>
+      <p class="hero__en">HIDA TAKAYAMA ONSEN — HOTEL SENJU</p>
+      <ol class="hero__dots" aria-hidden="true"><li class="is-active"></li><li></li><li></li></ol>
+      <p class="hero__scroll" aria-hidden="true">Scroll</p>
+    </section>
+
+    <!-- ===== Reserve bar ===== -->
+    <section class="reserve" id="reserve" aria-label="空室検索">
+      <form class="reserve__form" onsubmit="event.preventDefault(); alert('こちらはポートフォリオ用のサンプルのため、検索は行われません。');">
+        <p class="reserve__title">空室検索<span>Reservation</span></p>
+        <label class="reserve__field">チェックイン<input type="date" name="checkin" id="checkin"></label>
+        <label class="reserve__field">泊数
+          <select name="nights"><option>1泊</option><option>2泊</option><option>3泊</option></select>
+        </label>
+        <label class="reserve__field">大人
+          <select name="adult"><option>1名</option><option selected>2名</option><option>3名</option><option>4名</option></select>
+        </label>
+        <label class="reserve__field">お部屋数
+          <select name="rooms"><option>1室</option><option>2室</option></select>
+        </label>
+        <button type="submit" class="reserve__btn">検索する</button>
+      </form>
+      <p class="reserve__note">◆ 公式サイトからのご予約がいちばんお得です（ベストレート保証）</p>
+    </section>
+
+    <!-- ===== Topics ===== -->
+    <section class="section topics">
+      <div class="container topics__inner">
+        <div class="heading heading--left fade">
+          <p class="heading__en">Topics</p>
+          <h2 class="heading__ja">新着情報</h2>
+        </div>
+        <ul class="topics__list fade">
+          <li><time datetime="2026-10-01">2026.10.01</time><span class="cat">プラン</span><a href="#plan">【秋限定】飛騨の紅葉と松茸会席プランの販売を開始しました</a></li>
+          <li><time datetime="2026-09-20">2026.09.20</time><span class="cat">イベント</span><a href="access.html">秋の高山祭期間中の送迎バス運行のお知らせ</a></li>
+          <li><time datetime="2026-09-01">2026.09.01</time><span class="cat">お知らせ</span><a href="onsen.html">大浴場リニューアルのお知らせ</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Recommend plan ===== -->
+    <section class="section plan" id="plan">
+      <div class="container">
+        <div class="heading fade">
+          <p class="heading__en">Recommend Plan</p>
+          <h2 class="heading__ja">おすすめプラン</h2>
+        </div>
+
+        <div class="plan__tabs fade" role="tablist" aria-label="プランの種類">
+          <button class="plan__tab is-active" role="tab" aria-selected="true" aria-controls="panel-stay" id="tab-stay">宿泊プラン</button>
+          <button class="plan__tab" role="tab" aria-selected="false" aria-controls="panel-day" id="tab-day">日帰りプラン</button>
+        </div>
+
+        <div class="plan__panel is-active" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay">
+          <ul class="plan__cards">
+            <li class="plan-card fade">
+              <div class="plan-card__img"><img src="img/kaiseki.jpg" alt="季節の会席料理" loading="lazy"></div>
+              <div class="plan-card__body">
+                <ul class="tags"><li class="tag tag--red">人気</li><li class="tag">夕朝食付</li></ul>
+                <h3>【スタンダード】旬の飛騨会席と天然温泉を楽しむ</h3>
+                <p class="plan-card__price">1名様 <strong>¥18,700</strong>〜<small>（2名1室・税込）</small></p>
+                <a href="#reserve" class="btn-line">詳細・ご予約</a>
+              </div>
+            </li>
+            <li class="plan-card fade">
+              <div class="plan-card__img"><img src="img/beef.jpg" alt="飛騨牛の朴葉焼き" loading="lazy"></div>
+              <div class="plan-card__body">
+                <ul class="tags"><li class="tag tag--gold">贅沢</li><li class="tag">夕朝食付</li></ul>
+                <h3>【飛騨牛づくし】A5等級の飛騨牛を朴葉焼きとしゃぶしゃぶで</h3>
+                <p class="plan-card__price">1名様 <strong>¥26,400</strong>〜<small>（2名1室・税込）</small></p>
+                <a href="#reserve" class="btn-line">詳細・ご予約</a>
+              </div>
+            </li>
+            <li class="plan-card fade">
+              <div class="plan-card__img"><img src="img/room.jpg" alt="落ち着いた和室" loading="lazy"></div>
+              <div class="plan-card__body">
+                <ul class="tags"><li class="tag tag--green">早割30</li><li class="tag">朝食付</li></ul>
+                <h3>【30日前までのご予約でお得】観光の拠点に。朝食付きプラン</h3>
+                <p class="plan-card__price">1名様 <strong>¥11,000</strong>〜<small>（2名1室・税込）</small></p>
+                <a href="#reserve" class="btn-line">詳細・ご予約</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="plan__panel" id="panel-day" role="tabpanel" aria-labelledby="tab-day" hidden>
+          <ul class="plan__cards">
+            <li class="plan-card">
+              <div class="plan-card__img"><img src="img/plan1.jpg" alt="松花堂弁当" loading="lazy"></div>
+              <div class="plan-card__body">
+                <ul class="tags"><li class="tag tag--red">人気</li><li class="tag">昼食付</li></ul>
+                <h3>【日帰り】松花堂弁当と天然温泉でほっとひと息</h3>
+                <p class="plan-card__price">1名様 <strong>¥5,500</strong><small>（税込）</small></p>
+                <a href="#reserve" class="btn-line">詳細・ご予約</a>
+              </div>
+            </li>
+            <li class="plan-card">
+              <div class="plan-card__img"><img src="img/plan2.jpg" alt="飛騨牛の炙りにぎり" loading="lazy"></div>
+              <div class="plan-card__body">
+                <ul class="tags"><li class="tag tag--gold">限定10食</li><li class="tag">昼食付</li></ul>
+                <h3>【日帰り】飛騨牛炙りにぎり御膳と湯めぐり</h3>
+                <p class="plan-card__price">1名様 <strong>¥7,700</strong><small>（税込）</small></p>
+                <a href="#reserve" class="btn-line">詳細・ご予約</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Concept ===== -->
+    <section class="concept" id="concept">
+      <img src="img/corridor.jpg" alt="" class="concept__bg" loading="lazy">
+      <div class="concept__overlay"></div>
+      <div class="concept__inner fade">
+        <p class="heading__en heading__en--light">Concept</p>
+        <h2 class="concept__title">千の樹に抱かれて、<br>ひとやすみ。</h2>
+        <p>宿の名「千樹」は、飛騨の山々を覆う木々と、<br class="pc-only">それを育ててきた匠の手仕事に由来します。</p>
+        <p>古い町並みから歩いて七分。湯けむりに癒やされ、<br class="pc-only">旬の恵みを味わう。旅の一日を、ここでゆっくりと結んでください。</p>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
+    <section class="features">
+      <article class="feature" id="meal">
+        <div class="feature__img fade"><img src="img/kaiseki.jpg" alt="器にこだわった季節の会席料理" loading="lazy"></div>
+        <div class="feature__body fade">
+          <p class="feature__num">01</p>
+          <h2 class="feature__title"><span class="feature__vertical">飛騨の恵み</span><span class="feature__en">Meal</span></h2>
+          <p class="feature__lead">山の幸と飛騨牛を、<br>季節の会席で。</p>
+          <p>朴葉味噌で焼き上げる飛騨牛、清流で育った川魚、山菜やきのこ。飛騨の四季をそのまま器に盛り込んだ会席料理を、個室のお食事処でごゆっくりお楽しみください。</p>
+          <a href="cuisine.html" class="btn-line">お料理を詳しく見る</a>
+        </div>
+      </article>
+
+      <article class="feature feature--reverse" id="room">
+        <div class="feature__img fade"><img src="img/hero2.jpg" alt="庭の紅葉を望む和室" loading="lazy"></div>
+        <div class="feature__body fade">
+          <p class="feature__num">02</p>
+          <h2 class="feature__title"><span class="feature__vertical">心落ち着く空間</span><span class="feature__en">Guest Room</span></h2>
+          <p class="feature__lead">窓の向こうに、<br>季節がうつろう。</p>
+          <p>畳の香りが心地よい和室から、ベッドでくつろげる和洋室、露天風呂付きの特別室まで。ご旅行のスタイルに合わせてお選びいただけます。</p>
+          <ul class="room-types">
+            <li><span>和室</span>10畳 / 2〜5名</li>
+            <li><span>和洋室</span>10畳＋ツイン / 2〜4名</li>
+            <li><span>特別室</span>露天風呂付き / 2〜3名</li>
+          </ul>
+          <a href="rooms.html" class="btn-line">客室を詳しく見る</a>
+        </div>
+      </article>
+
+      <article class="feature" id="onsen">
+        <div class="feature__img fade"><img src="img/bath.jpg" alt="庭を眺める石造りの内湯" loading="lazy"></div>
+        <div class="feature__body fade">
+          <p class="feature__num">03</p>
+          <h2 class="feature__title"><span class="feature__vertical">自家源泉の湯</span><span class="feature__en">Onsen</span></h2>
+          <p class="feature__lead">肌にやさしい、<br>とろりとした湯ざわり。</p>
+          <p>敷地内から湧き出る自家源泉を、そのまま湯船へ。庭を眺める石造りの大浴場と、檜の香る貸切風呂で、旅の疲れをじっくりほどいてください。</p>
+          <dl class="spec">
+            <div><dt>泉質</dt><dd>単純温泉（低張性弱アルカリ性高温泉）</dd></div>
+            <div><dt>営業時間</dt><dd>15:00〜24:00 / 5:30〜10:00</dd></div>
+          </dl>
+          <a href="onsen.html" class="btn-line">温泉を詳しく見る</a>
+        </div>
+      </article>
+
+      <article class="feature feature--reverse" id="sightseeing">
+        <div class="feature__img fade"><img src="img/oldtown.jpg" alt="雪の残る高山の古い町並み" loading="lazy"></div>
+        <div class="feature__body fade">
+          <p class="feature__num">04</p>
+          <h2 class="feature__title"><span class="feature__vertical">周辺観光</span><span class="feature__en">Sightseeing</span></h2>
+          <p class="feature__lead">町歩きにも、<br>白川郷への旅にも。</p>
+          <p>古い町並みや宮川朝市は歩いてすぐ。白川郷や奥飛騨温泉郷へもバスでアクセスしやすく、飛騨を巡る旅の拠点に最適です。</p>
+          <ul class="spots">
+            <li><img src="img/oldtown.jpg" alt="" loading="lazy"><span>古い町並み<small>徒歩7分</small></span></li>
+            <li><img src="img/shirakawa.jpg" alt="" loading="lazy"><span>白川郷<small>バスで約50分</small></span></li>
+          </ul>
+          <a href="access.html" class="btn-line">アクセスを詳しく見る</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Access ===== -->
+    <section class="section access" id="access">
+      <div class="container">
+        <div class="heading fade">
+          <p class="heading__en">Access</p>
+          <h2 class="heading__ja">アクセス</h2>
+        </div>
+        <div class="access__inner fade">
+          <div class="access__map">
+            <iframe src="https://maps.google.com/maps?q=%E9%AB%98%E5%B1%B1%E9%A7%85&z=15&output=embed" title="高山駅周辺の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="access__map-note">※ 地図は高山駅周辺のイメージです</p>
+          </div>
+          <div class="access__info">
+            <dl class="spec">
+              <div><dt>住所</dt><dd>岐阜県高山市千樹町1-1（架空の住所です）</dd></div>
+              <div><dt>電車</dt><dd>JR高山駅より徒歩5分</dd></div>
+              <div><dt>お車</dt><dd>中部縦貫自動車道 高山ICより約15分<br>無料駐車場 80台</dd></div>
+              <div><dt>送迎</dt><dd>高山駅〜ホテル間 無料送迎あり（要予約）</dd></div>
+              <div><dt>チェックイン</dt><dd>15:00〜 / チェックアウト 〜10:00</dd></div>
+            </dl>
+            <a href="access.html" class="btn-line">送迎・駐車場について</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--footer">
+          <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M20 7 L20 33 M20 12 L13 19 M20 12 L27 19 M20 19 L11 27 M20 19 L29 27" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="logo__text"><span class="logo__sub">飛騨高山温泉</span><span class="logo__name">ホテル千樹</span></span>
+        </a>
+        <p>〒000-0000 岐阜県高山市千樹町1-1（架空）<br>TEL 0000-00-0000（ダミー）</p>
+      </div>
+      <ul class="footer__nav">
+        <li><a href="#concept">宿の想い</a></li>
+        <li><a href="cuisine.html">お料理</a></li>
+        <li><a href="rooms.html">客室</a></li>
+        <li><a href="onsen.html">温泉</a></li>
+        <li><a href="#sightseeing">周辺観光</a></li>
+        <li><a href="access.html">アクセス</a></li>
+      </ul>
+    </div>
+    <p class="footer__notice">※このサイトはWeb制作のポートフォリオ用に作成した架空のホテルサイトです。実在の施設とは関係ありません。Photos: Pexels</p>
+    <p class="footer__copy"><small>&copy; 2026 Hotel Senju (Portfolio Sample)</small></p>
+  </footer>
+
+  <!-- スマホ用の固定ボタン -->
+  <div class="sp-bar">
+    <a href="tel:0000000000" class="sp-bar__tel">電話する</a>
+    <a href="#reserve" class="sp-bar__reserve">空室検索・ご予約</a>
+  </div>
+  <a href="#top" class="pagetop" aria-label="ページの先頭へ">↑</a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

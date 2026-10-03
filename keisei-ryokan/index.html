@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>奥飛騨温泉郷 渓声館 | 渓谷の音に包まれる秘湯の宿</title>
+  <meta name="description" content="奥飛騨の渓谷沿いに佇む、囲炉裏と露天風呂の宿（ポートフォリオ用の架空サイトです）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // ナビの表示方法（保存された設定）を、画面が表示される前に反映する
+    try { if (localStorage.getItem('keisei-nav-mode') === 'smart') document.documentElement.classList.add('smart-header'); } catch (e) {}
+  </script>
+</head>
+<body id="top">
+
+  <!-- ===== ヘッダー（スクロールしても常に表示） ===== -->
+  <header class="header">
+    <div class="header__bar">
+      <p><span class="header__badge">ベストレート保証</span>公式サイト・お電話からのご予約が最もお得です</p>
+      <p class="header__lang"><a href="#top" aria-current="true">JA</a> | <a href="#top">EN</a></p>
+    </div>
+    <div class="header__main">
+      <a href="index.html" class="logo" aria-label="渓声館 トップへ">
+        <img src="img/logo-mark.svg" alt="" class="logo__mark" width="48" height="48">
+        <span class="logo__text">
+          <span class="logo__sub">奥飛騨温泉郷　渓谷の湯</span>
+          <span class="logo__name">渓声館</span>
+        </span>
+      </a>
+      <nav class="gnav" aria-label="メインメニュー">
+        <ul>
+          <li><a href="#sec-onsen">温泉</a></li>
+          <li><a href="#sec-cuisine">お食事</a></li>
+          <li><a href="#sec-room">客室 / 宿泊料金</a></li>
+          <li><a href="#sec-access">アクセス</a></li>
+          <li><a href="reservation.html">ご予約について</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+        </ul>
+      </nav>
+      <a href="vacancy.html" class="header__vacancy">空室状況</a>
+      <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-nav"><span></span><span></span><span></span><em>MENU</em></button>
+    </div>
+  </header>
+
+  <!-- スマホ用メニュー -->
+  <nav class="sp-nav" id="sp-nav" aria-label="スマホ用メニュー">
+    <ul>
+      <li><a href="#sec-onsen">温泉</a></li>
+      <li><a href="#sec-cuisine">お食事</a></li>
+      <li><a href="#sec-room">客室 / 宿泊料金</a></li>
+      <li><a href="#sec-access">アクセス</a></li>
+      <li><a href="#sec-area">周辺観光</a></li>
+      <li><a href="reservation.html">ご予約について</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="vacancy.html">空室状況</a></li>
+      <li><a href="#sec-news">お知らせ</a></li>
+    </ul>
+    <a href="tel:0000000000" class="sp-nav__tel">お電話でのご予約<br><strong>0000-00-0000</strong></a>
+  </nav>
+
+  <main>
+    <!-- ===== スライドショー ===== -->
+    <section class="slide" aria-label="メインビジュアル">
+      <img src="img/irori.jpg" alt="光の差し込む古民家の囲炉裏の間" class="slide__img is-active">
+      <img src="img/gorge.jpg" alt="新緑の渓谷とエメラルド色の川" class="slide__img">
+      <img src="img/bath.jpg" alt="庭を望む石造りの湯殿" class="slide__img">
+      <img src="img/alps.jpg" alt="雪をいただく北アルプスの山並み" class="slide__img">
+      <h1 class="slide__copy">渓谷の音に、<br>ほどける。</h1>
+      <ol class="slide__dots" aria-hidden="true"><li class="is-active"></li><li></li><li></li><li></li></ol>
+    </section>
+
+    <!-- ===== ライブカメラ ===== -->
+    <section class="sec">
+      <div class="container">
+        <h2 class="ttl">ライブカメラ<span>Live Camera</span></h2>
+        <figure class="camera">
+          <img src="img/river.jpg" alt="宿の前を流れる渓流の様子" loading="lazy">
+          <figcaption>宿の前の渓流の様子（イメージ）　最終更新 7:00</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== お知らせ ===== -->
+    <section class="sec sec--pt0" id="sec-news">
+      <div class="container">
+        <h2 class="ttl">お知らせ<span>News</span></h2>
+        <ul class="news">
+          <li><span class="news__tag">重要</span><time datetime="2026-10-01">2026.10.01</time><a href="#sec-room">11月〜3月のご予約について（冬季の送迎のご案内）</a></li>
+          <li><span class="news__tag">重要</span><time datetime="2026-09-12">2026.09.12</time><a href="#sec-access">県道の通行規制のお知らせ</a></li>
+          <li><span class="news__tag news__tag--gray">ご案内</span><time datetime="2026-08-20">2026.08.20</time><a href="#sec-onsen">日帰り入浴の受付時間を変更しました</a></li>
+          <li><span class="news__tag news__tag--gray">ご案内</span><time datetime="2026-07-05">2026.07.05</time><a href="#sec-cuisine">夏の献立「渓流会席」がはじまりました</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== キャッチ ===== -->
+    <section class="catch">
+      <img src="img/bath.jpg" alt="" class="catch__bg" loading="lazy">
+      <div class="catch__text anim-catch">
+        <h2 class="c1">渓谷の音を、聴きにくる。</h2>
+        <p>
+          <span class="c2">渓声館は、奥飛騨の渓谷沿いに建つ、<br>築百年の古民家を移築した小さな宿です。</span>
+          <span class="c3">川のせせらぎと囲炉裏の火、<br>そして山あいに湧く湯。</span>
+          <span class="c4">ここにしかない静けさを、<br>どうぞゆっくり味わってください。</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="badges anim-member">
+      <p>渓声館は、次のことを大切にしている宿です。</p>
+      <ul>
+        <li>源泉かけ流し</li>
+        <li>露天風呂 5か所</li>
+        <li>全室 渓谷側</li>
+      </ul>
+    </section>
+
+    <!-- ===== 温泉 ===== -->
+    <section class="sec onsen" id="sec-onsen">
+      <p class="side-copy side-copy--left anim-ver" aria-hidden="true">川沿いに湧く</p>
+      <div class="container">
+        <h2 class="ttl">温泉<span>Hot Springs</span></h2>
+      </div>
+      <div class="carousel" aria-label="温泉の写真">
+        <button class="carousel__btn carousel__btn--prev" aria-label="前の写真">‹</button>
+        <ul class="carousel__track">
+          <li><img src="img/bath.jpg" alt="石造りの内湯" loading="lazy"></li>
+          <li><img src="img/bucket.jpg" alt="檜の貸切風呂" loading="lazy"></li>
+          <li><img src="img/gorge.jpg" alt="渓谷を望む露天風呂からの眺め" loading="lazy"></li>
+          <li><img src="img/lake.jpg" alt="朝霧に包まれる山々" loading="lazy"></li>
+        </ul>
+        <button class="carousel__btn carousel__btn--next" aria-label="次の写真">›</button>
+      </div>
+      <div class="container narrow">
+        <h3 class="sub-ttl">渓谷の秘湯</h3>
+        <p>渓声館の露天風呂は、川面からわずか数メートル。湯船につかると、せせらぎの音だけが聞こえてきます。便利さよりも、山の宿らしい「不便さ」と「非日常」を大切に。ほかでは味わえない、奥飛騨の湯をご堪能ください。</p>
+        <p class="center"><button class="btn-more" data-modal="modal-onsen">温泉についての詳細</button></p>
+      </div>
+    </section>
+
+    <!-- ===== お食事 ===== -->
+    <section class="sec cuisine" id="sec-cuisine">
+      <p class="side-copy side-copy--right anim-ver" aria-hidden="true">地の幸 地の酒</p>
+      <div class="container">
+        <h2 class="ttl ttl--light">お食事<span>Cuisine</span></h2>
+        <!-- 雑誌の見開きのような写真の組み方。画面に入ると黒い幕が引いて現れる -->
+        <div class="collage">
+          <figure class="collage__a reveal"><img src="img/food1.jpg" alt="季節の会席料理" loading="lazy"><figcaption>季節の会席<span>Seasonal Kaiseki</span></figcaption></figure>
+          <figure class="collage__b reveal"><img src="img/food2.jpg" alt="霜降りの飛騨牛の炙り" loading="lazy"><figcaption>飛騨牛の炙り<span>Hida Beef</span></figcaption></figure>
+          <figure class="collage__c reveal reveal--r"><img src="img/food3.jpg" alt="炭火でじっくり焼き上げる川魚" loading="lazy"><figcaption>川魚の炭火焼き<span>Charcoal-grilled Fish</span></figcaption></figure>
+          <figure class="collage__d reveal reveal--r"><img src="img/food4.jpg" alt="朝採れの山の野菜" loading="lazy"><figcaption>朝採れの山の幸<span>Mountain Vegetables</span></figcaption></figure>
+          <figure class="collage__e reveal reveal--r"><img src="img/food5.jpg" alt="渓流魚のお造り" loading="lazy"><figcaption>渓流魚のお造り<span>Sashimi</span></figcaption></figure>
+        </div>
+        <div class="narrow">
+          <p>ご夕食は、季節ごとに山の食材をたっぷり使った会席料理。囲炉裏でじっくり焼き上げる川魚は、宿いちばんの名物です。料理によく合う地酒もご用意しています。</p>
+          <p class="center"><button class="btn-more btn-more--light" data-modal="modal-cuisine">お食事の詳細</button></p>
+          <div class="notice">
+            <h3 class="notice__ttl">食物アレルギーをお持ちのお客さまへ</h3>
+            <p>ご到着の<strong>7日前まで</strong>にお知らせいただいた場合、料理長と相談のうえ<strong>できる限りの代替料理</strong>をご用意いたします。</p>
+            <p class="notice__warn">！ 当日のお申し出による献立の変更は承っておりません。</p>
+            <p class="notice__warn">！ 内容によっては、お食事のご用意が難しい場合がございます。</p>
+            <p class="center"><button class="btn-more btn-more--dark" data-modal="modal-allergy">詳細はこちら</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 客室 ===== -->
+    <section class="sec room" id="sec-room">
+      <div class="container">
+        <h2 class="ttl">客室／宿泊料金<span>Guest Rooms / Room Rate</span></h2>
+      </div>
+      <article class="room-row">
+        <div class="room-row__img reveal reveal--white"><img src="img/hero2.jpg" alt="庭の紅葉を望む和モダンの客室" loading="lazy"></div>
+        <div class="room-row__body">
+          <h3>和モダンタイプ</h3>
+          <p>畳の落ち着きとベッドの快適さを合わせた、渓谷側のお部屋です。</p>
+          <p class="price-label">【ご宿泊料金／2名1室お一人様】</p>
+          <p class="price">1泊2食付　<strong>21,800円〜25,300円</strong><small>（税込）</small></p>
+        </div>
+      </article>
+      <article class="room-row room-row--reverse">
+        <div class="room-row__img reveal reveal--white"><img src="img/room.jpg" alt="太い梁が残る民芸調の客室" loading="lazy"></div>
+        <div class="room-row__body">
+          <h3>民芸調タイプ</h3>
+          <p>古民家の太い梁をそのまま生かした客室。囲炉裏を備えたお部屋もございます。</p>
+          <p class="price-label">【ご宿泊料金／2名1室お一人様】</p>
+          <p class="price">1泊2食付　<strong>21,800円〜25,300円</strong><small>（税込）</small></p>
+        </div>
+      </article>
+      <article class="room-row">
+        <div class="room-row__img reveal reveal--white"><img src="img/irori2.jpg" alt="囲炉裏のある離れ" loading="lazy"></div>
+        <div class="room-row__body">
+          <h3>囲炉裏付き離れ<small>（露天風呂付き／1棟）</small></h3>
+          <p>専用の露天風呂と囲炉裏を備えた一棟貸しの離れ。記念日のご旅行におすすめです。</p>
+          <p class="price-label">【ご宿泊料金／2名1室お一人様】</p>
+          <p class="price">1泊2食付　<strong>38,500円〜</strong><small>（税込）</small></p>
+        </div>
+      </article>
+      <p class="center btns-row"><a href="vacancy.html" class="btn-more">空室カレンダーを見る</a><a href="tel:0000000000" class="btn-more">お電話でのご予約</a></p>
+    </section>
+
+    <!-- ===== アクセス ===== -->
+    <section class="sec access" id="sec-access">
+      <div class="container">
+        <h2 class="ttl">アクセス<span>Access</span></h2>
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=%E6%96%B0%E7%A9%82%E9%AB%98%E6%B8%A9%E6%B3%89&z=12&output=embed" title="奥飛騨温泉郷周辺の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="map-note">※ 地図は奥飛騨温泉郷周辺のイメージです</p>
+        <ul class="route">
+          <li>長野道・松本ICより国道158号・471号経由で約1時間30分</li>
+          <li>中部縦貫道・高山ICより国道158号・471号経由で約1時間</li>
+          <li>JR高山駅より路線バスで約1時間30分「渓声館前」下車すぐ</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 周辺観光 ===== -->
+    <section class="sec area" id="sec-area">
+      <div class="container">
+        <h2 class="ttl">周辺観光<span>Sightseeing</span></h2>
+        <ul class="spots anim-area">
+          <li><img src="img/ropeway.jpg" alt="" loading="lazy"><h3>山のロープウェイ</h3><p>車で約5分</p></li>
+          <li><img src="img/kamikochi.jpg" alt="" loading="lazy"><h3>上高地</h3><p>バス乗継で約30分（4月〜11月）</p></li>
+          <li><img src="img/alps.jpg" alt="" loading="lazy"><h3>北アルプスの展望台</h3><p>車で約20分</p></li>
+          <li><img src="img/oldtown.jpg" alt="" loading="lazy"><h3>高山（古い町並み）</h3><p>車で約1時間</p></li>
+          <li><img src="img/shirakawa.jpg" alt="" loading="lazy"><h3>白川郷</h3><p>車で約1時間45分</p></li>
+          <li><img src="img/lake.jpg" alt="" loading="lazy"><h3>朝霧の池</h3><p>車で約40分</p></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <nav class="footer__nav" aria-label="フッターメニュー">
+      <ul>
+        <li><a href="#top">ホーム</a></li>
+        <li><a href="#sec-onsen">温泉</a></li>
+        <li><a href="#sec-cuisine">お食事</a></li>
+        <li><a href="#sec-room">客室 / 宿泊料金</a></li>
+        <li><a href="#sec-access">アクセス</a></li>
+        <li><a href="#sec-area">周辺観光</a></li>
+        <li><a href="reservation.html">ご予約について</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="vacancy.html">空室状況</a></li>
+        <li><a href="#sec-news">お知らせ</a></li>
+      </ul>
+    </nav>
+    <img src="img/irori2.jpg" alt="" class="footer__img" loading="lazy">
+    <div class="footer__body">
+      <a href="index.html" class="logo logo--footer"><img src="img/logo-mark.svg" alt="" class="logo__mark" width="64" height="64"><span class="logo__text"><span class="logo__sub">奥飛騨温泉郷　渓谷の湯</span><span class="logo__name">渓声館</span></span></a>
+      <p>〒000-0000 岐阜県高山市奥飛騨温泉郷 渓声1-1（架空の住所です）</p>
+      <p class="footer__tel">TEL. 0000-00-0000 / FAX. 0000-00-0001</p>
+      <p class="footer__notice">※このサイトはWeb制作のポートフォリオ用に作成した架空の旅館サイトです。<br>宿名・住所・料金・文章はすべて架空で、実在の施設とは関係ありません。Photos: Pexels</p>
+      <p class="footer__copy"><small>&copy; Keiseikan (Portfolio Sample)</small></p>
+    </div>
+    <a href="#top" class="pagetop">Page Top</a>
+  </footer>
+
+  <!-- 右端の固定ボタン（PC） / 下部の固定メニュー（スマホ） -->
+  <a href="reservation.html" class="side-reserve">ご予約について</a>
+  <nav class="sp-bar" aria-label="スマホ用固定メニュー">
+    <a href="#sec-access">アクセス</a>
+    <a href="#sec-room">宿泊料金</a>
+    <a href="vacancy.html">空室状況</a>
+    <a href="tel:0000000000">電話予約</a>
+  </nav>
+
+  <!-- ===== 詳細ポップアップ（画面全体に開き、右上の×で閉じる） ===== -->
+  <dialog class="modal" id="modal-onsen" aria-labelledby="modal-onsen-ttl">
+    <button class="modal__close" aria-label="閉じる"><span></span><span></span></button>
+    <div class="modal__inner">
+      <h2 class="modal__ttl" id="modal-onsen-ttl">温泉についての詳細<span>Hot Springs</span></h2>
+      <div class="modal__imgs">
+        <img src="img/bath.jpg" alt="石造りの内湯" loading="lazy">
+        <img src="img/bucket.jpg" alt="檜の貸切風呂" loading="lazy">
+        <img src="img/gorge.jpg" alt="露天風呂から望む渓谷" loading="lazy">
+        <img src="img/lake.jpg" alt="朝霧の山々" loading="lazy">
+      </div>
+      <p class="modal__lead">川のせせらぎを聞きながら入る露天風呂と、檜が香る貸切風呂。湯めぐりを楽しめるよう、5つのお風呂をご用意しています。</p>
+      <table class="modal__table">
+        <tr><th>泉質</th><td>単純温泉（架空）</td></tr>
+        <tr><th>源泉</th><td>自家源泉かけ流し・加水なし</td></tr>
+        <tr><th>露天風呂</th><td>混浴露天 1 ／ 女性専用露天 1 ／ 貸切露天 3</td></tr>
+        <tr><th>入浴時間</th><td>15:00〜23:00 ／ 翌朝 5:00〜9:30</td></tr>
+        <tr><th>日帰り入浴</th><td>10:00〜14:00（大人 800円）</td></tr>
+      </table>
+      <p class="modal__note">※ 内容はすべて架空のものです。</p>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-cuisine" aria-labelledby="modal-cuisine-ttl">
+    <button class="modal__close" aria-label="閉じる"><span></span><span></span></button>
+    <div class="modal__inner">
+      <h2 class="modal__ttl" id="modal-cuisine-ttl">お食事についての詳細<span>Cuisine</span></h2>
+      <div class="modal__imgs">
+        <img src="img/food1.jpg" alt="季節の会席" loading="lazy">
+        <img src="img/food2.jpg" alt="飛騨牛の炙り" loading="lazy">
+        <img src="img/food3.jpg" alt="川魚の炭火焼き" loading="lazy">
+        <img src="img/food5.jpg" alt="渓流魚のお造り" loading="lazy">
+      </div>
+      <p class="modal__lead">ご夕食は囲炉裏のあるお食事処で、季節の会席をお一品ずつ。ご朝食は渓谷を望む大広間で、朴葉味噌と炊きたてのご飯をどうぞ。</p>
+      <table class="modal__table">
+        <tr><th>ご夕食</th><td>18:00〜 ／ 18:30〜（お食事処「囲炉裏の間」）</td></tr>
+        <tr><th>ご朝食</th><td>7:30〜 ／ 8:00〜（大広間）</td></tr>
+        <tr><th>名物</th><td>川魚の炭火焼き・飛騨牛の朴葉味噌焼き・山菜の天ぷら</td></tr>
+        <tr><th>お飲み物</th><td>飛騨の地酒 6種、地ビール、ワインなど</td></tr>
+      </table>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="modal-allergy" aria-labelledby="modal-allergy-ttl">
+    <button class="modal__close" aria-label="閉じる"><span></span><span></span></button>
+    <div class="modal__inner modal__inner--narrow">
+      <h2 class="modal__ttl" id="modal-allergy-ttl">食物アレルギーへの対応について<span>Food Allergies</span></h2>
+      <p>食物アレルギーをお持ちのお客さまは、ご到着の7日前までにお電話でお知らせください。特定原材料（えび・かに・小麦・そば・卵・乳・落花生）を中心に、料理長が可能な範囲で代わりのお料理をご用意いたします。</p>
+      <p>同じ厨房で調理しているため、ごく微量の混入の可能性がございます。重いアレルギーをお持ちの場合は、事前に詳しくご相談ください。</p>
+      <p class="modal__tel">お問い合わせ　<a href="tel:0000000000">0000-00-0000</a></p>
+    </div>
+  </dialog>
+
+  <!-- ナビの表示方法の切り替え（選んだ設定はブラウザに保存され、全ページで続く） -->
+  <button type="button" class="demo-switch" aria-live="polite">ナビ：常に表示 ▶ 切替</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

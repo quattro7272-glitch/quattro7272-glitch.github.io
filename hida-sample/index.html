@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ひだ旅しおり舎 | 飛騨高山の旅をもっとゆっくり</title>
+  <meta name="description" content="古い町並み、朝市、高山祭、飛騨の味と温泉。飛騨高山の旅をゆっくり楽しむための案内サイト（ポートフォリオ用の架空サイトです）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="ひだ旅しおり舎 トップへ">
+        <span class="logo__mark">栞</span>
+        <span class="logo__text">ひだ旅しおり舎</span>
+      </a>
+      <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#spots">見どころ</a></li>
+          <li><a href="#gourmet">飛騨の味</a></li>
+          <li><a href="#course">モデルコース</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#contact" class="nav__cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <img src="img/hero.jpg" alt="雪の残る高山の古い町並み" class="hero__bg">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <p class="hero__sub">HIDA TAKAYAMA TRAVEL NOTES</p>
+        <h1 class="hero__title">格子戸の向こうに、<br>ゆっくり流れる時間。</h1>
+        <p class="hero__lead"><span class="nw">飛騨高山を、</span><span class="nw">いつもより半歩ゆっくり</span><span class="nw">歩くための旅のしおり。</span></p>
+        <a href="#spots" class="btn btn--light">見どころを見る</a>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">SCROLL</div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about__inner">
+        <div class="section-head fade">
+          <p class="section-head__en">ABOUT</p>
+          <h2 class="section-head__ja">私たちについて</h2>
+        </div>
+        <div class="about__text fade">
+          <p>ひだ旅しおり舎は、飛騨高山の「急がない旅」を提案する小さな案内所です。</p>
+          <p>有名スポットを駆け足で巡るのではなく、朝市で地元の人と言葉を交わしたり、町家の軒先で湯気の立つ団子をほおばったり。そんな何気ない時間こそ、この町のいちばんの魅力だと考えています。</p>
+          <p>地元スタッフが歩いて選んだ見どころと、季節ごとのモデルコースをご紹介します。</p>
+        </div>
+        <ul class="about__points fade">
+          <li><span class="about__num">01</span>地元スタッフが<br>実際に歩いて案内</li>
+          <li><span class="about__num">02</span>季節ごとの<br>モデルコース</li>
+          <li><span class="about__num">03</span>少人数の<br>まち歩きツアー</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Spots -->
+    <section class="section spots" id="spots">
+      <div class="container">
+        <div class="section-head section-head--center fade">
+          <p class="section-head__en">SPOTS</p>
+          <h2 class="section-head__ja">高山の見どころ</h2>
+        </div>
+
+        <article class="spot fade">
+          <div class="spot__img"><img src="img/machinami.jpg" alt="格子戸のある高山の町家" loading="lazy"></div>
+          <div class="spot__body">
+            <p class="spot__tag">町歩き</p>
+            <h3 class="spot__title">古い町並み</h3>
+            <p>江戸時代の城下町の面影を残す三町エリア。出格子の町家、軒先に下がる杉玉、用水を流れる水の音。酒蔵の試飲や手仕事の店をのぞきながら、ゆっくり歩くのがおすすめです。</p>
+            <dl class="spot__info">
+              <div><dt>目安時間</dt><dd>1〜2時間</dd></div>
+              <div><dt>おすすめ</dt><dd>朝9時前の静かな時間帯</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="spot spot--reverse fade">
+          <div class="spot__img"><img src="img/asaichi.jpg" alt="朝市に並ぶ色とりどりの野菜" loading="lazy"></div>
+          <div class="spot__body">
+            <p class="spot__tag">朝の楽しみ</p>
+            <h3 class="spot__title">宮川朝市</h3>
+            <p>宮川沿いに毎朝並ぶ露店では、採れたての野菜や漬物、季節の果物が手に入ります。「どこから来たの？」と気さくに声をかけてくれるのも朝市の魅力。早起きしてでも訪れたい場所です。</p>
+            <dl class="spot__info">
+              <div><dt>開催</dt><dd>毎朝 7:00頃〜正午頃</dd></div>
+              <div><dt>おすすめ</dt><dd>朝食前にさんぽがてら</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="spot fade">
+          <div class="spot__img"><img src="img/matsuri.jpg" alt="きらびやかな祭り屋台のイメージ" loading="lazy"></div>
+          <div class="spot__body">
+            <p class="spot__tag">春と秋の祭り</p>
+            <h3 class="spot__title">高山祭</h3>
+            <p>春と秋に行われる高山祭では、精巧な彫刻や飾り金具で彩られた屋台が町を巡ります。祭りの時期以外も、屋台の展示施設でその美しさを間近に見ることができます。</p>
+            <dl class="spot__info">
+              <div><dt>時期</dt><dd>春（4月）・秋（10月）</dd></div>
+              <div><dt>おすすめ</dt><dd>夜祭の提灯に灯る屋台</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gourmet -->
+    <section class="section gourmet" id="gourmet">
+      <div class="container gourmet__inner">
+        <div class="gourmet__img fade"><img src="img/gourmet.jpg" alt="香ばしく焼いた醤油味の団子" loading="lazy"></div>
+        <div class="gourmet__body fade">
+          <div class="section-head">
+            <p class="section-head__en">GOURMET</p>
+            <h2 class="section-head__ja">町歩きのおともに、<br>飛騨の味。</h2>
+          </div>
+          <ul class="food-list">
+            <li>
+              <h3>飛騨牛にぎり</h3>
+              <p>さっと炙った飛騨牛を、えびせんべいのお皿でいただく食べ歩きの定番。口の中でとろける甘い脂をぜひ。</p>
+            </li>
+            <li>
+              <h3>みだらし団子</h3>
+              <p>高山では「みたらし」ではなく「みだらし」。甘くない醤油味で、香ばしい焼き目が後を引きます。</p>
+            </li>
+            <li>
+              <h3>中華そば</h3>
+              <p>細ちぢれ麺にあっさり醤油スープ。地元の人にも観光客にも愛される、高山のソウルフードです。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Onsen banner -->
+    <section class="onsen">
+      <img src="img/onsen.jpg" alt="雪景色の高山の川辺" class="onsen__bg" loading="lazy">
+      <div class="onsen__overlay"></div>
+      <div class="onsen__content fade">
+        <p class="section-head__en">ONSEN</p>
+        <h2 class="onsen__title">冬の旅の締めくくりは、<br>奥飛騨の雪見の湯で。</h2>
+        <p>高山から車で約1時間。北アルプスを望む露天風呂で、歩き疲れた足をゆっくりほぐしてください。しんしんと雪が降る中で入る露天風呂は格別です。</p>
+      </div>
+    </section>
+
+    <!-- Model course -->
+    <section class="section course" id="course">
+      <div class="container">
+        <div class="section-head section-head--center fade">
+          <p class="section-head__en">MODEL COURSE</p>
+          <h2 class="section-head__ja">ゆっくり1日モデルコース</h2>
+        </div>
+        <ol class="timeline fade">
+          <li><time>7:30</time><div><h3>宮川朝市でさんぽ</h3><p>りんごジュースを片手に、露店をのんびり見て回ります。</p></div></li>
+          <li><time>9:00</time><div><h3>人の少ない古い町並みへ</h3><p>観光客が増える前の静かな町並みは、写真撮影にも最適。</p></div></li>
+          <li><time>11:30</time><div><h3>飛騨牛にぎりで腹ごしらえ</h3><p>食べ歩きのあとは、町家カフェでひと休み。</p></div></li>
+          <li><time>14:00</time><div><h3>屋台の展示で高山祭を体感</h3><p>祭りの時期でなくても、屋台の細工をじっくり鑑賞できます。</p></div></li>
+          <li><time>16:30</time><div><h3>奥飛騨温泉郷へ</h3><p>露天風呂と夕食で、1日の疲れを癒やします。</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section class="section news">
+      <div class="container news__inner">
+        <div class="section-head fade">
+          <p class="section-head__en">NEWS</p>
+          <h2 class="section-head__ja">お知らせ</h2>
+        </div>
+        <ul class="news__list fade">
+          <li><time datetime="2026-10-01">2026.10.01</time><span class="news__cat">ツアー</span><a href="#contact">秋の高山祭 まち歩きツアーの受付を開始しました</a></li>
+          <li><time datetime="2026-09-15">2026.09.15</time><span class="news__cat">コース</span><a href="#course">紅葉シーズンのモデルコースを公開しました</a></li>
+          <li><time datetime="2026-08-20">2026.08.20</time><span class="news__cat">お知らせ</span><a href="#access">案内所の営業時間変更のお知らせ</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Access -->
+    <section class="section access" id="access">
+      <div class="container access__inner">
+        <div class="section-head fade">
+          <p class="section-head__en">ACCESS</p>
+          <h2 class="section-head__ja">高山へのアクセス</h2>
+        </div>
+        <div class="access__grid fade">
+          <div class="access__card">
+            <h3>電車で</h3>
+            <p>名古屋駅から特急で約2時間20分<br>富山駅から特急で約1時間30分</p>
+          </div>
+          <div class="access__card">
+            <h3>高速バスで</h3>
+            <p>新宿から約5時間30分<br>名古屋から約2時間40分</p>
+          </div>
+          <div class="access__card">
+            <h3>車で</h3>
+            <p>中部縦貫自動車道 高山ICから約10分</p>
+          </div>
+        </div>
+        <p class="access__note">※所要時間は目安です。最新の情報は各交通機関でご確認ください。</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <div class="section-head section-head--center fade">
+          <p class="section-head__en">CONTACT</p>
+          <h2 class="section-head__ja">お問い合わせ</h2>
+        </div>
+        <p class="contact__lead fade">ツアーのご予約や旅のご相談は、お気軽にお問い合わせください。</p>
+        <form class="form fade" onsubmit="event.preventDefault(); alert('こちらはポートフォリオ用のサンプルのため、送信されません。');">
+          <label>お名前<span class="req">必須</span><input type="text" name="name" required></label>
+          <label>メールアドレス<span class="req">必須</span><input type="email" name="email" required></label>
+          <label>ご用件
+            <select name="type">
+              <option>まち歩きツアーについて</option>
+              <option>旅のご相談</option>
+              <option>その他</option>
+            </select>
+          </label>
+          <label>お問い合わせ内容<textarea name="message" rows="5"></textarea></label>
+          <button type="submit" class="btn btn--dark">送信する</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="logo logo--footer">
+        <span class="logo__mark">栞</span>
+        <span class="logo__text">ひだ旅しおり舎</span>
+      </a>
+      <p class="footer__notice">※このサイトはWeb制作のポートフォリオ用に作成した架空のサイトです。<br>実在の団体・店舗とは関係ありません。掲載写真はイメージです（Photos: Pexels）。</p>
+      <p class="footer__copy"><small>&copy; 2026 Hida Tabi Shiori-sha (Portfolio Sample)</small></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

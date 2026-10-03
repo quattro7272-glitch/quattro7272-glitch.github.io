@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hida Web Works | Webサイト制作 ポートフォリオ</title>
+  <meta name="description" content="店舗・観光・小規模事業者さま向けのWebサイト制作。デザインからコーディング、スマホ対応まで丁寧に対応します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f6f3; --ink: #22252a; --muted: #6b6f76; --line: #e3e1dc;
+      --accent: #2f6f5e; --accent-soft: #e4efe9; --white: #fff;
+      --en: "Inter", sans-serif; --ja: "Noto Sans JP", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--ja); color: var(--ink); background: var(--bg); line-height: 1.85; letter-spacing: .02em; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { margin: 0; line-height: 1.45; }
+    p { margin: 0 0 1em; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    .container { width: min(100% - 32px, 1040px); margin-inline: auto; }
+    section { padding: 96px 0; }
+    .label { font-family: var(--en); font-size: .8rem; font-weight: 700; letter-spacing: .18em; color: var(--accent); margin-bottom: 8px; }
+    .title { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 40px; }
+    .nw { display: inline-block; }
+
+    /* header */
+    header { position: sticky; top: 0; z-index: 10; background: rgba(247, 246, 243, .95); border-bottom: 1px solid var(--line); }
+    .header__inner { height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-family: var(--en); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+    .brand span { color: var(--accent); }
+    header nav { display: flex; gap: 28px; font-size: .9rem; }
+    header nav a { text-decoration: none; }
+    header nav a:hover { color: var(--accent); }
+
+    /* hero */
+    .hero { padding: 112px 0 96px; }
+    .hero h1 { font-size: clamp(1.9rem, 4.6vw, 3.1rem); margin-bottom: 24px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { color: var(--muted); max-width: 36em; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .tags li { padding: 6px 16px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: .85rem; }
+
+    /* works */
+    .works { background: var(--white); }
+    .work { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: center; }
+    .work + .work { margin-top: 88px; padding-top: 88px; border-top: 1px solid var(--line); }
+    .work__shots { position: relative; padding-right: 48px; padding-bottom: 24px; }
+    .work__pc { border-radius: 12px; box-shadow: 0 20px 48px rgba(34, 37, 42, .14); border: 1px solid var(--line); }
+    .work__sp { position: absolute; right: 0; bottom: 0; width: 26%; border-radius: 16px; border: 4px solid var(--ink); box-shadow: 0 12px 32px rgba(34, 37, 42, .2); }
+    .work__meta { font-family: var(--en); font-size: .8rem; color: var(--muted); margin-bottom: 6px; }
+    .work h3 { font-size: 1.35rem; margin-bottom: 14px; }
+    .work p { font-size: .95rem; color: #43474e; }
+    .work dl { margin: 20px 0 24px; font-size: .88rem; display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; }
+    .work dt { color: var(--muted); }
+    .work dd { margin: 0; }
+    .btn { display: inline-block; padding: 12px 28px; border-radius: 999px; background: var(--accent); color: var(--white); text-decoration: none; font-weight: 700; font-size: .92rem; transition: opacity .2s; }
+    .btn:hover { opacity: .85; }
+    .btn::after { content: " ↗"; }
+
+    /* services */
+    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 32px 28px; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+    .card p { font-size: .9rem; color: #43474e; }
+    .card .price { font-family: var(--en); font-weight: 700; font-size: 1.5rem; color: var(--accent); margin: 16px 0 0; }
+    .card .price small { font-family: var(--ja); font-size: .8rem; color: var(--muted); font-weight: 500; }
+    .note { font-size: .82rem; color: var(--muted); margin-top: 20px; }
+
+    /* strengths */
+    .strengths { background: var(--accent-soft); }
+    .strengths ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 40px; }
+    .strengths li { display: flex; gap: 16px; }
+    .strengths li::before { content: "✓"; flex-shrink: 0; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--white); font-weight: 700; }
+    .strengths h3 { font-size: 1rem; margin-bottom: 4px; }
+    .strengths p { font-size: .9rem; color: #43474e; margin: 0; }
+
+    /* flow */
+    .flow ol { margin: 0; padding: 0; list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .flow li { counter-increment: step; background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 24px 18px; font-size: .88rem; }
+    .flow li::before { content: "STEP " counter(step); display: block; font-family: var(--en); font-weight: 700; font-size: .75rem; color: var(--accent); margin-bottom: 6px; }
+    .flow h3 { font-size: 1rem; margin-bottom: 6px; }
+    .flow p { margin: 0; color: #43474e; }
+
+    /* contact */
+    .contact { text-align: center; background: var(--ink); color: var(--white); }
+    .contact .label { color: #9fd3c1; }
+    .contact p { color: #c9ccd1; }
+
+    footer { padding: 32px 0; text-align: center; font-size: .78rem; color: var(--muted); }
+
+    @media (max-width: 860px) {
+      section { padding: 72px 0; }
+      header nav { display: none; }
+      .work { grid-template-columns: 1fr; gap: 28px; }
+      .services__grid, .strengths ul { grid-template-columns: 1fr; }
+      .flow ol { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header__inner">
+      <a href="index.html" class="brand">Hida <span>Web</span> Works</a>
+      <nav>
+        <a href="#works">制作実績</a>
+        <a href="#services">サービス・料金</a>
+        <a href="#flow">ご依頼の流れ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="label">WEB DESIGN &amp; CODING</p>
+        <h1><span class="nw">お店や地域の魅力が</span><span class="nw"><em>伝わる</em>Webサイトを、</span><span class="nw">丁寧につくります。</span></h1>
+        <p>飲食店・観光・小さな事業者さま向けに、デザインからコーディング、スマホ対応まで一貫して制作しています。ページビルダーに頼らない、軽くて修正しやすいコードでお渡しします。</p>
+        <ul class="tags">
+          <li>HTML / CSS / JavaScript</li>
+          <li>レスポンシブ対応</li>
+          <li>LP・コーポレートサイト</li>
+          <li>店舗サイト</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="works" id="works">
+      <div class="container">
+        <p class="label">WORKS</p>
+        <h2 class="title">制作実績（サンプルサイト）</h2>
+
+        <article class="work">
+          <div class="work__shots">
+            <img src="img/work-keisei.jpg" alt="渓声館 PC表示" class="work__pc" loading="lazy">
+            <img src="img/work-keisei-sp.jpg" alt="渓声館 スマホ表示" class="work__sp" loading="lazy">
+          </div>
+          <div>
+            <p class="work__meta">Ryokan / Renewal study / 4 pages</p>
+            <h3>奥飛騨温泉郷 渓声館</h3>
+            <p>実在の旅館サイトを分析し、使いにくい点を改善する形で制作したリニューアル提案型のサンプル。メニューから移動するとナビが消えてしまう点や、色だけで表していた空室表示を見直しました。</p>
+            <dl>
+              <dt>ページ</dt><dd>トップ・空室状況・ご予約について・よくある質問</dd>
+              <dt>改善点</dt><dd>ナビの常時表示／上スクロールで表示の切り替え（設定はページをまたいで保存）・現在地のハイライト</dd>
+              <dt>機能</dt><dd>月タブ付き空室カレンダー（○△×の記号表示・日付を押すと案内）／質問を押すと開くFAQ／詳細ポップアップ</dd>
+            </dl>
+            <a href="keisei-ryokan/index.html" class="btn" target="_blank" rel="noopener">サイトを見る</a>
+          </div>
+        </article>
+
+        <article class="work">
+          <div class="work__shots">
+            <img src="img/work-hotel.jpg" alt="ホテル千樹 PC表示" class="work__pc" loading="lazy">
+            <img src="img/work-hotel-sp.jpg" alt="ホテル千樹 スマホ表示" class="work__sp" loading="lazy">
+          </div>
+          <div>
+            <p class="work__meta">Hotel &amp; Onsen / 5 pages</p>
+            <h3>飛騨高山温泉 ホテル千樹</h3>
+            <p>温泉ホテルをイメージした予約導線つきのサイト。金茶色と明朝体、縦書きの見出しで、旅館らしい上質さと落ち着きを表現しました。</p>
+            <dl>
+              <dt>ページ</dt><dd>トップ + 下層4ページ（お料理・客室・温泉・アクセス）</dd>
+              <dt>工夫</dt><dd>写真が切り替わるスライドショー / 空室検索バー / プランのタブ切り替え / スマホ用の電話・予約固定ボタン</dd>
+            </dl>
+            <a href="onsen-hotel/index.html" class="btn" target="_blank" rel="noopener">サイトを見る</a>
+          </div>
+        </article>
+
+        <article class="work">
+          <div class="work__shots">
+            <img src="img/work-hida.jpg" alt="ひだ旅しおり舎 PC表示" class="work__pc" loading="lazy">
+            <img src="img/work-hida-sp.jpg" alt="ひだ旅しおり舎 スマホ表示" class="work__sp" loading="lazy">
+          </div>
+          <div>
+            <p class="work__meta">Tourism / One page</p>
+            <h3>ひだ旅しおり舎</h3>
+            <p>飛騨高山の観光案内所をイメージした1ページサイト。墨・和紙・弁柄色を使った和のデザインで、町並みの落ち着いた空気感を表現しました。</p>
+            <dl>
+              <dt>ページ</dt><dd>1ページ（9セクション）</dd>
+              <dt>工夫</dt><dd>スクロール演出 / スマホ用メニュー / モデルコースのタイムライン</dd>
+            </dl>
+            <a href="hida-sample/index.html" class="btn" target="_blank" rel="noopener">サイトを見る</a>
+          </div>
+        </article>
+
+        <article class="work">
+          <div class="work__shots">
+            <img src="img/work-hinata.jpg" alt="ひなた珈琲とパン PC表示" class="work__pc" loading="lazy">
+            <img src="img/work-hinata-sp.jpg" alt="ひなた珈琲とパン スマホ表示" class="work__sp" loading="lazy">
+          </div>
+          <div>
+            <p class="work__meta">Cafe &amp; Bakery / 2 pages</p>
+            <h3>ひなた珈琲とパン</h3>
+            <p>朝ごはんカフェをイメージした店舗サイト。セージグリーンと丸みのある形で、明るくやさしい雰囲気にまとめました。</p>
+            <dl>
+              <dt>ページ</dt><dd>トップ + メニューページ</dd>
+              <dt>工夫</dt><dd>メニューの絞り込みタブ / 回転ロゴ / 地図風イラスト</dd>
+            </dl>
+            <a href="hinata-cafe/index.html" class="btn" target="_blank" rel="noopener">サイトを見る</a>
+          </div>
+        </article>
+        <p class="note">※ 掲載サイトはスキル紹介用に制作した架空のサンプルです（写真：Pexels）。</p>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <p class="label">SERVICES</p>
+        <h2 class="title">サービスと料金の目安</h2>
+        <div class="services__grid">
+          <div class="card">
+            <h3>LP・1ページサイト</h3>
+            <p>キャンペーンや店舗紹介など、1ページで伝えるサイト。デザイン・コーディング・スマホ対応込み。</p>
+            <p class="price">¥30,000<small> 〜</small></p>
+          </div>
+          <div class="card">
+            <h3>店舗・小規模サイト</h3>
+            <p>トップ＋メニュー・会社概要・お問い合わせなど、3〜5ページ程度のサイト。</p>
+            <p class="price">¥60,000<small> 〜</small></p>
+          </div>
+          <div class="card">
+            <h3>コーディングのみ</h3>
+            <p>いただいたデザインデータ（Figma・XDなど）をもとに、HTML/CSSで忠実に組み上げます。</p>
+            <p class="price">¥10,000<small> 〜 / 1ページ</small></p>
+          </div>
+        </div>
+        <p class="note">※ ページ数・内容により変わります。まずはお気軽にご相談ください。修正は2回まで無料です。</p>
+      </div>
+    </section>
+
+    <section class="strengths">
+      <div class="container">
+        <p class="label">STRENGTHS</p>
+        <h2 class="title">お任せいただけること</h2>
+        <ul>
+          <li><div><h3>スマホでも見やすく</h3><p>すべてのサイトをスマホ・タブレットに対応させます。</p></div></li>
+          <li><div><h3>ビルダー不使用の軽いコード</h3><p>表示が速く、あとから修正しやすい構成でお渡しします。</p></div></li>
+          <li><div><h3>写真やテキストのご相談も</h3><p>素材が揃っていなくても、構成や文章のたたき台からご提案します。</p></div></li>
+          <li><div><h3>こまめなご報告</h3><p>制作途中の画面を共有しながら、イメージのズレを防ぎます。</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="flow" id="flow">
+      <div class="container">
+        <p class="label">FLOW</p>
+        <h2 class="title">ご依頼の流れ</h2>
+        <ol>
+          <li><h3>ご相談</h3><p>目的・ページ数・ご希望の雰囲気をお聞きします。</p></li>
+          <li><h3>お見積り</h3><p>内容と納期、金額をご提示します。</p></li>
+          <li><h3>デザイン・制作</h3><p>途中経過を共有しながら進めます。</p></li>
+          <li><h3>ご確認・修正</h3><p>PC・スマホで確認いただき調整します。</p></li>
+          <li><h3>納品</h3><p>データ一式をお渡し、公開までサポートします。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <p class="label">CONTACT</p>
+        <h2 class="title">ご相談はお気軽に</h2>
+        <p>ご依頼・お見積りのご相談は、クラウドワークスのメッセージからご連絡ください。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Hida Web Works</footer>
+</body>
+</html>

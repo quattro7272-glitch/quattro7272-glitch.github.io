@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>メニュー | ひなた珈琲とパン</title>
+  <meta name="description" content="ひなた珈琲とパンのメニュー。コーヒー、ドリンク、パン、フード、スイーツ（ポートフォリオ用の架空サイトです）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-sub">
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="ひなた珈琲とパン トップへ">
+        <span class="logo__sun" aria-hidden="true"></span>
+        <span class="logo__en">hinata</span>
+        <span class="logo__ja">珈琲とパン</span>
+      </a>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="index.html#concept">コンセプト</a></li>
+          <li><a href="menu.html" aria-current="page">メニュー</a></li>
+          <li><a href="index.html#morning">モーニング</a></li>
+          <li><a href="index.html#info">店舗情報</a></li>
+          <li><a href="index.html#info" class="btn btn--small">テイクアウト予約</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <img src="img/bread.jpg" alt="" class="page-head__bg">
+      <div class="page-head__inner">
+        <p class="eyebrow eyebrow--light">Menu</p>
+        <h1 class="page-head__title">メニュー</h1>
+      </div>
+    </section>
+
+    <nav class="breadcrumb container" aria-label="パンくずリスト">
+      <ol><li><a href="index.html">ホーム</a></li><li aria-current="page">メニュー</li></ol>
+    </nav>
+
+    <section class="section menu">
+      <div class="container">
+        <div class="tabs" role="tablist" aria-label="メニューの種類">
+          <button class="tab is-active" role="tab" aria-selected="true" data-filter="all">すべて</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="coffee">コーヒー</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="drink">ドリンク</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="bread">パン</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="food">フード</button>
+          <button class="tab" role="tab" aria-selected="false" data-filter="sweets">スイーツ</button>
+        </div>
+
+        <ul class="menu-list">
+          <li class="menu-item" data-cat="coffee"><div><h3>ひなたブレンド <span class="label">人気</span></h3><p>ナッツのような香ばしさと、やわらかな甘み。</p></div><p class="price">¥520</p></li>
+          <li class="menu-item" data-cat="coffee"><div><h3>本日のシングルオリジン</h3><p>その日のおすすめの豆を、ハンドドリップで。</p></div><p class="price">¥620</p></li>
+          <li class="menu-item" data-cat="coffee"><div><h3>カフェラテ</h3><p>深煎りのエスプレッソに、まろやかなミルク。</p></div><p class="price">¥580</p></li>
+          <li class="menu-item" data-cat="coffee"><div><h3>アイスコーヒー</h3><p>すっきり飲みやすい、水出しのアイスコーヒー。</p></div><p class="price">¥550</p></li>
+
+          <li class="menu-item" data-cat="drink"><div><h3>和紅茶</h3><p>国産茶葉のやさしい紅茶。ミルクもおすすめ。</p></div><p class="price">¥520</p></li>
+          <li class="menu-item" data-cat="drink"><div><h3>りんごジュース</h3><p>飛騨のりんごを使った、ストレートジュース。</p></div><p class="price">¥480</p></li>
+          <li class="menu-item" data-cat="drink"><div><h3>ほうじ茶ラテ <span class="label label--season">季節限定</span></h3><p>香ばしいほうじ茶に、たっぷりのミルク。</p></div><p class="price">¥600</p></li>
+
+          <li class="menu-item" data-cat="bread"><div><h3>発酵バターのクロワッサン <span class="label">人気</span></h3><p>外はサクッ、中はしっとり。</p></div><p class="price">¥320</p></li>
+          <li class="menu-item" data-cat="bread"><div><h3>カンパーニュ（ハーフ）</h3><p>天然酵母でじっくり発酵させた、毎日のパン。</p></div><p class="price">¥450</p></li>
+          <li class="menu-item" data-cat="bread"><div><h3>くるみとレーズンのパン</h3><p>コーヒーによく合う、噛むほどおいしいパン。</p></div><p class="price">¥380</p></li>
+          <li class="menu-item" data-cat="bread"><div><h3>あんバターサンド</h3><p>自家製あんこと、発酵バターをたっぷりと。</p></div><p class="price">¥360</p></li>
+
+          <li class="menu-item" data-cat="food"><div><h3>季節野菜のサンド</h3><p>地元の野菜をたっぷりはさんだ、ボリュームサンド。</p></div><p class="price">¥780</p></li>
+          <li class="menu-item" data-cat="food"><div><h3>たまごサンド</h3><p>ふわふわの厚焼きたまごを、自家製食パンで。</p></div><p class="price">¥680</p></li>
+          <li class="menu-item" data-cat="food"><div><h3>本日のスープセット</h3><p>日替わりスープとパン2種類のセット。</p></div><p class="price">¥980</p></li>
+
+          <li class="menu-item" data-cat="sweets"><div><h3>ひなたパンケーキ</h3><p>いちごとメープルシロップをたっぷりのせて。</p></div><p class="price">¥850</p></li>
+          <li class="menu-item" data-cat="sweets"><div><h3>焼き菓子（各種）</h3><p>スコーン、マフィン、クッキーなど。</p></div><p class="price">¥240〜</p></li>
+        </ul>
+        <p class="note">※ 価格はすべて税込です。テイクアウトも承ります。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="logo logo--footer"><span class="logo__sun" aria-hidden="true"></span><span class="logo__en">hinata</span><span class="logo__ja">珈琲とパン</span></a>
+      <ul class="footer__nav">
+        <li><a href="index.html#concept">コンセプト</a></li>
+        <li><a href="menu.html">メニュー</a></li>
+        <li><a href="index.html#info">店舗情報</a></li>
+      </ul>
+      <p class="footer__notice">※このサイトはWeb制作のポートフォリオ用に作成した架空の店舗サイトです。実在の店舗とは関係ありません。<br>Photos: Pexels</p>
+      <p class="footer__copy"><small>&copy; 2026 hinata coffee &amp; bread (Portfolio Sample)</small></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

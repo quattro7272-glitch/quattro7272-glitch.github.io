@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>よくある質問 | 奥飛騨温泉郷 渓声館</title>
+  <meta name="description" content="お料理・温泉・お部屋についてのよくあるご質問（ポートフォリオ用の架空サイトです）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // ナビの表示方法（保存された設定）を、画面が表示される前に反映する
+    try { if (localStorage.getItem('keisei-nav-mode') === 'smart') document.documentElement.classList.add('smart-header'); } catch (e) {}
+  </script>
+</head>
+<body id="top" class="page-sub">
+
+  <!-- ===== ヘッダー（スクロールしても常に表示） ===== -->
+  <header class="header">
+    <div class="header__bar">
+      <p><span class="header__badge">ベストレート保証</span>公式サイト・お電話からのご予約が最もお得です</p>
+      <p class="header__lang"><a href="#top" aria-current="true">JA</a> | <a href="#top">EN</a></p>
+    </div>
+    <div class="header__main">
+      <a href="index.html" class="logo" aria-label="渓声館 トップへ">
+        <img src="img/logo-mark.svg" alt="" class="logo__mark" width="48" height="48">
+        <span class="logo__text">
+          <span class="logo__sub">奥飛騨温泉郷　渓谷の湯</span>
+          <span class="logo__name">渓声館</span>
+        </span>
+      </a>
+      <nav class="gnav" aria-label="メインメニュー">
+        <ul>
+          <li><a href="index.html#sec-onsen">温泉</a></li>
+          <li><a href="index.html#sec-cuisine">お食事</a></li>
+          <li><a href="index.html#sec-room">客室 / 宿泊料金</a></li>
+          <li><a href="index.html#sec-access">アクセス</a></li>
+          <li><a href="reservation.html">ご予約について</a></li>
+          <li><a href="faq.html" aria-current="page" class="is-current">よくある質問</a></li>
+        </ul>
+      </nav>
+      <a href="vacancy.html" class="header__vacancy">空室状況</a>
+      <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-nav"><span></span><span></span><span></span><em>MENU</em></button>
+    </div>
+  </header>
+
+  <!-- スマホ用メニュー -->
+  <nav class="sp-nav" id="sp-nav" aria-label="スマホ用メニュー">
+    <ul>
+      <li><a href="index.html#sec-onsen">温泉</a></li>
+      <li><a href="index.html#sec-cuisine">お食事</a></li>
+      <li><a href="index.html#sec-room">客室 / 宿泊料金</a></li>
+      <li><a href="index.html#sec-access">アクセス</a></li>
+      <li><a href="index.html#sec-area">周辺観光</a></li>
+      <li><a href="reservation.html">ご予約について</a></li>
+      <li><a href="faq.html" aria-current="page" class="is-current">よくある質問</a></li>
+      <li><a href="vacancy.html">空室状況</a></li>
+      <li><a href="index.html#sec-news">お知らせ</a></li>
+    </ul>
+    <a href="tel:0000000000" class="sp-nav__tel">お電話でのご予約<br><strong>0000-00-0000</strong></a>
+  </nav>
+
+  <main>
+    <section class="page-head">
+      <img src="img/irori2.jpg" alt="" class="page-head__bg">
+      <h1 class="page-head__ttl">よくある質問<span>FAQ</span></h1>
+    </section>
+
+    <nav class="breadcrumb container" aria-label="パンくずリスト">
+      <ol><li><a href="index.html">ホーム</a></li><li aria-current="page">よくある質問</li></ol>
+    </nav>
+
+    <section class="sec faq">
+      <div class="container narrow">
+        <ul class="faq__jump">
+          <li><a href="#faq-cuisine">料理について</a></li>
+          <li><a href="#faq-onsen">温泉について</a></li>
+          <li><a href="#faq-room">お部屋について</a></li>
+        </ul>
+        <p class="faq__hint">質問を押すと答えが開きます。</p>
+
+        <section class="faq__group" id="faq-cuisine">
+          <h2 class="faq__ttl">料理について</h2>
+          <details class="qa" open>
+            <summary><span class="qa__q">Q.</span>食事場所は？</summary>
+            <p><span class="qa__a">A.</span>ご夕食は囲炉裏のあるお食事処、ご朝食は渓谷を望む大広間でご用意します。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>アレルギーには対応してもらえますか？</summary>
+            <p><span class="qa__a">A.</span>ご予約の7日前までにお知らせください。可能な範囲で別のお料理をご用意します。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>子ども用の食事はありますか？</summary>
+            <p><span class="qa__a">A.</span>小学生以下のお子さま向けに、お子さま会席をご用意しています。</p>
+          </details>
+
+        </section>
+
+        <section class="faq__group" id="faq-onsen">
+          <h2 class="faq__ttl">温泉について</h2>
+          <details class="qa" open>
+            <summary><span class="qa__q">Q.</span>館内のお風呂は天然温泉ですか？</summary>
+            <p><span class="qa__a">A.</span>はい、すべて敷地内の自家源泉を使った、かけ流しの天然温泉です（架空の設定です）。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>お風呂を利用できる時間は？</summary>
+            <p><span class="qa__a">A.</span>チェックインから深夜23時まで、翌朝は5時から9時30分までご利用いただけます。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>大浴場から、そのまま露天風呂に出られますか？</summary>
+            <p><span class="qa__a">A.</span>いいえ。大浴場と露天風呂は別の場所にございますので、浴衣のままお移りください。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>日帰り入浴はできますか？</summary>
+            <p><span class="qa__a">A.</span>はい、10時〜14時（最終受付13時30分）にご利用いただけます。詳しくは<a href='reservation.html'>ご予約について</a>をご覧ください。</p>
+          </details>
+
+        </section>
+
+        <section class="faq__group" id="faq-room">
+          <h2 class="faq__ttl">お部屋について</h2>
+          <details class="qa" open>
+            <summary><span class="qa__q">Q.</span>露天風呂付きの客室はありますか？</summary>
+            <p><span class="qa__a">A.</span>囲炉裏付き離れに、専用の露天風呂がございます。1棟のみのため、お早めにご予約ください。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>Wi-Fiは使えますか？</summary>
+            <p><span class="qa__a">A.</span>はい、全館で無料Wi-Fiをご利用いただけます。山あいのため、つながりにくい場所もございます。</p>
+          </details>
+
+          <details class="qa">
+            <summary><span class="qa__q">Q.</span>ペットと一緒に泊まれますか？</summary>
+            <p><span class="qa__a">A.</span>申し訳ございませんが、ペットを連れてのご宿泊はお受けしておりません。</p>
+          </details>
+
+        </section>
+
+        <div class="vacancy__tel">
+          <p>そのほかのご質問は、お気軽にお電話ください</p>
+          <a href="tel:0000000000">0000-00-0000</a>
+          <p class="vacancy__hours">受付時間 8:00〜21:00</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <nav class="footer__nav" aria-label="フッターメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#sec-onsen">温泉</a></li>
+        <li><a href="index.html#sec-cuisine">お食事</a></li>
+        <li><a href="index.html#sec-room">客室 / 宿泊料金</a></li>
+        <li><a href="index.html#sec-access">アクセス</a></li>
+        <li><a href="index.html#sec-area">周辺観光</a></li>
+        <li><a href="reservation.html">ご予約について</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="vacancy.html">空室状況</a></li>
+        <li><a href="index.html#sec-news">お知らせ</a></li>
+      </ul>
+    </nav>
+    <img src="img/irori2.jpg" alt="" class="footer__img" loading="lazy">
+    <div class="footer__body">
+      <a href="index.html" class="logo logo--footer"><img src="img/logo-mark.svg" alt="" class="logo__mark" width="64" height="64"><span class="logo__text"><span class="logo__sub">奥飛騨温泉郷　渓谷の湯</span><span class="logo__name">渓声館</span></span></a>
+      <p>〒000-0000 岐阜県高山市奥飛騨温泉郷 渓声1-1（架空の住所です）</p>
+      <p class="footer__tel">TEL. 0000-00-0000 / FAX. 0000-00-0001</p>
+      <p class="footer__notice">※このサイトはWeb制作のポートフォリオ用に作成した架空の旅館サイトです。<br>宿名・住所・料金・文章はすべて架空で、実在の施設とは関係ありません。Photos: Pexels</p>
+      <p class="footer__copy"><small>&copy; Keiseikan (Portfolio Sample)</small></p>
+    </div>
+    <a href="#top" class="pagetop">Page Top</a>
+  </footer>
+
+  <!-- 右端の固定ボタン（PC） / 下部の固定メニュー（スマホ） -->
+  <a href="reservation.html" class="side-reserve">ご予約について</a>
+  <nav class="sp-bar" aria-label="スマホ用固定メニュー">
+    <a href="index.html#sec-access">アクセス</a>
+    <a href="index.html#sec-room">宿泊料金</a>
+    <a href="vacancy.html">空室状況</a>
+    <a href="tel:0000000000">電話予約</a>
+  </nav>
+
+  <!-- ナビの表示方法の切り替え（選んだ設定はブラウザに保存され、全ページで続く） -->
+  <button type="button" class="demo-switch" aria-live="polite">ナビ：常に表示 ▶ 切替</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

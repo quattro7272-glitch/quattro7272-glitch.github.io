@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ご予約について | 奥飛騨温泉郷 渓声館</title>
+  <meta name="description" content="電話・Webでのご予約方法、キャンセルポリシー、日帰り入浴のご案内（ポートフォリオ用の架空サイトです）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // ナビの表示方法（保存された設定）を、画面が表示される前に反映する
+    try { if (localStorage.getItem('keisei-nav-mode') === 'smart') document.documentElement.classList.add('smart-header'); } catch (e) {}
+  </script>
+</head>
+<body id="top" class="page-sub">
+
+  <!-- ===== ヘッダー（スクロールしても常に表示） ===== -->
+  <header class="header">
+    <div class="header__bar">
+      <p><span class="header__badge">ベストレート保証</span>公式サイト・お電話からのご予約が最もお得です</p>
+      <p class="header__lang"><a href="#top" aria-current="true">JA</a> | <a href="#top">EN</a></p>
+    </div>
+    <div class="header__main">
+      <a href="index.html" class="logo" aria-label="渓声館 トップへ">
+        <img src="img/logo-mark.svg" alt="" class="logo__mark" width="48" height="48">
+        <span class="logo__text">
+          <span class="logo__sub">奥飛騨温泉郷　渓谷の湯</span>
+          <span class="logo__name">渓声館</span>
+        </span>
+      </a>
+      <nav class="gnav" aria-label="メインメニュー">
+        <ul>
+          <li><a href="index.html#sec-onsen">温泉</a></li>
+          <li><a href="index.html#sec-cuisine">お食事</a></li>
+          <li><a href="index.html#sec-room">客室 / 宿泊料金</a></li>
+          <li><a href="index.html#sec-access">アクセス</a></li>
+          <li><a href="reservation.html" aria-current="page" class="is-current">ご予約について</a></li>
+          <li><a href="faq.html">よくある質問</a></li>
+        </ul>
+      </nav>
+      <a href="vacancy.html" class="header__vacancy">空室状況</a>
+      <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-nav"><span></span><span></span><span></span><em>MENU</em></button>
+    </div>
+  </header>
+
+  <!-- スマホ用メニュー -->
+  <nav class="sp-nav" id="sp-nav" aria-label="スマホ用メニュー">
+    <ul>
+      <li><a href="index.html#sec-onsen">温泉</a></li>
+      <li><a href="index.html#sec-cuisine">お食事</a></li>
+      <li><a href="index.html#sec-room">客室 / 宿泊料金</a></li>
+      <li><a href="index.html#sec-access">アクセス</a></li>
+      <li><a href="index.html#sec-area">周辺観光</a></li>
+      <li><a href="reservation.html" aria-current="page" class="is-current">ご予約について</a></li>
+      <li><a href="faq.html">よくある質問</a></li>
+      <li><a href="vacancy.html">空室状況</a></li>
+      <li><a href="index.html#sec-news">お知らせ</a></li>
+    </ul>
+    <a href="tel:0000000000" class="sp-nav__tel">お電話でのご予約<br><strong>0000-00-0000</strong></a>
+  </nav>
+
+  <main>
+    <section class="page-head">
+      <img src="img/gorge.jpg" alt="" class="page-head__bg">
+      <h1 class="page-head__ttl">ご予約について<span>Reservation</span></h1>
+    </section>
+
+    <nav class="breadcrumb container" aria-label="パンくずリスト">
+      <ol><li><a href="index.html">ホーム</a></li><li aria-current="page">ご予約について</li></ol>
+    </nav>
+
+    <section class="sec reserve">
+      <div class="container">
+        <div class="reserve__grid">
+          <div class="reserve__box">
+            <h2 class="reserve__ttl">電話予約<span>Telephone</span></h2>
+            <p class="reserve__badge">ベストレート保証</p>
+            <a href="tel:0000000000" class="reserve__tel">0000-00-0000</a>
+            <p class="reserve__hours">受付 8:00〜21:00</p>
+            <p class="reserve__point">お電話でのご予約が一番お得です。</p>
+            <a href="vacancy.html" class="btn-more">空室状況を確認する</a>
+          </div>
+          <div class="reserve__box">
+            <h2 class="reserve__ttl">Web予約<span>Online Reservation</span></h2>
+            <p>ネットでのご予約はこちらから</p>
+            <button type="button" class="btn-more" onclick="alert('こちらはポートフォリオ用のサンプルのため、予約サイトには移動しません。')">Web予約サイトへ</button>
+            <p class="reserve__small">※ ご予約には予約サイトの会員登録（無料）が必要です。<br>※ 日本国内にお住まいの方のみご利用いただけます。</p>
+            <h3 class="reserve__en">If you are making a reservation from overseas</h3>
+            <p class="reserve__mail"><a href="mailto:booking@example.com">booking@example.com</a></p>
+            <p class="reserve__small">For customers outside Japan, reservations and inquiries are handled by email.</p>
+          </div>
+        </div>
+
+        <dl class="policy">
+          <div>
+            <dt>チェックイン／アウト<span>Check-in / out</span></dt>
+            <dd>チェックイン <strong>15:00〜17:00</strong> ／ チェックアウト <strong>11:00</strong></dd>
+          </div>
+          <div>
+            <dt>キャンセルポリシー<span>Cancellation policy</span></dt>
+            <dd>
+              <p>ご予約を取り消された場合、下記の通りキャンセル料をいただいております。</p>
+              <table class="cancel">
+                <tr><th>7〜2日前</th><th>前日</th><th>当日</th><th>連絡なしの不泊</th></tr>
+                <tr><td>宿泊料金の20%</td><td>宿泊料金の50%</td><td>宿泊料金の80%</td><td>宿泊料金の100%</td></tr>
+              </table>
+            </dd>
+          </div>
+          <div>
+            <dt>ご利用可能なクレジットカード<span>Available credit cards</span></dt>
+            <dd>VISA ／ Mastercard ／ JCB ／ American Express</dd>
+          </div>
+        </dl>
+
+        <div class="extra">
+          <article class="extra__item">
+            <h3>日帰り入浴（露天風呂）</h3>
+            <img src="img/bath.jpg" alt="日帰りで利用できる露天風呂" loading="lazy">
+            <p>大人 800円 ／ 小学生以下 500円（お一人様）<br>貸切露天風呂 1,500円 ／ 1時間<br>営業時間 10:00〜14:00（最終受付 13:30）</p>
+            <p class="reserve__small">※ メンテナンスなどでご利用いただけない日がございます。事前にお問い合わせください。</p>
+          </article>
+          <article class="extra__item">
+            <h3>昼食のご案内（予約制）</h3>
+            <img src="img/beef.jpg" alt="昼食の飛騨牛料理" loading="lazy">
+            <p>前日までにお電話でご予約ください。季節ごとに内容が変わります。<br>営業 11:00〜14:00 ／ 料金 2,800円〜</p>
+            <p class="reserve__small">※ 2名様より承ります。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="footer">
+    <nav class="footer__nav" aria-label="フッターメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="index.html#sec-onsen">温泉</a></li>
+        <li><a href="index.html#sec-cuisine">お食事</a></li>
+        <li><a href="index.html#sec-room">客室 / 宿泊料金</a></li>
+        <li><a href="index.html#sec-access">アクセス</a></li>
+        <li><a href="index.html#sec-area">周辺観光</a></li>
+        <li><a href="reservation.html">ご予約について</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="vacancy.html">空室状況</a></li>
+        <li><a href="index.html#sec-news">お知らせ</a></li>
+      </ul>
+    </nav>
+    <img src="img/irori2.jpg" alt="" class="footer__img" loading="lazy">
+    <div class="footer__body">
+      <a href="index.html" class="logo logo--footer"><img src="img/logo-mark.svg" alt="" class="logo__mark" width="64" height="64"><span class="logo__text"><span class="logo__sub">奥飛騨温泉郷　渓谷の湯</span><span class="logo__name">渓声館</span></span></a>
+      <p>〒000-0000 岐阜県高山市奥飛騨温泉郷 渓声1-1（架空の住所です）</p>
+      <p class="footer__tel">TEL. 0000-00-0000 / FAX. 0000-00-0001</p>
+      <p class="footer__notice">※このサイトはWeb制作のポートフォリオ用に作成した架空の旅館サイトです。<br>宿名・住所・料金・文章はすべて架空で、実在の施設とは関係ありません。Photos: Pexels</p>
+      <p class="footer__copy"><small>&copy; Keiseikan (Portfolio Sample)</small></p>
+    </div>
+    <a href="#top" class="pagetop">Page Top</a>
+  </footer>
+
+  <!-- 右端の固定ボタン（PC） / 下部の固定メニュー（スマホ） -->
+  <nav class="sp-bar" aria-label="スマホ用固定メニュー">
+    <a href="index.html#sec-access">アクセス</a>
+    <a href="index.html#sec-room">宿泊料金</a>
+    <a href="vacancy.html">空室状況</a>
+    <a href="tel:0000000000">電話予約</a>
+  </nav>
+
+  <!-- ナビの表示方法の切り替え（選んだ設定はブラウザに保存され、全ページで続く） -->
+  <button type="button" class="demo-switch" aria-live="polite">ナビ：常に表示 ▶ 切替</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
