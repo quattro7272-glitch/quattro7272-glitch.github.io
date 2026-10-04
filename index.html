@@ -7,7 +7,10 @@
   <meta name="description" content="店舗・観光・小規模事業者さま向けのWebサイト制作。デザインからコーディング、スマホ対応まで丁寧に対応します。">
   <link rel="icon" href="img/logo-mark.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/atelier-aria-logo.png">
-  <meta property="og:image" content="https://quattro7272-glitch.github.io/img/atelier-aria-logo.png">
+  <meta property="og:image" content="https://quattro7272-glitch.github.io/img/ogp.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -48,6 +51,7 @@
     .hero h1 { font-size: clamp(1.9rem, 4.6vw, 3.1rem); margin-bottom: 24px; }
     .hero h1 em { font-style: normal; color: var(--accent); }
     .hero p { color: var(--muted); max-width: 36em; }
+    .hero__banner { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 48px rgba(34, 37, 42, .12); margin: 8px 0 40px; }
     .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
     .tags li { padding: 6px 16px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: .85rem; }
 
@@ -106,6 +110,14 @@
       .services__grid, .strengths ul { grid-template-columns: 1fr; }
       .flow ol { grid-template-columns: 1fr; }
     }
+    /* バナーの文字が小さくなりすぎるスマホでは、画像の代わりに見出しの文字を見せる */
+    @media (min-width: 768px) {
+      .hero { padding-top: 64px; }
+      .hero h1 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: 0; }
+    }
+    @media (max-width: 767px) {
+      .hero__banner { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -125,6 +137,7 @@
       <div class="container">
         <p class="label">WEB DESIGN &amp; CODING</p>
         <h1><span class="nw">お店や地域の魅力が</span><span class="nw"><em>伝わる</em>Webサイトを、</span><span class="nw">丁寧につくります。</span></h1>
+        <img src="img/aria-header.jpg" alt="" width="2000" height="667" class="hero__banner">
         <p>飲食店・観光・小さな事業者さま向けに、デザインからコーディング、スマホ対応まで一貫して制作しています。ページビルダーに頼らない、軽くて修正しやすいコードでお渡しします。AIツールで作業を効率化し、短納期・お手頃な価格でご提供しています。</p>
         <ul class="tags">
           <li>HTML / CSS / JavaScript</li>
