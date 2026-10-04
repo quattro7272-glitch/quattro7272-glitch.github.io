@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="atelier ARIA">
+  <!-- atelier ARIA のマーク：工房の屋根に見立てたA＋メロディの波線＋工房の明かり -->
+  <circle cx="60" cy="60" r="58" fill="#2f5e52"/>
+  <circle cx="60" cy="60" r="53" fill="none" stroke="#d9b56c" stroke-width="1.2" opacity=".85"/>
+  <path d="M33 86 L60 30 L87 86" fill="none" stroke="#f4efe6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="60" cy="48" r="3.4" fill="#d9b56c"/>
+  <path d="M39 70 C46 64 52 64 60 70 S74 76 81 70" fill="none" stroke="#d9b56c" stroke-width="4" stroke-linecap="round"/>
+</svg>
