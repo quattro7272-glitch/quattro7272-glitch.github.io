@@ -117,6 +117,7 @@
 .breadcrumb ol {
   display: flex;
   flex-wrap: wrap;
+  align-items: center; /* リンクの押せる範囲を広げた分、文字の高さがずれないよう中央でそろえる */
   gap: 0.5rem;
   font-size: 0.8125rem;
   color: var(--color-ink-soft);

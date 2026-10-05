@@ -12,9 +12,18 @@
 }
 
 .page-head__photo {
+  position: relative;
   overflow: hidden;
   border-radius: var(--radius-photo);
   aspect-ratio: 16 / 6;
+}
+
+/* 写真の下の方だけ少し暗くして、上に重ねた白い文字を読みやすくする */
+.page-head__photo::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, rgb(30 24 18 / 0.6));
 }
 
 .page-head__photo img {
