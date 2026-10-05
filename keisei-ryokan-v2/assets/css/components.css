@@ -1,0 +1,228 @@
+/* ===== ボタン ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0.75rem 2.25rem;
+  border: 1px solid currentColor;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.14em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color var(--duration), color var(--duration), border-color var(--duration);
+}
+
+.button:hover {
+  background: var(--color-keiryu);
+  border-color: var(--color-keiryu);
+  color: var(--color-paper);
+}
+
+.button--solid {
+  background: var(--color-keiryu);
+  border-color: var(--color-keiryu);
+  color: var(--color-paper);
+}
+
+.button--solid:hover {
+  background: var(--color-sumi);
+  border-color: var(--color-sumi);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+/* ===== 写真の枠（スクロールで幕が上がるように現れる） ===== */
+.photo {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-photo);
+  background: var(--color-line);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo__caption {
+  margin-top: 0.6rem;
+  font-size: var(--fs-xs);
+  color: var(--color-stone);
+  letter-spacing: 0.1em;
+}
+
+/* ===== 本文 ===== */
+.prose > * + * {
+  margin-top: 1.2em;
+}
+
+.prose {
+  max-width: 34em;
+}
+
+.lead {
+  font-family: var(--font-mincho);
+  font-size: var(--fs-md);
+  line-height: 2;
+  letter-spacing: 0.1em;
+}
+
+/* ===== 注意書き（アレルギー） ===== */
+.notice {
+  padding: var(--space-md);
+  border: 1px solid currentColor;
+}
+
+.notice__title {
+  font-size: var(--fs-md);
+}
+
+.notice__warn {
+  color: var(--color-warn);
+}
+
+.notice strong {
+  font-weight: 700;
+}
+
+/* ===== 電話のご案内 ===== */
+.tel-box {
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--color-paper);
+  text-align: center;
+}
+
+.tel-box__number {
+  display: inline-block;
+  margin-block: 0.25rem;
+  font-family: var(--font-mincho);
+  font-size: var(--fs-xl);
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+.tel-box__hours {
+  font-size: var(--fs-sm);
+  color: var(--color-stone);
+}
+
+/* ===== ナビの表示方法の切り替え（ポートフォリオ用デモ） =====
+   すりガラスの小さな帯。後ろのコンテンツをぼかして透かし、触っていない間は控えめにする */
+.demo-switch {
+  position: fixed;
+  left: var(--space-sm);
+  bottom: calc(var(--sp-bar-h) + var(--space-sm));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.35rem;
+  border-radius: 999px;
+  background: rgb(27 31 28 / 0.7);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12), 0 8px 24px rgb(20 23 21 / 0.18);
+  color: rgb(255 255 255 / 0.78);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  opacity: 0.88;
+  transition: opacity var(--duration), background-color var(--duration);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .demo-switch {
+    /* 明るい背景の上でも白い文字が読める濃さ（コントラスト約5:1） */
+    background: rgb(27 31 28 / 0.6);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    backdrop-filter: blur(14px) saturate(1.2);
+  }
+}
+
+.demo-switch:hover,
+.demo-switch:focus-within {
+  opacity: 1;
+}
+
+.demo-switch__label {
+  padding-inline: 0.65rem 0.35rem;
+}
+
+.demo-switch__option {
+  position: relative;
+  min-height: 32px;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  color: inherit;
+  transition: color var(--duration), background-color var(--duration);
+}
+
+.demo-switch__option:hover {
+  color: var(--color-paper);
+}
+
+/* 選ばれている方は、文字を白くしてうっすら面を付ける */
+.demo-switch__option[aria-pressed="true"] {
+  background: rgb(255 255 255 / 0.12);
+  color: var(--color-paper);
+}
+
+.demo-switch__hint {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.5rem);
+  width: max-content;
+  max-width: calc(100vw - var(--space-sm) * 2);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgb(27 31 28 / 0.55);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--color-paper);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity var(--duration), transform var(--duration), visibility var(--duration);
+}
+
+.demo-switch__hint.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+@media (max-width: 767px) {
+  .demo-switch {
+    left: var(--space-xs);
+    bottom: calc(var(--sp-bar-h) + var(--space-xs));
+    font-size: 0.625rem;
+  }
+
+  .demo-switch__label {
+    padding-inline: 0.5rem 0.2rem;
+  }
+
+  .demo-switch__option {
+    min-height: 36px;
+    padding: 0.2rem 0.55rem;
+  }
+}
+
+/* ===== パンくずリスト ===== */
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-block: var(--space-sm);
+  font-size: var(--fs-xs);
+  color: var(--color-stone);
+}
+
+.breadcrumb__list li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+}

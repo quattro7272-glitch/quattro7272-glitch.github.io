@@ -1,0 +1,54 @@
+/* ===== デザインの共通値 =====
+   色は「川霧・墨・渓流」から取っている */
+:root {
+  --color-mist: #e6e9e4;      /* 背景：川霧のような灰白 */
+  --color-paper: #f3f4f0;     /* 面：少し明るい紙の色 */
+  --color-sumi: #232724;      /* 文字：囲炉裏の煤のような墨 */
+  --color-sumi-deep: #1b1f1c; /* 暗いセクションの背景 */
+  --color-stone: #5c635d;     /* 補足の文字 */
+  --color-keiryu: #2e5b52;    /* アクセント：渓流の深い緑 */
+  --color-line: #c3c9c1;      /* 罫線 */
+  --color-on-dark: #e6e9e4;
+  --color-on-dark-muted: #a9b0a8;
+  --color-warn: #8c2f24;
+  --color-washi: #e3e0d9;       /* メニューの面：生成りの和紙のような色 */
+  --color-washi-light: #eeece7;      /* 注意書き（アレルギー等）だけに使う */
+
+  --font-mincho: "Shippori Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  --font-gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+
+  /* 文字サイズ（1.25倍の比率） */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.563rem;
+  --fs-xl: 1.953rem;
+  --fs-2xl: clamp(2rem, 1.4rem + 2.4vw, 3.052rem);
+  --fs-hero: clamp(2.25rem, 1.5rem + 3.2vw, 4rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: clamp(5rem, 3rem + 7vw, 10rem);
+
+  --radius-photo: clamp(8px, 0.4rem + 0.6vw, 20px); /* 写真の角の丸み（画面幅に合わせて8〜20px） */
+  --frame: clamp(6px, 0.2rem + 0.4vw, 12px);         /* ファーストビューの写真の周りの余白 */
+
+  --container-width: 1200px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  --header-h: 76px;
+  --sp-bar-h: 0px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.4s;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 60px;
+    --sp-bar-h: 56px;
+  }
+}

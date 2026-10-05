@@ -1,0 +1,552 @@
+/* ===== 下層ページの見出し =====
+   ナビから移動すると、まず大きな写真と見出しが出迎える。見出しは左下に横書き */
+.page-head {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: clamp(420px, 78vh, 820px);
+  margin: var(--frame);
+  padding: var(--gutter) calc(var(--gutter) + 0.5rem);
+  border-radius: var(--radius-photo);
+  overflow: hidden;
+  background: var(--color-sumi-deep);
+  color: var(--color-paper);
+}
+
+/* 文字を読みやすくするため、左下だけ少し暗くする */
+.page-head::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(20 23 21 / 0.55), rgb(20 23 21 / 0) 45%),
+    linear-gradient(to bottom, rgb(20 23 21 / 0.35), rgb(20 23 21 / 0) 25%);
+  pointer-events: none;
+}
+
+.page-head__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-head__title {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2em 0.6em;
+  font-size: var(--fs-hero);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+}
+
+.page-head__en {
+  font-size: 0.42em;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 767px) {
+  .page-head {
+    height: min(62svh, 520px);
+    padding-bottom: var(--space-md);
+  }
+}
+
+/* 下層ページのセクション（トップより少し詰める） */
+.section--page {
+  padding-block: var(--space-lg);
+}
+
+.section--page:last-child {
+  padding-bottom: var(--space-xl);
+}
+
+.section--paper {
+  background: var(--color-paper);
+}
+
+.page-title {
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-xl);
+  font-weight: 500;
+}
+
+/* 泉質・食事時間・設備などの表 */
+.spec-table {
+  width: 100%;
+  font-size: var(--fs-sm);
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.spec-table th {
+  width: 9em;
+  font-family: var(--font-mincho);
+  font-weight: 600;
+}
+
+.spec-table--dark th,
+.spec-table--dark td {
+  border-color: rgb(230 233 228 / 0.18);
+}
+
+.cuisine__subtitle {
+  margin-bottom: var(--space-xs);
+  font-size: var(--fs-md);
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .spec-table th {
+    width: 6.5em;
+  }
+}
+
+.page-body {
+  padding-block: var(--space-lg) var(--space-xl);
+}
+
+.page-note {
+  font-size: var(--fs-sm);
+  color: var(--color-stone);
+}
+
+/* ===== 空室カレンダー ===== */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: var(--space-md);
+  font-size: var(--fs-sm);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-weight: 500;
+}
+
+.mark--ok { background: #d5e3dc; color: var(--color-keiryu); }
+.mark--few { background: #ece2c8; color: #7a5a14; }
+.mark--full { background: #ead6d1; color: var(--color-warn); }
+.mark--tel { background: #dde1e8; color: #34465f; }
+.mark--closed { background: #d9dbd7; color: var(--color-stone); }
+
+.month-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: var(--space-md);
+  border: 1px solid var(--color-line);
+}
+
+.month-tab {
+  padding: 0.6rem 0.25rem;
+  font-family: var(--font-mincho);
+  line-height: 1.3;
+  transition: background-color var(--duration), color var(--duration);
+}
+
+.month-tab + .month-tab {
+  border-left: 1px solid var(--color-line);
+}
+
+.month-tab small {
+  display: block;
+  font-family: var(--font-gothic);
+  font-size: 0.6875rem;
+  color: var(--color-stone);
+}
+
+.month-tab:hover {
+  background: var(--color-paper);
+}
+
+.month-tab.is-active {
+  background: var(--color-keiryu);
+  color: var(--color-paper);
+}
+
+.month-tab.is-active small {
+  color: inherit;
+}
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.calendar-head__title {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+.calendar-nav {
+  min-height: 44px;
+  padding: 0.4rem 0.8rem;
+  font-size: var(--fs-sm);
+}
+
+.calendar-nav:hover:not(:disabled) {
+  color: var(--color-keiryu);
+}
+
+.calendar-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.calendar {
+  width: 100%;
+  margin-top: var(--space-sm);
+  table-layout: fixed;
+  background: var(--color-paper);
+}
+
+.calendar th {
+  padding-block: 0.5rem;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.calendar .is-sun { color: var(--color-warn); }
+.calendar .is-sat { color: #34465f; }
+
+.calendar td {
+  height: 4.5rem;
+  border: 1px solid var(--color-mist);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar-cell {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 4.5rem;
+  transition: background-color var(--duration);
+}
+
+.calendar-cell:hover {
+  background: var(--color-mist);
+}
+
+.calendar-cell.is-selected {
+  outline: 2px solid var(--color-keiryu);
+  outline-offset: -2px;
+}
+
+.calendar .day {
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.calendar .status {
+  font-size: var(--fs-md);
+  line-height: 1.2;
+}
+
+.calendar .is-ok .status { color: var(--color-keiryu); }
+.calendar .is-few .status { color: #8a6416; }
+.calendar .is-full .status { color: var(--color-warn); }
+.calendar .is-tel .status { color: #34465f; }
+.calendar .is-closed .status { color: var(--color-stone); font-size: var(--fs-sm); }
+
+.calendar .is-past {
+  color: #81877f;
+  background: var(--color-mist);
+}
+
+.calendar .is-today .day {
+  padding: 0 0.4em;
+  background: var(--color-sumi);
+  color: var(--color-paper);
+}
+
+.day-info {
+  margin-top: var(--space-md);
+  padding: var(--space-md);
+  border-left: 3px solid var(--color-keiryu);
+  background: var(--color-paper);
+}
+
+.day-info--full { border-left-color: var(--color-warn); }
+.day-info--closed { border-left-color: var(--color-stone); }
+
+.day-info__date {
+  font-family: var(--font-mincho);
+  font-size: var(--fs-md);
+}
+
+@media (max-width: 767px) {
+  .month-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .month-tab:nth-child(4) {
+    border-left: 0;
+  }
+
+  .month-tab:nth-child(n + 4) {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .calendar td,
+  .calendar-cell {
+    height: 3.4rem;
+    min-height: 3.4rem;
+  }
+
+  .calendar .day {
+    font-size: var(--fs-xs);
+  }
+
+  .calendar .status {
+    font-size: var(--fs-base);
+  }
+
+  .calendar-head__title {
+    font-size: var(--fs-md);
+  }
+
+  .day-info {
+    padding: var(--space-sm);
+  }
+
+  .day-info__date {
+    font-size: var(--fs-base);
+  }
+}
+
+/* ===== ご予約について ===== */
+.reserve-ways {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.reserve-way {
+  padding: var(--space-md);
+  background: var(--color-paper);
+}
+
+.reserve-way__title {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+.reserve-way__badge {
+  display: inline-block;
+  margin-top: var(--space-xs);
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--color-keiryu);
+  color: var(--color-keiryu);
+  font-size: var(--fs-xs);
+}
+
+.reserve-way__tel {
+  display: block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-mincho);
+  font-size: var(--fs-xl);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.reserve-way__small {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-xs);
+  color: var(--color-stone);
+}
+
+.reserve-way__en {
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-line);
+  font-size: var(--fs-base);
+  font-weight: 500;
+}
+
+.policy {
+  margin-top: var(--space-xl);
+}
+
+.policy__row {
+  display: grid;
+  grid-template-columns: 14em minmax(0, 1fr);
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.policy__row:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+.policy dt {
+  font-family: var(--font-mincho);
+  font-weight: 600;
+}
+
+.cancel-table {
+  width: 100%;
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+.cancel-table th,
+.cancel-table td {
+  padding: 0.6rem 0.4rem;
+  border: 1px solid var(--color-line);
+}
+
+.cancel-table th {
+  background: var(--color-paper);
+  font-weight: 500;
+}
+
+.extras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.extra__photo {
+  aspect-ratio: 3 / 2;
+  margin-block: var(--space-sm);
+}
+
+.extra__title {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .reserve-ways,
+  .extras {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .policy__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-xs);
+  }
+
+  .cancel-table {
+    font-size: var(--fs-xs);
+  }
+}
+
+/* ===== よくある質問 ===== */
+.faq-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.faq-jump a {
+  display: block;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+}
+
+.faq-jump a:hover {
+  border-color: var(--color-keiryu);
+}
+
+.faq-group {
+  margin-top: var(--space-lg);
+}
+
+.faq-group__title {
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-sumi);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+.qa {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.qa summary {
+  position: relative;
+  display: flex;
+  gap: 0.8rem;
+  padding: 1.1rem 2.5rem 1.1rem 0;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+
+.qa summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 開閉の印（＋／−） */
+.qa summary::before,
+.qa summary::after {
+  content: "";
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.qa summary::after {
+  transform: rotate(90deg);
+}
+
+.qa[open] summary::after {
+  transform: rotate(0deg);
+}
+
+.qa summary:hover {
+  color: var(--color-keiryu);
+}
+
+.qa__mark {
+  flex: none;
+  font-family: var(--font-mincho);
+  color: var(--color-keiryu);
+}
+
+.qa__answer {
+  display: flex;
+  gap: 0.8rem;
+  padding-bottom: 1.2rem;
+}
+
+.qa__answer .qa__mark {
+  color: var(--color-stone);
+}
