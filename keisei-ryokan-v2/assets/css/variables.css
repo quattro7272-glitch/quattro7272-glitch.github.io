@@ -10,9 +10,9 @@
   --color-line: #c3c9c1;      /* 罫線 */
   --color-on-dark: #e6e9e4;
   --color-on-dark-muted: #a9b0a8;
-  --color-warn: #8c2f24;
+  --color-warn: #8c2f24;      /* 注意書き（アレルギー等）だけに使う */
   --color-washi: #e3e0d9;       /* メニューの面：生成りの和紙のような色 */
-  --color-washi-light: #eeece7;      /* 注意書き（アレルギー等）だけに使う */
+  --color-washi-light: #eeece7; /* メニュー内のボタンの面 */
 
   --font-mincho: "Shippori Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
   --font-gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
