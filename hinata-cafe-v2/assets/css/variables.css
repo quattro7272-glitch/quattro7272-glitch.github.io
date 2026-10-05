@@ -1,0 +1,48 @@
+/* ===== デザインの共通値 =====
+   色は「生成りの紙・焙煎した豆・朝の光」から取っている。
+   飾りの色（朝日・若葉・空・いちご など）は SVG の中だけで使い、文字や線には使わない */
+:root {
+  --color-kinari: #f3eee3;      /* 背景：生成り */
+  --color-kinari-deep: #ebe3d3; /* 少し濃い面（モーニング・店舗情報） */
+  --color-paper: #faf7f0;       /* 明るい面（メニューの札・ドロワー） */
+  --color-ink: #2f2821;         /* 文字：深煎りの豆のような焦げ茶 */
+  --color-ink-soft: #6b6054;    /* 補足の文字 */
+  --color-roast: #6e4a31;       /* アクセント：焙煎色（リンク・選択中のタブ） */
+  --color-line: #d6cab5;        /* 罫線 */
+
+  --font-mincho: "Zen Old Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  --font-roman: "EB Garamond", "Times New Roman", serif;
+
+  /* 文字サイズ（1.25倍の比率） */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.25rem;
+  --fs-lg: 1.563rem;
+  --fs-xl: clamp(1.6rem, 1.3rem + 1.2vw, 1.953rem);
+  --fs-2xl: clamp(2rem, 1.4rem + 2.4vw, 3.052rem);
+  --fs-hero: clamp(1.75rem, 1.2rem + 2.4vw, 3rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: clamp(5rem, 3rem + 7vw, 9rem);
+
+  --radius-photo: clamp(6px, 0.3rem + 0.5vw, 14px);
+
+  --container-width: 1160px;
+  --container-narrow: 760px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  --header-h: 84px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.4s;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 64px;
+  }
+}

@@ -1,0 +1,133 @@
+/* ===== くり返し使う部品 ===== */
+
+/* --- 見出し：英字の斜体（大）＋ 日本語（小） --- */
+.sec-title {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: var(--space-md);
+}
+
+.sec-title__en {
+  font-family: var(--font-roman);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-2xl);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.sec-title__ja {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+.sec-title--center {
+  justify-items: center;
+  text-align: center;
+}
+
+/* --- 丸い矢印（写真つきリンクの「進む」しるし） --- */
+.circle-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-ink);
+  border-radius: 50%;
+  transition: background-color var(--duration), color var(--duration);
+}
+
+.circle-arrow::before {
+  content: "";
+  width: 14px;
+  height: 8px;
+  background: currentColor;
+  clip-path: polygon(0 45%, 78% 45%, 78% 0, 100% 50%, 78% 100%, 78% 55%, 0 55%);
+}
+
+/* --- 下線つきの文字リンク --- */
+.text-link {
+  display: inline-block;
+  padding-block: 0.5rem;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.text-link:hover {
+  color: var(--color-roast);
+}
+
+/* --- 値段の一覧（点線でつなぐ） --- */
+.price-list {
+  display: grid;
+  margin-block: var(--space-md);
+}
+
+.price-list__row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-block: 0.6rem;
+}
+
+.price-list__row dt {
+  flex-shrink: 0;
+}
+
+.price-list__row::after {
+  content: "";
+  order: 1;
+  flex: 1;
+  border-bottom: 1px dotted var(--color-line);
+  transform: translateY(-0.3em);
+}
+
+.price-list__row dd {
+  order: 2;
+  font-family: var(--font-roman);
+  font-size: var(--fs-md);
+}
+
+/* --- 小さな補足 --- */
+.note {
+  font-size: var(--fs-sm);
+  line-height: 1.9;
+  color: var(--color-ink-soft);
+}
+
+/* --- 写真：角を少し丸めて、画面に入ったらゆっくり現れる --- */
+.js-reveal {
+  border-radius: var(--radius-photo);
+}
+
+.has-motion .js-reveal {
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 1.2s var(--ease-out), transform 1.6s var(--ease-out);
+}
+
+.has-motion .js-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- パンくずリスト --- */
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+}
+
+.breadcrumb a {
+  display: inline-block;
+  padding-block: 0.6rem;
+}

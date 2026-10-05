@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>メニュー | ひなた珈琲とパン</title>
+  <meta name="description" content="ひなた珈琲とパンのメニュー。自家焙煎のコーヒー、西尾抹茶のドリンク、毎朝焼くパン、サンドイッチ、スイーツ（ポートフォリオ用の架空サイトです）。">
+  <link rel="canonical" href="https://quattro7272-glitch.github.io/hinata-cafe-v2/menu.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="メニュー | ひなた珈琲とパン">
+  <meta property="og:description" content="コーヒー、ドリンク、パン、フード、スイーツのメニュー（ポートフォリオ用の架空サイトです）。">
+  <meta property="og:url" content="https://quattro7272-glitch.github.io/hinata-cafe-v2/menu.html">
+  <meta property="og:image" content="https://quattro7272-glitch.github.io/hinata-cafe-v2/assets/images/ogp/ogp-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/common/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Zen+Old+Mincho:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/menu.css">
+</head>
+<body id="top">
+  <a href="#main" class="skip-link">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" aria-label="ひなた珈琲とパン トップへ">
+        <img src="assets/images/common/logo-mark.svg" alt="" class="logo__mark" width="40" height="40">
+        <span class="logo__text">
+          <span class="logo__name">ひなた珈琲とパン</span>
+          <span class="logo__en" lang="en">hinata coffee &amp; bread</span>
+        </span>
+      </a>
+      <nav class="gnav" aria-label="メインメニュー">
+        <ul class="gnav__list">
+          <li><a href="index.html#about">ひなたについて</a></li>
+          <li><a href="menu.html" aria-current="page">メニュー</a></li>
+          <li><a href="index.html#morning">モーニング</a></li>
+          <li><a href="index.html#info">店舗情報</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="menu-button js-menu-button" aria-expanded="false" aria-controls="sp-nav">
+        <span class="menu-button__lines" aria-hidden="true"></span>
+        <span class="menu-button__label">メニュー</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="sp-nav" id="sp-nav">
+    <nav class="sp-nav__panel" aria-label="スマートフォン用メニュー">
+      <ul class="sp-nav__list">
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="index.html#about">ひなたについて</a></li>
+        <li><a href="menu.html" aria-current="page">メニュー</a></li>
+        <li><a href="index.html#morning">モーニング</a></li>
+        <li><a href="index.html#info">店舗情報</a></li>
+      </ul>
+      <p class="sp-nav__hours">営業 7:30〜17:00<br>定休日 水曜・第3木曜</p>
+      <img src="assets/images/common/ornament-small.svg" alt="" class="sp-nav__ornament" width="120" height="76">
+    </nav>
+  </div>
+
+  <main id="main">
+    <div class="page-head">
+      <div class="page-head__photo">
+        <img src="assets/images/menu/menu-header.webp" alt="" width="1600" height="1291" fetchpriority="high">
+      </div>
+      <h1 class="page-head__title">
+        <span class="page-head__en" lang="en">Menu</span>
+        <span class="page-head__ja">メニュー</span>
+      </h1>
+    </div>
+
+    <nav class="breadcrumb container" aria-label="現在の位置">
+      <ol>
+        <li><a href="index.html">トップ</a></li>
+        <li aria-current="page">メニュー</li>
+      </ol>
+    </nav>
+
+    <div class="menu container">
+      <div class="menu-filter" role="group" aria-label="メニューの種類で絞り込む">
+        <button type="button" class="menu-filter__button js-filter" data-filter="all" aria-pressed="true">すべて</button>
+        <button type="button" class="menu-filter__button js-filter" data-filter="coffee" aria-pressed="false">コーヒー</button>
+        <button type="button" class="menu-filter__button js-filter" data-filter="drink" aria-pressed="false">ドリンク</button>
+        <button type="button" class="menu-filter__button js-filter" data-filter="bread" aria-pressed="false">パン</button>
+        <button type="button" class="menu-filter__button js-filter" data-filter="food" aria-pressed="false">フード</button>
+        <button type="button" class="menu-filter__button js-filter" data-filter="sweets" aria-pressed="false">スイーツ</button>
+      </div>
+      <p class="visually-hidden" aria-live="polite" id="filter-status"></p>
+
+      <section class="menu-group" id="menu-coffee" data-cat="coffee" aria-labelledby="coffee-title">
+        <img src="assets/images/menu/menu-coffee.webp" alt="ハンドドリップでいれるコーヒー" width="1000" height="1251" loading="lazy" class="menu-group__photo">
+        <div class="menu-group__body">
+          <h2 class="sec-title" id="coffee-title">
+            <span class="sec-title__en" lang="en">Coffee</span>
+            <span class="sec-title__ja">コーヒー</span>
+          </h2>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">ひなたブレンド<span class="tag">いちばん人気</span></h3><p class="menu-item__price">¥520</p></div><p class="menu-item__desc">ナッツのような香ばしさと、やわらかな甘み。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">本日のシングルオリジン</h3><p class="menu-item__price">¥620</p></div><p class="menu-item__desc">その日のおすすめの豆を、一杯ずつハンドドリップで。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">カフェラテ</h3><p class="menu-item__price">¥580</p></div><p class="menu-item__desc">深煎りのエスプレッソに、まろやかなミルク。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">水出しアイスコーヒー</h3><p class="menu-item__price">¥550</p></div><p class="menu-item__desc">ひと晩かけて落とした、すっきりした味。</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="menu-group" id="menu-drink" data-cat="drink" aria-labelledby="drink-title">
+        <img src="assets/images/menu/menu-drink.webp" alt="葉っぱの模様を描いた西尾抹茶ラテ" width="1000" height="667" loading="lazy" class="menu-group__photo">
+        <div class="menu-group__body">
+          <h2 class="sec-title" id="drink-title">
+            <span class="sec-title__en" lang="en">Drink</span>
+            <span class="sec-title__ja">ドリンク</span>
+          </h2>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">和紅茶</h3><p class="menu-item__price">¥520</p></div><p class="menu-item__desc">国産の茶葉のやさしい紅茶。ミルクを足してもおいしい。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">西尾抹茶ラテ<span class="tag">西尾の味</span></h3><p class="menu-item__price">¥620</p></div><p class="menu-item__desc">地元・西尾の抹茶を、たっぷりのミルクで。甘さはひかえめです。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">ほうじ茶ラテ<span class="tag">秋冬だけ</span></h3><p class="menu-item__price">¥600</p></div><p class="menu-item__desc">香ばしいほうじ茶に、温めたミルクをたっぷり。</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="menu-group" id="menu-bread" data-cat="bread" aria-labelledby="bread-title">
+        <img src="assets/images/menu/menu-bread.webp" alt="発酵バターのクロワッサン" width="1000" height="750" loading="lazy" class="menu-group__photo">
+        <div class="menu-group__body">
+          <h2 class="sec-title" id="bread-title">
+            <span class="sec-title__en" lang="en">Bread</span>
+            <span class="sec-title__ja">パン</span>
+          </h2>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">発酵バターのクロワッサン<span class="tag">いちばん人気</span></h3><p class="menu-item__price">¥320</p></div><p class="menu-item__desc">外はさくっと、中はしっとり。朝のうちに売り切れることもあります。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">カンパーニュ（ハーフ）</h3><p class="menu-item__price">¥450</p></div><p class="menu-item__desc">自家製の酵母で、ひと晩かけて発酵させた毎日のパン。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">くるみとレーズンのパン</h3><p class="menu-item__price">¥380</p></div><p class="menu-item__desc">コーヒーによく合う、噛むほどおいしいパン。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">抹茶とあんこのパン<span class="tag">西尾の味</span></h3><p class="menu-item__price">¥340</p></div><p class="menu-item__desc">西尾の抹茶を練りこんだ生地で、自家製のあんこを包みました。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">あんバターサンド</h3><p class="menu-item__price">¥360</p></div><p class="menu-item__desc">自家製のあんこに、発酵バターをたっぷり。</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="menu-group" id="menu-food" data-cat="food" aria-labelledby="food-title">
+        <img src="assets/images/menu/menu-food.webp" alt="野菜をはさんだサンドイッチ" width="1000" height="1500" loading="lazy" class="menu-group__photo">
+        <div class="menu-group__body">
+          <h2 class="sec-title" id="food-title">
+            <span class="sec-title__en" lang="en">Food</span>
+            <span class="sec-title__ja">フード</span>
+          </h2>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">季節野菜のサンド</h3><p class="menu-item__price">¥780</p></div><p class="menu-item__desc">近くの畑の野菜を、たっぷりはさんで。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">たまごサンド</h3><p class="menu-item__price">¥680</p></div><p class="menu-item__desc">ふわふわの厚焼きたまごを、自家製の食パンで。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">本日のスープセット</h3><p class="menu-item__price">¥980</p></div><p class="menu-item__desc">日替わりのスープと、パン2つのセット。</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="menu-group" id="menu-sweets" data-cat="sweets" aria-labelledby="sweets-title">
+        <img src="assets/images/menu/menu-sweets.webp" alt="いちごをのせたパンケーキ" width="1000" height="800" loading="lazy" class="menu-group__photo">
+        <div class="menu-group__body">
+          <h2 class="sec-title" id="sweets-title">
+            <span class="sec-title__en" lang="en">Sweets</span>
+            <span class="sec-title__ja">スイーツ</span>
+          </h2>
+          <ul class="menu-list">
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">ひなたパンケーキ</h3><p class="menu-item__price">¥850</p></div><p class="menu-item__desc">いちごとメープルシロップを、たっぷりのせて。</p></li>
+            <li class="menu-item"><div class="menu-item__head"><h3 class="menu-item__name">焼き菓子（いろいろ）</h3><p class="menu-item__price">¥240〜</p></div><p class="menu-item__desc">スコーン、マフィン、クッキーなど。日によって変わります。</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <p class="note menu__note">価格はすべて税込です。パンと焼き菓子はお持ち帰りもできます。</p>
+      <p class="menu__back"><a href="index.html#info" class="text-link">営業時間と場所を見る</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <a href="index.html" class="logo logo--footer" aria-label="ひなた珈琲とパン トップへ">
+        <img src="assets/images/common/logo-mark.svg" alt="" class="logo__mark" width="40" height="40">
+        <span class="logo__text">
+          <span class="logo__name">ひなた珈琲とパン</span>
+          <span class="logo__en" lang="en">hinata coffee &amp; bread</span>
+        </span>
+      </a>
+      <nav aria-label="フッターメニュー">
+        <ul class="footer-nav">
+          <li><a href="index.html#about">ひなたについて</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="index.html#morning">モーニング</a></li>
+          <li><a href="index.html#info">店舗情報</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__notice">このサイトはWeb制作のポートフォリオ用に作った架空の店舗サイトです。実在の店舗とは関係ありません。<br>写真：Unsplash・Pexels</p>
+      <p class="site-footer__copy"><small>&copy; 2026 hinata coffee &amp; bread (Portfolio Sample)</small></p>
+      <a href="#top" class="page-top">ページの先頭へ</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/menu-filter.js" defer></script>
+</body>
+</html>

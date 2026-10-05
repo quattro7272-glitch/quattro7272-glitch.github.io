@@ -1,0 +1,201 @@
+/* ===== メニューページ ===== */
+
+/* --- ページの見出し：写真の上に、英字と日本語のタイトル --- */
+.page-head {
+  display: grid;
+  padding: calc(var(--header-h) + var(--space-xs)) var(--gutter) 0;
+}
+
+.page-head__photo,
+.page-head__title {
+  grid-area: 1 / 1;
+}
+
+.page-head__photo {
+  overflow: hidden;
+  border-radius: var(--radius-photo);
+  aspect-ratio: 16 / 6;
+}
+
+.page-head__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.82);
+}
+
+.page-head__title {
+  display: grid;
+  position: relative; /* 写真（明るさの調整で前面に出る）より手前に表示する */
+  align-self: end;
+  gap: 0.2rem;
+  padding: var(--space-md) clamp(1.25rem, 4vw, 3.5rem);
+  color: var(--color-paper);
+  text-shadow: 0 1px 12px rgb(0 0 0 / 0.35);
+}
+
+.page-head__en {
+  font-family: var(--font-roman);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-2xl);
+  line-height: 1.1;
+}
+
+.page-head__ja {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.2em;
+}
+
+@media (max-width: 767px) {
+  .page-head__photo {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.breadcrumb {
+  margin-top: var(--space-sm);
+}
+
+/* --- 絞り込みボタン --- */
+.menu {
+  padding-block: var(--space-lg) var(--space-xl);
+}
+
+.menu-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-lg);
+  scroll-margin-top: calc(var(--header-h) + var(--space-sm));
+}
+
+.menu-filter__button {
+  min-height: 44px;
+  padding: 0.4rem 1.3rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: var(--color-paper);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.12em;
+  transition: background-color var(--duration), color var(--duration), border-color var(--duration);
+}
+
+.menu-filter__button:hover {
+  border-color: var(--color-roast);
+}
+
+.menu-filter__button[aria-pressed="true"] {
+  border-color: var(--color-roast);
+  background: var(--color-roast);
+  color: var(--color-paper);
+}
+
+@media (max-width: 767px) {
+  .menu-filter {
+    justify-content: flex-start;
+  }
+
+  .menu-filter__button {
+    padding-inline: 1rem;
+  }
+}
+
+/* --- 種類ごとのまとまり：写真と一覧を左右に。1つおきに左右を入れかえる --- */
+.menu-group {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-lg);
+  align-items: start;
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--color-line);
+}
+
+.menu-group:nth-of-type(even) .menu-group__photo {
+  order: 1;
+}
+
+.menu-group[hidden] {
+  display: none;
+}
+
+.menu-group__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-photo);
+}
+
+.menu-list {
+  display: grid;
+}
+
+.menu-item {
+  padding-block: 1rem;
+  border-bottom: 1px dotted var(--color-line);
+}
+
+.menu-item__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.menu-item__name {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.menu-item__price {
+  flex-shrink: 0;
+  font-family: var(--font-roman);
+  font-size: var(--fs-md);
+}
+
+.menu-item__desc {
+  margin-top: 0.2rem;
+  font-size: var(--fs-sm);
+  line-height: 1.9;
+  color: var(--color-ink-soft);
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0 0.6rem;
+  border: 1px solid var(--color-roast);
+  border-radius: 999px;
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  color: var(--color-roast);
+  vertical-align: 0.15em;
+}
+
+.menu__note {
+  margin-top: var(--space-md);
+}
+
+.menu__back {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .menu-group {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .menu-group:nth-of-type(even) .menu-group__photo {
+    order: 0;
+  }
+
+  .menu-group__photo {
+    aspect-ratio: 16 / 9;
+  }
+}

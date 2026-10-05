@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ひなた珈琲とパン | 西尾の朝ごはんとパンのカフェ</title>
+  <meta name="description" content="名鉄西尾駅から歩いて5分。自家焙煎のコーヒーと毎朝焼き上げるパンのお店。朝7:30から営業しています（ポートフォリオ用の架空サイトです）。">
+  <link rel="canonical" href="https://quattro7272-glitch.github.io/hinata-cafe-v2/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ひなた珈琲とパン">
+  <meta property="og:description" content="自家焙煎のコーヒーと、毎朝焼き上げるパン。朝7:30から（ポートフォリオ用の架空サイトです）。">
+  <meta property="og:url" content="https://quattro7272-glitch.github.io/hinata-cafe-v2/">
+  <meta property="og:image" content="https://quattro7272-glitch.github.io/hinata-cafe-v2/assets/images/ogp/ogp-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/common/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Zen+Old+Mincho:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/hero/hero-main.webp" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+  <script>
+    // 動きの準備（表示前に付けて、ちらつきを防ぐ）。「動きを減らす」設定の人には付けない
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('has-motion');
+    // 動きのファイルが読み込めなかったときは、写真が隠れたままにならないよう準備を外す
+    window.addEventListener('load', () => { if (!window.hinataMotionReady) document.documentElement.classList.remove('has-motion'); });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "ひなた珈琲とパン（架空の店舗）",
+    "description": "ポートフォリオ用の架空の店舗サイトです。",
+    "servesCuisine": ["コーヒー", "パン"],
+    "openingHours": "Mo,Tu,Th,Fr,Sa,Su 07:30-17:00"
+  }
+  </script>
+</head>
+<body id="top">
+  <a href="#main" class="skip-link">本文へ移動</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" aria-label="ひなた珈琲とパン トップへ">
+        <img src="assets/images/common/logo-mark.svg" alt="" class="logo__mark" width="40" height="40">
+        <span class="logo__text">
+          <span class="logo__name">ひなた珈琲とパン</span>
+          <span class="logo__en" lang="en">hinata coffee &amp; bread</span>
+        </span>
+      </a>
+      <nav class="gnav" aria-label="メインメニュー">
+        <ul class="gnav__list">
+          <li><a href="#about">ひなたについて</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="#morning">モーニング</a></li>
+          <li><a href="#info">店舗情報</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="menu-button js-menu-button" aria-expanded="false" aria-controls="sp-nav">
+        <span class="menu-button__lines" aria-hidden="true"></span>
+        <span class="menu-button__label">メニュー</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="sp-nav" id="sp-nav">
+    <nav class="sp-nav__panel" aria-label="スマートフォン用メニュー">
+      <ul class="sp-nav__list">
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="#about">ひなたについて</a></li>
+        <li><a href="menu.html">メニュー</a></li>
+        <li><a href="#morning">モーニング</a></li>
+        <li><a href="#info">店舗情報</a></li>
+      </ul>
+      <p class="sp-nav__hours">営業 7:30〜17:00<br>定休日 水曜・第3木曜</p>
+      <img src="assets/images/common/ornament-small.svg" alt="" class="sp-nav__ornament" width="120" height="76">
+    </nav>
+  </div>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__photo">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/images/hero/hero-main-sp.webp" width="900" height="900">
+          <img src="assets/images/hero/hero-main.webp" alt="テーブルに並んだ、焼きたてのバゲットやカンパーニュ" width="1800" height="1200" fetchpriority="high">
+        </picture>
+      </div>
+      <div class="hero__body">
+        <h1 class="hero__title" id="hero-title"><span class="nw">朝いちばんの、</span><span class="nw">焼きたてとコーヒー。</span></h1>
+        <p class="hero__lead">毎朝焼き上げるパンと、<span class="nw">自家焙煎のコーヒー。</span><br>西尾駅から歩いて5分。<span class="nw">ひなたぼっこのような朝ごはんを。</span></p>
+        <dl class="hero__hours">
+          <div><dt>営業</dt><dd>7:30〜17:00</dd></div>
+          <div><dt>定休日</dt><dd>水曜・第3木曜</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about__inner container">
+        <div class="about__text">
+          <h2 class="sec-title" id="about-title">
+            <span class="sec-title__en" lang="en">About hinata</span>
+            <span class="sec-title__ja">ひなたについて</span>
+          </h2>
+          <p class="about__lead">陽のあたる窓ぎわで、<br>焼きたてをひとつ。</p>
+          <p>ひなた珈琲とパンは、町の人も旅の人もふらりと立ち寄れる、小さなパン屋とカフェです。</p>
+          <p>特別な日のごちそうではなく、毎日食べても飽きないやさしい味を。朝の光が差しこむ席で、ゆっくり過ごしてください。</p>
+        </div>
+        <div class="about__ornaments" aria-hidden="true">
+          <img src="assets/images/common/ornament-strand-1.svg" alt="" width="140" height="760" class="about__strand about__strand--1 js-parallax" data-speed="0.12">
+          <img src="assets/images/common/ornament-strand-2.svg" alt="" width="140" height="560" class="about__strand about__strand--2 js-parallax" data-speed="-0.08">
+          <img src="assets/images/common/ornament-strand-3.svg" alt="" width="140" height="680" class="about__strand about__strand--3 js-parallax" data-speed="0.2">
+        </div>
+      </div>
+
+      <div class="craft container">
+        <figure class="craft__photo">
+          <img src="assets/images/about/about-campagne.webp" alt="まな板の上で切り分けたカンパーニュ" width="1000" height="750" loading="lazy" class="js-reveal">
+        </figure>
+        <ul class="craft__list">
+          <li>
+            <h3>自家焙煎のコーヒー</h3>
+            <p>店の奥の小さな焙煎機で、週に2回、少しずつ焼いています。</p>
+          </li>
+          <li>
+            <h3>国産小麦のパン</h3>
+            <p>香りのいい国産小麦と自家製の酵母で、毎朝6時から焼き上げます。</p>
+          </li>
+          <li>
+            <h3>近くの畑の野菜とたまご</h3>
+            <p>サンドイッチには、西尾の農家さんから届く野菜とたまごを使います。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="selection" aria-labelledby="selection-title">
+      <div class="container">
+        <h2 class="sec-title sec-title--center" id="selection-title">
+          <span class="sec-title__en" lang="en">Selection</span>
+          <span class="sec-title__ja">ひなたの定番</span>
+        </h2>
+        <ul class="selection__list">
+          <li class="selection__item">
+            <a href="menu.html#bread" class="selection__link">
+              <img src="assets/images/menu/menu-bread.webp" alt="" width="1000" height="750" loading="lazy" class="selection__photo js-reveal">
+              <span class="selection__body">
+                <span class="selection__en" lang="en">Bread</span>
+                <span class="selection__name">パン</span>
+                <span class="selection__pick">発酵バターのクロワッサン ¥320</span>
+                <span class="circle-arrow" aria-hidden="true"></span>
+              </span>
+            </a>
+          </li>
+          <li class="selection__item">
+            <a href="menu.html#coffee" class="selection__link">
+              <img src="assets/images/menu/menu-coffee.webp" alt="" width="1000" height="1251" loading="lazy" class="selection__photo js-reveal">
+              <span class="selection__body">
+                <span class="selection__en" lang="en">Coffee</span>
+                <span class="selection__name">コーヒー</span>
+                <span class="selection__pick">ひなたブレンド ¥520</span>
+                <span class="circle-arrow" aria-hidden="true"></span>
+              </span>
+            </a>
+          </li>
+          <li class="selection__item">
+            <a href="menu.html#food" class="selection__link">
+              <img src="assets/images/menu/menu-food.webp" alt="" width="1000" height="1500" loading="lazy" class="selection__photo js-reveal">
+              <span class="selection__body">
+                <span class="selection__en" lang="en">Food</span>
+                <span class="selection__name">フード</span>
+                <span class="selection__pick">季節野菜のサンド ¥780</span>
+                <span class="circle-arrow" aria-hidden="true"></span>
+              </span>
+            </a>
+          </li>
+          <li class="selection__item">
+            <a href="menu.html#sweets" class="selection__link">
+              <img src="assets/images/menu/menu-sweets.webp" alt="" width="1000" height="800" loading="lazy" class="selection__photo js-reveal">
+              <span class="selection__body">
+                <span class="selection__en" lang="en">Sweets</span>
+                <span class="selection__name">スイーツ</span>
+                <span class="selection__pick">ひなたパンケーキ ¥850</span>
+                <span class="circle-arrow" aria-hidden="true"></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="selection__more"><a href="menu.html" class="text-link">メニューをすべて見る</a></p>
+      </div>
+    </section>
+
+    <div class="band" aria-hidden="true">
+      <div class="band__track js-band"></div>
+    </div>
+
+    <section class="morning" id="morning" aria-labelledby="morning-title">
+      <div class="morning__inner container">
+        <div class="morning__photos">
+          <img src="assets/images/morning/morning-main.webp" alt="窓ぎわの席のクロワッサンとコーヒー" width="1600" height="1067" loading="lazy" class="morning__main js-reveal">
+          <img src="assets/images/morning/morning-sub.webp" alt="マグカップのコーヒーとクロワッサン" width="900" height="600" loading="lazy" class="morning__sub js-reveal">
+        </div>
+        <div class="morning__body">
+          <h2 class="sec-title" id="morning-title">
+            <span class="sec-title__en" lang="en">Morning</span>
+            <span class="sec-title__ja">7:30からのモーニング</span>
+          </h2>
+          <p>お好きなパン2つと、ドリンク、小さなサラダのセット。旅の朝ごはんにもどうぞ。</p>
+          <dl class="price-list">
+            <div class="price-list__row"><dt>パンのセット</dt><dd>¥880</dd></div>
+            <div class="price-list__row"><dt>パンケーキのセット</dt><dd>¥1,100</dd></div>
+          </dl>
+          <p class="note">7:30〜10:30。ドリンクはブレンド・和紅茶・西尾抹茶ラテから選べます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cafe" aria-labelledby="cafe-title">
+      <div class="container">
+        <h2 class="sec-title sec-title--center" id="cafe-title">
+          <span class="sec-title__en" lang="en">Cafe</span>
+          <span class="sec-title__ja">店内のこと</span>
+        </h2>
+        <figure class="cafe__photo">
+          <img src="assets/images/shop/shop-interior.webp" alt="木の椅子と植物が並ぶ明るい店内" width="1600" height="1068" loading="lazy" class="js-reveal">
+        </figure>
+        <p class="cafe__text">窓の大きな店内に18席と、テラスに4席。<br>買ったパンは、そのまま店内で召し上がれます。</p>
+      </div>
+    </section>
+
+    <section class="info" id="info" aria-labelledby="info-title">
+      <div class="info__inner container">
+        <div class="info__body">
+          <h2 class="sec-title" id="info-title">
+            <span class="sec-title__en" lang="en">Shop info</span>
+            <span class="sec-title__ja">店舗情報</span>
+          </h2>
+          <table class="info-table">
+            <tr><th scope="row">住所</th><td>愛知県西尾市ひなた町1-2-3<br><small>（架空の住所です）</small></td></tr>
+            <tr><th scope="row">営業時間</th><td>7:30〜17:00（ラストオーダー 16:30）<br>モーニング 7:30〜10:30</td></tr>
+            <tr><th scope="row">定休日</th><td>水曜日・第3木曜日</td></tr>
+            <tr><th scope="row">席数</th><td>18席（テラス4席）</td></tr>
+            <tr><th scope="row">電話</th><td>0000-00-0000<small>（ダミー）</small></td></tr>
+            <tr><th scope="row">アクセス</th><td>名鉄西尾駅から歩いて5分</td></tr>
+          </table>
+          <p class="info__takeout">パンのお取り置きは、前日の17時までお電話で承ります。</p>
+        </div>
+        <figure class="info__map">
+          <svg viewBox="0 0 480 400" role="img" aria-labelledby="map-title" class="map">
+            <title id="map-title">店までの地図：名鉄西尾駅を出て、駅前の大通りを東へ歩いて5分。通りの北側にあります</title>
+            <rect width="480" height="400" fill="#faf7f0"/>
+            <path d="M0 230 H480" stroke="#e3d8c4" stroke-width="16"/>
+            <path d="M300 0 V400" stroke="#e3d8c4" stroke-width="9"/>
+            <path d="M90 0 V400" stroke="#cdbfa6" stroke-width="3" stroke-dasharray="10 6"/>
+            <rect x="62" y="196" width="56" height="68" rx="3" fill="#2f2821"/>
+            <text x="126" y="300" font-size="15" fill="#2f2821" font-family="Zen Old Mincho, serif">名鉄西尾駅</text>
+            <text x="96" y="30" font-size="12" fill="#6b6054" font-family="Zen Old Mincho, serif">名鉄西尾線</text>
+            <text x="196" y="264" font-size="13" fill="#6b6054" font-family="Zen Old Mincho, serif">駅前の大通り</text>
+            <path d="M122 220 H330" fill="none" stroke="#6e4a31" stroke-width="2" stroke-dasharray="4 6"/>
+            <circle cx="350" cy="196" r="16" fill="#e9a93b"/>
+            <circle cx="350" cy="196" r="6" fill="#2f2821"/>
+            <text x="324" y="166" font-size="16" fill="#2f2821" font-family="Zen Old Mincho, serif">ひなた</text>
+            <text x="190" y="200" font-size="13" fill="#6b6054" font-family="Zen Old Mincho, serif">歩いて5分</text>
+            <path d="M440 70 V30 M432 42 L440 30 L448 42" fill="none" stroke="#6b6054" stroke-width="1.5"/>
+            <text x="434" y="88" font-size="12" fill="#6b6054" font-family="Zen Old Mincho, serif">北</text>
+          </svg>
+          <figcaption class="note">地図はイメージです。</figcaption>
+        </figure>
+      </div>
+      <figure class="info__gmap container">
+        <iframe src="https://maps.google.com/maps?q=34.8634,137.0575&amp;hl=ja&amp;z=16&amp;output=embed" title="名鉄西尾駅周辺のGoogleマップ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <figcaption class="note">印は名鉄西尾駅です（店舗は架空のため、地図上にはありません）。</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner container">
+      <a href="index.html" class="logo logo--footer" aria-label="ひなた珈琲とパン トップへ">
+        <img src="assets/images/common/logo-mark.svg" alt="" class="logo__mark" width="40" height="40">
+        <span class="logo__text">
+          <span class="logo__name">ひなた珈琲とパン</span>
+          <span class="logo__en" lang="en">hinata coffee &amp; bread</span>
+        </span>
+      </a>
+      <nav aria-label="フッターメニュー">
+        <ul class="footer-nav">
+          <li><a href="#about">ひなたについて</a></li>
+          <li><a href="menu.html">メニュー</a></li>
+          <li><a href="#morning">モーニング</a></li>
+          <li><a href="#info">店舗情報</a></li>
+        </ul>
+      </nav>
+      <p class="site-footer__notice">このサイトはWeb制作のポートフォリオ用に作った架空の店舗サイトです。実在の店舗とは関係ありません。<br>写真：Unsplash・Pexels</p>
+      <p class="site-footer__copy"><small>&copy; 2026 hinata coffee &amp; bread (Portfolio Sample)</small></p>
+      <a href="#top" class="page-top">ページの先頭へ</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/navigation.js" defer></script>
+  <script src="assets/js/motion.js" defer></script>
+</body>
+</html>

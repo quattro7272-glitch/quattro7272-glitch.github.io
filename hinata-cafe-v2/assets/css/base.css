@@ -1,0 +1,79 @@
+/* ===== サイト全体の基本 ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + var(--space-sm));
+}
+
+body {
+  background: var(--color-kinari);
+  color: var(--color-ink);
+  font-family: var(--font-mincho);
+  font-size: var(--fs-base);
+  line-height: 2;
+  letter-spacing: 0.06em;
+  font-feature-settings: "palt" 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-roast);
+  outline-offset: 3px;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+small {
+  font-size: var(--fs-xs);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* キーボードで操作する人向け：Tabキーを押すと最初に現れる「本文へ移動」 */
+.skip-link {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  z-index: 20;
+  padding: 0.6rem 1rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* 改行位置をそろえる（文の区切りで折り返す） */
+.nw {
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important; /* 動きを減らす設定の人には、すべての動きを止める（ここだけ例外的に使う） */
+    animation-duration: 0.01ms !important;
+  }
+}

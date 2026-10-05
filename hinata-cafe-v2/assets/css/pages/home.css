@@ -1,0 +1,473 @@
+/* ===== トップページ ===== */
+
+/* --- ファーストビュー：テーブルの写真を大きく --- */
+.hero {
+  padding: calc(var(--header-h) + var(--space-xs)) var(--gutter) 0;
+}
+
+.hero__photo {
+  overflow: hidden;
+  border-radius: var(--radius-photo);
+  /* 写真の下のキャッチコピーまで、最初の画面に収まる高さにする */
+  height: clamp(320px, calc(100svh - var(--header-h) - 15rem), 760px);
+  background: var(--color-kinari-deep);
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+.hero__body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-sm) var(--space-lg);
+  align-items: end;
+  width: min(100%, var(--container-width));
+  margin: var(--space-md) auto 0;
+}
+
+.hero__title {
+  font-size: var(--fs-hero);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+}
+
+.hero__lead {
+  grid-column: 1;
+  max-width: 34em;
+  color: var(--color-ink-soft);
+}
+
+.hero__hours {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  padding-left: var(--space-md);
+  border-left: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+  line-height: 2.2;
+}
+
+.hero__hours div {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero__hours dt {
+  color: var(--color-ink-soft);
+}
+
+/* 読み込み時の動き：写真が少し引いて、文字がにじむように現れる（この1回だけ） */
+.has-motion .hero__photo img {
+  transform: scale(1.08);
+  transition: transform 2.4s var(--ease-out);
+}
+
+.has-motion .hero__title,
+.has-motion .hero__lead,
+.has-motion .hero__hours {
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 1.4s var(--ease-out), filter 1.4s var(--ease-out);
+}
+
+.has-motion .hero__lead { transition-delay: 0.35s; }
+.has-motion .hero__hours { transition-delay: 0.6s; }
+
+.has-motion.is-loaded .hero__photo img {
+  transform: none;
+}
+
+.has-motion.is-loaded .hero__title,
+.has-motion.is-loaded .hero__lead,
+.has-motion.is-loaded .hero__hours {
+  opacity: 1;
+  filter: none;
+}
+
+@media (max-width: 767px) {
+  .hero__photo {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero__body {
+    grid-template-columns: 1fr;
+    margin-top: var(--space-md);
+  }
+
+  .hero__hours {
+    grid-column: 1;
+    grid-row: auto;
+    padding: var(--space-sm) 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+/* --- ひなたについて：文章と、吊るし飾り --- */
+.about {
+  padding-block: var(--space-xl);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.about__text {
+  max-width: 30em;
+}
+
+.about__text p + p {
+  margin-top: var(--space-sm);
+}
+
+.about__lead {
+  margin-bottom: var(--space-md);
+  font-size: var(--fs-xl);
+  line-height: 1.8;
+  letter-spacing: 0.14em;
+}
+
+.about__ornaments {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(1rem, 4vw, 3.5rem);
+  height: clamp(420px, 52vw, 640px);
+  overflow: hidden;
+  /* 上下の端は、切れ目が見えないように薄くぼかす */
+  -webkit-mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent);
+}
+
+.about__strand {
+  width: clamp(70px, 8vw, 120px);
+}
+
+.about__strand--2 { margin-top: 8%; }
+.about__strand--3 { margin-top: -4%; }
+
+@media (max-width: 767px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about__ornaments {
+    order: -1;
+    height: 300px;
+  }
+
+  .about__strand {
+    width: 64px;
+  }
+}
+
+/* こだわり3つ：写真＋短い文 */
+.craft {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-lg);
+  align-items: center;
+  margin-top: var(--space-xl);
+}
+
+.craft__photo img {
+  width: 100%;
+}
+
+.craft__list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.craft__list li {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-line);
+}
+
+.craft__list h3 {
+  margin-bottom: 0.3rem;
+  font-size: var(--fs-md);
+  letter-spacing: 0.12em;
+}
+
+.craft__list p {
+  font-size: var(--fs-sm);
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 767px) {
+  .craft {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* --- ひなたの定番：写真を大きく、右の列を少し下げて並べる --- */
+.selection {
+  padding-block: var(--space-xl);
+}
+
+.selection__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) clamp(2rem, 6vw, 6rem);
+  margin-top: var(--space-lg);
+}
+
+.selection__item:nth-child(even) {
+  margin-top: var(--space-xl);
+}
+
+.selection__link {
+  display: grid;
+  gap: var(--space-sm);
+  text-decoration: none;
+}
+
+.selection__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.selection__item:nth-child(2) .selection__photo,
+.selection__item:nth-child(3) .selection__photo {
+  aspect-ratio: 4 / 5;
+}
+
+.selection__body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: var(--space-sm);
+}
+
+.selection__en {
+  font-family: var(--font-roman);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  line-height: 1.3;
+}
+
+.selection__name {
+  grid-row: 2;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.2em;
+}
+
+.selection__pick {
+  grid-row: 3;
+  margin-top: 0.3rem;
+  font-size: var(--fs-sm);
+  color: var(--color-ink-soft);
+}
+
+.selection__body .circle-arrow {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+/* 指でタップする端末では、押した後に色が残らないよう hover を使わない */
+@media (hover: hover) {
+  .selection__link:hover .circle-arrow {
+    background: var(--color-ink);
+    color: var(--color-kinari);
+  }
+}
+
+.selection__link:focus-visible .circle-arrow {
+  background: var(--color-ink);
+  color: var(--color-kinari);
+}
+
+.selection__more {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .selection__list {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .selection__item:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .selection__item:nth-child(2) .selection__photo,
+  .selection__item:nth-child(3) .selection__photo {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* --- 日の出の帯：スクロールに合わせてゆっくり横に流れる --- */
+.band {
+  overflow: hidden;
+  border-block: 1px solid var(--color-line);
+  padding-block: var(--space-md) 0;
+}
+
+.band__track {
+  height: clamp(130px, 14vw, 200px);
+  background: url("../../images/common/ornament-band.svg") left bottom / auto 100% repeat-x;
+  width: calc(100% + 1200px);
+  margin-left: -600px;
+}
+
+/* --- モーニング --- */
+.morning {
+  padding-block: var(--space-xl);
+  background: var(--color-kinari-deep);
+}
+
+.morning__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.morning__photos {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.morning__main {
+  grid-column: 1 / 12;
+  grid-row: 1;
+  width: 100%;
+}
+
+.morning__sub {
+  grid-column: 7 / 13;
+  grid-row: 2;
+  width: 100%;
+  margin-top: calc(var(--space-lg) * -1);
+  border: 6px solid var(--color-kinari-deep);
+  box-sizing: content-box;
+}
+
+@media (max-width: 767px) {
+  .morning__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .morning__sub {
+    margin-top: calc(var(--space-md) * -1);
+    width: calc(100% - 12px);
+  }
+}
+
+/* --- 店内のこと --- */
+.cafe {
+  padding-block: var(--space-xl) 0;
+}
+
+.cafe__photo {
+  width: min(100%, 980px);
+  margin: var(--space-md) auto 0;
+}
+
+.cafe__photo img {
+  width: 100%;
+}
+
+.cafe__text {
+  margin-top: var(--space-md);
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .cafe__text {
+    text-align: left;
+  }
+
+  .cafe__text br {
+    display: none;
+  }
+}
+
+/* --- 店舗情報 --- */
+.info {
+  padding-block: var(--space-xl);
+}
+
+.info__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.info-table {
+  width: 100%;
+  font-size: var(--fs-sm);
+}
+
+.info-table th,
+.info-table td {
+  padding-block: 0.9rem;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 7em;
+  font-weight: 400;
+  color: var(--color-ink-soft);
+}
+
+.info__takeout {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-paper);
+  border-radius: var(--radius-photo);
+  font-size: var(--fs-sm);
+}
+
+.info__map .map {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-photo);
+}
+
+.info__map figcaption,
+.info__gmap figcaption {
+  margin-top: 0.5rem;
+}
+
+/* Googleマップ：表と絵の地図の下に、全幅で置く */
+.info__gmap {
+  margin-top: var(--space-lg);
+}
+
+.info__gmap iframe {
+  width: 100%;
+  height: clamp(280px, 32vw, 420px);
+  border: 0;
+  border-radius: var(--radius-photo);
+  background: var(--color-kinari-deep);
+  filter: grayscale(0.4) sepia(0.08); /* 鮮やかすぎる色を少し落として、生成りの画面になじませる */
+}
+
+@media (max-width: 767px) {
+  .info__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .info-table th {
+    width: 5.5em;
+  }
+}
