@@ -1,0 +1,237 @@
+/* ===== 下層ページ（お料理・客室・温泉・館内・アクセス）の見た目 ===== */
+
+.intro {
+  padding-block: var(--space-lg) 0;
+}
+
+.intro .lead {
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .intro .lead {
+    margin-left: calc(4.5rem + var(--space-lg));
+  }
+}
+
+/* ---------- 写真と文章を1組ずつ並べる（左右を交互に） ---------- */
+.feature-list {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.feature {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.feature__title {
+  font-size: var(--fs-lg);
+  letter-spacing: 0.2em;
+}
+
+.feature__sub {
+  font-size: var(--fs-xs);
+  font-family: var(--font-ui);
+  letter-spacing: 0.15em;
+  color: var(--color-ash);
+}
+
+.feature__text {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-sm);
+}
+
+.feature__body .spec {
+  margin-top: var(--space-sm);
+}
+
+.feature__body .text-link {
+  margin-top: var(--space-xs);
+}
+
+@media (min-width: 960px) {
+  .feature {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .feature:nth-child(even) .photo {
+    order: 2;
+  }
+}
+
+/* 写真が2枚ある組 */
+.photo-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--space-xs);
+  align-items: end;
+}
+
+.photo-pair .photo:last-child img {
+  aspect-ratio: 3 / 4;
+}
+
+/* ---------- 献立の流れ（順番があるので番号付き） ---------- */
+.course {
+  counter-reset: course;
+  border-top: 1px solid var(--color-line);
+}
+
+.course__item {
+  display: grid;
+  grid-template-columns: 2.5em minmax(0, 1fr);
+  gap: var(--space-sm);
+  padding: 1em 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+}
+
+.course__item::before {
+  counter-increment: course;
+  content: counter(course, cjk-ideographic);
+  color: var(--color-yu);
+}
+
+.course__name {
+  font-size: var(--fs-base);
+  letter-spacing: 0.15em;
+}
+
+.course__text {
+  color: var(--color-ash);
+}
+
+/* ---------- 客室 ---------- */
+.room + .room {
+  margin-top: var(--space-xl);
+}
+
+.room__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2em 1em;
+  margin-bottom: var(--space-sm);
+}
+
+.room__name {
+  font-size: var(--fs-xl);
+  letter-spacing: 0.3em;
+}
+
+.room__type {
+  font-size: var(--fs-sm);
+  color: var(--color-ash);
+  letter-spacing: 0.15em;
+}
+
+.room__body {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 960px) {
+  .room__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+/* ---------- 備品・設備の一覧 ---------- */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--space-md);
+  border-top: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+}
+
+.item-list li {
+  padding: 0.7em 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 768px) {
+  .item-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- アクセス ---------- */
+.map iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  filter: grayscale(0.6);
+}
+
+.map .note {
+  margin-top: var(--space-xs);
+}
+
+.route-group + .route-group {
+  margin-top: var(--space-lg);
+}
+
+.route-group__title {
+  margin-bottom: var(--space-sm);
+  font-size: var(--fs-lg);
+  letter-spacing: 0.2em;
+}
+
+/* 乗り継ぎの順番 */
+.route {
+  display: grid;
+  gap: 0;
+  font-size: var(--fs-sm);
+}
+
+.route li {
+  position: relative;
+  padding: 0 0 1.2em 1.6em;
+  border-left: 1px solid var(--color-line);
+  margin-left: 0.35em;
+}
+
+.route li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+
+.route li::before {
+  content: "";
+  position: absolute;
+  left: -0.35em;
+  top: 0.7em;
+  width: 0.7em;
+  height: 0.7em;
+  border: 1px solid var(--color-yu);
+  border-radius: 50%;
+  background: var(--color-paper);
+}
+
+.route small {
+  display: block;
+  color: var(--color-ash);
+}
+
+/* 注意を引きたい囲み（冬道・アレルギーなど） */
+.notice-box {
+  padding: var(--space-sm) var(--space-md);
+  border-left: 2px solid var(--color-yu);
+  background: var(--color-paper-dim);
+  font-size: var(--fs-sm);
+}
+
+.notice-box__title {
+  font-size: var(--fs-base);
+  letter-spacing: 0.15em;
+}
+
+.stack > * + * {
+  margin-top: var(--space-md);
+}

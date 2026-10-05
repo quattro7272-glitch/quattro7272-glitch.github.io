@@ -1,0 +1,294 @@
+/* ===== くり返し使う部品 ===== */
+
+/* ---------- ボタン・リンク ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 2em;
+  border: 1px solid var(--color-sumi);
+  background: var(--color-sumi);
+  color: var(--color-paper);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.25em;
+  text-decoration: none;
+  transition: background-color var(--duration), border-color var(--duration);
+}
+
+.button:hover {
+  border-color: var(--color-yu);
+  background: var(--color-yu);
+  color: var(--color-paper);
+}
+
+.button--line {
+  background: transparent;
+  color: var(--color-sumi);
+}
+
+.button--line:hover {
+  background: transparent;
+  color: var(--color-yu);
+}
+
+/* 文章の下に置く「詳しく見る」系のリンク */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+  min-height: 44px;
+  font-size: var(--fs-sm);
+  letter-spacing: 0.15em;
+  text-decoration: none;
+}
+
+.text-link::after {
+  content: "";
+  width: 2.5em;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--duration) var(--ease-out);
+}
+
+.text-link:hover::after {
+  width: 3.5em;
+}
+
+/* ---------- 空室検索 ---------- */
+.reserve {
+  padding: var(--space-md) 0;
+  background: var(--color-paper-dim);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.reserve__title {
+  margin-bottom: var(--space-sm);
+  font-size: var(--fs-md);
+  letter-spacing: 0.25em;
+}
+
+.reserve__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+  align-items: end;
+}
+
+.reserve__field {
+  display: grid;
+  gap: 0.3em;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  color: var(--color-ash);
+}
+
+.reserve__field--date {
+  grid-column: 1 / -1;
+}
+
+.reserve__field input,
+.reserve__field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 0.8em;
+  border: 1px solid var(--color-line);
+  border-radius: 0;
+  background: var(--color-paper);
+  color: var(--color-sumi);
+  font-size: var(--fs-base);
+}
+
+.reserve__submit {
+  grid-column: 1 / -1;
+}
+
+.reserve__note,
+.reserve__status {
+  margin-top: var(--space-xs);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  line-height: 1.8;
+  color: var(--color-ash);
+}
+
+.reserve__status:empty {
+  display: none;
+}
+
+.reserve__status {
+  padding: 0.6em 0.9em;
+  border-left: 2px solid var(--color-yu);
+  background: var(--color-paper);
+  color: var(--color-sumi);
+}
+
+@media (min-width: 768px) {
+  .reserve__form {
+    grid-template-columns: 1.6fr repeat(3, minmax(0, 1fr)) auto;
+  }
+
+  .reserve__field--date,
+  .reserve__submit {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 960px) {
+  .reserve__inner {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .reserve__title {
+    margin: 0;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.4em;
+  }
+}
+
+/* ---------- プランのタブ ---------- */
+.plan-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.plan-tabs__tab {
+  min-height: 48px;
+  padding: 0 1.5em;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+  color: var(--color-ash);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.2em;
+}
+
+.plan-tabs__tab[aria-selected="true"] {
+  border-bottom-color: var(--color-yu);
+  color: var(--color-sumi);
+}
+
+.plan-tabs__tab:hover {
+  color: var(--color-sumi);
+}
+
+/* ---------- プランの一覧（1行ずつ） ---------- */
+.plan-list__item {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: var(--space-sm);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.plan-list__photo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.plan-list__name {
+  font-size: var(--fs-md);
+  letter-spacing: 0.08em;
+}
+
+.plan-list__meta {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--color-ash);
+  letter-spacing: 0.08em;
+}
+
+.plan-list__price {
+  font-size: var(--fs-sm);
+}
+
+.plan-list__price strong {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.plan-list__action {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+  .plan-list__item {
+    grid-template-columns: 160px minmax(0, 1fr) auto;
+    gap: var(--space-md);
+    align-items: center;
+  }
+
+  .plan-list__action {
+    grid-column: auto;
+  }
+}
+
+/* ---------- 項目と内容の表 ---------- */
+.spec {
+  border-top: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+}
+
+.spec__row {
+  display: grid;
+  grid-template-columns: 7.5em minmax(0, 1fr);
+  gap: var(--space-sm);
+  padding: 0.9em 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.spec dt {
+  color: var(--color-ash);
+}
+
+/* ---------- 写真 ---------- */
+.photo img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.photo figcaption {
+  margin-top: 0.6em;
+  font-size: var(--fs-xs);
+  color: var(--color-ash);
+  letter-spacing: 0.1em;
+}
+
+/* ---------- 注意書き ---------- */
+.note {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  line-height: 1.9;
+  color: var(--color-ash);
+}
+
+/* ---------- ページ下のご予約の帯 ---------- */
+.cta-band {
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+}
+
+.cta-band__title {
+  font-size: var(--fs-xl);
+  letter-spacing: 0.25em;
+}
+
+.cta-band__text {
+  margin-top: var(--space-sm);
+  color: var(--color-ash);
+}
+
+.cta-band__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}

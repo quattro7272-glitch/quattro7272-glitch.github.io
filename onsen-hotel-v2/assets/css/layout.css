@@ -1,0 +1,524 @@
+/* ===== サイト全体の骨組み =====
+   PC（960px〜）：左に縦書きのロゴ帯を固定、右上にご予約とメニュー
+   スマホ・タブレット：上に横長の帯、スマホは下に電話・予約ボタン */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-sm);
+  z-index: 100;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--color-sumi);
+  color: var(--color-paper);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+  color: var(--color-paper);
+}
+
+/* ---------- ロゴの帯 ---------- */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding-inline: var(--space-sm);
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  color: var(--color-sumi);
+  text-decoration: none;
+  line-height: 1.2;
+}
+
+.brand:hover {
+  color: var(--color-sumi);
+}
+
+.brand__place {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  color: var(--color-ash);
+}
+
+.brand__name {
+  font-size: var(--fs-sm);
+  letter-spacing: 0.1em;
+}
+
+.brand__name-main {
+  font-family: var(--font-brush);
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+  margin-inline-start: 0.15em;
+}
+
+.site-header__page {
+  display: none;
+}
+
+@media (min-width: 960px) {
+  .site-header {
+    inset: 0 auto 0 0;
+    width: var(--rail-w);
+    height: 100vh;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--space-md) 0;
+    border-bottom: 0;
+    border-right: 1px solid var(--color-line);
+  }
+
+  .brand {
+    writing-mode: vertical-rl;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .brand__place {
+    font-size: var(--fs-sm);
+    letter-spacing: 0.3em;
+  }
+
+  .brand__name {
+    letter-spacing: 0.2em;
+  }
+
+  .brand__name-main {
+    display: block;
+    font-size: 3.25rem;
+    margin: 0.2em 0 0;
+  }
+
+  .site-header__page {
+    display: block;
+    writing-mode: vertical-rl;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.4em;
+    color: var(--color-ash);
+  }
+}
+
+/* ---------- 右上：ご予約とメニュー ---------- */
+.site-tools {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 40;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-inline: var(--space-xs);
+}
+
+.site-tools__reserve {
+  display: none;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  min-height: 44px;
+  padding: 0 var(--space-xs);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.15em;
+}
+
+.menu-button__icon {
+  position: relative;
+  width: 24px;
+  height: 9px;
+  border-block: 1px solid currentColor;
+  transition: border-color var(--duration) var(--ease-out);
+}
+
+.menu-button__icon::before,
+.menu-button__icon::after {
+  content: "";
+  position: absolute;
+  inset: 3px 0 auto;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transition: transform var(--duration) var(--ease-out), opacity var(--duration);
+}
+
+.is-menu-open .menu-button__icon {
+  border-color: transparent;
+}
+
+.is-menu-open .menu-button__icon::before,
+.is-menu-open .menu-button__icon::after {
+  opacity: 1;
+}
+
+.is-menu-open .menu-button__icon::before { transform: rotate(45deg) scaleX(0.6); }
+.is-menu-open .menu-button__icon::after { transform: rotate(-45deg) scaleX(0.6); }
+
+@media (min-width: 960px) {
+  .site-tools {
+    top: var(--space-sm);
+    right: var(--space-sm);
+    height: auto;
+    gap: 0;
+    padding: 0;
+    background: var(--color-paper);
+  }
+
+  .site-tools__reserve {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 1.75em;
+    background: var(--color-sumi);
+    color: var(--color-paper);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.3em;
+    text-decoration: none;
+  }
+
+  .site-tools__reserve:hover {
+    background: var(--color-yu);
+    color: var(--color-paper);
+  }
+
+  .menu-button {
+    min-height: 48px;
+    padding: 0 1.25em;
+  }
+}
+
+/* ---------- メニュー（全画面） ---------- */
+.global-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  display: grid;
+  align-content: center;
+  overflow-y: auto;
+  padding: calc(var(--header-h) + var(--space-md)) var(--gutter) calc(var(--sp-bar-h) + var(--space-md));
+  background: var(--color-paper);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--duration) var(--ease-out), visibility 0s var(--duration);
+}
+
+.is-menu-open .global-nav {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity var(--duration) var(--ease-out);
+}
+
+.is-menu-open body {
+  overflow: hidden;
+}
+
+.global-nav__inner {
+  display: grid;
+  gap: var(--space-md);
+  width: min(100%, 52rem);
+  margin-inline: auto;
+}
+
+.global-nav__list a {
+  display: block;
+  padding: 0.6em 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-md);
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.global-nav__list a[aria-current="page"] {
+  color: var(--color-yu);
+}
+
+.global-nav__contact {
+  font-size: var(--fs-sm);
+  color: var(--color-ash);
+  line-height: 1.8;
+}
+
+.global-nav__tel {
+  display: inline-block;
+  margin-top: 0.2em;
+  font-size: var(--fs-lg);
+  color: var(--color-sumi);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .global-nav__inner {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: end;
+    gap: var(--space-lg);
+  }
+
+  .global-nav__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-md);
+  }
+}
+
+@media (min-width: 960px) {
+  .global-nav {
+    padding-left: calc(var(--rail-w) + var(--gutter));
+  }
+}
+
+/* ---------- 本文 ---------- */
+.site-main {
+  padding-top: var(--header-h);
+}
+
+@media (min-width: 960px) {
+  .site-main,
+  .site-footer {
+    margin-left: var(--rail-w);
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--content-w) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section + .section {
+  padding-top: 0;
+}
+
+/* 見出しは左に縦書き、内容は右（スマホは上に横書き） */
+.section__inner {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.section-title {
+  font-size: var(--fs-xl);
+  letter-spacing: 0.25em;
+}
+
+@media (min-width: 768px) {
+  .section__inner {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .section-title {
+    writing-mode: vertical-rl;
+    letter-spacing: 0.4em;
+  }
+}
+
+.lead {
+  max-width: var(--text-w);
+  font-size: var(--fs-md);
+  line-height: 2.2;
+}
+
+/* ---------- 下層ページの最初の部分 ---------- */
+.page-head {
+  display: grid;
+}
+
+.page-head__title {
+  order: 2;
+  padding: var(--space-md) var(--gutter) 0;
+  font-size: var(--fs-xl);
+  letter-spacing: 0.3em;
+}
+
+.page-head__photo {
+  order: 1;
+}
+
+.page-head__photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .page-head {
+    grid-template-columns: calc(4.5rem + var(--gutter) * 2) minmax(0, 1fr);
+    padding-top: var(--space-lg);
+  }
+
+  .page-head__title {
+    order: 0;
+    writing-mode: vertical-rl;
+    justify-self: center;
+    padding: 0;
+    font-size: var(--fs-hero);
+    letter-spacing: 0.4em;
+  }
+
+  .page-head__photo img {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+@media (min-width: 960px) {
+  .page-head {
+    padding-top: calc(48px + var(--space-md));
+  }
+}
+
+.breadcrumb {
+  padding-top: var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--color-ash);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.breadcrumb a {
+  display: inline-block;
+  padding-block: 0.6em;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: 0.4em;
+}
+
+/* ---------- フッター ---------- */
+.site-footer {
+  padding: var(--space-lg) 0 calc(var(--space-md) + var(--sp-bar-h));
+  background: var(--color-night);
+  color: var(--color-on-night);
+  font-size: var(--fs-sm);
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
+/* 暗い背景の上では、フォーカスの枠を明るい色にする */
+.site-footer :focus-visible {
+  outline-color: var(--color-on-night);
+}
+
+.site-footer__inner {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.site-footer__brand .brand {
+  color: var(--color-on-night);
+}
+
+.site-footer__brand .brand__place {
+  color: var(--color-on-night-muted);
+}
+
+.site-footer__address {
+  margin-top: var(--space-sm);
+  font-style: normal;
+  line-height: 1.9;
+  color: var(--color-on-night-muted);
+}
+
+.site-footer__address a {
+  display: inline-block;
+  padding-block: 0.5em;
+  color: var(--color-on-night);
+}
+
+.site-footer__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.2em var(--space-md);
+}
+
+.site-footer__nav a {
+  display: inline-block;
+  padding: 0.6em 0;
+  text-decoration: none;
+}
+
+.site-footer__notice {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgb(255 255 255 / 0.14);
+  font-size: var(--fs-xs);
+  line-height: 1.9;
+  color: var(--color-on-night-muted);
+}
+
+@media (min-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .site-footer__nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- スマホ用の固定ボタン ---------- */
+.sp-bar {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  height: var(--sp-bar-h);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.1em;
+}
+
+.sp-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.sp-bar__reserve {
+  background: var(--color-sumi);
+  color: var(--color-paper);
+}
+
+.sp-bar__reserve:hover {
+  color: var(--color-paper);
+}
+
+@media (min-width: 768px) {
+  .sp-bar {
+    display: none;
+  }
+}

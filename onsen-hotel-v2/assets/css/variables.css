@@ -1,0 +1,55 @@
+/* ===== デザインの共通値 =====
+   色は「湯けむりの白・墨・湯畑のお湯の青緑」から取っている */
+:root {
+  --color-paper: #fbfbf9;      /* 背景：湯けむりのような白 */
+  --color-paper-dim: #f1f1ed;  /* 少し沈めた面（帯・入力欄） */
+  --color-sumi: #262420;       /* 文字 */
+  --color-ash: #67645e;        /* 補足の文字 */
+  --color-line: #dcdad4;       /* 罫線 */
+  --color-yu: #3a726e;         /* アクセント：湯畑の青緑（リンク・選択中・フォーカス） */
+  --color-yu-pale: #e4edeb;
+  --color-night: #1f2422;      /* フッター：夜の湯畑 */
+  --color-on-night: #e9ebe8;
+  --color-on-night-muted: #a7aca8;
+
+  --font-mincho: "Noto Serif JP", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  --font-brush: "Yuji Syuku", "Noto Serif JP", serif; /* ロゴの「千樹」だけに使う */
+  --font-ui: "Hiragino Sans", "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif; /* 入力欄・小さな表示 */
+
+  /* 文字サイズ（1.25倍の比率） */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: clamp(1.5rem, 1.2rem + 1vw, 1.875rem);
+  --fs-hero: clamp(1.75rem, 1.2rem + 1.8vw, 2.625rem);
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: clamp(5rem, 3rem + 6vw, 9rem);
+
+  --rail-w: 0px;               /* PCで左に固定する縦帯の幅 */
+  --header-h: 56px;            /* スマホ・タブレットの上の帯 */
+  --sp-bar-h: 56px;            /* スマホの下の固定ボタン */
+  --content-w: 1080px;
+  --text-w: 34em;
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 3.5rem);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 0.35s;
+}
+
+@media (min-width: 768px) {
+  :root { --sp-bar-h: 0px; }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --rail-w: 104px;
+    --header-h: 0px;
+  }
+}

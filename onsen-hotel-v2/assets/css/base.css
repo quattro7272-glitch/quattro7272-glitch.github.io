@@ -1,0 +1,60 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-sumi);
+  font-family: var(--font-mincho);
+  font-size: var(--fs-base);
+  line-height: 2;
+  letter-spacing: 0.04em;
+  font-feature-settings: "palt" 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--color-yu);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-yu);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+}
+
+small {
+  font-size: var(--fs-xs);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* 動きを減らす設定の人には、すべてのアニメーションを止める（ここだけ例外） */
+    transition-duration: 0.01ms !important;
+  }
+}

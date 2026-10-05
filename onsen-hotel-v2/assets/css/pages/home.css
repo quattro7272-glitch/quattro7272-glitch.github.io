@@ -1,0 +1,317 @@
+/* ===== トップページだけの見た目 ===== */
+
+/* ---------- 一番上の写真 ---------- */
+.hero {
+  position: relative;
+  height: calc(100svh - var(--header-h) - var(--sp-bar-h));
+  min-height: 420px;
+  max-height: 960px;
+  overflow: hidden;
+  background: var(--color-night);
+  color: #ffffff;
+}
+
+.hero__slides {
+  position: absolute;
+  inset: 0;
+}
+
+/* 明るい空の上でも白い文字が読めるよう、文字のある右側だけ少し暗くする */
+.hero__slides::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgb(0 0 0 / 0.32), rgb(0 0 0 / 0) 55%);
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 写真がゆっくり寄る動き（表示中の1枚だけ） */
+.hero__slide.is-active img {
+  animation: hero-drift 9s ease-out both;
+}
+
+@keyframes hero-drift {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+
+.hero__copy {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+  padding: var(--space-md) var(--gutter);
+}
+
+.hero__copy-text {
+  writing-mode: vertical-rl;
+  font-size: var(--fs-hero);
+  font-weight: 400;
+  line-height: 2.1;
+  letter-spacing: 0.35em;
+  text-shadow: 0 0 24px rgb(0 0 0 / 0.45), 0 0 2px rgb(0 0 0 / 0.35);
+  animation: hero-copy 2.4s 0.6s var(--ease-out) both;
+}
+
+@keyframes hero-copy {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero__controls {
+  position: absolute;
+  left: var(--gutter);
+  bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hero__progress {
+  display: flex;
+  gap: 6px;
+}
+
+.hero__pause {
+  min-height: 44px;
+  padding: 0 0.5em;
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 6px rgb(0 0 0 / 0.6);
+}
+
+.hero__pause:focus-visible {
+  outline-color: #ffffff;
+}
+
+.hero__progress li {
+  width: 28px;
+  height: 2px;
+  background: rgb(255 255 255 / 0.4);
+  transition: background-color 0.6s;
+}
+
+.hero__progress li.is-active {
+  background: #ffffff;
+}
+
+@media (min-width: 960px) {
+  .hero__copy {
+    padding: calc(48px + var(--space-lg)) calc(var(--gutter) + 2rem) var(--space-lg);
+  }
+}
+
+/* ---------- 宿の想い ---------- */
+.concept__body {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.concept__catch {
+  font-size: var(--fs-lg);
+  letter-spacing: 0.15em;
+  line-height: 2;
+}
+
+.concept__text p + p {
+  margin-top: 1em;
+}
+
+@media (min-width: 960px) {
+  .concept__body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: var(--space-lg);
+    align-items: end;
+  }
+}
+
+/* ---------- 宿のご案内（4つ、ずらして並べる） ---------- */
+.guide {
+  display: grid;
+  gap: var(--space-lg) var(--space-md);
+}
+
+.guide__item a {
+  display: block;
+  text-decoration: none;
+}
+
+.guide__item img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: opacity var(--duration);
+}
+
+.guide__item a:hover img {
+  opacity: 0.85;
+}
+
+.guide__name {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-lg);
+  letter-spacing: 0.3em;
+}
+
+.guide__text {
+  margin-top: 0.3em;
+  font-size: var(--fs-sm);
+  color: var(--color-ash);
+}
+
+@media (min-width: 768px) {
+  .guide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .guide__item:nth-child(even) {
+    margin-top: var(--space-xl);
+  }
+}
+
+/* ---------- おすすめプラン ---------- */
+.plans__panel {
+  margin-top: var(--space-sm);
+}
+
+/* ---------- 周辺観光（夜の湯畑） ---------- */
+.sightseeing {
+  position: relative;
+  display: grid;
+  min-height: min(90vh, 760px);
+  color: var(--color-on-night);
+  background: var(--color-night);
+}
+
+.sightseeing__photo {
+  grid-area: 1 / 1;
+}
+
+.sightseeing__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sightseeing__body {
+  grid-area: 1 / 1;
+  align-self: end;
+  width: min(100%, 34rem);
+  margin: var(--gutter);
+  padding: var(--space-md);
+  background: rgb(31 36 34 / 0.82);
+}
+
+.sightseeing__title {
+  font-size: var(--fs-xl);
+  letter-spacing: 0.25em;
+}
+
+.sightseeing__text {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+}
+
+.sightseeing__spots {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+}
+
+.sightseeing__spots div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 0.5em 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.18);
+}
+
+.sightseeing__spots dd {
+  color: var(--color-on-night-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .sightseeing__body {
+    margin: 0;
+    width: 100%;
+  }
+
+  .sightseeing__photo img {
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+
+  .sightseeing {
+    min-height: 0;
+  }
+
+  .sightseeing__body {
+    grid-area: auto;
+    background: var(--color-night);
+  }
+}
+
+/* ---------- お知らせ ---------- */
+.news__item {
+  display: grid;
+  gap: 0.2em;
+  padding: 1em 0;
+  border-bottom: 1px solid var(--color-line);
+  font-size: var(--fs-sm);
+}
+
+.news__item:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+.news__item time {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  color: var(--color-ash);
+  letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .news__item {
+    grid-template-columns: 8em minmax(0, 1fr);
+    align-items: baseline;
+  }
+}
+
+/* ---------- アクセス（概要） ---------- */
+.access-summary {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.access-summary__map iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  filter: grayscale(0.6);
+}
+
+@media (min-width: 960px) {
+  .access-summary {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: var(--space-lg);
+  }
+}
