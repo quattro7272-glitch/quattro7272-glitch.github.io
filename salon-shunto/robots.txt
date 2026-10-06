@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://quattro7272-glitch.github.io/salon-shunto/sitemap.xml

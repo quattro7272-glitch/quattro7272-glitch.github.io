@@ -1,0 +1,721 @@
+/*
+ * Home Page Styles for Shunto (白椿)
+ */
+
+/* --- Hero Section --- */
+.home-hero {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--color-rose), var(--color-mist));
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero__inner {
+  max-width: calc(var(--container) - var(--gutter) * 2);
+  width: 100%;
+  padding-top: var(--space-xl);
+  z-index: 2;
+}
+
+.home-hero__title {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  color: var(--color-paper);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.home-hero__ja {
+  display: block;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.home-hero__en {
+  display: block;
+  font-size: var(--fs-hero); /* 約 4rem */
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+
+.home-hero__tagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-paper);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.home-hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-left: var(--space-md);
+  color: var(--color-paper);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  letter-spacing: 0.1em;
+}
+
+.home-hero__scroll:hover {
+  border-bottom-color: var(--color-paper);
+  opacity: 0.9;
+}
+
+.home-hero__photo-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.home-hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Initial state for animation */
+  transform-origin: center center;
+}
+
+/* Animation: Slow zoom out from scale 1.08 to 1 on load */
+.has-motion .home-hero__photo {
+  animation: hero-zoom-out 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes hero-zoom-out {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+/* --- Concept Section --- */
+.home-section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.home-story {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: calc(var(--space-xl) * 2);
+  align-items: center;
+}
+
+.home-story__text {
+  flex: 1;
+}
+
+.home-story__body {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.8;
+  color: var(--color-ink);
+}
+
+.home-story__img {
+  flex: 0 0 auto;
+  width: 40%;
+}
+
+.home-story__photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+/* Values / こだわり */
+.home-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(var(--space-lg) * 2);
+  margin-top: var(--space-xl);
+}
+
+.home-value-item {
+  position: relative;
+}
+
+/* Staggered layout for items 02 and 03 */
+.home-values .home-value-item:nth-child(2),
+.home-values .home-value-item:nth-child(3) {
+  margin-top: var(--space-lg);
+}
+
+.home-value__num {
+  font-family: "Jost", sans-serif;
+  font-size: 1.5rem;
+  color: var(--color-rose);
+  opacity: 0.8;
+  margin-bottom: var(--space-xs);
+}
+
+.home-value__title {
+  font-weight: 400;
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: var(--color-ink);
+  margin-bottom: var(--space-md);
+}
+
+.home-value__img-wrapper {
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+.home-value__photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Menu Section (Home) --- */
+.home-menu-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-lg);
+}
+
+.home-menu-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home-menu-thumb {
+  width: 100%;
+  aspect-ratio: 4/3; /* Adjust based on portrait preference, but grid usually needs ratio */
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-xs);
+}
+
+.home-menu-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.home-menu-item a:hover .home-menu-thumb img,
+.home-menu-item a:focus-visible .home-menu-thumb img {
+  filter: brightness(1.1); /* Slight brightening on hover */
+}
+
+.home-menu-title {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  margin-bottom: var(--space-xs);
+}
+
+.home-menu-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-sub);
+  flex-grow: 1;
+}
+
+/* --- Style Section (Slider) --- */
+.sec-style .slider__viewport {
+  margin-top: var(--space-md);
+}
+
+/* Lightbox is handled in components.css, but ensure spacing here if needed */
+
+/* --- Salon Section --- */
+.home-salon-content,
+.home-town-content {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  margin-bottom: var(--space-xl);
+}
+
+.home-salon-text p,
+.home-town-text p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.8;
+  color: var(--color-ink);
+}
+
+.home-salon-img img,
+.home-town-img img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+  .home-hero__photo-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .home-hero__inner {
+    padding-top: auto; /* Push to bottom */
+    padding-bottom: var(--space-lg);
+    text-align: left;
+  }
+
+  .home-hero__title,
+  .home-hero__tagline,
+  .home-hero__scroll {
+    color: var(--color-paper);
+  }
+
+  .home-hero__title {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .home-hero__tagline {
+    margin-bottom: var(--space-md);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  /* Staggered Concept */
+  .home-story {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .home-story__img {
+    width: 100%;
+  }
+
+  .home-values {
+    grid-template-columns: 1fr;
+    margin-top: calc(var(--space-xl) * 2);
+  }
+
+  .home-values .home-value-item:nth-child(2),
+  .home-values .home-value-item:nth-child(3) {
+    margin-top: var(--space-md); /* Reduce gap on mobile */
+  }
+
+  /* Menu Grid */
+  .home-menu-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Salon Layouts */
+  .home-salon-content,
+  .home-town-content {
+    flex-direction: column-reverse; /* Text below image or vice versa based on preference, usually text first for flow */
+    gap: var(--space-md);
+  }
+
+  .home-town-content {
+    flex-direction: column;
+    margin-top: var(--space-lg);
+  }
+}
+
+/* Hero Section Adjustments */
+.hero__photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Concept List Layout */
+.concept-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  margin-top: calc(var(--gutter) * 2);
+}
+
+.concept-item {
+  position: relative;
+}
+
+.concept-num {
+  font-size: 1.5rem;
+  color: var(--color-sub);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Service List Layout */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gutter);
+  margin-top: calc(var(--gutter) * 2);
+}
+
+.service-item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-name {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+/* Salon Section */
+.salon-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gutter);
+  align-items: center;
+  text-align: center;
+}
+
+/* Responsive Adjustments for Home Page */
+@media (max-width: 768px) {
+  .concept-list,
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .salon-content img {
+    width: 100%;
+  }
+}
+
+/* メニュー一覧の下のボタン、サロン紹介の左右入れ替え */
+.home-menu-cta {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+.home-town-content {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.home-town-content--reverse {
+  flex-direction: row-reverse;
+}
+
+/* 1. ヒーローセクションの文字色とサイズ修正 */
+.home-hero__title {
+  color: var(--color-ink);
+  text-shadow: none;
+}
+
+.home-hero__ja {
+  color: var(--color-ink);
+}
+
+.home-hero__en {
+  color: var(--color-accent);
+}
+
+.home-hero__tagline {
+  color: var(--color-ink);
+  opacity: 0.8;
+}
+
+/* ヒーローのレイアウト調整：PC では左カラムに文字を収める */
+@media (min-width: 769px) {
+  .home-hero__inner {
+    max-width: calc(var(--container) - var(--gutter) * 2);
+    padding-top: var(--space-xl);
+    z-index: 2;
+    position: relative;
+  }
+
+  .home-hero__title {
+    font-size: clamp(2.8rem, 1.2rem + 5.2vw, 6rem); /* 少し小さく調整 */
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    color: var(--color-ink);
+  }
+
+  .home-hero__en {
+    font-size: var(--fs-hero);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .home-hero__tagline {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.05em;
+  }
+
+  /* ヒーロー写真のアニメーションは PC のみ適用 */
+  .has-motion .home-hero__photo {
+    animation: hero-zoom-out 2.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  @keyframes hero-zoom-out {
+    from { transform: scale(1.08); }
+    to { transform: scale(1); }
+  }
+}
+
+/* スマホでは背景画像として表示 */
+@media (max-width: 768px) {
+  .home-hero__photo-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .home-hero__inner {
+    padding-top: auto;
+    padding-bottom: var(--space-lg);
+    text-align: left;
+    position: relative;
+    z-index: 2;
+  }
+
+  .home-hero__title,
+  .home-hero__tagline,
+  .home-hero__scroll {
+    color: var(--color-paper); /* スマホでは背景に溶け込ませないため白 */
+  }
+
+  .home-hero__title {
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .home-hero__tagline {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+/* 2. Scroll リンクの装飾 */
+.home-hero__scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-left: var(--space-md);
+  color: var(--color-ink); /* PC ではインク色、スマホでは JS/CSS で上書き */
+  text-decoration: none;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.home-hero__scroll::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 48px;
+  background-color: currentColor;
+  margin-left: var(--space-xs);
+}
+
+@media (max-width: 768px) {
+  .home-hero__scroll {
+    color: var(--color-paper);
+  }
+  
+  .home-hero__scroll:hover,
+  .home-hero__scroll:focus-visible {
+    opacity: 0.9;
+  }
+}
+
+/* 3 & 4. セクションの余白調整と未定義クラスの追加 */
+.sec-concept,
+.sec-menu,
+.sec-salon {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.sec-title {
+  margin-bottom: var(--space-md);
+}
+
+/* home-menu-link の定義 */
+.home-menu-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.home-menu-thumb img {
+  transition: filter 0.3s ease;
+}
+
+.home-menu-item a:hover .home-menu-thumb img,
+.home-menu-item a:focus-visible .home-menu-thumb img {
+  filter: brightness(1.05); /* ホバーでわずかに明るく */
+}
+
+/* home-salon-desc と home-town-desc の定義 */
+.home-salon-desc,
+.home-town-desc {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.9;
+  color: var(--color-ink);
+  max-width: 36em;
+}
+
+/* 5. コンセプトのこだわり列のズレ量修正 */
+.home-values .home-value-item:nth-child(2),
+.home-values .home-value-item:nth-child(3) {
+  margin-top: var(--space-md); /* 約 48px に調整 */
+}
+
+@media (max-width: 768px) {
+  .home-values .home-value-item:nth-child(2),
+  .home-values .home-value-item:nth-child(3) {
+    margin-top: var(--space-sm); /* スマホではさらに小さく */
+  }
+}
+
+/* ヒーロー（PC）：英字を左カラムに収め、Scroll は文字＋下に伸びる縦線にする */
+@media (min-width: 768px) {
+  .home-hero__en {
+    font-size: clamp(2.8rem, 1rem + 4.6vw, 5.4rem);
+  }
+
+  .home-hero__scroll {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    padding: 0;
+    border: 0;
+    color: var(--color-ink);
+    font-family: var(--font-en);
+    font-size: var(--fs-sm);
+    letter-spacing: 0.3em;
+  }
+
+  .home-hero__scroll::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: currentColor;
+  }
+}
+
+/* サロン・街の紹介：文章と写真を2カラムに（文章の列が細くならないようにする） */
+.home-salon-content,
+.home-town-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: var(--space-lg);
+  align-items: center;
+  margin-top: var(--space-lg);
+}
+
+.home-town-content--reverse {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+
+.home-town-content--reverse .home-town-text {
+  order: 2;
+}
+
+.home-salon-desc,
+.home-town-desc {
+  max-width: 34em;
+}
+
+.home-salon-img img,
+.home-town-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .home-salon-content,
+  .home-town-content,
+  .home-town-content--reverse {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .home-town-content--reverse .home-town-text {
+    order: 0;
+  }
+}
+
+/* セクション同士の間隔をそろえる */
+main .home-section {
+  padding-block: var(--space-lg);
+}
+
+
+/* ヒーロー（スマホ）：写真を全面に敷いて、下から濃くなるグラデの上に白い文字を置く */
+@media (max-width: 767px) {
+  .home-hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 100svh;
+    overflow: hidden;
+  }
+
+  .home-hero__photo-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-hero__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+
+  .home-hero::after {
+    content: "";
+    position: absolute;
+    inset: 40% 0 0;
+    background: linear-gradient(to top, rgb(45 42 46 / 0.72), transparent);
+    pointer-events: none;
+  }
+
+  .home-hero__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-bottom: var(--space-lg);
+  }
+
+  .home-hero__ja,
+  .home-hero__en,
+  .home-hero__tagline,
+  .home-hero__scroll {
+    color: var(--color-paper);
+  }
+
+  .home-hero__ja {
+    font-size: 2rem;
+  }
+
+  .home-hero__en {
+    font-size: clamp(2.6rem, 14vw, 3.8rem);
+  }
+}

@@ -1,0 +1,106 @@
+/* ページ固有スタイル：メニューページ */
+
+.menu-intro {
+  margin-bottom: var(--space-xl);
+}
+
+.menu-intro__text {
+  font-family: var(--font-ja);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+  color: var(--color-sub);
+}
+
+/* 特集ブロック（左右交互レイアウト） */
+.feature-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .feature-section {
+    flex-direction: column-reverse; /* スマホでは写真を下に */
+    gap: var(--space-md);
+  }
+}
+
+.feature-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .feature-section:nth-child(even) {
+    flex-direction: column-reverse; /* スマホでは常に同じ順序 */
+  }
+}
+
+.feature__photo-wrapper {
+  flex: 0 0 auto;
+  width: 45%;
+}
+
+@media (max-width: 768px) {
+  .feature__photo-wrapper {
+    width: 100%;
+  }
+}
+
+.feature__photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3; /* 横長比率 */
+  object-fit: cover;
+  background-color: var(--color-mist);
+  border-radius: var(--radius);
+}
+
+.feature__content {
+  flex: 1;
+}
+
+.feature__title {
+  font-family: var(--font-en);
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-md);
+  color: var(--color-ink);
+}
+
+.feature__desc {
+  font-family: var(--font-ja);
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  color: var(--color-sub);
+}
+
+/* 注意書き */
+.menu-note {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-line);
+  font-size: var(--fs-xs);
+  color: var(--color-sub);
+}
+
+/* スライダーの縦長比率調整（PC） */
+@media (min-width: 769px) {
+  .feature__photo-wrapper {
+    width: 45%;
+  }
+  
+  /* PC では横長に見せるため、スライダーの aspect-ratio を上書きする必要がある場合があるが、
+     ここではクラスで明示的に縦横比を制御する。
+     指示書の画像一覧にある menu-cut (2000x1333) は横長なので、aspect-ratio: 4/3 で適切に表示される */
+}
+
+@media (max-width: 768px) {
+  .feature__photo-wrapper {
+    width: 100%;
+  }
+  
+  /* スマホでは縦長に見せる場合、または横長のまま。
+     指示書の「左右交互」のレイアウトを維持しつつ、スマホでは上下配置にする */
+}
