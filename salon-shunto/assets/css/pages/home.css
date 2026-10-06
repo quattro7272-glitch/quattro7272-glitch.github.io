@@ -719,3 +719,10 @@ main .home-section {
     font-size: clamp(2.6rem, 14vw, 3.8rem);
   }
 }
+
+/* ヒーローの写真（PC）：縦長の写真を横に広い枠に入れても、顔が切れないよう上寄せにする */
+@media (min-width: 768px) {
+  .home-hero__photo {
+    object-position: 50% 6%;
+  }
+}
