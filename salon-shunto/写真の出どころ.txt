@@ -1,7 +1,7 @@
 about/about-main: pakutaso.com https://www.pakutaso.com/20250818217post-55083.html
 about/concept-1: pexels.com https://www.pexels.com/photo/person-combing-hair-with-fingers-5240287/
-about/concept-2: pexels.com https://www.pexels.com/photo/woman-relaxing-on-a-mountain-cliff-35813684/
-about/concept-3: pexels.com https://www.pexels.com/photo/hands-hand-relaxation-texture-6800925/
+about/concept-2: pexels.com https://www.pexels.com/photo/7750114/（2026-10-09 差し替え。左寄りを縦長に切り抜き。以前は山の崖の写真）
+about/concept-3: pexels.com https://www.pexels.com/photo/29498301/ （2026-10-09 差し替え。以前は手にスポイトで液体を垂らす写真）
 about/salon-interior: pexels.com https://www.pexels.com/photo/beauty-salon-interior-design-7750091/
 common/town-takayama: pakutaso.com https://www.pakutaso.com/20260607169post-57551.html
 hero/hero-main: pakutaso.com https://www.pakutaso.com/20260945265post-58543.html
