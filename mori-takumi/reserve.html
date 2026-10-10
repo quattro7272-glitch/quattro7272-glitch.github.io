@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ご相談の予約｜株式会社 森の匠工務店</title>
+<meta name="description" content="まだ何も決まっていなくても、お話しできます。ご相談のご予約はこちらから。">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/main.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="logo" href="index.html">森の匠工務店</a>
+    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="メインメニュー">
+      <a href="policy.html">私たちの家づくり</a>
+      <a href="works.html">施工事例</a>
+      <a href="flow.html">ご相談の流れ</a>
+      <a href="company.html">会社案内</a>
+      <a href="reserve.html" class="nav-reserve" aria-current="page">ご相談予約</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-head" aria-label="ページの見出し">
+    <div class="wrap">
+      <span class="rule"></span>
+      <h1>ご相談の予約</h1>
+      <p>まだ何も決まっていなくても、お話しできます。最初の打ち合わせでは、どうして家を建てようと思ったのかを伺います。準備していただくものは、特にありません。</p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="h-form">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="rule"></span>
+        <h2 class="title" id="h-form">ご予約フォーム</h2>
+      </div>
+
+      <form class="form reveal" data-review="form-unfinished" novalidate>
+        <div class="field">
+          <label for="f-name">お名前<span class="req">必須</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-contact">ご連絡先（メールまたは電話）<span class="req">必須</span></label>
+          <input id="f-contact" name="contact" type="text" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-date1">ご希望の日時（第1希望）</label>
+          <input id="f-date1" name="date1" type="text">
+          <p class="hint">平日・土曜の9:00〜17:00でお選びください（水曜定休）。</p>
+        </div>
+        <div class="field">
+          <label for="f-date2">ご希望の日時（第2希望）</label>
+          <input id="f-date2" name="date2" type="text">
+        </div>
+        <div class="field">
+          <label for="f-why">家を建てようと思ったきっかけ<span class="opt">任意</span></label>
+          <textarea id="f-why" name="reason" rows="4"></textarea>
+          <p class="hint">書けなくても大丈夫です。当日、ゆっくり伺います。</p>
+        </div>
+        <button class="btn" type="submit">ご相談を予約する</button>
+        <p class="form-note">送信しても、その場で何かが決まることはありません。</p>
+        <p class="form-note">いただいた個人情報は、ご相談のご連絡のみに使用します。</p>
+        <p class="form-status" id="form-status" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-after">
+    <div class="wrap prose reveal">
+      <span class="rule"></span>
+      <h2 class="title" id="h-after">当日の流れ</h2>
+      <p>まず、どうして家を建てようと思ったのかを伺います。希望が決まっていない方には、焦って決めなくていいですよ、とお伝えしています。</p>
+      <p>間取りや金額のお話も、お聞きになりたいときはお話しします。</p>
+      <p class="more"><a href="flow.html">ご相談の流れを見る<span aria-hidden="true"> →</span></a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="f-logo">森の匠工務店</div>
+  <div><a href="policy.html">私たちの家づくり</a><a href="works.html">施工事例</a><a href="flow.html">ご相談の流れ</a><a href="company.html">会社案内</a><a href="reserve.html">ご相談予約</a></div>
+  <div style="margin-top:6px">© 株式会社 森の匠工務店</div>
+  <p class="f-note">※ポートフォリオ用の架空の工務店サイトです。写真はAIで生成したイメージです。</p>
+</footer>
+
+</body>
+</html>
