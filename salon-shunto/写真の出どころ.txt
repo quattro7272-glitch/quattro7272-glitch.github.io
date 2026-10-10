@@ -4,7 +4,7 @@ about/concept-2: pexels.com https://www.pexels.com/photo/7750114/（2026-10-09 �
 about/concept-3: pexels.com https://www.pexels.com/photo/29498301/ （2026-10-09 差し替え。以前は手にスポイトで液体を垂らす写真）
 about/salon-interior: pexels.com https://www.pexels.com/photo/beauty-salon-interior-design-7750091/
 hero/hero-main: pakutaso.com https://www.pakutaso.com/20260945265post-58543.html
-service/menu-color: pakutaso.com https://www.pakutaso.com/20241202339post-53002.html
+service/menu-color: AIで作成（ローカルの画像生成 Z-Image-Turbo、2026-10-10 差し替え。照合コード 6F63D7E5。以前は pakutaso 20241202339post-53002 の金髪の女性）
 service/menu-cut: AIで作成（ローカルの画像生成 Z-Image-Turbo、2026-10-10 差し替え。以前は Pexels 4055078 の夕焼けの後ろ姿）
 service/menu-headspa: pexels.com https://www.pexels.com/photo/woman-getting-her-hair-shampoo-3993461/
 service/menu-treatment: pexels.com https://www.pexels.com/photo/elegant-asian-woman-with-long-silky-hair-35267456/
