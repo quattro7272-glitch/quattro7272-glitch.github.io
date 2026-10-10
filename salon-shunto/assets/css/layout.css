@@ -395,3 +395,38 @@ html.is-menu-open .site-header {
   background-color: transparent;
   backdrop-filter: none;
 }
+
+/* スマホの全画面メニュー：文字が画面の端に付かないよう左右に余白 */
+.global-menu__nav,
+.global-menu__info {
+  padding-inline: var(--gutter);
+}
+
+.global-menu__info {
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+/* ページの先頭へ戻るボタン（右下に固定） */
+.page-top {
+  position: fixed;
+  right: var(--gutter);
+  bottom: var(--space-md);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-accent);
+  font-family: var(--font-en);
+}
+
+.page-top:hover,
+.page-top:focus-visible {
+  border-color: var(--color-accent);
+  opacity: 1;
+}

@@ -726,3 +726,212 @@ main .home-section {
     object-position: 50% 6%;
   }
 }
+
+/* ===== 余白と縦の英字見出しで見せる改善（2026-10-10） ===== */
+
+/* メニュー：写真1枚＋線で区切った料金表 */
+.home-menu-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.home-menu-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.home-price {
+  border-top: 1px solid var(--color-line);
+}
+
+.home-price div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-sm);
+  padding: 1.1em 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.home-price dt a {
+  color: var(--color-ink);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+}
+
+.home-price dt a:hover,
+.home-price dt a:focus-visible {
+  color: var(--color-accent);
+}
+
+.home-price dd {
+  margin: 0;
+  font-family: var(--font-en);
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.home-price__note {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-xs);
+  color: var(--color-sub);
+}
+
+@media (min-width: 768px) {
+  .home-menu-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-lg);
+  }
+}
+
+/* サロン：お店の情報と予約への導線 */
+.home-info {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+}
+
+.home-info__list div {
+  display: grid;
+  grid-template-columns: 6em minmax(0, 1fr);
+  gap: var(--space-sm);
+  padding: 0.9em 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.home-info__list dt {
+  color: var(--color-sub);
+  letter-spacing: 0.08em;
+}
+
+.home-info__list dd {
+  margin: 0;
+}
+
+.home-info__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .home-info {
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+  }
+
+  .home-info__list div {
+    grid-template-columns: 8em minmax(0, 1fr);
+  }
+}
+
+/* PC：英字の見出しを左に縦書きで大きく置き、コンセプト文は細い枠の縦書きに */
+@media (min-width: 1024px) {
+  .home-section > .container {
+    display: grid;
+    grid-template-columns: clamp(72px, 8vw, 120px) minmax(0, 1fr);
+    column-gap: var(--space-lg);
+  }
+
+  .home-section > .container > * {
+    grid-column: 2;
+  }
+
+  .home-section .sec-title {
+    grid-column: 1;
+    grid-row: 1 / span 6;
+    align-self: start;
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-md));
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: 0;
+  }
+
+  .home-section .sec-title__en {
+    writing-mode: vertical-rl;
+    font-size: clamp(3rem, 2rem + 2.4vw, 4.6rem);
+    letter-spacing: 0.2em;
+    line-height: 1;
+  }
+
+  .home-section .sec-title__ja {
+    writing-mode: vertical-rl;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.3em;
+  }
+
+  .home-story__body {
+    writing-mode: vertical-rl;
+    height: 22em;
+    margin-left: auto;
+    padding: 2.4em 2em;
+    border: 1px solid var(--color-line);
+    line-height: 2.2;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* スタイル：3枚を並べて見せる（押すと拡大） */
+.home-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-gallery__item button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.home-gallery__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: opacity 0.4s var(--ease);
+}
+
+.home-gallery__item button:hover .home-gallery__img,
+.home-gallery__item button:focus-visible .home-gallery__img {
+  opacity: 0.85;
+}
+
+.home-gallery__caption {
+  margin-top: var(--space-xs);
+  font-family: var(--font-en);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.15em;
+  color: var(--color-sub);
+}
+
+@media (max-width: 599px) {
+  .home-gallery {
+    grid-template-columns: repeat(3, minmax(64%, 1fr));
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-xs);
+  }
+
+  .home-gallery__item {
+    scroll-snap-align: start;
+  }
+}

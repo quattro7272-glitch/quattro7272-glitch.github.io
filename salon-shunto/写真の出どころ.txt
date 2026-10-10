@@ -3,12 +3,12 @@ about/concept-1: pexels.com https://www.pexels.com/photo/person-combing-hair-wit
 about/concept-2: pexels.com https://www.pexels.com/photo/7750114/（2026-10-09 差し替え。左寄りを縦長に切り抜き。以前は山の崖の写真）
 about/concept-3: pexels.com https://www.pexels.com/photo/29498301/ （2026-10-09 差し替え。以前は手にスポイトで液体を垂らす写真）
 about/salon-interior: pexels.com https://www.pexels.com/photo/beauty-salon-interior-design-7750091/
-common/town-takayama: pakutaso.com https://www.pakutaso.com/20260607169post-57551.html
 hero/hero-main: pakutaso.com https://www.pakutaso.com/20260945265post-58543.html
 service/menu-color: pakutaso.com https://www.pakutaso.com/20241202339post-53002.html
-service/menu-cut: pexels.com https://www.pexels.com/photo/back-view-of-a-woman-with-long-hair-4055078/
+service/menu-cut: AIで作成（ローカルの画像生成 Z-Image-Turbo、2026-10-10 差し替え。以前は Pexels 4055078 の夕焼けの後ろ姿）
 service/menu-headspa: pexels.com https://www.pexels.com/photo/woman-getting-her-hair-shampoo-3993461/
 service/menu-treatment: pexels.com https://www.pexels.com/photo/elegant-asian-woman-with-long-silky-hair-35267456/
 works/style-1: pakutaso.com https://www.pakutaso.com/20241214338post-52948.html
 works/style-2: pakutaso.com https://www.pakutaso.com/20260942261post-56862.html
 works/style-3: pakutaso.com https://www.pakutaso.com/20260809236post-58263.html
+about/salon-exterior: AIで作成（ローカルの画像生成 Z-Image-Turbo、2026-10-10 追加。アクセスページ上部）

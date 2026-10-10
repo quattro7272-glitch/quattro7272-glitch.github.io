@@ -152,125 +152,6 @@
   margin-bottom: 0;
 }
 
-/* スライダー */
-.slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.slider__viewport {
-  position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3/4; /* 縦長比率を維持 */
-}
-
-@media (max-width: 768px) {
-  .slider__viewport {
-    aspect-ratio: 2/3;
-  }
-}
-
-.slider__track {
-  display: flex;
-  transition: transform var(--duration) var(--ease);
-  will-change: transform;
-}
-
-.slider__slide {
-  min-width: 100%;
-  position: relative;
-}
-
-@media (min-width: 769px) {
-  .slider__slide {
-    width: calc(50% - var(--space-md)); /* 2 枚表示の場合の幅調整 */
-    margin-right: var(--space-md);
-  }
-  
-  .slider__slide:last-child {
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .slider__slide {
-    width: 100%;
-    margin-right: 0;
-  }
-}
-
-.slider__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-color: var(--color-mist);
-}
-
-.slider__caption {
-  position: absolute;
-  bottom: var(--space-md);
-  left: var(--space-md);
-  right: var(--space-md);
-  color: var(--color-paper);
-  font-family: var(--font-en);
-  font-size: var(--fs-sm);
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
-
-.slider__controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 var(--space-sm);
-  pointer-events: none; /* ボタン以外でクリック防止 */
-}
-
-.slider__button {
-  pointer-events: auto;
-  width: 44px;
-  height: 44px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.slider__button:hover {
-  background-color: var(--color-paper);
-}
-
-.slider__button--prev {
-  margin-left: auto; /* 左に配置 */
-}
-
-.slider__button--next {
-  margin-right: auto; /* 右に配置 */
-}
-
-@media (max-width: 768px) {
-  .slider__button {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.slider__count {
-  position: absolute;
-  bottom: var(--space-md);
-  right: var(--space-sm);
-  font-family: var(--font-en);
-  font-size: var(--fs-xs);
-  color: var(--color-paper);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
 /* ライトボックス */
 .lightbox {
   position: fixed;
@@ -329,12 +210,6 @@
     padding-top: var(--space-sm);
   }
   
-  .info-table__term::after {
-    content: ":";
-    display: block;
-    margin-bottom: var(--space-xs);
-    font-weight: bold;
-  }
 }
 
 .info-table__term {
@@ -423,17 +298,6 @@ section + section {
   }
 }
 
-/* スライダーの縦長写真用クラス（PC） */
-.slider__viewport--portrait .slider__slide {
-  /* PC では already handled by aspect-ratio, but for safety */
-}
-
-@media (max-width: 768px) {
-  .slider__viewport--portrait .slider__slide {
-    /* スマホでも縦長維持 */
-  }
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -476,90 +340,6 @@ section + section {
 .btn--light:hover, .btn--light:focus-visible {
   background-color: var(--color-paper);
   color: var(--color-ink);
-}
-
-.slider__viewport {
-  width: 100%;
-  height: auto;
-  margin-bottom: var(--space-sm);
-}
-
-.slider__track {
-  display: flex;
-  gap: var(--space-sm);
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: var(--space-md); /* スクロールバー用余白 */
-}
-
-.slider__track::-webkit-scrollbar {
-  height: 4px;
-}
-
-.slider__track::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.slider__track::-webkit-scrollbar-thumb {
-  background-color: var(--color-ink);
-  border-radius: 2px;
-}
-
-.slider__slide {
-  flex: 0 0 auto;
-  width: min(420px, 72vw);
-  height: auto;
-}
-
-.slider__img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  background-color: var(--color-mist);
-}
-
-.slider__caption {
-  position: static;
-  margin-top: var(--space-xs);
-  font-size: var(--fs-sm);
-  color: var(--color-ink);
-  text-align: left;
-  opacity: 0.8;
-}
-
-.slider__controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-  pointer-events: auto;
-}
-
-.slider__button {
-  width: 44px;
-  height: 44px;
-  background-color: transparent;
-  border: 1px solid var(--color-ink);
-  color: var(--color-ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.slider__button:hover, .slider__button:focus-visible {
-  background-color: var(--color-ink);
-  color: var(--color-paper);
-}
-
-.slider__count {
-  font-family: var(--font-en);
-  font-size: var(--fs-sm);
-  color: var(--color-ink);
-  white-space: nowrap;
 }
 
 .lightbox__caption {
@@ -610,74 +390,6 @@ section + section {
   .page-head__title {
     font-size: var(--fs-xl);
   }
-}
-
-/* スライダー（最終版）：1枚ずつ見せる。JS は translateX(-番号×100%) で動かすので、1枚の幅 = 見える幅にする */
-.slider {
-  position: relative;
-  max-width: 420px;
-  margin-inline: auto;
-}
-
-.slider .slider__viewport {
-  overflow: hidden;
-}
-
-.slider .slider__track {
-  display: flex;
-  gap: 0;
-  transition: transform 0.6s var(--ease);
-}
-
-.slider .slider__slide {
-  flex: 0 0 100%;
-  width: 100%;
-}
-
-.slider .slider__slide button {
-  display: block;
-  width: 100%;
-}
-
-.slider .slider__img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
-.slider .slider__caption {
-  position: static;
-  margin-top: var(--space-xs);
-  color: var(--color-sub);
-  font-size: var(--fs-sm);
-  letter-spacing: 0.12em;
-  text-shadow: none;
-}
-
-.slider .slider__controls {
-  position: static;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-
-.slider .slider__button {
-  position: static;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--color-ink);
-  background: transparent;
-  color: var(--color-ink);
-}
-
-.slider .slider__count {
-  position: static;
-  color: var(--color-ink);
-  font-family: var(--font-en);
-  letter-spacing: 0.2em;
-  text-shadow: none;
 }
 
 .info-table__desc {
