@@ -584,3 +584,21 @@
     top: calc(var(--header-h) + var(--space-md));
   }
 }
+
+/* 客室の下のボタン：ホバーで、外側にやわらかい縁がじわっと広がる */
+.rooms__actions { isolation: isolate; }
+.rooms__actions .button { position: relative; }
+.rooms__actions .button::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+  background: var(--color-line);
+  opacity: 0;
+  clip-path: inset(6px);
+}
+.rooms__actions .button:hover::before,
+.rooms__actions .button:focus-visible::before { opacity: 1; clip-path: inset(0); }
+@media (prefers-reduced-motion: no-preference) {
+  .rooms__actions .button::before { transition: clip-path .8s cubic-bezier(.2, .7, .2, 1), opacity .4s; }
+}

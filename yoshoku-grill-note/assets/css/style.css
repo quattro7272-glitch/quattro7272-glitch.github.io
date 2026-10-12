@@ -192,3 +192,21 @@ a { color: inherit; }
   @keyframes page-in { from { opacity: 0; } }
   @keyframes title-in { from { opacity: 0; transform: translateY(12px); } }
 }
+
+/* ===== メニュー内の店舗カード：ホバーで、外側にやわらかい縁がじわっと広がる ===== */
+.menu-panel__store { position: relative; isolation: isolate; }
+.menu-panel__store::before {
+  content: "";
+  position: absolute;
+  inset: -8px -12px;
+  z-index: -1;
+  background: rgb(247 243 236 / .14);
+  border-radius: 8px;
+  opacity: 0;
+  clip-path: inset(8px 12px round 4px);
+}
+.menu-panel__store:hover::before,
+.menu-panel__store:focus-visible::before { opacity: 1; clip-path: inset(0 round 8px); }
+@media (prefers-reduced-motion: no-preference) {
+  .menu-panel__store::before { transition: clip-path .8s cubic-bezier(.2, .7, .2, 1), opacity .4s; }
+}
