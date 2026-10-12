@@ -210,3 +210,36 @@ a { color: inherit; }
 @media (prefers-reduced-motion: no-preference) {
   .menu-panel__store::before { transition: clip-path .8s cubic-bezier(.2, .7, .2, 1), opacity .4s; }
 }
+
+/* ===== スマホ：メニュー内の店舗を、横にスワイプして、ぴたっと止まる一列にする ===== */
+@media (max-width: 760px) {
+  .menu-panel__store-list {
+    display: flex;
+    gap: 14px;
+    margin-inline: -24px;
+    padding-inline: 24px;
+    padding-bottom: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;
+    overscroll-behavior-x: contain;
+  }
+
+  .menu-panel__store-list > li {
+    flex: 0 0 64%;
+    scroll-snap-align: start;
+  }
+
+  .menu-panel__store {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .menu-panel__store img {
+    width: 100%;
+  }
+
+  .menu-panel__store-name { font-size: 16px; }
+  .menu-panel__store-area { font-size: 12px; }
+}
