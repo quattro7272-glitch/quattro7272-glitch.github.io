@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="150 24 380 130" role="img" aria-labelledby="logo-title">
+<title id="logo-title">洋食堂 GRILL NOTE</title>
+<g stroke="#8c3b25" stroke-width="3" stroke-linecap="round">
+<line x1="250" y1="48" x2="430" y2="48"/>
+<line x1="270" y1="62" x2="410" y2="62"/>
+</g>
+<text x="340" y="96" text-anchor="middle" font-family="serif" font-size="18" fill="#8c3b25" letter-spacing="6">洋食堂</text>
+<text x="340" y="146" text-anchor="middle" font-family="serif" font-size="46" font-weight="700" fill="#262220" letter-spacing="3">GRILL NOTE</text>
+</svg>
