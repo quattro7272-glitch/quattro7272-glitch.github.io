@@ -471,3 +471,23 @@
     width: 5.5em;
   }
 }
+
+/* ファーストビュー：キャッチコピーが、句ごとに順番にふわっと現れる（CSSだけ） */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__title .nw {
+    display: inline-block;
+    animation: hero-phrase-in 0.9s ease-out both;
+  }
+
+  .hero__title .nw:nth-child(2) {
+    animation-delay: 0.45s;
+  }
+
+  .hero__lead {
+    animation: hero-phrase-in 0.9s ease-out 0.9s both;
+  }
+
+  @keyframes hero-phrase-in {
+    from { opacity: 0; transform: translateY(14px); }
+  }
+}
