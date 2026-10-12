@@ -576,3 +576,11 @@
     font-size: 0.8125rem;
   }
 }
+
+/* お食事：写真が流れる間も、縦書きの見出しを画面の上に貼り付けておく（パソコン幅のみ） */
+@media (min-width: 768px) {
+  .cuisine .section-title {
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-md));
+  }
+}

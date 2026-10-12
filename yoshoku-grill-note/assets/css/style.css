@@ -169,3 +169,26 @@ a { color: inherit; }
 }
 .more-link { margin: 24px 0 0; }
 .site-footer a { display: inline-block; padding: 12px 0; }
+
+/* ===== 店舗写真の上：指のマークのカーソル（押せることが一目で分かる）。読み込めない時は標準の指マーク ===== */
+.store { cursor: url("../images/common/cursor-hand.svg") 15 4, pointer; }
+
+/* ===== ページ移動のなめらかな切り替え（対応ブラウザのみ。非対応なら普通に移動する） ===== */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+
+  /* ロゴ・ナビ・メニューボタンは動かずに残り、見出しだけが入れ替わる */
+  .top-bar__logo { view-transition-name: site-logo; }
+  .side-nav { view-transition-name: site-nav; }
+  .menu-button { view-transition-name: menu-button; }
+  .page-head h1 { view-transition-name: page-title; }
+
+  ::view-transition-old(root) { animation: 0.3s ease-in both page-out; }
+  ::view-transition-new(root) { animation: 0.5s ease-out 0.1s both page-in; }
+  ::view-transition-old(page-title) { animation: 0.25s ease-in both page-out; }
+  ::view-transition-new(page-title) { animation: 0.5s ease-out 0.2s both title-in; }
+
+  @keyframes page-out { to { opacity: 0; } }
+  @keyframes page-in { from { opacity: 0; } }
+  @keyframes title-in { from { opacity: 0; transform: translateY(12px); } }
+}
