@@ -1,0 +1,20 @@
+:root {
+  --color-paper: #fbf8f3;
+  --color-paper-glass: rgba(251, 248, 243, 0.9);
+  --color-ink: #1f3a5f;
+  --color-ink-soft: #55698a;
+  --color-line: #c9d1db;
+  --color-shadow: rgba(31, 58, 95, 0.22);
+
+  --font-ja: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-en: "Cormorant Garamond", "Times New Roman", serif;
+  --font-note: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+
+  --margin: 5vw;
+  --gap: 2vw;
+  --header-height: 64px;
+  --space-section: clamp(96px, 14vw, 200px);
+  --space-block: clamp(48px, 6vw, 96px);
+
+  --ease-quiet: cubic-bezier(0.22, 0.61, 0.36, 1);
+}

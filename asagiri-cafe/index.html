@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>朝霧珈琲 | 霧がはれたら、珈琲を。</title>
+  <meta name="description" content="霧の深い朝だけ扉をあける、小さな珈琲店。写真集のように静かに味わうウェブサイト（制作見本・店名は仮）。">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="朝霧珈琲 | 霧がはれたら、珈琲を。">
+  <meta property="og:description" content="霧の深い朝だけ扉をあける、小さな珈琲店。">
+  <meta property="og:image" content="assets/images/plate-01-steam.webp">
+  <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300&family=Shippori+Mincho:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="site-header">
+    <a class="logo" href="#cover" aria-label="朝霧珈琲 トップへ">
+      <img class="logo__mark" src="assets/images/logo/logo-mark.svg" width="120" height="120" alt="">
+      <span class="logo__text"><span class="logo__en">Asagiri</span><span class="logo__ja">朝霧珈琲</span></span>
+    </a>
+    <nav class="site-header__nav" aria-label="メインメニュー">
+      <ul class="site-header__list">
+        <li><a href="#plates">Plates</a></li>
+        <li><a href="#info">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <p class="clock" aria-hidden="true"><span class="clock__time js-clock">05:40</span><span class="clock__unit">AM</span></p>
+
+  <main id="main">
+
+    <!-- 表紙 -->
+    <section class="cover" id="cover" data-time="05:40" aria-labelledby="cover-title">
+      <figure class="cover__photo">
+        <img src="assets/images/plate-01-steam.webp" width="1216" height="832" alt="窓辺の木のテーブルに置かれた、湯気の立つ白いカップ。">
+      </figure>
+      <h1 class="cover__title" id="cover-title">Asagiri<span class="cover__title-ja">朝霧珈琲</span></h1>
+      <p class="cover__catch" aria-label="霧がはれたら、珈琲を。">
+        <span aria-hidden="true" style="--i:0">霧</span><span aria-hidden="true" style="--i:1">が</span><span aria-hidden="true" style="--i:2">は</span><span aria-hidden="true" style="--i:3">れ</span><span aria-hidden="true" style="--i:4">た</span><span aria-hidden="true" style="--i:5">ら</span><span aria-hidden="true" style="--i:6">、</span><span aria-hidden="true" style="--i:7">珈</span><span aria-hidden="true" style="--i:8">琲</span><span aria-hidden="true" style="--i:9">を</span><span aria-hidden="true" style="--i:10">。</span>
+      </p>
+      <p class="cover__label">Vol.01<br>霧の朝号<br>2026 Autumn</p>
+      <svg class="cover__lines" viewBox="0 0 120 200" aria-hidden="true" focusable="false">
+        <line x1="10" y1="190" x2="110" y2="10"/>
+        <line x1="30" y1="195" x2="115" y2="42"/>
+      </svg>
+    </section>
+
+    <!-- 巻頭言 -->
+    <section class="preface" data-time="06:10" aria-labelledby="preface-title">
+      <p class="folio reveal">01 / 06</p>
+      <h2 class="section-title reveal" id="preface-title"><span class="section-title__en">Preface</span><span class="section-title__ja">はじめに</span></h2>
+      <div class="preface__text reveal">
+        <p>霧の深い朝だけ、扉をあける。</p>
+        <p>湯を沸かし、豆を挽き、<br>窓の外が白くなるのを待つ。</p>
+        <p>霧がはれるまでの、ほんのひととき。<br>そのあいだだけの、小さな珈琲店です。</p>
+      </div>
+      <figure class="plate plate--tall preface__photo reveal">
+        <div class="plate__frame"><img class="plate__img" src="assets/images/plate-02-counter.webp" width="1216" height="832" loading="lazy" alt="霧の窓を背にした、木のカウンターとコーヒーミル、並んだカップ。"></div>
+        <figcaption class="plate__caption">Plate 02　カウンター、午前6時。</figcaption>
+      </figure>
+    </section>
+
+    <!-- 特集 -->
+    <section class="editorial" data-time="06:50" aria-labelledby="editorial-title">
+      <p class="folio reveal">02 / 06</p>
+      <h2 class="editorial__title" id="editorial-title"><span class="section-title__en">Editorial</span><span class="section-title__ja">霧のはなし</span></h2>
+      <figure class="plate editorial__photo">
+        <div class="plate__frame"><img class="plate__img" src="assets/images/plate-03-window.webp" width="1216" height="832" loading="lazy" alt="朝の光が差す窓辺の木のベンチと、たたんだ麻の布。"></div>
+        <figcaption class="plate__caption">Plate 03　窓辺、霧のうすい朝。</figcaption>
+      </figure>
+      <div class="editorial__text reveal">
+        <p class="dropcap">雨でも晴れでもなく、霧の朝がいちばん静かだと思う。音がやわらかくなって、湯気がよく見える。</p>
+        <p>そんな朝の気配を、一杯の珈琲と一切れの焼き菓子に託して。急がず、読むように味わってもらえたら。</p>
+      </div>
+    </section>
+
+    <blockquote class="pullquote reveal">
+      <p class="pullquote__text">霧が晴れるまでの、<br>約四十分。</p>
+      <footer class="pullquote__credit">— 朝霧珈琲の、ひとつの決まり</footer>
+    </blockquote>
+
+    <!-- 連載 -->
+    <section class="plates" id="plates" data-time="07:30" aria-labelledby="plates-title">
+      <p class="folio reveal">03 / 06</p>
+      <h2 class="section-title reveal" id="plates-title"><span class="section-title__en">Plates</span><span class="section-title__ja">いちにちの三皿</span></h2>
+
+      <article class="dish dish--tart">
+        <figure class="plate dish__photo">
+          <div class="plate__frame"><img class="plate__img" src="assets/images/plate-04-tart.webp" width="1024" height="1024" loading="lazy" alt="白い皿にのった焼きたてのタルトとフォーク。"></div>
+          <figcaption class="plate__caption">Plate 04　皿のうえの、朝の続き。</figcaption>
+        </figure>
+        <div class="dish__body reveal">
+          <h3 class="dish__name">季節のタルト</h3>
+          <p class="dish__text">香ばしく焼いた生地に、季節の果実とやさしいクリームを。</p>
+          <p class="dish__price"><span class="dish__yen">¥</span>520<span class="dish__note">（仮）</span></p>
+        </div>
+      </article>
+
+      <article class="dish dish--blend">
+        <figure class="plate plate--tall dish__photo">
+          <div class="plate__frame"><img class="plate__img" src="assets/images/plate-05-drip.webp" width="832" height="1216" loading="lazy" alt="細口のケトルから湯を注ぎ、ハンドドリップで珈琲を淹れる手元。"></div>
+          <figcaption class="plate__caption">Plate 05　注ぐ。</figcaption>
+        </figure>
+        <div class="dish__body reveal">
+          <h3 class="dish__name">本日のブレンド</h3>
+          <p class="dish__text">霧の朝にあわせて、毎朝焙煎度を少しだけ変える一杯。</p>
+          <p class="dish__price"><span class="dish__yen">¥</span>600<span class="dish__note">（仮）</span></p>
+        </div>
+      </article>
+
+      <article class="dish dish--list reveal">
+        <h3 class="dish__name">焼き菓子の詰め合わせ</h3>
+        <p class="dish__text">日持ちのする小さな焼き菓子を、箱に。霧の朝の、おみやげに。</p>
+        <p class="dish__price"><span class="dish__yen">¥</span>1,200<span class="dish__note">（仮）</span></p>
+      </article>
+    </section>
+
+    <!-- 全幅の一枚 -->
+    <figure class="plate plate--bleed" data-time="08:10">
+      <div class="plate__frame"><img class="plate__img" src="assets/images/plate-06-fog-road.webp" width="1216" height="832" loading="lazy" alt="濃い霧の中へまっすぐ続く、人のいない道。"></div>
+      <figcaption class="plate__caption plate__caption--inset">Plate 06　霧の道。この先に、店がある。</figcaption>
+    </figure>
+
+    <!-- 奥付 -->
+    <section class="info" id="info" data-time="08:30" aria-labelledby="info-title">
+      <p class="folio reveal">04 / 06</p>
+      <h2 class="info__title reveal" id="info-title"><span class="section-title__en">Info</span><span class="section-title__ja">奥付</span></h2>
+      <dl class="info__list reveal">
+        <div class="info__row"><dt>店名</dt><dd>朝霧珈琲（仮）</dd></div>
+        <div class="info__row"><dt>営業</dt><dd>準備中</dd></div>
+        <div class="info__row"><dt>住所</dt><dd>準備中</dd></div>
+        <div class="info__row"><dt>電話</dt><dd>準備中</dd></div>
+        <div class="info__row"><dt>備考</dt><dd>このページは制作見本です。</dd></div>
+      </dl>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__shadow">
+    <div class="site-footer__panel">
+      <p class="site-footer__name logo logo--paper">
+        <img class="logo__mark" src="assets/images/logo/logo-mark-paper.svg" width="120" height="120" alt="" loading="lazy">
+        <span class="logo__text"><span class="logo__en">Asagiri</span><span class="logo__ja">朝霧珈琲</span></span>
+      </p>
+      <p class="site-footer__note">掲載写真にはAI生成画像を使用しています。実際の商品・店舗とは異なる場合があります。</p>
+      <p class="site-footer__note">制作見本・店名は仮。</p>
+      <p class="site-footer__copy">© 2026 Asagiri Coffee (sample)</p>
+    </div>
+    </div>
+    <svg class="site-footer__slit site-footer__slit--top" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+      <line x1="70" y1="234" x2="234" y2="70"/>
+      <line x1="100" y1="181" x2="130" y2="151"/>
+      <line x1="150" y1="131" x2="181" y2="100"/>
+    </svg>
+    <svg class="site-footer__slit site-footer__slit--bottom" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+      <line x1="70" y1="234" x2="234" y2="70"/>
+      <line x1="100" y1="181" x2="130" y2="151"/>
+      <line x1="150" y1="131" x2="181" y2="100"/>
+    </svg>
+    <p class="site-footer__vertical site-footer__vertical--left" aria-hidden="true">ゆっくり、味わってください。</p>
+    <p class="site-footer__vertical site-footer__vertical--right" aria-hidden="true">霧の朝だけ、扉をあける。</p>
+  </footer>
+
+  <script src="assets/js/reveal.js" defer></script>
+  <script src="assets/js/clock.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+/* ---------- ロゴ ---------- */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+}
+
+.logo__mark {
+  width: 40px;
+  height: 40px;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__en {
+  font-family: var(--font-en);
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.logo__ja {
+  margin-top: 6px;
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: 0.7em;
+}
+
+.logo--paper {
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.logo--paper .logo__mark {
+  width: clamp(64px, 7vw, 96px);
+  height: clamp(64px, 7vw, 96px);
+}
+
+.logo--paper .logo__en {
+  font-size: clamp(30px, 3.6vw, 48px);
+}
+
+.logo--paper .logo__ja {
+  margin-top: 12px;
+  font-size: clamp(11px, 1vw, 14px);
+}
+
+/* ---------- 見出し ---------- */
+.section-title,
+.editorial__title,
+.info__title {
+  display: block;
+  line-height: 1;
+}
+
+.section-title__en {
+  display: block;
+  font-family: var(--font-en);
+  font-weight: 400;
+  font-size: clamp(56px, 11vw, 176px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+
+.section-title__ja {
+  display: inline-block;
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-ink);
+  font-size: clamp(14px, 1.3vw, 18px);
+  letter-spacing: 0.5em;
+}
+
+/* ---------- 写真 ---------- */
+.plate {
+  position: relative;
+}
+
+.plate__frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-line);
+}
+
+.plate__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: 50% 60%;
+}
+
+.plate--tall .plate__frame {
+  aspect-ratio: 4 / 5;
+}
+
+.plate--bleed .plate__frame {
+  /* 上下の端が霧に溶ける */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 20%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 20%, #000 80%, transparent 100%);
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 16 / 8;
+  min-height: 60svh;
+}
+
+.plate__caption {
+  margin-top: 14px;
+  font-family: var(--font-note);
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+.plate__caption--inset {
+  padding-left: var(--margin);
+}
+
+/* ---------- 文章 ---------- */
+.dropcap::first-letter {
+  float: left;
+  margin: 0.04em 0.12em 0 0;
+  font-family: var(--font-ja);
+  font-size: 4.2em;
+  line-height: 0.9;
+}
+
+.pullquote__text {
+  font-size: clamp(28px, 4.6vw, 68px);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+
+.pullquote__credit {
+  margin-top: 1.6em;
+  font-family: var(--font-note);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- 品書き ---------- */
+.dish__name {
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+}
+
+.dish__text {
+  margin-top: 1em;
+  font-size: 15px;
+  line-height: 2.1;
+  text-wrap: pretty;
+}
+
+.dish__price {
+  margin-top: 1.2em;
+  font-family: var(--font-en);
+  font-size: clamp(48px, 7vw, 112px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.dish__yen {
+  margin-right: 0.12em;
+  font-size: 0.4em;
+  vertical-align: 0.9em;
+}
+
+.dish__note {
+  margin-left: 0.6em;
+  font-family: var(--font-note);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+.dish--list .dish__price {
+  margin-top: 0;
+  font-size: clamp(40px, 5vw, 72px);
+}
+
+/* ---------- 奥付 ---------- */
+.info__row {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  column-gap: var(--gap);
+  padding-block: 18px;
+  border-top: 1px solid var(--color-line);
+}
+
+.info__row:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.info__row dt {
+  font-family: var(--font-note);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- 動き（さりげなく4つだけ） ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* 1. 表紙：霧がはれて写真が色づく */
+  .cover__photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-paper);
+    animation: mist-lift 2.2s var(--ease-quiet) 0.3s both;
+    pointer-events: none;
+  }
+
+  .cover__photo img {
+    animation: photo-settle 2.8s var(--ease-quiet) 0.3s both;
+  }
+
+  /* 2. 縦書きキャッチを一文字ずつ */
+  .cover__catch span {
+    display: inline-block;
+    animation: char-in 1.2s var(--ease-quiet) both;
+    animation-delay: calc(1.4s + var(--i) * 0.12s);
+  }
+
+  .cover__title,
+  .cover__label {
+    animation: fade-up 1.4s var(--ease-quiet) 1.2s both;
+  }
+
+  /* 3. 斜線が描かれる */
+  .cover__lines line {
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation: line-draw 2.4s var(--ease-quiet) 0.8s forwards;
+  }
+
+  /* 3'. 写真は、画面に入ると薄い霧が晴れてから現れる */
+  .js .plate .plate__frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-paper);
+    opacity: 0.9;
+    transition: opacity 2s var(--ease-quiet);
+    pointer-events: none;
+  }
+
+  .js .plate .plate__img {
+    filter: blur(6px);
+    transition: filter 2s var(--ease-quiet);
+  }
+
+  .js .plate.is-clear .plate__frame::after {
+    opacity: 0;
+  }
+
+  .js .plate.is-clear .plate__img {
+    filter: none;
+  }
+
+  /* 4. スクロールで現れる */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.9s var(--ease-quiet), transform 0.9s var(--ease-quiet);
+  }
+
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* 写真がスクロールに合わせてゆっくり寄る（対応ブラウザのみ） */
+  @supports (animation-timeline: view()) {
+    .plate:not(.cover__photo) .plate__img {
+      animation: plate-zoom linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+}
+
+@keyframes mist-lift {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes photo-settle {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+
+@keyframes char-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes line-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes plate-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
