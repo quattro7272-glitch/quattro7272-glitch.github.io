@@ -16,3 +16,16 @@ function watchMorningClock() {
 if (clockElement && "IntersectionObserver" in window) {
   watchMorningClock();
 }
+
+const footerElement = document.querySelector(".site-footer");
+
+function hideClockOverFooter() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => clockElement.closest(".clock").classList.toggle("is-hidden", entry.isIntersecting));
+  });
+  observer.observe(footerElement);
+}
+
+if (clockElement && footerElement && "IntersectionObserver" in window) {
+  hideClockOverFooter();
+}

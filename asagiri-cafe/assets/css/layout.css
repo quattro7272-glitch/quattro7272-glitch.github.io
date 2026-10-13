@@ -10,7 +10,7 @@
   justify-content: space-between;
   height: var(--header-height);
   padding-inline: var(--margin);
-  background: var(--color-paper-glass);
+  background: var(--color-paper);
 }
 
 /* ヘッダーの下端を、雲のように揺らぐ霧でぼかして、写真との境目をなくす（ノイズから作ったマスク画像） */
@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   height: 44px;
-  background: var(--color-paper-glass);
+  background: var(--color-paper);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   -webkit-mask-image: url("../images/mask-fog-header.png");
@@ -60,6 +60,14 @@
   background: var(--color-paper-glass);
   font-family: var(--font-en);
   color: var(--color-ink);
+}
+
+.clock {
+  transition: opacity 0.4s var(--ease-quiet);
+}
+
+.clock.is-hidden {
+  opacity: 0;
 }
 
 .clock__time {
@@ -445,6 +453,23 @@
     --gap: 12px;
     --header-height: 56px;
   }
+
+  .clock {
+    top: calc(var(--header-height) - 6px);
+    bottom: auto;
+    right: var(--margin);
+    padding: 0;
+    background: none;
+  }
+
+  .clock__time {
+    font-size: 15px;
+  }
+
+  .clock__unit {
+    font-size: 10px;
+  }
+
 
   .cover {
     grid-template-columns: 1fr 48px;
