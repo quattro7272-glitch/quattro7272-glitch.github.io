@@ -451,23 +451,29 @@
   :root {
     --margin: 24px;
     --gap: 12px;
-    --header-height: 56px;
+    --header-height: 68px;
   }
 
   .clock {
-    top: calc(var(--header-height) - 6px);
+    top: auto;
     bottom: auto;
+    top: 44px;
     right: var(--margin);
     padding: 0;
     background: none;
+    line-height: 1;
   }
 
   .clock__time {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .clock__unit {
     font-size: 10px;
+  }
+
+  .site-header__nav {
+    padding-bottom: 16px;
   }
 
 
@@ -479,8 +485,9 @@
 
   .cover__photo {
     grid-column: 1 / 2;
-    height: 74svh;
-    min-height: 380px;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
   }
 
   .cover__title {
@@ -490,7 +497,7 @@
 
   .cover__catch {
     grid-column: 2 / 3;
-    padding-top: 6vh;
+    padding-top: 40px;
     font-size: 17px;
   }
 

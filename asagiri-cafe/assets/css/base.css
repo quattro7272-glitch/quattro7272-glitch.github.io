@@ -5,6 +5,8 @@
 }
 
 html {
+  /* ヘッダーの帯（高さ＋霧）の下に、飛び先の見出しが潜り込まないようにする */
+  scroll-padding-top: calc(var(--header-height) + 44px);
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
