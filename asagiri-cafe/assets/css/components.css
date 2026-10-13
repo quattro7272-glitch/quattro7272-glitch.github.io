@@ -192,6 +192,192 @@
   font-size: clamp(40px, 5vw, 72px);
 }
 
+/* ---------- 読者企画：今朝の一杯 ---------- */
+.js .quiz__empty[hidden],
+.js .quiz__photo[hidden],
+.js .quiz__answer-body[hidden] {
+  display: none;
+}
+
+html:not(.js) .quiz {
+  display: none;
+}
+
+.quiz__question {
+  margin: 0 0 var(--space-block);
+  padding: 0;
+  border: 0;
+}
+
+.quiz__legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: clamp(18px, 1.7vw, 24px);
+  line-height: 1.6;
+  letter-spacing: 0.2em;
+}
+
+.quiz__no {
+  display: block;
+  font-family: var(--font-en);
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: var(--color-ink-soft);
+}
+
+.quiz__option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.quiz__option input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.quiz__text {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 52px;
+  border-top: 1px solid var(--color-line);
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+  transition: color 0.4s var(--ease-quiet), padding-left 0.4s var(--ease-quiet);
+}
+
+.quiz__text::before {
+  content: "";
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--color-ink-soft);
+  border-radius: 50%;
+  transition: background-color 0.4s var(--ease-quiet), border-color 0.4s var(--ease-quiet);
+}
+
+.quiz__option:last-of-type .quiz__text {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.quiz__option:hover .quiz__text {
+  color: var(--color-ink);
+}
+
+.quiz__option input:checked + .quiz__text {
+  padding-left: 8px;
+  color: var(--color-ink);
+}
+
+.quiz__option input:checked + .quiz__text::before {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+}
+
+.quiz__option input:focus-visible + .quiz__text {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+.quiz__reset {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  border-bottom: 1px solid var(--color-ink);
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.quiz__reset:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 4px;
+}
+
+.quiz__empty {
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+  margin-right: var(--margin);
+  border: 1px solid var(--color-line);
+  text-align: center;
+  font-size: 14px;
+  line-height: 2.2;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+.quiz__photo .plate__frame {
+  aspect-ratio: 5 / 4;
+}
+
+/* 答えるたびに替わるので、霧のうすれ方は他の写真より少し速く */
+.js .quiz__photo .plate__frame::after,
+.js .quiz__photo .plate__img {
+  transition-duration: 1.1s;
+}
+
+.quiz__label {
+  margin-top: 28px;
+  font-family: var(--font-en);
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.quiz__name {
+  margin-top: 8px;
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+}
+
+.quiz__text-result {
+  margin-top: 1em;
+  margin-right: var(--margin);
+  font-size: 15px;
+  line-height: 2.1;
+  text-wrap: pretty;
+}
+
+.quiz__note {
+  font-family: var(--font-note);
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 767px) {
+  .quiz__empty,
+  .quiz__text-result {
+    margin-right: 0;
+  }
+
+  .quiz__empty {
+    min-height: 140px;
+  }
+
+  .quiz__photo .plate__frame {
+    aspect-ratio: 2 / 1;
+  }
+
+  .quiz__photo .plate__caption {
+    margin-top: 8px;
+  }
+}
+
 /* ---------- 奥付 ---------- */
 .info__row {
   display: grid;

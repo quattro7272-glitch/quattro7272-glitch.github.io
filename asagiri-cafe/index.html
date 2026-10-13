@@ -33,6 +33,7 @@
     <nav class="site-header__nav" aria-label="メインメニュー">
       <ul class="site-header__list">
         <li><a href="#plates">Plates</a></li>
+        <li><a href="#quiz">Quiz</a></li>
         <li><a href="#info">Info</a></li>
       </ul>
     </nav>
@@ -128,6 +129,53 @@
       </article>
     </section>
 
+    <!-- 読者企画：今朝の一杯 -->
+    <section class="quiz" id="quiz" data-time="07:50" aria-labelledby="quiz-title">
+      <p class="folio reveal">04 / 06</p>
+      <h2 class="section-title reveal" id="quiz-title"><span class="section-title__en">Quiz</span><span class="section-title__ja">今朝の一杯</span></h2>
+      <p class="quiz__lead reveal">三つの問いに答えると、その朝にあう一杯が決まります。選ぶたびに、写真が一枚ずつ届きます。</p>
+
+      <form class="quiz__form reveal" id="quiz-form">
+        <fieldset class="quiz__question">
+          <legend class="quiz__legend"><span class="quiz__no">Q.1</span>いま、窓の外は？</legend>
+          <label class="quiz__option"><input type="radio" name="window" value="2" data-photo="assets/images/quiz/window-thick.webp" data-alt="白い霧に包まれて、対岸の集落がかすんで見える窓の外。"><span class="quiz__text">霧が、濃い</span></label>
+          <label class="quiz__option"><input type="radio" name="window" value="1" data-photo="assets/images/quiz/window-thin.webp" data-alt="うすい霧が水面にただよう、川沿いの集落を斜めに望む窓の外。"><span class="quiz__text">霧が、うすい</span></label>
+          <label class="quiz__option"><input type="radio" name="window" value="0" data-photo="assets/images/quiz/window-clear.webp" data-alt="霧のはれた川と、岸に並ぶ集落、遠い青い山を斜めに望む窓の外。"><span class="quiz__text">もう、晴れている</span></label>
+        </fieldset>
+        <fieldset class="quiz__question">
+          <legend class="quiz__legend"><span class="quiz__no">Q.2</span>朝の、いちばん近い気分は？</legend>
+          <label class="quiz__option"><input type="radio" name="mood" value="2" data-photo="assets/images/quiz/mood-slow.webp" data-alt="窓辺の机で、湯気の立つ白いカップがやわらかくぼやけている。"><span class="quiz__text">ゆっくり、ぼんやりしたい</span></label>
+          <label class="quiz__option"><input type="radio" name="mood" value="1" data-photo="assets/images/quiz/mood-think.webp" data-alt="木の机に置かれた、開いたノートと万年筆と白いカップ。"><span class="quiz__text">静かに、ひとつ考えたい</span></label>
+          <label class="quiz__option"><input type="radio" name="mood" value="0" data-photo="assets/images/quiz/mood-move.webp" data-alt="玄関のベンチに置かれた、トートバッグと上着と鍵。"><span class="quiz__text">そろそろ、動き出したい</span></label>
+        </fieldset>
+        <fieldset class="quiz__question">
+          <legend class="quiz__legend"><span class="quiz__no">Q.3</span>甘いものは？</legend>
+          <label class="quiz__option"><input type="radio" name="sweet" value="tart" data-photo="assets/images/quiz/sweet-tart.webp" data-alt="白い皿にのった、焼きたての果実のタルトとフォーク。"><span class="quiz__text">添えたい</span></label>
+          <label class="quiz__option"><input type="radio" name="sweet" value="cookie" data-photo="assets/images/quiz/sweet-cookie.webp" data-alt="麻の布の上に並んだ、バタークッキーと小さな紙袋。"><span class="quiz__text">少しだけ</span></label>
+          <label class="quiz__option"><input type="radio" name="sweet" value="none" data-photo="assets/images/quiz/sweet-none.webp" data-alt="木のテーブルに置かれた、湯気の立つ黒い珈琲だけのカップ。"><span class="quiz__text">珈琲だけで</span></label>
+        </fieldset>
+        <button class="quiz__reset" type="reset">もういちど</button>
+      </form>
+
+      <div class="quiz__result">
+        <div class="quiz__stage">
+          <p class="quiz__empty">答えるたびに、<br>ここへ今朝の写真が一枚ずつ届きます。</p>
+          <figure class="plate quiz__photo" hidden>
+            <div class="plate__frame"><img class="plate__img js-quiz-photo" src="assets/images/quiz/window-thin.webp" width="1280" height="1024" alt=""></div>
+            <figcaption class="plate__caption js-quiz-caption"></figcaption>
+          </figure>
+        </div>
+        <div class="quiz__answer" aria-live="polite">
+          <div class="quiz__answer-body" hidden>
+            <p class="quiz__label">Your Morning Cup</p>
+            <h3 class="quiz__name js-quiz-name"></h3>
+            <p class="quiz__text-result js-quiz-text"></p>
+          </div>
+        </div>
+      </div>
+      <p class="quiz__note">診断は制作見本の遊びです。焙煎度との対応は仮の設定です。</p>
+    </section>
+
     <!-- 全幅の一枚 -->
     <figure class="plate plate--bleed" data-time="08:10">
       <div class="plate__frame"><img class="plate__img" src="assets/images/plate-06-fog-road.webp" width="1216" height="832" loading="lazy" alt="濃い霧の中へまっすぐ続く、人のいない道。"></div>
@@ -136,7 +184,7 @@
 
     <!-- 奥付 -->
     <section class="info" id="info" data-time="08:30" aria-labelledby="info-title">
-      <p class="folio reveal">04 / 06</p>
+      <p class="folio reveal">05 / 06</p>
       <h2 class="info__title reveal" id="info-title"><span class="section-title__en">Info</span><span class="section-title__ja">奥付</span></h2>
       <dl class="info__list reveal">
         <div class="info__row"><dt>店名</dt><dd>朝霧珈琲（仮）</dd></div>
@@ -177,5 +225,6 @@
 
   <script src="assets/js/reveal.js" defer></script>
   <script src="assets/js/clock.js" defer></script>
+  <script src="assets/js/quiz.js" defer></script>
 </body>
 </html>
