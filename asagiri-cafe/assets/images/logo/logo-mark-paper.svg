@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="朝霧珈琲のマーク">
+  <defs>
+    <mask id="fog" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="120">
+      <rect width="120" height="120" fill="#fff"/>
+      <rect x="0" y="62" width="120" height="1.6" fill="#000"/>
+      <rect x="0" y="69" width="120" height="2.6" fill="#000"/>
+      <rect x="0" y="76.5" width="120" height="3.8" fill="#000"/>
+      <rect x="0" y="85" width="120" height="5.2" fill="#000"/>
+      <rect x="0" y="95" width="120" height="7" fill="#000"/>
+    </mask>
+  </defs>
+  <circle cx="60" cy="56" r="40" fill="#fbf8f3" mask="url(#fog)"/>
+  <rect x="6" y="108" width="108" height="0.8" fill="#fbf8f3"/>
+</svg>
