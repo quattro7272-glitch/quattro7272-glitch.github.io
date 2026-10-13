@@ -98,9 +98,13 @@
 }
 
 .plate--bleed .plate__frame {
-  /* 上下の端が霧に溶ける */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 20%, #000 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 20%, #000 80%, transparent 100%);
+  /* 上下の端が、雲のように揺らぐ霧に溶ける（ノイズから作ったマスク画像） */
+  -webkit-mask-image: url("../images/mask-fog-road.png");
+  mask-image: url("../images/mask-fog-road.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   width: 100%;
   min-width: 0;
   aspect-ratio: 16 / 8;

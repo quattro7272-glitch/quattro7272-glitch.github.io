@@ -13,19 +13,23 @@
   background: var(--color-paper-glass);
 }
 
-/* ヘッダーの下端を霧のようにぼかして、写真との境目をなくす */
+/* ヘッダーの下端を、雲のように揺らぐ霧でぼかして、写真との境目をなくす（ノイズから作ったマスク画像） */
 .site-header::after {
   content: "";
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  height: 36px;
-  background: linear-gradient(var(--color-paper-glass), transparent);
+  height: 44px;
+  background: var(--color-paper-glass);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  -webkit-mask-image: linear-gradient(#000, transparent);
-  mask-image: linear-gradient(#000, transparent);
+  -webkit-mask-image: url("../images/mask-fog-header.png");
+  mask-image: url("../images/mask-fog-header.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
   pointer-events: none;
 }
 
@@ -106,11 +110,13 @@
   overflow: hidden;
   height: calc(100svh - var(--header-height));
   min-height: 420px;
-  /* 上端はヘッダーへ、右端は縦書きの帯へ、霧のように溶ける */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 12%), linear-gradient(to left, transparent 0, #000 10%);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 12%), linear-gradient(to left, transparent 0, #000 10%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
+  /* 上端はヘッダーへ、右端は縦書きの帯へ、雲のような揺らぎのある霧に溶ける（ノイズから作ったマスク画像） */
+  -webkit-mask-image: url("../images/mask-fog-edge.png");
+  mask-image: url("../images/mask-fog-edge.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
 .cover__photo img {
