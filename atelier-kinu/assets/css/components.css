@@ -173,27 +173,42 @@
 
 /* ---------- 診断 ---------- */
 .quiz__empty {
-  padding: 0 var(--gutter);
-  text-align: center;
+  align-self: center;
   font-size: 0.875rem;
   color: var(--color-muted-on-dark);
 }
 
 .quiz__caption {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  padding: 8px 14px;
   font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
-  background: var(--color-charcoal);
+  line-height: 1.6;
   color: var(--color-ivory);
 }
 
+.quiz__empty[hidden],
+.quiz__answer-body[hidden],
 .quiz__caption:empty {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .quiz__empty {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 0 var(--gutter);
+    text-align: center;
+  }
+
+  .quiz__caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 8px 14px;
+    background: var(--color-charcoal);
+  }
 }
 
 .quiz__question {
@@ -423,22 +438,22 @@
       .work__frame {
         animation: frame-open linear both;
         animation-timeline: view();
-        animation-range: entry 0% entry 80%;
+        animation-range: entry 0% entry 35%;
       }
 
       .work__img {
         animation: photo-settle linear both;
         animation-timeline: view();
-        animation-range: entry 0% entry 100%;
+        animation-range: entry 0% entry 35%;
       }
 
       @keyframes frame-open {
-        from { clip-path: inset(22% 14% 22% 14%); }
+        from { clip-path: inset(8% 6% 8% 6%); }
         to { clip-path: inset(0); }
       }
 
       @keyframes photo-settle {
-        from { transform: scale(1.15); }
+        from { transform: scale(1.06); }
         to { transform: scale(1); }
       }
     }
