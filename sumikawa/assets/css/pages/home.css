@@ -78,45 +78,35 @@
   right: calc(var(--gutter) - 0.6rem);
 }
 
-/* 障子：読み込み後に左右へ開く。JS が使えない・動きを減らす設定のときは出さない */
-.shoji {
-  display: none;
+/* 静かな表紙：写真がほんの少し引いていき、宿名が遅れて現れる（「動きを減らす」では動かさない） */
+@keyframes hero-settle {
+  from { transform: scale(1.07); }
+  to { transform: scale(1); }
 }
 
-.js .shoji {
-  display: block;
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
 
-.shoji__panel {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50.2%;
-  z-index: 5;
-  pointer-events: none;
-  background-color: var(--color-paper);
-  background-image:
-    linear-gradient(90deg, rgba(70, 48, 28, 0.7) 2px, transparent 2px),
-    linear-gradient(0deg, rgba(70, 48, 28, 0.7) 2px, transparent 2px);
-  background-size: calc(100% / 3) calc(100% / 8);
-  box-shadow: inset 0 0 0 8px #4a3724;
-  transition: transform 1.9s var(--ease);
-}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__media img {
+    animation: hero-settle 4.2s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  }
 
-.shoji__panel--left {
-  left: 0;
-}
+  .hero__eyebrow,
+  .hero__title,
+  .hero__copy,
+  .hero__season,
+  .hero__cta {
+    animation: hero-rise 1.8s ease-out both;
+  }
 
-.shoji__panel--right {
-  right: 0;
-}
-
-.hero.is-open .shoji__panel--left {
-  transform: translateX(-102%);
-}
-
-.hero.is-open .shoji__panel--right {
-  transform: translateX(102%);
+  .hero__eyebrow { animation-delay: 1.2s; }
+  .hero__title { animation-delay: 1.6s; }
+  .hero__copy { animation-delay: 2.2s; }
+  .hero__season { animation-delay: 2.6s; }
+  .hero__cta { animation-delay: 3s; }
 }
 
 @media (min-width: 768px) {
@@ -372,8 +362,3 @@ html[data-season="winter"] .seasons-strip__item[data-season-item="winter"] {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .js .shoji {
-    display: none;
-  }
-}
