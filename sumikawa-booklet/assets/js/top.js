@@ -3,7 +3,7 @@ const stage = document.querySelector(".js-stage");
 const book = document.querySelector(".js-book");
 const cover = document.querySelector(".js-cover");
 const desktopQuery = window.matchMedia("(min-width: 900px) and (min-height: 560px)");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const prefersStill = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 let drawnWhenOpen = false;
 let phoneOpened = false;
@@ -37,7 +37,7 @@ function updateDesktop() {
 
 function scrollToOpen() {
   const travel = stage.offsetHeight - window.innerHeight;
-  window.scrollTo({ top: stage.offsetTop + travel * 0.6, behavior: reducedMotion.matches ? "auto" : "smooth" });
+  window.scrollTo({ top: stage.offsetTop + travel * 0.6, behavior: prefersStill.matches ? "auto" : "smooth" });
 }
 
 /* ---- スマホ ---- */
