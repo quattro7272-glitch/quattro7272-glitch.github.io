@@ -1,0 +1,256 @@
+/* ---- 見出し ---- */
+.heading {
+  margin-bottom: var(--space-md);
+}
+
+.heading__eyebrow {
+  margin-bottom: 0.6rem;
+  color: var(--color-red);
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+}
+
+.heading__title {
+  font-size: clamp(1.55rem, 3.4vw, 2.3rem);
+  letter-spacing: 0.12em;
+}
+
+.page-title {
+  font-size: clamp(1.8rem, 4.4vw, 3rem);
+  letter-spacing: 0.14em;
+}
+
+.lede {
+  max-width: 36em;
+  margin-top: 1.4rem;
+  color: var(--color-ink-soft);
+}
+
+.section--dark .lede,
+.section--dark .heading__eyebrow {
+  color: #cfc8b6;
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  font-family: var(--font-serif);
+  letter-spacing: 0.3em;
+  line-height: 2;
+}
+
+/* ---- ボタン・リンク ---- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.6rem 2rem;
+  border: 1px solid var(--color-ink);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.button--primary {
+  border-color: var(--color-red);
+  background: var(--color-red);
+  color: #fff;
+}
+
+.button--light {
+  border-color: var(--color-ink);
+}
+
+.button:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.button--primary:hover {
+  background: #8c3224;
+  border-color: #8c3224;
+}
+
+.link-more {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid currentColor;
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.link-more::after {
+  content: "　→";
+}
+
+/* ---- 写真 ---- */
+.photo {
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo--landscape {
+  aspect-ratio: 3 / 2;
+}
+
+.photo--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.photo__caption {
+  margin-top: 0.6rem;
+  color: var(--color-ink-soft);
+  font-size: 0.8rem;
+}
+
+/* ---- 季節の切替 ---- */
+.season-switch {
+  display: inline-flex;
+  gap: 0.2rem;
+  align-items: center;
+}
+
+.season-switch__label {
+  margin-right: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+}
+
+.season-switch__button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: none;
+  color: inherit;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  opacity: 0.7;
+}
+
+.season-switch__button[aria-pressed="true"] {
+  border-bottom-color: currentColor;
+  opacity: 1;
+}
+
+/* ---- 仕様表（客室・案内） ---- */
+.spec {
+  display: grid;
+  grid-template-columns: 8.5em 1fr;
+  gap: 0.5rem 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.spec dt {
+  color: var(--color-ink-soft);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
+
+.table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.table th,
+.table td {
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+/* ---- 注記 ---- */
+.sample-note {
+  margin-top: 1.4rem;
+  color: var(--color-ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+/* ---- よくある質問 ---- */
+.faq {
+  border-top: 1px solid var(--color-line);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq__question {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 0.9rem 0;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: "＋";
+  color: var(--color-red);
+}
+
+.faq__item[open] .faq__question::after {
+  content: "－";
+}
+
+.faq__answer {
+  padding: 0 0 1.2rem;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+}
+
+/* ---- ページ末尾の導線 ---- */
+.page-end {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: var(--space-lg) var(--gutter);
+  justify-content: center;
+  background: var(--color-bg-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu,
+  .menu.is-open,
+  .header {
+    transition: none;
+  }
+}

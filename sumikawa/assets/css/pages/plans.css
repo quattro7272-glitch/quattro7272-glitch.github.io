@@ -1,0 +1,204 @@
+/* ---- プラン（カードを並べず、大きな行で見せる） ---- */
+.plan {
+  display: grid;
+  gap: 1.2rem;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.plan__name {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.14em;
+}
+
+.plan__sub {
+  margin-bottom: 0.6rem;
+  color: var(--color-red);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.plan__price {
+  margin: 1rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+}
+
+.plan__price small {
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+}
+
+.plan__badge {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0 0.7rem;
+  background: var(--color-green);
+  color: #fff;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+}
+
+@media (min-width: 768px) {
+  .plan {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .plan:nth-child(even) .plan__photo {
+    order: 2;
+  }
+}
+
+.compare {
+  margin-top: var(--space-lg);
+}
+
+/* ---- 予約フォーム（デモ） ---- */
+.demo-banner {
+  margin-bottom: var(--space-md);
+  padding: 0.9rem 1.2rem;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.reserve {
+  display: grid;
+  gap: 2.4rem;
+  max-width: 44rem;
+}
+
+.reserve__step {
+  min-width: 0;
+  margin: 0;
+  padding: 0 0 2rem;
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.reserve__legend {
+  margin-bottom: 1rem;
+  padding: 0;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+}
+
+.reserve__no {
+  margin-right: 0.8em;
+  color: var(--color-red);
+  font-size: 0.8rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.field label,
+.field__label {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #a9a28d;
+  border-radius: 0;
+  background: #fbf9f3;
+}
+
+.field textarea {
+  min-height: 6.5rem;
+}
+
+.field-row {
+  display: grid;
+  gap: 0 1rem;
+}
+
+@media (min-width: 560px) {
+  .field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.choice {
+  position: relative;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+}
+
+.choice label {
+  display: block;
+  min-height: 48px;
+  padding: 0.7rem 1rem;
+  border: 1px solid #a9a28d;
+  background: #fbf9f3;
+  cursor: pointer;
+}
+
+.choice input:checked + label {
+  border-color: var(--color-green);
+  background: var(--color-green);
+  color: #fff;
+}
+
+.choice input:focus-visible + label {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+}
+
+.choice input:disabled + label {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.choice small {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.reserve__status {
+  margin: 0.8rem 0;
+  padding: 0.7rem 1rem;
+  background: var(--color-bg-deep);
+  font-size: 0.9rem;
+}
+
+.reserve__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.confirm {
+  margin-bottom: 1rem;
+}
+
+.complete {
+  padding: 2rem 1.4rem;
+  border: 1px solid var(--color-green);
+}
+
+.complete__title {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+}

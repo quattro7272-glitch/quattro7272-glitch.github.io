@@ -1,0 +1,244 @@
+/* ---- 季節で出し分け：data-s を持つ要素は、今の季節のものだけ表示 ---- */
+[data-s] {
+  display: none;
+}
+
+html:not([data-season]) [data-s="spring"],
+html[data-season="spring"] [data-s="spring"],
+html[data-season="summer"] [data-s="summer"],
+html[data-season="autumn"] [data-s="autumn"],
+html[data-season="winter"] [data-s="winter"] {
+  display: inline;
+}
+
+html:not([data-season]) :is(picture, div, ul, figure, li, p)[data-s="spring"],
+html[data-season="spring"] :is(picture, div, ul, figure, li, p)[data-s="spring"],
+html[data-season="summer"] :is(picture, div, ul, figure, li, p)[data-s="summer"],
+html[data-season="autumn"] :is(picture, div, ul, figure, li, p)[data-s="autumn"],
+html[data-season="winter"] :is(picture, div, ul, figure, li, p)[data-s="winter"] {
+  display: block;
+}
+
+/* ---- ヘッダー ---- */
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--gutter);
+  color: #fff;
+  transition: background-color 0.4s, color 0.4s;
+  view-transition-name: site-header;
+}
+
+.header.is-solid,
+.header.is-menu-open,
+.header--page {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  box-shadow: 0 1px 0 var(--color-line);
+}
+
+.header.is-menu-open {
+  box-shadow: none;
+}
+
+.header__logo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7em;
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
+}
+
+.header__logo small {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.header__reserve {
+  padding: 0.35rem 1.1rem;
+  background: var(--color-red);
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+}
+
+.header__menu {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.4rem;
+  border: 0;
+  background: none;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+}
+
+/* ---- 全画面メニュー ---- */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--header-height) + 1rem) var(--gutter) 2rem;
+  overflow-y: auto;
+  background: var(--color-bg);
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition: clip-path 0.7s var(--ease), visibility 0s 0.7s;
+}
+
+.menu.is-open {
+  clip-path: inset(0);
+  visibility: visible;
+  transition: clip-path 0.7s var(--ease), visibility 0s;
+}
+
+.menu__nav {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.menu__list {
+  display: grid;
+  gap: 0;
+}
+
+.menu__link {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-line);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  letter-spacing: 0.12em;
+}
+
+.menu__link small {
+  margin-left: auto;
+  color: var(--color-ink-soft);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+}
+
+.menu__no {
+  width: 2em;
+  color: var(--color-red);
+  font-size: 0.8rem;
+}
+
+.menu__reserve {
+  margin-top: 1.6rem;
+}
+
+/* ---- 共通レイアウト ---- */
+.section {
+  padding: var(--space-xl) var(--gutter);
+}
+
+.section--deep {
+  background: var(--color-bg-deep);
+}
+
+.section--dark {
+  background: var(--color-dark);
+  color: #efe9da;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.page-hero {
+  position: relative;
+  padding-top: var(--header-height);
+}
+
+.page-hero__media {
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+.page-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__body {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-lg) var(--gutter) 0;
+}
+
+/* ---- フッター ---- */
+.footer {
+  padding: var(--space-lg) var(--gutter) 2rem;
+  background: var(--color-dark);
+  color: #cfc8b6;
+  font-size: 0.85rem;
+}
+
+.footer__inner {
+  display: grid;
+  gap: 2rem;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.footer__logo {
+  color: #efe9da;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+}
+
+.footer__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2rem 1rem;
+}
+
+.footer__list a {
+  display: block;
+  padding: 0.35rem 0;
+  text-decoration: none;
+}
+
+.footer__note {
+  max-width: var(--container);
+  margin: 2rem auto 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid #44443d;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .footer__list {
+    grid-template-columns: repeat(4, auto);
+  }
+}
