@@ -367,8 +367,8 @@ html[data-season="winter"] :is(div, ul, figure)[data-s="winter"] { display: bloc
   .cover__front { border-radius: 0; --pw: 330px; }
   .cover__back { display: none; }
   .cover__frame { inset: 4% 9% 4% 4%; }
-  .cover__art { left: 4%; right: 12%; top: 32%; bottom: 11%; }
-  .cover__label { top: 6%; left: 9%; width: 20%; height: 34%; }
+  .cover__art { left: 4%; right: 12%; top: 40%; bottom: 11%; }
+  .cover__label { top: 7%; left: 21%; width: 20%; height: 30%; }
   .cover__label span { font-size: 1.7rem; }
   .cover__sub { left: 9%; right: 12%; bottom: 5%; font-size: 0.72rem; }
   .cover__stitch { width: 7%; }
