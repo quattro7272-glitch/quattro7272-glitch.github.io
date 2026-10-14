@@ -1,0 +1,87 @@
+/* 味のものさし */
+.meter {
+  margin: var(--space-md) 0 0;
+  max-width: 34rem;
+}
+
+.meter__art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.meter__frame {
+  fill: var(--color-ground-deep);
+  stroke: var(--color-line-faint);
+  stroke-width: 1;
+}
+
+.meter__axis {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 0.8;
+  opacity: 0.35;
+}
+
+.meter__label,
+.meter__dot text {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  fill: var(--color-ink-soft);
+}
+
+.meter__dot text {
+  fill: var(--color-ink);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.meter__dot circle {
+  fill: var(--color-line);
+  stroke: var(--color-ground);
+  stroke-width: 3;
+}
+
+.meter__dot:hover circle,
+.meter__dot:focus-visible circle {
+  fill: var(--color-ink);
+}
+
+.meter__list {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: var(--space-sm);
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+}
+
+.meter__list a {
+  color: var(--color-ink);
+  border-bottom: 1px solid var(--color-line-faint);
+}
+
+/* 銘柄 */
+.bottle {
+  display: grid;
+  gap: var(--space-md);
+}
+
+@media (min-width: 600px) {
+  .bottle {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.bottle__art {
+  display: block;
+  width: min(100%, 11rem);
+  height: auto;
+}
+
+@media (min-width: 600px) {
+  .bottle__art {
+    width: 100%;
+  }
+}

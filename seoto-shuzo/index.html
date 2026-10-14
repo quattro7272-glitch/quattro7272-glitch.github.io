@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>瀬音酒造 仕込み帖｜米が酒になるまで、およそ48日</title>
+  <meta name="description" content="架空の酒蔵「瀬音酒造」のサンプルサイト。米を洗う日から瓶に詰める日まで、約48日の仕込みを、蔵の帳面の温度の線にそって日ごとにたどります。">
+  <meta property="og:title" content="瀬音酒造 仕込み帖">
+  <meta property="og:description" content="米が酒になるまで、およそ48日。蔵の帳面の線をたどる、架空の酒蔵のサンプルサイト。">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#e8e3d8">
+  <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/home.css">
+</head>
+<body id="top">
+
+  <header class="site-header">
+    <a class="site-header__logo" href="#top" aria-label="瀬音酒造 仕込み帖の最初へ戻る">
+      瀬音酒造 <small>SEOTO BREWERY</small>
+    </a>
+    <nav class="site-nav" aria-label="サイト内">
+      <a class="site-nav__item" href="./" aria-current="page">仕込み帖</a>
+      <a class="site-nav__item" href="pages/sake/">酒</a>
+      <a class="site-nav__item" href="pages/kura/">蔵</a>
+      <a class="site-nav__item" href="pages/buy/">買う</a>
+    </nav>
+  </header>
+
+  <div class="page">
+
+    <aside class="ruler js-ruler" aria-label="仕込みの現在地と目次">
+      <div class="ruler__bar" aria-hidden="true"><i class="ruler__bar-fill js-now-bar"></i></div>
+      <div class="ruler__now">
+        <p class="ruler__day"><span class="ruler__day-number js-now-day">0</span><span class="ruler__day-unit">日目</span></p>
+        <p class="ruler__meta">
+          <span class="ruler__name js-now-name">はじめに</span>
+          <span class="ruler__temp js-now-temp"></span>
+        </p>
+        <button class="ruler__toggle js-ruler-toggle" type="button" aria-expanded="false" aria-controls="ruler-nav">目次</button>
+      </div>
+      <nav class="ruler__nav" id="ruler-nav" aria-label="仕込みの目次">
+        <ol class="ruler__list">
+          <li><a class="ruler__link js-ruler-link" href="#top" data-target=""><span class="ruler__link-day">表紙</span>はじめに</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#wash" data-target="wash"><span class="ruler__link-day">1日</span>洗米・浸漬</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#steam" data-target="steam"><span class="ruler__link-day">2日</span>蒸し</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#koji" data-target="koji"><span class="ruler__link-day">3–4日</span>麹</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#moto" data-target="moto"><span class="ruler__link-day">5–18日</span>酛<wbr>（酒母）</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#sandan" data-target="sandan"><span class="ruler__link-day">19–22日</span>三段仕込み</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#moromi" data-target="moromi"><span class="ruler__link-day">23–42日</span>醪<wbr>（発酵）</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#shibori" data-target="shibori"><span class="ruler__link-day">43–45日</span>搾り</a></li>
+          <li><a class="ruler__link js-ruler-link" href="#bottle" data-target="bottle"><span class="ruler__link-day">46–48日</span>火入れ・<wbr>瓶詰め</a></li>
+        </ol>
+        <p class="ruler__other-title">ほかの<wbr>ページ</p>
+        <ul class="ruler__list ruler__list--pages">
+          <li><a class="ruler__link" href="./" aria-current="page"><span class="ruler__link-day">頁</span>仕込み帖<wbr>（いまここ）</a></li>
+          <li><a class="ruler__link" href="pages/sake/"><span class="ruler__link-day">頁</span>酒</a></li>
+          <li><a class="ruler__link" href="pages/kura/"><span class="ruler__link-day">頁</span>蔵</a></li>
+          <li><a class="ruler__link" href="pages/buy/"><span class="ruler__link-day">頁</span>買う</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="page__main">
+
+      <section class="cover" aria-labelledby="cover-title">
+        <p class="cover__kicker">瀬音酒造　仕込み帖</p>
+        <h1 class="cover__title" id="cover-title">米が<wbr>酒に<wbr>なるまで、<br>およそ四十八日。</h1>
+        <p class="cover__lead">蔵では、<wbr>毎朝、<wbr>醪の<wbr>温度を<wbr>帳面に<wbr>書きます。<wbr>この<wbr>頁の<wbr>左の<wbr>線は、<wbr>その<wbr>記録を<wbr>なぞった<wbr>ものです。<wbr>下へ<wbr>進むほど、<wbr>日が<wbr>進みます。</p>
+        <section class="kura-now js-kura-now" aria-labelledby="kura-now-title">
+          <h2 class="kura-now__title" id="kura-now-title">いま、<wbr>蔵では</h2>
+          <p class="kura-now__time"><time class="js-kura-time">--:--</time></p>
+          <p class="kura-now__task js-kura-task">蔵の<wbr>一日は、<wbr>下の<wbr>表の<wbr>とおりです。</p>
+          <p class="kura-now__detail js-kura-detail"></p>
+          <p class="kura-now__next js-kura-next"></p>
+          <div class="kura-now__strip js-kura-strip" aria-hidden="true"></div>
+          <details class="kura-now__day">
+            <summary>蔵の<wbr>一日を<wbr>ぜんぶ<wbr>見る</summary>
+            <ol class="kura-now__list js-kura-list">
+              <li data-start="0" data-end="4"><time>0:00〜4:00</time><b class="kura-now__item-title">夜の<wbr>番</b><span class="kura-now__item-detail">麹室と<wbr>酛の<wbr>タンクを、<wbr>交代で<wbr>見回ります。<wbr>温度が<wbr>上がりすぎていないか、<wbr>手で<wbr>確かめます。</span></li>
+              <li data-start="4" data-end="5"><time>4:00〜5:00</time><b class="kura-now__item-title">蒸しの<wbr>支度</b><span class="kura-now__item-detail">釜に<wbr>火を<wbr>入れて、<wbr>湯を<wbr>わかします。</span></li>
+              <li data-start="5" data-end="6"><time>5:00〜6:00</time><b class="kura-now__item-title">朝の<wbr>測り</b><span class="kura-now__item-detail">醪と<wbr>酛の<wbr>タンクの<wbr>温度を<wbr>測って、<wbr>帳面に<wbr>書きます。</span></li>
+              <li data-start="6" data-end="8"><time>6:00〜8:00</time><b class="kura-now__item-title">蒸し</b><span class="kura-now__item-detail">甑<wbr>（こしき）で<wbr>米を<wbr>蒸します。<wbr>湯気で、<wbr>蔵の<wbr>中が<wbr>白くなります。</span></li>
+              <li data-start="8" data-end="9"><time>8:00〜9:00</time><b class="kura-now__item-title">朝ごはん</b><span class="kura-now__item-detail">蔵の<wbr>みんなで<wbr>食べます。</span></li>
+              <li data-start="9" data-end="11"><time>9:00〜11:00</time><b class="kura-now__item-title">麹室と<wbr>酛の<wbr>手入れ</b><span class="kura-now__item-detail">蒸した<wbr>米を<wbr>冷まして<wbr>麹室へ<wbr>運びます。<wbr>酛の<wbr>タンクを<wbr>かき混ぜます。</span></li>
+              <li data-start="11" data-end="12"><time>11:00〜12:00</time><b class="kura-now__item-title">洗米・浸漬</b><span class="kura-now__item-detail">明日の<wbr>米を<wbr>洗って、<wbr>ストップウォッチで<wbr>測りながら水に<wbr>浸けます。</span></li>
+              <li data-start="12" data-end="13"><time>12:00〜13:00</time><b class="kura-now__item-title">昼ごはん</b><span class="kura-now__item-detail">午後の<wbr>仕事の<wbr>前に、<wbr>ゆっくり休みます。</span></li>
+              <li data-start="13" data-end="15"><time>13:00〜15:00</time><b class="kura-now__item-title">タンクの<wbr>作業</b><span class="kura-now__item-detail">仕込みの<wbr>日は<wbr>米・麹・水を<wbr>足します。<wbr>搾りの<wbr>日は、<wbr>醪の<wbr>袋を<wbr>積みます。</span></li>
+              <li data-start="15" data-end="17"><time>15:00〜17:00</time><b class="kura-now__item-title">道具の<wbr>掃除</b><span class="kura-now__item-detail">桶・布・ホースを<wbr>洗って、<wbr>乾かします。<wbr>蔵は<wbr>いつも<wbr>清潔に。</span></li>
+              <li data-start="17" data-end="18"><time>17:00〜18:00</time><b class="kura-now__item-title">夕方の<wbr>測り</b><span class="kura-now__item-detail">もう<wbr>一度、<wbr>すべての<wbr>タンクの<wbr>温度を<wbr>測って、<wbr>帳面に<wbr>書きます。</span></li>
+              <li data-start="18" data-end="19"><time>18:00〜19:00</time><b class="kura-now__item-title">夕ごはん</b><span class="kura-now__item-detail">一日の<wbr>仕事を、<wbr>みんなで<wbr>振り返ります。</span></li>
+              <li data-start="19" data-end="22"><time>19:00〜22:00</time><b class="kura-now__item-title">帳面と<wbr>段取り</b><span class="kura-now__item-detail">今日の<wbr>記録を<wbr>まとめて、<wbr>明日の<wbr>作業を<wbr>決めます。</span></li>
+              <li data-start="22" data-end="24"><time>22:00〜24:00</time><b class="kura-now__item-title">夜の<wbr>番</b><span class="kura-now__item-detail">交代で<wbr>見回りの<wbr>番に<wbr>入ります。</span></li>
+            </ol>
+          </details>
+          <p class="kura-now__note">あなたの<wbr>端末の<wbr>時刻に<wbr>合わせた、<wbr>サンプルの<wbr>蔵の<wbr>一日です。<wbr>実在の<wbr>蔵の<wbr>予定ではありません。<wbr>時刻は、<wbr>この<wbr>端末の<wbr>中だけで<wbr>使っていて、<wbr>どこにも<wbr>送りません。</p>
+        </section>
+
+        <p class="cover__guide">いま何日目で、<wbr>何の<wbr>仕事を<wbr>しているかは、<wbr>画面の<wbr>左（スマホは、<wbr>画面の<wbr>下の<wbr>帯）に<wbr>出ています。<wbr>迷ったら、<wbr>そこの<wbr>目次か、<wbr>上の<wbr>蔵の<wbr>名前から、<wbr>いつでも<wbr>戻れます。</p>
+      </section>
+
+      <div class="tracks js-tracks">
+
+        <div class="spine" aria-hidden="true">
+          <svg class="spine__svg js-spine-svg" focusable="false">
+            <polyline class="spine__line-base js-line-base" points=""></polyline>
+            <polyline class="spine__line-done js-line-done" points=""></polyline>
+            <g class="js-dots"></g>
+            <circle class="spine__marker js-marker" r="6" cx="-20" cy="-20"></circle>
+          </svg>
+        </div>
+
+        <section class="step js-step" id="wash" aria-labelledby="wash-title"
+                 data-name="洗米・浸漬" data-day-start="1" data-day-end="1" data-temps="8,8">
+          <h2 class="step__title" id="wash-title"><span class="step__day">1日目</span>洗米・浸漬</h2>
+          <p class="step__text">米を<wbr>洗って<wbr>表面の<wbr>糠を<wbr>流し、<wbr>水を<wbr>吸わせます。<wbr>吸わせすぎると、<wbr>蒸しあがりが<wbr>柔らかくなりすぎます。<wbr>だから、<wbr>ここだけは<wbr>ストップウォッチで、<wbr>秒を<wbr>測ります。</p>
+          <dl class="step__facts">
+            <dt>水の<wbr>温度</dt><dd>約8℃</dd>
+            <dt>吸わせる<wbr>時間</dt><dd>数分〜<wbr>（秒単位で<wbr>調整）</dd>
+          </dl>
+        </section>
+
+        <section class="step js-step" id="steam" aria-labelledby="steam-title"
+                 data-name="蒸し" data-day-start="2" data-day-end="2" data-temps="32,30">
+          <h2 class="step__title" id="steam-title"><span class="step__day">2日目</span>蒸し</h2>
+          <p class="step__text">甑<wbr>（こしき）で、<wbr>約1時間蒸します。<wbr>目指すのは、<wbr>外は<wbr>固く、<wbr>中は<wbr>柔らかい米。<wbr>蒸しあがった<wbr>米は、<wbr>手で<wbr>持てる<wbr>温度まで<wbr>冷まして、<wbr>麹室へ<wbr>運びます。</p>
+          <dl class="step__facts">
+            <dt>蒸す時間</dt><dd>約60分</dd>
+            <dt>冷ました<wbr>あと</dt><dd>約30℃</dd>
+          </dl>
+        </section>
+
+        <section class="step js-step" id="koji" aria-labelledby="koji-title"
+                 data-name="麹" data-day-start="3" data-day-end="4" data-temps="30,36,40,38">
+          <h2 class="step__title" id="koji-title"><span class="step__day">3〜4日目</span>麹</h2>
+          <p class="step__text">蒸した<wbr>米に<wbr>麹菌を<wbr>ふり、<wbr>約48時間かけて<wbr>育てます。<wbr>麹は<wbr>自分で<wbr>熱を<wbr>出して、<wbr>温度が<wbr>40℃近くまで<wbr>上がります。<wbr>2〜3時間<wbr>おきに<wbr>棚を<wbr>見に<wbr>行き、<wbr>手で<wbr>混ぜて、<wbr>熱を<wbr>逃が<wbr>します。</p>
+          <dl class="step__facts">
+            <dt>育てる<wbr>時間</dt><dd>約48時間</dd>
+            <dt>温度</dt><dd>30〜40℃</dd>
+          </dl>
+          <!--ZOOM-START-->
+          <section class="zoom js-zoom" aria-labelledby="zoom-title">
+            <div class="zoom__intro">
+              <h3 class="zoom__title" id="zoom-title">米1粒から、<wbr>麹菌まで</h3>
+              <p class="zoom__lead">麹が<wbr>働いているのは、<wbr>米の<wbr>粒の、<wbr>そのまた<wbr>中です。<wbr>下へ<wbr>進むと、<wbr>倍率が<wbr>上がります。</p>
+            </div>
+            <div class="zoom__track js-zoom-track">
+              <div class="zoom__stage js-zoom-stage">
+                <a class="zoom__skip" href="#moto">ズームを<wbr>飛ばして、<wbr>酛へ<wbr>進む</a>
+                <p class="zoom__count">拡大 <span class="js-zoom-now">1</span> / 4</p>
+                <div class="zoom__art">
+                  <figure class="zoom__scene js-zoom-scene">
+                    <img class="zoom-art" src="assets/images/zoom/zoom-grain.webp" width="836" height="1014" alt="黒い石の上に置いた、細長い一粒の米を接写した写真" loading="lazy" decoding="async">
+                    <figcaption><b>米1粒</b><span>酒に<wbr>する<wbr>米は、<wbr>外側の<wbr>糠<wbr>（ぬか）を<wbr>削って、<wbr>中心のでんぷんだけを<wbr>残します。</span></figcaption>
+                  </figure>
+                  <figure class="zoom__scene js-zoom-scene">
+                    <img class="zoom-art" src="assets/images/zoom/zoom-core.webp" width="836" height="1014" alt="縦に切った米粒の断面を接写した写真。中心に、白くにごった部分がある" loading="lazy" decoding="async">
+                    <figcaption><b>心白<wbr>（しんぱく）</b><span>米の<wbr>中心に、<wbr>白くに<wbr>ごった<wbr>部分が<wbr>あります。<wbr>すき間が<wbr>多く、<wbr>麹菌が<wbr>入りこみやすい<wbr>場所です。</span></figcaption>
+                  </figure>
+                  <figure class="zoom__scene js-zoom-scene">
+                    <img class="zoom-art" src="assets/images/zoom/zoom-starch.webp" width="836" height="1014" alt="でんぷんの粒がびっしり並んでいる様子を、電子顕微鏡で撮ったような写真" loading="lazy" decoding="async">
+                    <figcaption><b>でんぷんの<wbr>粒</b><span>心白を<wbr>さらに<wbr>拡大すると、<wbr>小さな<wbr>でんぷんの<wbr>粒が、<wbr>びっしり<wbr>集まっています。</span></figcaption>
+                  </figure>
+                  <figure class="zoom__scene js-zoom-scene">
+                    <img class="zoom-art" src="assets/images/zoom/zoom-koji.webp" width="836" height="1014" alt="麹菌の細い糸と胞子が、でんぷんの粒のまわりに広がっている様子を、電子顕微鏡で撮ったような写真" loading="lazy" decoding="async">
+                    <figcaption><b>麹菌<wbr>（こうじきん）</b><span>麹菌の<wbr>細い<wbr>糸<wbr>（菌糸）が、<wbr>でんぷんの<wbr>粒に<wbr>食いこみ、<wbr>酵素を<wbr>出して、<wbr>糖に<wbr>変えていきます。</span></figcaption>
+                  </figure>
+                </div>
+                <ol class="zoom__scale js-zoom-scale" aria-label="倍率の目盛り（おおよその大きさ）">
+                  <li><span class="zoom__scale-value">約5mm</span><span class="zoom__scale-name">米1粒</span></li>
+                  <li><span class="zoom__scale-value">約1mm</span><span class="zoom__scale-name">心白</span></li>
+                  <li><span class="zoom__scale-value">約0.005mm</span><span class="zoom__scale-name">でんぷんの<wbr>粒</span></li>
+                  <li><span class="zoom__scale-value">約0.003mm</span><span class="zoom__scale-name">麹菌の<wbr>糸</span></li>
+                </ol>
+              </div>
+            </div>
+          </section>
+<!--ZOOM-END-->
+        </section>
+
+        <section class="step js-step" id="moto" aria-labelledby="moto-title"
+                 data-name="酛（酒母）" data-day-start="5" data-day-end="18" data-temps="8,12,15,12,9">
+          <h2 class="step__title" id="moto-title"><span class="step__day">5〜18日目</span>酛<wbr>（酒母）</h2>
+          <p class="step__text">酵母を<wbr>育てる<wbr>「酒母」を、<wbr>小さな<wbr>タンクで<wbr>つくります。<wbr>麹・蒸した<wbr>米・水に<wbr>酵母を<wbr>合わせて、<wbr>温度を<wbr>少し<wbr>ずつ上げて、<wbr>また<wbr>下げます。<wbr>約2週間、<wbr>静かに<wbr>待つ仕事です。</p>
+          <dl class="step__facts">
+            <dt>かかる<wbr>日数</dt><dd>約14日</dd>
+            <dt>温度</dt><dd>8〜15℃</dd>
+          </dl>
+        </section>
+
+        <section class="step js-step" id="sandan" aria-labelledby="sandan-title"
+                 data-name="三段仕込み" data-day-start="19" data-day-end="22" data-temps="9,10,10,9">
+          <h2 class="step__title" id="sandan-title"><span class="step__day">19〜22日目</span>三段仕込み</h2>
+          <p class="step__text">酒母に、<wbr>蒸した<wbr>米・麹・水を、<wbr>3回に<wbr>分けて<wbr>加えます。<wbr>初添<wbr>（は<wbr>つぞえ）、<wbr>1日休む<wbr>「踊り」、<wbr>仲添<wbr>（なかぞえ）、<wbr>留添<wbr>（とめぞえ）。<wbr>少し<wbr>ずつ足すと、<wbr>酵母が<wbr>弱らずに<wbr>増えます。</p>
+          <dl class="step__facts">
+            <dt>かかる<wbr>日数</dt><dd>4日間<wbr>（3回に<wbr>分ける）</dd>
+            <dt>温度</dt><dd>8〜10℃</dd>
+          </dl>
+        </section>
+
+        <section class="step js-step" id="moromi" aria-labelledby="moromi-title"
+                 data-name="醪（発酵）" data-day-start="23" data-day-end="42" data-temps="8,10,12,13,12,10,9,8">
+          <h2 class="step__title" id="moromi-title"><span class="step__day">23〜42日目</span>醪<wbr>（発酵）</h2>
+          <p class="step__text">醪<wbr>（もろみ）は、<wbr>約20日かけて<wbr>発酵します。<wbr>毎朝、<wbr>タンクの<wbr>温度を<wbr>測って、<wbr>帳面に<wbr>書きます。<wbr>1℃ずれたら、<wbr>冷やし方を<wbr>変えます。<wbr>この<wbr>頁の<wbr>左の<wbr>線は、<wbr>この<wbr>帳面の<wbr>数字を<wbr>なぞった<wbr>ものです。</p>
+          <dl class="step__facts">
+            <dt>かかる<wbr>日数</dt><dd>約20日</dd>
+            <dt>温度</dt><dd>8〜13℃<wbr>（低めを<wbr>保つ）</dd>
+          </dl>
+        </section>
+
+        <section class="step js-step" id="shibori" aria-labelledby="shibori-title"
+                 data-name="搾り" data-day-start="43" data-day-end="45" data-temps="5,5">
+          <h2 class="step__title" id="shibori-title"><span class="step__day">43〜45日目</span>搾り</h2>
+          <p class="step__text">醪を<wbr>袋に<wbr>入れて、<wbr>酒と<wbr>粕に<wbr>分けます。<wbr>最初に<wbr>出る<wbr>酒、<wbr>中ほど、<wbr>最後と、<wbr>味が<wbr>少し<wbr>ずつ<wbr>変わります。<wbr>どこを<wbr>瓶に<wbr>詰めるかは、<wbr>舌で<wbr>決めます。</p>
+          <dl class="step__facts">
+            <dt>かかる<wbr>日数</dt><dd>約3日</dd>
+            <dt>蔵の<wbr>温度</dt><dd>約5℃</dd>
+          </dl>
+
+          <section class="press js-press-root" aria-labelledby="press-title">
+            <h3 class="press__title" id="press-title">搾りを、<wbr>手で<wbr>体験する</h3>
+            <p class="press__lead">袋を、<wbr>ゆっくり押してみてください。<wbr>押している<wbr>あいだだけ、<wbr>酒が<wbr>したたります。<wbr>（パソコンは<wbr>マウスを<wbr>押したまま、<wbr>キーボードは<wbr>スペースキーを<wbr>押したまま）</p>
+            <button class="press__zone js-press-zone" type="button" aria-describedby="press-status">
+              <svg class="press-art js-press-art" viewBox="0 0 836 1014" role="img" aria-label="吊るされた酒袋と、その下の盃。袋から酒が一滴ずつ落ちる" focusable="false"
+                   data-cup-top="700" data-cup-bottom="815" data-drop-x="419" data-drop-y="447" data-drop-travel="248">
+                <defs>
+                  <clipPath id="press-cup-clip"><path d="M289 700 L549 700 C545 770 495 815 419 815 C343 815 293 770 289 700 Z"/></clipPath>
+                </defs>
+                <image href="assets/images/press/press-bag.webp" width="836" height="1014"/>
+                <g class="js-press-drops"></g>
+                <g clip-path="url(#press-cup-clip)">
+                  <rect class="press-art__liquid js-press-liquid" x="270" y="815" width="300" height="140"/>
+                </g>
+                <path class="press-art__cup" d="M289 700 L549 700 C545 770 495 815 419 815 C343 815 293 770 289 700 Z"/>
+                <path class="press-art__rim" d="M281 700 L557 700"/>
+              </svg>
+              <span class="press__state js-press-state">おす</span>
+            </button>
+            <p class="press__count" id="press-status"><b class="js-press-count">0</b> 滴　約 <b class="js-press-ml">0</b> ml / 小さな<wbr>盃1杯<wbr>（10ml）</p>
+            <p class="press__note js-press-note">一升瓶<wbr>（1.8L）なら、<wbr>この<wbr>盃の<wbr>およそ180杯ぶん。<wbr>約3万6千滴です。</p>
+            <button class="press__reset js-press-reset" type="button" hidden>もう<wbr>一度、<wbr>空の<wbr>盃から</button>
+            <p class="u-sr-only" aria-live="polite" role="status" id="press-live"></p>
+          </section>
+        </section>
+
+        <section class="step js-step" id="bottle" aria-labelledby="bottle-title"
+                 data-name="火入れ・瓶詰め" data-day-start="46" data-day-end="48" data-temps="5,5">
+          <h2 class="step__title" id="bottle-title"><span class="step__day">46〜48日目</span>火入れ・<wbr>瓶詰め</h2>
+          <p class="step__text">酒を<wbr>65℃ほどに<wbr>温めて、<wbr>菌と<wbr>酵素の<wbr>働きを<wbr>止め、<wbr>瓶に<wbr>詰めます。<wbr>ここまで、<wbr>およそ48日。<wbr>米を<wbr>洗った<wbr>日の<wbr>水の<wbr>冷たさを、<wbr>帳面の<wbr>最初の<wbr>行が<wbr>覚えています。</p>
+          <dl class="step__facts">
+            <dt>火入れ</dt><dd>約65℃<wbr>（短い<wbr>時間）</dd>
+            <dt>全体</dt><dd>約48日</dd>
+          </dl>
+        </section>
+
+      </div>
+
+      <footer class="colophon">
+        <p>これは<wbr>架空の<wbr>酒蔵<wbr>「瀬音酒造」の<wbr>サンプルサイトです。<wbr>蔵の<wbr>名前・場所・日数・温度の<wbr>数字は、<wbr>仕込みの<wbr>流れを<wbr>伝える<wbr>ための<wbr>仮の<wbr>ものです。<wbr>左の<wbr>線は、<wbr>その<wbr>ときの<wbr>主役の<wbr>温度<wbr>（洗米は<wbr>水、<wbr>麹は<wbr>麹、<wbr>醪は<wbr>醪）を<wbr>つないだもので、<wbr>実際の<wbr>蔵の<wbr>記録ではありません。</p>
+        <p>この<wbr>サイトの<wbr>絵は、<wbr>画像生成AIで<wbr>描いた<wbr>図譜風の<wbr>ものです。</p>
+        <a class="colophon__top" href="#top">帖の<wbr>最初へ<wbr>戻る</a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/interval.js" defer></script>
+  <script src="assets/js/spine.js" defer></script>
+  <script src="assets/js/kura-now.js" defer></script>
+  <script src="assets/js/zoom.js" defer></script>
+  <script src="assets/js/press.js" defer></script>
+</body>
+</html>

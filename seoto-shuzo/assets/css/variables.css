@@ -1,0 +1,30 @@
+:root {
+  --color-ground: #e8e3d8;
+  --color-ground-deep: #ddd6c8;
+  --color-ink: #2a2622;
+  --color-ink-soft: #5e574e;
+  --color-line: #8a4b2d;
+  --color-line-faint: #c4b9a7;
+  --color-iron: #3d3b38;
+
+  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+
+  --header-height: 52px;
+  --ruler-width: 248px;
+  --spine-width: 148px;
+  --bottom-bar-height: 60px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  --measure: 36rem;
+}
+
+@media (max-width: 899px) {
+  :root {
+    --spine-width: 60px;
+  }
+}

@@ -1,0 +1,68 @@
+/* トップは、左の余白を「背骨」の幅がうけもつので、左は 0 */
+.page__main {
+  padding-left: 0;
+}
+
+/* 表紙 */
+.cover {
+  min-height: calc(100vh - var(--header-height) - var(--bottom-bar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0 var(--space-lg) var(--spine-width);
+}
+
+.cover__kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--color-ink-soft);
+}
+
+.cover__title {
+  font-size: clamp(1.45rem, 6vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+}
+
+.cover__lead {
+  max-width: var(--measure);
+}
+
+.cover__guide {
+  max-width: var(--measure);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-line-faint);
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+}
+
+@media (min-width: 900px) {
+  .cover {
+    min-height: calc(100vh - var(--header-height));
+  }
+}
+
+/* 工程が並ぶ縦長の本体（背骨はこの左に重なる） */
+.tracks {
+  position: relative;
+  padding-left: var(--spine-width);
+}
+
+/* 奥付 */
+.colophon {
+  padding: var(--space-lg) 0 0 var(--spine-width);
+  max-width: calc(var(--measure) + var(--spine-width));
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.colophon__top {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-ink);
+  color: var(--color-ink);
+  letter-spacing: 0.1em;
+}
