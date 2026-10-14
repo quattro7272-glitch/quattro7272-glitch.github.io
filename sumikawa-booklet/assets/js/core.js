@@ -11,14 +11,23 @@ function currentSeason() {
   return root.getAttribute("data-season");
 }
 
-/* ---- 図案：.js-art に差し込む。data-art="winter" のように固定もできる ---- */
+/* ---- 図譜：.js-art に季節の画像を差し込む。data-art="winter" のように固定もできる ---- */
+const PLATE_ALT = { spring: "桜の枝の図譜", summer: "青楓の枝の図譜", autumn: "紅葉の図譜", winter: "松の枝の図譜" };
+
+function artRoot() {
+  return document.body.dataset.root || "";
+}
+
 function renderArt(slot) {
   const season = slot.dataset.art || currentSeason();
-  const art = window.ART && window.ART[season];
-  if (!art) return;
-  artCounter += 1;
   slot.classList.remove("is-drawing");
-  slot.innerHTML = art.replace(/__ID__/g, `a${artCounter}_`);
+  const image = document.createElement("img");
+  image.src = `${artRoot()}assets/img/plates/plate-${season}.webp`;
+  image.alt = PLATE_ALT[season] || "";
+  image.width = 896;
+  image.height = 1088;
+  image.loading = slot.dataset.when === "load" ? "eager" : "lazy";
+  slot.replaceChildren(image);
   if (slot.dataset.when === "open") return; // トップの表紙の裏は、ひらいたときに top.js が描き始める
   if (slot.dataset.when === "load" || !drawObserver) {
     window.requestAnimationFrame(() => slot.classList.add("is-drawing"));
@@ -37,7 +46,7 @@ function renderAllArt(onlyFollowingSeason) {
 
 function startDrawing(when) {
   window.requestAnimationFrame(() => {
-    document.querySelectorAll(".js-art").forEach((slot) => {
+    document.querySelectorAll(".js-art, .js-photo").forEach((slot) => {
       if (slot.dataset.when === when) slot.classList.add("is-drawing");
     });
   });

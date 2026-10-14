@@ -86,6 +86,14 @@
 
 /* 章扉 */
 .opener { text-align: center; }
+.opener__art img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; opacity: 0; transition: opacity 1.8s ease 0.3s; }
+.opener__art.is-drawing img { opacity: 1; }
+.vignette img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; opacity: 0; transition: opacity 1.8s ease 0.3s; }
+.vignette.is-drawing img { opacity: 1; }
+
+/* 写真のない頁：文章と余白だけ */
+.fold--quiet .fold__inner { max-width: 44rem; margin: 0 auto; }
+.fold--quiet .vtext { height: min(18rem, 60vh); }
 
 .opener__inner {
   display: grid; gap: 1.2rem; justify-items: center;
@@ -101,9 +109,7 @@
 
 .opener__lede { max-width: 36em; font-size: 0.95rem; line-height: 2.2; letter-spacing: 0.1em; color: var(--ink); }
 
-.opener__art { width: min(78%, 320px); aspect-ratio: 5 / 6; position: relative; overflow: hidden; border: 1px solid rgba(60, 40, 30, 0.35); }
-.opener__art svg, .vignette svg { width: 100%; height: 100%; display: block; }
-.opener__art svg > :not(defs), .vignette svg > :not(defs) { filter: url(#bleed); }
+.opener__art { width: min(86%, 420px); aspect-ratio: 5 / 6; position: relative; overflow: hidden; }
 
 /* 見開き：右綴じなので、はじめに読む頁（文章）を右に置く */
 .spread { display: grid; gap: clamp(22px, 4vw, 46px); align-items: start; }
@@ -140,7 +146,7 @@
 }
 
 .print__frame img {
-  display: block; width: 100%; height: auto; filter: sepia(0.2) saturate(0.78) contrast(1.02); mix-blend-mode: multiply;
+  display: block; width: 100%; height: auto; filter: sepia(0.14) saturate(0.8) contrast(0.98); mix-blend-mode: multiply;
 }
 
 .print figcaption { margin-top: 0.6rem; font-family: var(--serif); font-size: 0.74rem; letter-spacing: 0.2em; color: var(--ink); opacity: 0.8; text-align: center; }
@@ -319,7 +325,9 @@
   .toc-button { margin-right: 36px; }
   .folio { padding-top: 64px; }
   .spread::after { display: none; }
-  .vtext { height: 20rem; font-size: 0.92rem; }
+  .vtext { writing-mode: horizontal-tb; height: auto; font-size: 0.92rem; line-height: 2; }
+  .vtext p { margin: 0 0 0.8em; }
+  .fold--quiet .vtext { height: auto; }
   .spec { grid-template-columns: 6.6em 1fr; }
   .room-index { grid-template-columns: repeat(4, 1fr); }
   .toc { padding: 70px 10px 40px; }
