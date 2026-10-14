@@ -48,13 +48,16 @@
   max-width: 100%; overflow-x: auto; padding-bottom: 8px;
 }
 
+.toc__item { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
+
+.toc__no { color: var(--accent); font-family: var(--serif); font-size: 0.7rem; letter-spacing: 0.15em; white-space: nowrap; }
+
 .toc__item a {
-  display: block; writing-mode: vertical-rl; height: min(62vh, 26rem); text-decoration: none; color: var(--ink);
+  display: block; writing-mode: vertical-rl; height: min(58vh, 24rem); text-decoration: none; color: var(--ink);
   font-family: var(--serif); font-size: clamp(1.15rem, 3vw, 1.7rem); letter-spacing: 0.35em; line-height: 1.5; padding: 0 0.1em;
   border-right: 1px solid rgba(60, 40, 30, 0.3);
 }
 
-.toc__item small { display: block; margin-bottom: 1.2em; color: var(--accent); font-size: 0.62em; letter-spacing: 0.2em; }
 .toc__item a:hover { color: var(--accent); }
 .toc__item--current a { color: var(--accent); }
 
@@ -215,8 +218,9 @@
   border: 1px solid rgba(60, 40, 30, 0.3); background: rgba(255, 252, 244, 0.45);
 }
 
-.kondate__item { flex: none; writing-mode: vertical-rl; font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.25em; line-height: 1.7; }
-.kondate__item small { display: block; margin-bottom: 0.7em; color: var(--accent); font-size: 0.7rem; letter-spacing: 0.2em; }
+.kondate__item { flex: none; display: flex; flex-direction: column; align-items: center; gap: 0.7rem; }
+.kondate__label { color: var(--accent); font-family: var(--serif); font-size: 0.68rem; letter-spacing: 0.1em; white-space: nowrap; }
+.kondate__name { writing-mode: vertical-rl; font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.25em; line-height: 1.7; }
 
 .season-switch { display: inline-flex; gap: 0.2rem; align-items: center; margin-bottom: 1rem; }
 .season-switch__button { min-width: 44px; min-height: 44px; border: 0; border-bottom: 1px solid transparent; background: none; font-family: var(--serif); font-size: 1.05rem; opacity: 0.6; cursor: pointer; }
@@ -317,8 +321,12 @@
   .vtext { height: 20rem; font-size: 0.92rem; }
   .spec { grid-template-columns: 6.6em 1fr; }
   .room-index { grid-template-columns: repeat(4, 1fr); }
+  .toc { padding: 70px 10px 40px; }
+  .toc__list { gap: 6px; }
+  .toc__item a { font-size: 1.05rem; letter-spacing: 0.25em; }
+  .toc__no { font-size: 0.62rem; letter-spacing: 0.05em; }
   .kondate__list { gap: 0.4rem; padding: 1.2rem 0.5rem; }
-  .kondate__item { font-size: 0.92rem; letter-spacing: 0.2em; }
+  .kondate__name { font-size: 0.92rem; letter-spacing: 0.2em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
