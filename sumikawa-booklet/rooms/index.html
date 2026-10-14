@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja" data-season="spring">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第三章 客室｜湯宿 澄川（小冊子・試作）</title>
+  <meta name="description" content="全12室。標準和室・広めの和室・特別室。部屋ごとに窓の景色が違います。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#27331f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f4a3f'/%3E%3Ctext x='32' y='43' font-size='34' text-anchor='middle' fill='%23f4f0e6' font-family='serif'%3E澄%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/booklet.css">
+  <link rel="stylesheet" href="../assets/css/chapter.css">
+  <script src="../assets/js/season-init.js"></script>
+</head>
+<body>
+  <a class="skip-link u-visually-hidden" href="#main">本文へ移動</a>
+  <svg class="u-visually-hidden" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="press" x="-2%" y="-2%" width="104%" height="104%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -7 5.0" result="holes"/>
+        <feComposite in="SourceGraphic" in2="holes" operator="in" result="speck"/>
+        <feTurbulence type="turbulence" baseFrequency="0.07" numOctaves="1" seed="2" result="wave"/>
+        <feDisplacementMap in="speck" in2="wave" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="bleed" x="-3%" y="-3%" width="106%" height="106%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="8" result="wave"/>
+        <feDisplacementMap in="SourceGraphic" in2="wave" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="seal" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="5" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 3.9" result="holes"/>
+        <feComposite in="SourceGraphic" in2="holes" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="desk" aria-hidden="true"><div class="desk__light"></div><div class="fx js-fx"></div></div>
+
+  <div class="chrome">
+    <a class="ear" href="../" aria-label="湯宿 澄川（はじめへ）">澄川<small>SUMIKAWA</small></a>
+    <button class="toc-button js-toc-button" type="button" aria-expanded="false" aria-controls="toc"><span>目次</span></button>
+  </div>
+
+  <nav class="toc js-toc" id="toc" aria-label="目次">
+    <ul class="toc__list"><li class="toc__item"><a href="../"><small>序</small>はじめに</a></li><li class="toc__item"><a href="../about/"><small>第一章</small>宿について</a></li><li class="toc__item"><a href="../onsen/"><small>第二章</small>温泉</a></li><li class="toc__item toc__item--current"><a href="../rooms/"><small>第三章</small>客室</a></li><li class="toc__item"><a href="../cuisine/"><small>第四章</small>お料理</a></li><li class="toc__item"><a href="../seasons/"><small>第五章</small>季節の過ごし方</a></li><li class="toc__item"><a href="../access/"><small>第六章</small>アクセス・ご案内</a></li><li class="toc__item"><a href="../plans/"><small>第七章</small>プラン・ご予約</a></li></ul>
+  </nav>
+
+  <nav class="bookmarks" aria-label="季節のしおり">
+    <button class="bookmarks__tab js-season" type="button" data-season-value="spring" aria-pressed="false"><span>春</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="summer" aria-pressed="false"><span>夏</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="autumn" aria-pressed="false"><span>秋</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="winter" aria-pressed="false"><span>冬</span></button>
+  </nav>
+
+  <a class="seal" href="../plans/#reserve" aria-label="ご予約へ"><span>予約</span></a>
+
+  <main id="main" class="folio">
+    <header class="fold opener">
+      <div class="opener__inner">
+        <p class="opener__no">第三章</p>
+        <div class="opener__art js-art" data-when="load" role="img" aria-label="手描きの季節の図案"></div>
+        <h1 class="opener__title press">客室</h1>
+        <p class="opener__lede">どの部屋も、窓の景色が違います。標準和室6室・広めの和室4室・特別室2室。</p>
+      </div>
+    </header>
+    <section class="fold" aria-labelledby="map-t"><div class="fold__inner">
+      <p class="eyebrow">配置図</p>
+      <h2 class="heading-v press" id="map-t">谷に沿って、十二の部屋</h2>
+      <svg class="plan-map" viewBox="0 0 720 300" role="group" aria-label="館内の配置図。谷に沿って、十二の客室が並ぶ。">
+      <path d="M0 150 C120 118 240 182 360 150 S600 118 720 150" fill="none" stroke="#9db8b0" stroke-width="30" opacity=".55"/>
+      <text class="plan-map__label" x="560" y="156">渓流</text>
+      <rect x="14" y="112" width="76" height="76" rx="3" fill="#ebe5d5" stroke="#8a8470"/>
+      <text x="52" y="156" class="plan-map__label" text-anchor="middle">玄関</text>
+      <text class="plan-map__label" x="120" y="22">標準和室</text>
+      <text class="plan-map__label" x="120" y="292">広めの和室（左4室）・特別室（右2室）</text>
+      <a class="plan-map__room" href="#sakura" aria-label="桜（標準和室）"><rect x="120" y="30" width="86" height="70" rx="3"/><text x="163" y="73">桜</text></a><a class="plan-map__room" href="#fuji" aria-label="藤（標準和室）"><rect x="218" y="30" width="86" height="70" rx="3"/><text x="261" y="73">藤</text></a><a class="plan-map__room" href="#hagi" aria-label="萩（標準和室）"><rect x="316" y="30" width="86" height="70" rx="3"/><text x="359" y="73">萩</text></a><a class="plan-map__room" href="#kaede" aria-label="楓（標準和室）"><rect x="414" y="30" width="86" height="70" rx="3"/><text x="457" y="73">楓</text></a><a class="plan-map__room" href="#tsubaki" aria-label="椿（標準和室）"><rect x="512" y="30" width="86" height="70" rx="3"/><text x="555" y="73">椿</text></a><a class="plan-map__room" href="#take" aria-label="竹（標準和室）"><rect x="610" y="30" width="86" height="70" rx="3"/><text x="653" y="73">竹</text></a><a class="plan-map__room" href="#katsura" aria-label="桂（広めの和室）"><rect x="120" y="200" width="86" height="70" rx="3"/><text x="163" y="243">桂</text></a><a class="plan-map__room" href="#ume" aria-label="梅（広めの和室）"><rect x="218" y="200" width="86" height="70" rx="3"/><text x="261" y="243">梅</text></a><a class="plan-map__room" href="#matsu" aria-label="松（広めの和室）"><rect x="316" y="200" width="86" height="70" rx="3"/><text x="359" y="243">松</text></a><a class="plan-map__room" href="#hiiragi" aria-label="柊（広めの和室）"><rect x="414" y="200" width="86" height="70" rx="3"/><text x="457" y="243">柊</text></a><a class="plan-map__room plan-map__room--special" href="#hinoki" aria-label="檜（特別室）"><rect x="512" y="200" width="86" height="70" rx="3"/><text x="555" y="243">檜</text></a><a class="plan-map__room plan-map__room--special" href="#sugi" aria-label="杉（特別室）"><rect x="610" y="200" width="86" height="70" rx="3"/><text x="653" y="243">杉</text></a>
+    </svg>
+      <div class="room-index" aria-label="客室の一覧"><a href="#sakura">桜</a><a href="#fuji">藤</a><a href="#hagi">萩</a><a href="#kaede">楓</a><a href="#tsubaki">椿</a><a href="#take">竹</a><a href="#katsura">桂</a><a href="#ume">梅</a><a href="#matsu">松</a><a href="#hiiragi">柊</a><a href="#hinoki">檜</a><a href="#sugi">杉</a></div>
+      <p class="note">※客室の種類・室数・料金は、見本としての仮の設定です。</p>
+    </div></section>
+    <section class="fold" aria-labelledby="sp-t"><div class="fold__inner"><p class="eyebrow">特別室</p><h2 class="heading-v press" id="sp-t">記念日などの特別な滞在</h2></div></section>
+    <article class="fold fold--spread" id="hinoki" aria-labelledby="hinoki-n"><div class="fold__inner"><div class="spread">
+      <div><p class="room-type">特別室</p><h3 class="room-name press" id="hinoki-n">檜</h3><p class="room-copy">湯を、部屋の中に。</p>
+        <dl class="spec"><dt>広さ</dt><dd>約62㎡</dd><dt>定員</dt><dd>2〜4名</dd><dt>寝具</dt><dd>ベッド＋畳の間</dd><dt>眺望</dt><dd>渓流と杉林（専用露天風呂から）</dd><dt>設備</dt><dd>専用の露天風呂・冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>52,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl>
+        <a class="btn btn--primary" style="margin-top:1.2rem" href="../plans/?room=hinoki#reserve">この部屋で泊まる</a></div>
+      <div class="prints"><figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-hinoki-1.webp" alt="檜の室内" loading="lazy" width="960" height="640"></div><figcaption>檜の室内</figcaption></figure><figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-hinoki-2.webp" alt="檜の専用露天風呂" loading="lazy" width="960" height="640"></div><figcaption>檜の湯</figcaption></figure></div>
+    </div></div></article>
+    <article class="fold fold--spread" id="sugi" aria-labelledby="sugi-n"><div class="fold__inner"><div class="spread">
+      <div><p class="room-type">特別室</p><h3 class="room-name press" id="sugi-n">杉</h3><p class="room-copy">杉木立に、抱かれる。</p>
+        <dl class="spec"><dt>広さ</dt><dd>約62㎡</dd><dt>定員</dt><dd>2〜4名</dd><dt>寝具</dt><dd>ベッド＋畳の間</dd><dt>眺望</dt><dd>杉木立（専用露天風呂から）</dd><dt>設備</dt><dd>専用の露天風呂・冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>52,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl>
+        <a class="btn btn--primary" style="margin-top:1.2rem" href="../plans/?room=sugi#reserve">この部屋で泊まる</a></div>
+      <div class="prints"><figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-sugi-1.webp" alt="杉の室内" loading="lazy" width="960" height="640"></div><figcaption>杉の室内</figcaption></figure><figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-sugi-2.webp" alt="杉の専用露天風呂" loading="lazy" width="960" height="640"></div><figcaption>杉の湯</figcaption></figure></div>
+    </div></div></article>
+    <section class="fold" aria-labelledby="wd-t"><div class="fold__inner">
+      <p class="eyebrow">広めの和室</p><h2 class="heading-v press" id="wd-t">ふたりでゆったり</h2>
+      <div class="wide-rooms">
+        <article class="wide-room" id="katsura" aria-labelledby="katsura-n">
+          <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-katsura.webp" alt="桂の客室。渓流と杉林の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>桂</figcaption></figure>
+          <h3 class="room-name press" id="katsura-n">桂</h3><p class="room-copy">渓流の音が、いちばん近い部屋。</p>
+          <dl class="spec"><dt>広さ</dt><dd>約45㎡（和室10畳＋次の間＋広縁）</dd><dt>定員</dt><dd>2〜4名</dd><dt>寝具</dt><dd>布団（ベッド対応）</dd><dt>眺望</dt><dd>渓流と杉林</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>36,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl>
+          <a class="link-more" href="../plans/?room=katsura#reserve">この部屋で泊まる</a>
+        </article>
+        <article class="wide-room" id="ume" aria-labelledby="ume-n">
+          <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-ume.webp" alt="梅の客室。梅の木と石垣の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>梅</figcaption></figure>
+          <h3 class="room-name press" id="ume-n">梅</h3><p class="room-copy">早春に、いちばん早く春が来る。</p>
+          <dl class="spec"><dt>広さ</dt><dd>約45㎡（和室10畳＋次の間＋広縁）</dd><dt>定員</dt><dd>2〜4名</dd><dt>寝具</dt><dd>布団（ベッド対応）</dd><dt>眺望</dt><dd>梅の木と石垣</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>36,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl>
+          <a class="link-more" href="../plans/?room=ume#reserve">この部屋で泊まる</a>
+        </article>
+        <article class="wide-room" id="matsu" aria-labelledby="matsu-n">
+          <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-matsu.webp" alt="松の客室。中庭の老松の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>松</figcaption></figure>
+          <h3 class="room-name press" id="matsu-n">松</h3><p class="room-copy">老松を眺める、静かな午後。</p>
+          <dl class="spec"><dt>広さ</dt><dd>約45㎡（和室10畳＋次の間＋広縁）</dd><dt>定員</dt><dd>2〜4名</dd><dt>寝具</dt><dd>布団（ベッド対応）</dd><dt>眺望</dt><dd>中庭の老松</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>36,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl>
+          <a class="link-more" href="../plans/?room=matsu#reserve">この部屋で泊まる</a>
+        </article>
+        <article class="wide-room" id="hiiragi" aria-labelledby="hiiragi-n">
+          <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-hiiragi.webp" alt="柊の客室。柊と小さな庭の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>柊</figcaption></figure>
+          <h3 class="room-name press" id="hiiragi-n">柊</h3><p class="room-copy">冬は、庭が主役になる。</p>
+          <dl class="spec"><dt>広さ</dt><dd>約45㎡（和室10畳＋次の間＋広縁）</dd><dt>定員</dt><dd>2〜4名</dd><dt>寝具</dt><dd>布団（ベッド対応）</dd><dt>眺望</dt><dd>柊と小さな庭</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>36,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl>
+          <a class="link-more" href="../plans/?room=hiiragi#reserve">この部屋で泊まる</a>
+        </article>
+      </div>
+    </div></section>
+    <section class="fold" aria-labelledby="st-t"><div class="fold__inner">
+      <p class="eyebrow">標準和室</p><h2 class="heading-v press" id="st-t">落ち着いた和の滞在</h2>
+        <details class="std-room" id="sakura">
+          <summary class="std-room__summary"><span><span class="std-room__name press">桜</span><span class="std-room__copy">春は、窓が花で満ちる。</span></span></summary>
+          <div class="std-room__body">
+            <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-sakura.webp" alt="桜の客室。桜の木の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>桜</figcaption></figure>
+            <div><dl class="spec"><dt>広さ</dt><dd>約32㎡（和室10畳＋広縁）</dd><dt>定員</dt><dd>2〜3名</dd><dt>寝具</dt><dd>布団</dd><dt>眺望</dt><dd>桜の木</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>28,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl><a class="link-more" href="../plans/?room=sakura#reserve">この部屋で泊まる</a></div>
+          </div>
+        </details>
+        <details class="std-room" id="fuji">
+          <summary class="std-room__summary"><span><span class="std-room__name press">藤</span><span class="std-room__copy">紫の房が、風にゆれる。</span></span></summary>
+          <div class="std-room__body">
+            <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-fuji.webp" alt="藤の客室。藤棚の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>藤</figcaption></figure>
+            <div><dl class="spec"><dt>広さ</dt><dd>約32㎡（和室10畳＋広縁）</dd><dt>定員</dt><dd>2〜3名</dd><dt>寝具</dt><dd>布団</dd><dt>眺望</dt><dd>藤棚</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>28,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl><a class="link-more" href="../plans/?room=fuji#reserve">この部屋で泊まる</a></div>
+          </div>
+        </details>
+        <details class="std-room" id="hagi">
+          <summary class="std-room__summary"><span><span class="std-room__name press">萩</span><span class="std-room__copy">秋の入口の、小さな庭。</span></span></summary>
+          <div class="std-room__body">
+            <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-hagi.webp" alt="萩の客室。萩の小さな庭の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>萩</figcaption></figure>
+            <div><dl class="spec"><dt>広さ</dt><dd>約32㎡（和室10畳＋広縁）</dd><dt>定員</dt><dd>2〜3名</dd><dt>寝具</dt><dd>布団</dd><dt>眺望</dt><dd>萩の小さな庭</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>28,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl><a class="link-more" href="../plans/?room=hagi#reserve">この部屋で泊まる</a></div>
+          </div>
+        </details>
+        <details class="std-room" id="kaede">
+          <summary class="std-room__summary"><span><span class="std-room__name press">楓</span><span class="std-room__copy">窓いっぱいに、秋の色。</span></span></summary>
+          <div class="std-room__body">
+            <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-kaede.webp" alt="楓の客室。楓の木立の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>楓</figcaption></figure>
+            <div><dl class="spec"><dt>広さ</dt><dd>約32㎡（和室10畳＋広縁）</dd><dt>定員</dt><dd>2〜3名</dd><dt>寝具</dt><dd>布団</dd><dt>眺望</dt><dd>楓の木立</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>28,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl><a class="link-more" href="../plans/?room=kaede#reserve">この部屋で泊まる</a></div>
+          </div>
+        </details>
+        <details class="std-room" id="tsubaki">
+          <summary class="std-room__summary"><span><span class="std-room__name press">椿</span><span class="std-room__copy">雪の日に、赤がともる。</span></span></summary>
+          <div class="std-room__body">
+            <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-tsubaki.webp" alt="椿の客室。椿と石灯籠の庭の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>椿</figcaption></figure>
+            <div><dl class="spec"><dt>広さ</dt><dd>約32㎡（和室10畳＋広縁）</dd><dt>定員</dt><dd>2〜3名</dd><dt>寝具</dt><dd>布団</dd><dt>眺望</dt><dd>椿と石灯籠の庭</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>28,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl><a class="link-more" href="../plans/?room=tsubaki#reserve">この部屋で泊まる</a></div>
+          </div>
+        </details>
+        <details class="std-room" id="take">
+          <summary class="std-room__summary"><span><span class="std-room__name press">竹</span><span class="std-room__copy">竹の葉ずれを聞きながら。</span></span></summary>
+          <div class="std-room__body">
+            <figure class="print"><div class="print__frame"><img src="../assets/img/rooms/room-take.webp" alt="竹の客室。竹林の見える和室。" loading="lazy" width="960" height="640"></div><figcaption>竹</figcaption></figure>
+            <div><dl class="spec"><dt>広さ</dt><dd>約32㎡（和室10畳＋広縁）</dd><dt>定員</dt><dd>2〜3名</dd><dt>寝具</dt><dd>布団</dd><dt>眺望</dt><dd>竹林</dd><dt>設備</dt><dd>冷暖房・床暖房・冷蔵庫・金庫・Wi-Fi・浴衣</dd><dt>料金の目安</dt><dd>28,000円〜／1名（1泊2食・税サ込・サンプル）</dd></dl><a class="link-more" href="../plans/?room=take#reserve">この部屋で泊まる</a></div>
+          </div>
+        </details>
+    </div></section>
+    <div class="next-leaf"><a class="btn" href="../cuisine/">第四章　お料理へ</a><a class="btn btn--primary" href="../plans/#reserve">ご予約</a></div>
+  </main>
+  <script src="../assets/js/art.js"></script>
+  <script src="../assets/js/core.js" defer></script>
+  <script src="../assets/js/rooms.js" defer></script>
+</body>
+</html>

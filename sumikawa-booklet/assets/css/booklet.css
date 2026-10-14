@@ -11,19 +11,19 @@
 }
 
 /* ---- 季節：色・光・余白・動きまで変える ---- */
-html[data-season="spring"] {
+[data-season="spring"] {
   --paper: #f6eee3; --cover: #eddccb; --ink: #3a322e; --accent: #c9758e;
   --desk-a: #4b5f44; --desk-b: #222d1d; --glow: rgba(255, 226, 206, 0.42); --pad: 1;
 }
-html[data-season="summer"] {
+[data-season="summer"] {
   --paper: #eff1e4; --cover: #dde6d6; --ink: #2b3a33; --accent: #3f8a8c;
   --desk-a: #21474a; --desk-b: #0e2325; --glow: rgba(196, 244, 232, 0.34); --pad: 0.82;
 }
-html[data-season="autumn"] {
+[data-season="autumn"] {
   --paper: #f3e5d0; --cover: #e6cfb2; --ink: #3d2d26; --accent: #b5452a;
   --desk-a: #5a3326; --desk-b: #261410; --glow: rgba(255, 186, 116, 0.4); --pad: 1;
 }
-html[data-season="winter"] {
+[data-season="winter"] {
   --paper: #eceeee; --cover: #dde2e6; --ink: #272b33; --accent: #566c8c;
   --desk-a: #26324a; --desk-b: #0c1019; --glow: rgba(184, 206, 255, 0.3); --pad: 1.35;
 }
@@ -58,6 +58,11 @@ html[data-season="spring"] [data-s="spring"],
 html[data-season="summer"] [data-s="summer"],
 html[data-season="autumn"] [data-s="autumn"],
 html[data-season="winter"] [data-s="winter"] { display: inline; }
+
+html[data-season="spring"] :is(div, ul, figure)[data-s="spring"],
+html[data-season="summer"] :is(div, ul, figure)[data-s="summer"],
+html[data-season="autumn"] :is(div, ul, figure)[data-s="autumn"],
+html[data-season="winter"] :is(div, ul, figure)[data-s="winter"] { display: block; }
 
 :focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 

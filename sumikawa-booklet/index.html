@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>湯宿 澄川｜一冊の小冊子（試作）</title>
-  <meta name="description" content="和紙、活版印刷、手描きの季節の図案。旅館の案内を、小冊子をめくるように読む。湯宿 澄川のWebサイト制作見本（試作）。">
+  <meta name="description" content="和紙、活版印刷、手描きの季節の図案。旅館の案内を、小冊子をめくるように読む。湯宿 澄川のWebサイト制作見本。">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#27331f">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f4a3f'/%3E%3Ctext x='32' y='43' font-size='34' text-anchor='middle' fill='%23f4f0e6' font-family='serif'%3E澄%3C/text%3E%3C/svg%3E">
@@ -12,13 +12,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/css/booklet.css">
+  <link rel="stylesheet" href="assets/css/chapter.css">
   <script src="assets/js/season-init.js"></script>
 </head>
 <body>
-
+  <a class="skip-link u-visually-hidden" href="#main">本文へ移動</a>
   <svg class="u-visually-hidden" width="0" height="0" aria-hidden="true" focusable="false">
     <defs>
-      <!-- 活版印刷：インクのかすれ（細かい欠け）と、ほんの少しのにじみ -->
       <filter id="press" x="-2%" y="-2%" width="104%" height="104%">
         <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="noise"/>
         <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -7 5.0" result="holes"/>
@@ -26,12 +26,10 @@
         <feTurbulence type="turbulence" baseFrequency="0.07" numOctaves="1" seed="2" result="wave"/>
         <feDisplacementMap in="speck" in2="wave" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
       </filter>
-      <!-- 筆の墨のにじみ（輪郭をわずかに乱す） -->
       <filter id="bleed" x="-3%" y="-3%" width="106%" height="106%">
         <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="8" result="wave"/>
         <feDisplacementMap in="SourceGraphic" in2="wave" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
       </filter>
-      <!-- 朱印のかすれ -->
       <filter id="seal" x="-5%" y="-5%" width="110%" height="110%">
         <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="5" result="noise"/>
         <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 3.9" result="holes"/>
@@ -40,10 +38,16 @@
     </defs>
   </svg>
 
-  <div class="desk" aria-hidden="true">
-    <div class="desk__light"></div>
-    <div class="fx js-fx"></div>
+  <div class="desk" aria-hidden="true"><div class="desk__light"></div><div class="fx js-fx"></div></div>
+
+  <div class="chrome">
+    <a class="ear" href="./" aria-label="湯宿 澄川（はじめへ）">澄川<small>SUMIKAWA</small></a>
+    <button class="toc-button js-toc-button" type="button" aria-expanded="false" aria-controls="toc"><span>目次</span></button>
   </div>
+
+  <nav class="toc js-toc" id="toc" aria-label="目次">
+    <ul class="toc__list"><li class="toc__item toc__item--current"><a href="./"><small>序</small>はじめに</a></li><li class="toc__item"><a href="./about/"><small>第一章</small>宿について</a></li><li class="toc__item"><a href="./onsen/"><small>第二章</small>温泉</a></li><li class="toc__item"><a href="./rooms/"><small>第三章</small>客室</a></li><li class="toc__item"><a href="./cuisine/"><small>第四章</small>お料理</a></li><li class="toc__item"><a href="./seasons/"><small>第五章</small>季節の過ごし方</a></li><li class="toc__item"><a href="./access/"><small>第六章</small>アクセス・ご案内</a></li><li class="toc__item"><a href="./plans/"><small>第七章</small>プラン・ご予約</a></li></ul>
+  </nav>
 
   <nav class="bookmarks" aria-label="季節のしおり">
     <button class="bookmarks__tab js-season" type="button" data-season-value="spring" aria-pressed="false"><span>春</span></button>
@@ -52,15 +56,12 @@
     <button class="bookmarks__tab js-season" type="button" data-season-value="winter" aria-pressed="false"><span>冬</span></button>
   </nav>
 
-  <a class="seal" href="../sumikawa/plans/#reserve" aria-label="ご予約へ（従来版の予約ページ）"><span>予約</span></a>
+  <a class="seal" href="./plans/#reserve" aria-label="ご予約へ"><span>予約</span></a>
 
-  <main>
+  <main id="main">
     <div class="stage js-stage">
       <div class="stage__sticky">
-
         <div class="book js-book">
-
-          <!-- 一頁目（表紙の下）。右綴じなので、縦書きは右から左へ読む -->
           <section class="leaf leaf--text" aria-labelledby="p1-title">
             <div class="leaf__inner">
               <p class="leaf__running">湯宿 澄川 ・ <span data-s="spring">春</span><span data-s="summer">夏</span><span data-s="autumn">秋</span><span data-s="winter">冬</span></p>
@@ -72,19 +73,16 @@
                   <p>廊下の奥にともる灯り。障子に映る木々。立ちのぼる湯気。窓を打つ雨の音。</p>
                   <p>頁をめくるように、季節をひとつずつ、お過ごしください。</p>
                 </div>
-
-                  <p class="leaf__season">
+                <p class="leaf__season">
                   <span data-s="spring">芽吹く山々と、やわらかな朝の空気。</span>
                   <span data-s="summer">深い緑と、渓流の涼やかな音。</span>
                   <span data-s="autumn">色づく木々と、静かな夕暮れ。</span>
                   <span data-s="winter">雪景色と、湯けむりに包まれる時間。</span>
-                  </p>
+                </p>
               </div>
-              <p class="leaf__folio">― 一 ―</p>
+              <p class="leaf__folio">― 序 ―</p>
             </div>
           </section>
-
-          <!-- 表紙：右の縁（綴じ目）を軸にひらく -->
           <div class="cover js-cover" role="button" tabindex="0" aria-label="表紙。押すと、ひらきます">
             <div class="cover__face cover__front">
               <div class="cover__frame"></div>
@@ -106,27 +104,76 @@
               </figure>
             </div>
           </div>
-
         </div>
-
-        <!-- スマホ：表紙の下に、図版がそのまま続く -->
         <figure class="plate plate--phone">
           <div class="plate__art js-art" data-when="open"></div>
           <figcaption class="plate__caption"><span data-s="spring">図一　桜</span><span data-s="summer">図一　青楓</span><span data-s="autumn">図一　紅葉</span><span data-s="winter">図一　松に雪、南天</span>　手描きの図案（見本）</figcaption>
         </figure>
-
       </div>
     </div>
 
-    <section class="colophon" aria-labelledby="colophon-title">
-      <h2 class="colophon__title press" id="colophon-title">奥付</h2>
-      <p>この頁は、サイトを「一冊の小冊子」にする試作です。表紙と最初の見開きだけを作り、和紙・活版・手描きの図案・四季の仕掛けが狙いどおりに出るかを確かめています。</p>
-      <p>宿名・図案・文章はすべて架空です。右の「しおり」で、春・夏・秋・冬を切り替えられます。</p>
-      <p><a href="../sumikawa/">従来版のサイトを見る</a></p>
-    </section>
-  </main>
+    <div class="top-folio">
+      <section class="fold" aria-labelledby="contents-title"><div class="fold__inner">
+        <p class="eyebrow">目次</p>
+        <h2 class="heading-v press" id="contents-title">頁をめくる</h2>
+        <ol class="contents" style="list-style:none"><li><a href="about/"><span class="contents__no">第一章</span><span class="contents__name">宿について</span><span class="contents__sub">歴史と、もてなし</span></a></li><li><a href="onsen/"><span class="contents__no">第二章</span><span class="contents__name">温泉</span><span class="contents__sub">湯と、谷の音</span></a></li><li><a href="rooms/"><span class="contents__no">第三章</span><span class="contents__name">客室</span><span class="contents__sub">十二の部屋</span></a></li><li><a href="cuisine/"><span class="contents__no">第四章</span><span class="contents__name">お料理</span><span class="contents__sub">季節の会席</span></a></li><li><a href="seasons/"><span class="contents__no">第五章</span><span class="contents__name">季節の過ごし方</span><span class="contents__sub">四季の滞在</span></a></li><li><a href="access/"><span class="contents__no">第六章</span><span class="contents__name">アクセス・ご案内</span><span class="contents__sub">交通・FAQ</span></a></li><li><a href="plans/"><span class="contents__no">第七章</span><span class="contents__name">プラン・ご予約</span><span class="contents__sub">ご宿泊のご予約</span></a></li></ol>
+      </div></section>
 
+      <section class="fold" aria-labelledby="diagnosis-title"><div class="fold__inner">
+        <p class="eyebrow">あなたに合う滞在</p>
+        <h2 class="heading-v press" id="diagnosis-title">三つの問い</h2>
+        <p class="prose" style="margin-bottom:1.6rem">答えると、おすすめのプランをお伝えします。結果は、ご予約にそのまま引き継げます。</p>
+        <form class="quiz" id="quiz-form">
+          <div>
+            <fieldset class="quiz__fieldset"><legend class="quiz__legend"><span class="quiz__no">一</span>いちばん大切にしたい時間は？</legend>
+              <div class="quiz__option"><input type="radio" name="time" id="q1a" value="bath"><label for="q1a">湯に、ゆっくりつかる</label></div>
+              <div class="quiz__option"><input type="radio" name="time" id="q1b" value="view"><label for="q1b">窓の景色を眺める</label></div>
+              <div class="quiz__option"><input type="radio" name="time" id="q1c" value="food"><label for="q1c">ごちそうを味わう</label></div>
+            </fieldset>
+            <fieldset class="quiz__fieldset"><legend class="quiz__legend"><span class="quiz__no">二</span>どなたと過ごしますか？</legend>
+              <div class="quiz__option"><input type="radio" name="company" id="q2a" value="alone"><label for="q2a">ひとりで</label></div>
+              <div class="quiz__option"><input type="radio" name="company" id="q2b" value="pair"><label for="q2b">ふたりで</label></div>
+              <div class="quiz__option"><input type="radio" name="company" id="q2c" value="anniversary"><label for="q2c">記念日のお祝いに</label></div>
+            </fieldset>
+            <fieldset class="quiz__fieldset"><legend class="quiz__legend"><span class="quiz__no">三</span>滞在の過ごし方は？</legend>
+              <div class="quiz__option"><input type="radio" name="pace" id="q3a" value="rest"><label for="q3a">何もせず、のんびり</label></div>
+              <div class="quiz__option"><input type="radio" name="pace" id="q3b" value="walk"><label for="q3b">少し散歩して、湯とごはん</label></div>
+              <div class="quiz__option"><input type="radio" name="pace" id="q3c" value="talk"><label for="q3c">食事を囲んで、語らう</label></div>
+            </fieldset>
+            <button class="btn" type="reset">やり直す</button>
+          </div>
+          <div class="quiz__result js-quiz-result" aria-live="polite">
+            <p class="quiz__empty js-quiz-empty">3つ答えると、ここにおすすめが出ます。</p>
+            <div class="js-quiz-body" hidden>
+              <p class="heading__eyebrow">おすすめのプラン</p>
+              <h3 class="quiz__result-title js-quiz-name"></h3>
+              <p class="js-quiz-text"></p>
+              <p class="js-quiz-price sample-note"></p>
+              <a class="btn btn--primary js-quiz-link" href="plans/#reserve" style="margin-top:1.2rem">このプランで予約へ</a>
+            </div>
+          </div>
+        </form>
+      </div></section>
+
+      <section class="fold" aria-labelledby="info-title"><div class="fold__inner">
+        <p class="eyebrow">ご案内</p>
+        <h2 class="heading-v press" id="info-title">奥付</h2>
+        <dl class="spec">
+          <dt>所在地</dt><dd>サンプル（架空の澄川温泉）</dd>
+          <dt>客室</dt><dd>全12室（標準和室6・広めの和室4・特別室2）</dd>
+          <dt>チェックイン</dt><dd>15:00（最終18:00）／チェックアウト 10:00</dd>
+          <dt>送迎</dt><dd>谷口駅発 14:30／15:30／16:30（前日18時までに要予約）</dd>
+          <dt>電話</dt><dd>000-0000-0000（サンプル）</dd>
+        </dl>
+        <p class="note">このサイトは Web 制作の見本です。宿名・所在地・料金・図案・写真（AI で生成）は、すべて架空です。</p>
+        <p class="note"><a href="../sumikawa/" class="link-more" style="margin-top:0">従来版のサイトを見る</a></p>
+      </div></section>
+    </div>
+  </main>
   <script src="assets/js/art.js"></script>
-  <script src="assets/js/booklet.js" defer></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/core.js" defer></script>
+  <script src="assets/js/top.js" defer></script>
+  <script src="assets/js/quiz.js" defer></script>
 </body>
 </html>

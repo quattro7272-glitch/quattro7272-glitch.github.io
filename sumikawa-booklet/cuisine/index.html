@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ja" data-season="spring">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第四章 お料理｜湯宿 澄川（小冊子・試作）</title>
+  <meta name="description" content="季節の会席と朝食。器と盛り付けに心を配る、夕餉のひととき。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#27331f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f4a3f'/%3E%3Ctext x='32' y='43' font-size='34' text-anchor='middle' fill='%23f4f0e6' font-family='serif'%3E澄%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/booklet.css">
+  <link rel="stylesheet" href="../assets/css/chapter.css">
+  <script src="../assets/js/season-init.js"></script>
+</head>
+<body>
+  <a class="skip-link u-visually-hidden" href="#main">本文へ移動</a>
+  <svg class="u-visually-hidden" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="press" x="-2%" y="-2%" width="104%" height="104%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -7 5.0" result="holes"/>
+        <feComposite in="SourceGraphic" in2="holes" operator="in" result="speck"/>
+        <feTurbulence type="turbulence" baseFrequency="0.07" numOctaves="1" seed="2" result="wave"/>
+        <feDisplacementMap in="speck" in2="wave" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="bleed" x="-3%" y="-3%" width="106%" height="106%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="8" result="wave"/>
+        <feDisplacementMap in="SourceGraphic" in2="wave" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="seal" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="5" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 3.9" result="holes"/>
+        <feComposite in="SourceGraphic" in2="holes" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="desk" aria-hidden="true"><div class="desk__light"></div><div class="fx js-fx"></div></div>
+
+  <div class="chrome">
+    <a class="ear" href="../" aria-label="湯宿 澄川（はじめへ）">澄川<small>SUMIKAWA</small></a>
+    <button class="toc-button js-toc-button" type="button" aria-expanded="false" aria-controls="toc"><span>目次</span></button>
+  </div>
+
+  <nav class="toc js-toc" id="toc" aria-label="目次">
+    <ul class="toc__list"><li class="toc__item"><a href="../"><small>序</small>はじめに</a></li><li class="toc__item"><a href="../about/"><small>第一章</small>宿について</a></li><li class="toc__item"><a href="../onsen/"><small>第二章</small>温泉</a></li><li class="toc__item"><a href="../rooms/"><small>第三章</small>客室</a></li><li class="toc__item toc__item--current"><a href="../cuisine/"><small>第四章</small>お料理</a></li><li class="toc__item"><a href="../seasons/"><small>第五章</small>季節の過ごし方</a></li><li class="toc__item"><a href="../access/"><small>第六章</small>アクセス・ご案内</a></li><li class="toc__item"><a href="../plans/"><small>第七章</small>プラン・ご予約</a></li></ul>
+  </nav>
+
+  <nav class="bookmarks" aria-label="季節のしおり">
+    <button class="bookmarks__tab js-season" type="button" data-season-value="spring" aria-pressed="false"><span>春</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="summer" aria-pressed="false"><span>夏</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="autumn" aria-pressed="false"><span>秋</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="winter" aria-pressed="false"><span>冬</span></button>
+  </nav>
+
+  <a class="seal" href="../plans/#reserve" aria-label="ご予約へ"><span>予約</span></a>
+
+  <main id="main" class="folio">
+    <header class="fold opener">
+      <div class="opener__inner">
+        <p class="opener__no">第四章</p>
+        <div class="opener__art js-art" data-when="load" role="img" aria-label="手描きの季節の図案"></div>
+        <h1 class="opener__title press">お料理</h1>
+        <p class="opener__lede">献立は、季節の食材が決めます。</p>
+      </div>
+    </header>
+    <section class="fold" aria-labelledby="dn"><div class="fold__inner">
+      <p class="eyebrow">夕餉</p><h2 class="heading-v press" id="dn">一皿ごとに、季節。</h2>
+      <p class="prose">谷の空気がかわるたび、お皿の上も少しずつ変わっていきます。先付から水菓子まで、素材の持ち味を邪魔しないよう、手をかけすぎず、けれど手を抜かず。</p>
+      <div style="margin:1.4rem 0 1rem"><div class="season-switch" role="group" aria-label="季節を選ぶ"><button class="season-switch__button js-season" type="button" data-season-value="spring" aria-pressed="false">春</button><button class="season-switch__button js-season" type="button" data-season-value="summer" aria-pressed="false">夏</button><button class="season-switch__button js-season" type="button" data-season-value="autumn" aria-pressed="false">秋</button><button class="season-switch__button js-season" type="button" data-season-value="winter" aria-pressed="false">冬</button></div></div>
+      <div class="kondate"><div><div data-s="spring"><ul class="kondate__list" aria-label="春の献立の例"><li class="kondate__item press"><small>先付</small>筍</li><li class="kondate__item press"><small>椀</small>蛤</li><li class="kondate__item press"><small>造り</small>桜鱒</li><li class="kondate__item press"><small>焼物</small>山菜の天ぷら</li><li class="kondate__item press"><small>煮物</small>菜の花</li><li class="kondate__item press"><small>強肴</small>山菜の白和え</li><li class="kondate__item press"><small>食事</small>桜の炊き込みご飯</li><li class="kondate__item press"><small>水菓子</small>苺</li></ul></div><div data-s="summer"><ul class="kondate__list" aria-label="夏の献立の例"><li class="kondate__item press"><small>先付</small>胡麻豆腐</li><li class="kondate__item press"><small>椀</small>冬瓜</li><li class="kondate__item press"><small>造り</small>鱧</li><li class="kondate__item press"><small>焼物</small>鮎の塩焼き</li><li class="kondate__item press"><small>煮物</small>茄子</li><li class="kondate__item press"><small>強肴</small>夏野菜の冷鉢</li><li class="kondate__item press"><small>食事</small>冷やし素麺</li><li class="kondate__item press"><small>水菓子</small>水蜜桃</li></ul></div><div data-s="autumn"><ul class="kondate__list" aria-label="秋の献立の例"><li class="kondate__item press"><small>先付</small>栗</li><li class="kondate__item press"><small>椀</small>きのこ</li><li class="kondate__item press"><small>造り</small>秋刀魚</li><li class="kondate__item press"><small>焼物</small>岩魚</li><li class="kondate__item press"><small>煮物</small>里芋</li><li class="kondate__item press"><small>強肴</small>銀杏と秋野菜</li><li class="kondate__item press"><small>食事</small>きのこご飯</li><li class="kondate__item press"><small>水菓子</small>柿</li></ul></div><div data-s="winter"><ul class="kondate__list" aria-label="冬の献立の例"><li class="kondate__item press"><small>先付</small>蕪</li><li class="kondate__item press"><small>椀</small>蟹</li><li class="kondate__item press"><small>造り</small>寒鰤</li><li class="kondate__item press"><small>焼物</small>岩魚の味噌焼き</li><li class="kondate__item press"><small>煮物</small>大根</li><li class="kondate__item press"><small>強肴</small>根菜の蒸し物</li><li class="kondate__item press"><small>食事</small>雑炊</li><li class="kondate__item press"><small>水菓子</small>柚子</li></ul></div><p class="note">※献立は季節ごとの例（サンプル）です。仕入れにより、内容は変わります。</p></div><div><div data-s="spring"><figure class="print"><div class="print__frame"><img src="../assets/img/cuisine/cuisine-spring.webp" alt="桜の枝を添えた、筍と山菜の小鉢。" loading="lazy" width="960" height="640"></div><figcaption>春の一皿　筍と山菜</figcaption></figure></div><div data-s="summer"><figure class="print"><div class="print__frame"><img src="../assets/img/cuisine/cuisine-summer.webp" alt="氷を敷いたガラスの器の、胡麻豆腐と青菜。" loading="lazy" width="960" height="640"></div><figcaption>夏の一皿　胡麻豆腐の冷鉢</figcaption></figure></div><div data-s="autumn"><figure class="print"><div class="print__frame"><img src="../assets/img/cuisine/cuisine-autumn.webp" alt="黒い皿に、きのこと栗、紅葉の葉。" loading="lazy" width="960" height="640"></div><figcaption>秋の一皿　きのこと栗</figcaption></figure></div><div data-s="winter"><figure class="print"><div class="print__frame"><img src="../assets/img/cuisine/cuisine-winter.webp" alt="湯気の立つ、蕪と柚子の椀。" loading="lazy" width="960" height="640"></div><figcaption>冬の一皿　蕪の椀</figcaption></figure></div></div></div>
+    </div></section>
+    <section class="fold fold--spread" aria-labelledby="ut"><div class="fold__inner"><div class="spread">
+      <div><h2 class="heading-v press" id="ut">器と盛り付け</h2><div class="vtext press"><p>器は、料理が引き立つものを。</p><p>色の少ない器には、旬の彩りを一点だけ添えます。</p><p>料理が運ばれてくる、その一瞬も、お料理のうちだと考えています。</p></div></div>
+      <figure class="print"><div class="print__frame"><img src="../assets/img/cuisine/cuisine-utsuwa.webp" alt="白い器に、ひとつの葉を添えた一皿。" loading="lazy" width="960" height="640"></div><figcaption>図　白い器</figcaption></figure>
+    </div></div></section>
+    <section class="fold fold--spread" aria-labelledby="bf"><div class="fold__inner"><div class="spread">
+      <div><h2 class="heading-v press" id="bf">朝食</h2><div class="vtext press"><p>朝は、湯上がりの体にやさしい和のお膳を。</p><p>炊きたてのご飯、季節の小鉢、温かな汁物。</p><p>窓の外の光が変わるのを眺めながら、ゆっくりお召し上がりください。</p></div></div>
+      <figure class="print"><div class="print__frame"><img src="../assets/img/cuisine/cuisine-breakfast.webp" alt="窓辺に整えられた和朝食の膳。" loading="lazy" width="960" height="640"></div><figcaption>図　朝の膳</figcaption></figure>
+    </div></div></section>
+    <section class="fold" aria-labelledby="al"><div class="fold__inner">
+      <p class="eyebrow">お食事のご相談</p><h2 class="heading-v press" id="al">アレルギー・苦手な食材</h2>
+      <p class="prose">食物アレルギーや苦手な食材がある方は、ご予約の際にお知らせください。できる限り対応いたしますが、ご用意できない場合もありますので、事前にご相談いただけますと幸いです。</p>
+      <a class="link-more" href="../access/#faq">よくある質問</a>
+    </div></section>
+    <div class="next-leaf"><a class="btn" href="../seasons/">第五章　季節の過ごし方へ</a><a class="btn btn--primary" href="../plans/#reserve">ご予約</a></div>
+  </main>
+  <script src="../assets/js/art.js"></script>
+  <script src="../assets/js/core.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja" data-season="spring">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>第二章 温泉｜湯宿 澄川（小冊子・試作）</title>
+  <meta name="description" content="渓流のそばの露天風呂と、檜の内湯。季節ごとに変わる湯浴みの景色。">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#27331f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232f4a3f'/%3E%3Ctext x='32' y='43' font-size='34' text-anchor='middle' fill='%23f4f0e6' font-family='serif'%3E澄%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Zen+Old+Mincho:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../assets/css/booklet.css">
+  <link rel="stylesheet" href="../assets/css/chapter.css">
+  <script src="../assets/js/season-init.js"></script>
+</head>
+<body>
+  <a class="skip-link u-visually-hidden" href="#main">本文へ移動</a>
+  <svg class="u-visually-hidden" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="press" x="-2%" y="-2%" width="104%" height="104%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -7 5.0" result="holes"/>
+        <feComposite in="SourceGraphic" in2="holes" operator="in" result="speck"/>
+        <feTurbulence type="turbulence" baseFrequency="0.07" numOctaves="1" seed="2" result="wave"/>
+        <feDisplacementMap in="speck" in2="wave" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="bleed" x="-3%" y="-3%" width="106%" height="106%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="8" result="wave"/>
+        <feDisplacementMap in="SourceGraphic" in2="wave" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <filter id="seal" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="5" result="noise"/>
+        <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -6 3.9" result="holes"/>
+        <feComposite in="SourceGraphic" in2="holes" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <div class="desk" aria-hidden="true"><div class="desk__light"></div><div class="fx js-fx"></div></div>
+
+  <div class="chrome">
+    <a class="ear" href="../" aria-label="湯宿 澄川（はじめへ）">澄川<small>SUMIKAWA</small></a>
+    <button class="toc-button js-toc-button" type="button" aria-expanded="false" aria-controls="toc"><span>目次</span></button>
+  </div>
+
+  <nav class="toc js-toc" id="toc" aria-label="目次">
+    <ul class="toc__list"><li class="toc__item"><a href="../"><small>序</small>はじめに</a></li><li class="toc__item"><a href="../about/"><small>第一章</small>宿について</a></li><li class="toc__item toc__item--current"><a href="../onsen/"><small>第二章</small>温泉</a></li><li class="toc__item"><a href="../rooms/"><small>第三章</small>客室</a></li><li class="toc__item"><a href="../cuisine/"><small>第四章</small>お料理</a></li><li class="toc__item"><a href="../seasons/"><small>第五章</small>季節の過ごし方</a></li><li class="toc__item"><a href="../access/"><small>第六章</small>アクセス・ご案内</a></li><li class="toc__item"><a href="../plans/"><small>第七章</small>プラン・ご予約</a></li></ul>
+  </nav>
+
+  <nav class="bookmarks" aria-label="季節のしおり">
+    <button class="bookmarks__tab js-season" type="button" data-season-value="spring" aria-pressed="false"><span>春</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="summer" aria-pressed="false"><span>夏</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="autumn" aria-pressed="false"><span>秋</span></button>
+    <button class="bookmarks__tab js-season" type="button" data-season-value="winter" aria-pressed="false"><span>冬</span></button>
+  </nav>
+
+  <a class="seal" href="../plans/#reserve" aria-label="ご予約へ"><span>予約</span></a>
+
+  <main id="main" class="folio">
+    <header class="fold opener">
+      <div class="opener__inner">
+        <p class="opener__no">第二章</p>
+        <div class="opener__art js-art" data-when="load" role="img" aria-label="手描きの季節の図案"></div>
+        <h1 class="opener__title press">温泉</h1>
+        <p class="opener__lede">効能をうたうより、湯につかる時間と、まわりの自然を。</p>
+      </div>
+    </header>
+    <section class="fold fold--spread" aria-labelledby="ro"><div class="fold__inner"><div class="spread">
+      <div><h2 class="heading-v press" id="ro">露天風呂</h2><div class="vtext press"><p>川の音が、湯のなかまで届きます。</p><p>杉の木立の向こうに空が開け、時間とともに、湯の色も空の色も変わっていきます。</p></div></div>
+      <figure class="print"><div class="print__frame"><img src="../assets/img/onsen/onsen-ro-dusk.webp" alt="夕暮れの露天風呂。湯気の向こうに、提灯の灯り。" loading="lazy" width="960" height="640"></div><figcaption>図一　夕暮れの露天</figcaption></figure>
+    </div></div></section>
+    <section class="fold fold--spread" aria-labelledby="uchi"><div class="fold__inner"><div class="spread">
+      <div><h2 class="heading-v press" id="uchi">内湯</h2><div class="vtext press"><p>檜の湯船に、窓の緑が映ります。</p><p>灯りは低く、音はやわらかく。朝の光が入る時間は、とくに静かです。</p></div></div>
+      <figure class="print"><div class="print__frame"><img src="../assets/img/onsen/onsen-uchi.webp" alt="檜の湯船と、緑の見える大きな窓の内湯。" loading="lazy" width="960" height="640"></div><figcaption>図二　檜の内湯</figcaption></figure>
+    </div></div></section>
+    <section class="fold" aria-labelledby="sb"><div class="fold__inner">
+      <p class="eyebrow">季節の湯浴み</p>
+      <h2 class="heading-v press" id="sb">今の季節の湯</h2>
+      <div class="season-switch" role="group" aria-label="季節を選ぶ"><button class="season-switch__button js-season" type="button" data-season-value="spring" aria-pressed="false">春</button><button class="season-switch__button js-season" type="button" data-season-value="summer" aria-pressed="false">夏</button><button class="season-switch__button js-season" type="button" data-season-value="autumn" aria-pressed="false">秋</button><button class="season-switch__button js-season" type="button" data-season-value="winter" aria-pressed="false">冬</button></div>
+      <div style="max-width:420px"><div data-s="spring"><figure class="print"><div class="print__frame"><img src="../assets/img/onsen/onsen-spring.webp" alt="春の露天風呂。芽吹く山々と、やわらかな朝の空気。" loading="lazy" width="960" height="640"></div><figcaption>春の湯　芽吹く山々と、やわらかな朝の空気</figcaption></figure></div><div data-s="summer"><figure class="print"><div class="print__frame"><img src="../assets/img/onsen/onsen-summer.webp" alt="夏の露天風呂。深い緑と、渓流の涼やかな音。" loading="lazy" width="960" height="640"></div><figcaption>夏の湯　深い緑と、渓流の涼やかな音</figcaption></figure></div><div data-s="autumn"><figure class="print"><div class="print__frame"><img src="../assets/img/onsen/onsen-autumn.webp" alt="秋の露天風呂。色づく木々と、静かな夕暮れ。" loading="lazy" width="960" height="640"></div><figcaption>秋の湯　色づく木々と、静かな夕暮れ</figcaption></figure></div><div data-s="winter"><figure class="print"><div class="print__frame"><img src="../assets/img/onsen/onsen-winter.webp" alt="冬の露天風呂。雪景色と、湯けむりに包まれる時間。" loading="lazy" width="960" height="640"></div><figcaption>冬の湯　雪景色と、湯けむりに包まれる時間</figcaption></figure></div></div>
+      <p class="prose" style="margin-top:1.2rem">春は新緑、夏は川風、秋は紅葉、冬は雪見。同じ湯でも、季節ごとに見える景色が変わります。</p>
+    </div></section>
+    <section class="fold" aria-labelledby="usage"><div class="fold__inner">
+      <p class="eyebrow">ご利用案内</p>
+      <h2 class="heading-v press" id="usage">湯のご案内</h2>
+      <dl class="spec">
+        <dt>お風呂</dt><dd>内湯・露天風呂とも、男女別</dd>
+        <dt>入浴時間</dt><dd>15:00〜24:00／翌朝 5:30〜9:00</dd>
+        <dt>貸切風呂</dt><dd>1か所・予約制・50分</dd>
+        <dt>備品</dt><dd>タオル・アメニティは、客室と大浴場にご用意しています</dd>
+      </dl>
+      <p class="note">※入浴時間・貸切風呂などは、見本としての仮の設定です。</p>
+      <!-- 泉質・源泉・加水・加温などは、設定が決まってから、ここに追加する -->
+    </div></section>
+    <div class="next-leaf"><a class="btn" href="../rooms/">第三章　客室へ</a><a class="btn btn--primary" href="../plans/#reserve">ご予約</a></div>
+  </main>
+  <script src="../assets/js/art.js"></script>
+  <script src="../assets/js/core.js" defer></script>
+</body>
+</html>
