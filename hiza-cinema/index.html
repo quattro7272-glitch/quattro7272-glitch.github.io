@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>灯座 | 港町の小さな映画館（架空）</title>
+<meta name="description" content="坂の上の古い劇場を改装した、58席のミニシアター「灯座」。上映は日没のあと。架空のサイトです。">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0a09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Shippori+Mincho+B1:wght@400;700&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+<header class="gnav">
+  <p class="gnav__here" aria-live="polite"><span class="gnav__num">00</span><span class="gnav__label">表紙</span></p>
+  <button class="gnav__toggle" type="button" aria-expanded="false" aria-controls="toc">目次</button>
+  <nav id="toc" class="toc" aria-label="ページ内の目次" hidden>
+    <ol>
+      <li><a href="#top"><span>00</span>表紙</a></li>
+      <li><a href="#film"><span>01</span>今月の一本</a></li>
+      <li><a href="#seats"><span>02</span>座席</a></li>
+      <li><a href="#schedule"><span>03</span>上映時刻</a></li>
+      <li><a href="#about"><span>04</span>灯座について</a></li>
+    </ol>
+  </nav>
+</header>
+
+<a class="totop" href="#top" aria-label="先頭へ戻る">↑</a>
+
+<section id="top" class="cover" data-label="表紙">
+  <img class="cover__photo" src="assets/images/hero/exterior-dusk.webp" alt="夕暮れの坂道に建つ、小さな古い劇場の外観。扉の横の掲示窓が白く灯り、遠くに港の灯りが見える" width="1216" height="832">
+  <div class="cover__beam" aria-hidden="true"></div>
+  <div class="cover__inner">
+    <p class="cover__en" lang="en">HIZA<br>CINEMA</p>
+    <h1 class="cover__title">灯座</h1>
+    <p class="cover__lines">
+      <span class="cover__line" style="--d:2.4s">坂の上の古い劇場に、</span>
+      <span class="cover__line" style="--d:3.8s">五十八の席と、</span>
+      <span class="cover__line" style="--d:5.2s">一枚のスクリーン。</span>
+    </p>
+    <p class="cover__scroll" aria-hidden="true">SCROLL</p>
+  </div>
+  <div class="curtain" aria-hidden="true"><span class="curtain__l"></span><span class="curtain__r"></span></div>
+</section>
+
+<main class="stage">
+
+<section id="film" class="film" data-label="今月の一本" aria-labelledby="film-title">
+  <div class="film__poster">
+    <p class="label"><span>01</span> 今月の一本</p>
+    <h2 id="film-title" class="film__title">潮の鳴る夜</h2>
+    <p class="film__en" lang="en">The Night the Tide Sounds</p>
+    <p class="film__meta">110分 ／ モノクロ ／ 架空の作品</p>
+    <figure class="film__still">
+      <img src="assets/images/film/tide-night.webp" alt="霧の夜、街灯が一本だけ灯る港。岸壁に小さな漁船が係留され、波が石を洗っている" width="832" height="1216" loading="lazy">
+    </figure>
+  </div>
+  <div class="film__text">
+    <p class="reveal">港の灯りが消えるころ、<br>潮だけが話しはじめる。</p>
+    <p class="reveal">三十年閉じていた漁協の事務所で、<br>ひとりの女が古い録音テープを見つける。</p>
+    <p class="reveal">再生すると、波の音のあいだに<br>知らない人の声が混じっていた。</p>
+    <p class="film__time reveal">本日の上映　<strong data-sunset-show>日没の30分後</strong></p>
+  </div>
+</section>
+
+<section id="seats" class="seats" data-label="座席" aria-labelledby="seats-title">
+  <p class="label"><span>02</span> 座席</p>
+  <div class="seats__head">
+    <h2 id="seats-title" class="seats__title">五十八席。<br>どこに座るか決めておく。</h2>
+    <figure class="seats__fabric">
+      <img src="assets/images/common/seat-velvet.webp" alt="古い赤いビロードの座席の背。真鍮の番号札が付いている" width="832" height="1216" loading="lazy">
+    </figure>
+  </div>
+  <div class="seats__body">
+    <figure class="seatmap">
+      <svg id="seatmap" viewBox="0 0 600 340" role="group" aria-label="座席表。席を選ぶとその席からの見え方を表示します"></svg>
+      <figcaption>画面側が上。灯っている席が選べます。</figcaption>
+    </figure>
+    <div class="view" aria-live="polite">
+      <p class="view__seat" id="view-seat">席を選んでください</p>
+      <svg class="view__frame" viewBox="0 0 320 180" aria-hidden="true">
+        <rect width="320" height="180" class="view__room"/>
+        <polygon id="view-screen" class="view__screen" points="40,30 280,30 280,150 40,150"/>
+      </svg>
+      <p class="view__note" id="view-note">画面との距離と角度が、ここに映ります。</p>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="schedule" data-label="上映時刻" aria-labelledby="schedule-title">
+  <p class="label"><span>03</span> 上映時刻</p>
+  <h2 id="schedule-title" class="schedule__title">最後の回は、日没のあと。</h2>
+  <p class="schedule__lead">夜の回は、その日の日没から30分後に始まります。日が短くなると、開始も早くなります。</p>
+  <table class="timetable">
+    <caption class="visually-hidden">今週の上映時刻</caption>
+    <thead><tr><th scope="col">日</th><th scope="col">昼</th><th scope="col">午後</th><th scope="col">日没の回</th></tr></thead>
+    <tbody id="timetable-body">
+      <tr><th scope="row">毎日</th><td>11:00</td><td>14:00</td><td>日没の30分後</td></tr>
+    </tbody>
+  </table>
+  <p class="schedule__note">昼は短編特集「港の短い夜」、午後と夜は「潮の鳴る夜」です。</p>
+</section>
+
+<section id="about" class="about" data-label="灯座について" aria-labelledby="about-title">
+  <p class="label"><span>04</span> 灯座について</p>
+  <h2 id="about-title" class="visually-hidden">灯座について</h2>
+  <p class="about__quote">暗くなるまで、<br>待ってもらいます。</p>
+  <figure class="about__photo">
+    <img src="assets/images/about/projector.webp" alt="暗い映写室の古い映写機。リールに光が当たり、レンズから光の筋が伸びている" width="1216" height="832" loading="lazy">
+  </figure>
+  <div class="about__text">
+    <p>灯座は、港を見下ろす坂の上にあった芝居小屋を、十年前に映画館へ作り替えたものです。席は五十八。座席は古い劇場のものを張り替えて使っています。</p>
+    <p>上映の前には照明を落として、五分だけ何も映しません。その五分で、外の音が小さくなります。</p>
+  </div>
+  <address class="about__address">
+    架空の港町・坂の上<br>
+    開館 10:30 ／ 休館 毎週水曜
+  </address>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>灯座は架空の映画館です。このサイトは見せるためのもので、実在の施設・作品とは関係ありません。写真は画像生成AIで作ったものです。</p>
+  <p lang="en">© HIZA CINEMA (fictional)</p>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
