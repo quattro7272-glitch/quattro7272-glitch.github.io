@@ -128,10 +128,17 @@
 .subheading { margin-top: 2.2rem; font-size: 1.05rem; font-weight: 400; letter-spacing: 0.12em; }
 
 /* 家のつくり：断面図と材の一覧 */
-.parts { margin-top: 2rem; display: grid; gap: 2rem; }
-.parts__figure { max-width: 22rem; }
+.parts { margin-top: 2rem; display: grid; gap: 1.2rem; }
+/* スマホ：一覧をスクロールしても図が見えるよう、小さくして画面の上に貼り付ける */
+.parts__figure {
+  position: sticky; top: var(--header-h); z-index: 6;
+  margin: 0; padding: 0.4rem 0; background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.parts__figure .drawing { width: auto; height: 15rem; margin: 0 auto; }
+.parts__figure .figure__caption { margin: 0.2rem 0 0; text-align: center; font-size: 0.8rem; color: var(--ink); }
+.part-item { scroll-margin-top: calc(var(--header-h) + 17.6rem); }
 .drawing .part { transition: opacity 0.3s; }
-.drawing.has-active .part:not(.is-active) { opacity: 0.3; }
+.drawing.has-active .part:not(.is-active) { opacity: 0.22; }
 .drawing .part.is-active .line { stroke: var(--accent); stroke-width: 2.2; }
 .parts__list { border-top: 1px solid var(--rule); }
 .part-item { border-bottom: 1px solid var(--rule); }
@@ -148,7 +155,10 @@
 .part-item__body dd { margin: 0; }
 @media (min-width: 900px) {
   .parts { grid-template-columns: 22rem 1fr; gap: 3.5rem; align-items: start; }
-  .parts__figure { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+  .parts__figure { top: calc(var(--header-h) + 1.5rem); max-width: 22rem; padding: 0; background: none; border-bottom: 0; }
+  .parts__figure .drawing { width: 100%; height: auto; }
+  .parts__figure .figure__caption { margin-top: 0.7rem; text-align: left; font-size: 0.78rem; color: var(--ink-soft); }
+  .part-item { scroll-margin-top: calc(var(--header-h) + 1rem); }
 }
 
 /* 約束・お断りなどの番号つきの文 */
