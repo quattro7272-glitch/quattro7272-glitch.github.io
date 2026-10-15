@@ -1,0 +1,290 @@
+/* 作品集 — 5つの作品を「場面」として順に見せる1ページ */
+
+:root {
+  --paper: #f6f4ee;
+  --ink: #23211e;
+  --muted: #6a655c;
+  --line: #d9d5ca;
+  --bar-height: 52px;
+  --font-ja: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-title: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-num: "Cormorant Garamond", "Times New Roman", serif;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--bar-height); }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ja);
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: anywhere;
+}
+
+h1, h2, p, ol, figure { margin: 0; }
+ol { padding: 0; list-style: none; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* ---------- 上の帯（現在地と目次をいつも出す） ---------- */
+
+.bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  height: var(--bar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--gutter);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.bar__title {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.bar__index ol { display: flex; gap: 2px; }
+
+.bar__index a {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  font-family: var(--font-num);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.bar__index a:hover { color: var(--ink); }
+
+.bar__index a[aria-current="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- はじめに ---------- */
+
+.intro {
+  padding: calc(var(--bar-height) + clamp(72px, 14vw, 168px)) var(--gutter) clamp(72px, 12vw, 144px);
+}
+
+.intro__inner { max-width: 1240px; margin-inline: auto; }
+
+.intro__title {
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  letter-spacing: 0.4em;
+  color: var(--muted);
+}
+
+.intro__lead {
+  margin-top: clamp(24px, 4vw, 48px);
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 6.4vw, 4.6rem);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+.intro__note {
+  margin-top: clamp(28px, 4vw, 48px);
+  max-width: 30em;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.intro__list {
+  margin-top: clamp(48px, 8vw, 96px);
+  max-width: 640px;
+  border-top: 1px solid var(--line);
+}
+
+.intro__list a {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.intro__list a:hover .intro__name { text-decoration: underline; text-underline-offset: 6px; }
+
+.intro__no { font-family: var(--font-num); font-size: 1.2rem; color: var(--muted); }
+.intro__name { font-family: var(--font-title); font-size: 1.1rem; }
+.intro__kind { font-size: 0.8rem; color: var(--muted); }
+
+/* ---------- 作品（1つが1つの場面） ---------- */
+
+.work {
+  --bg: var(--paper);
+  --work-ink: var(--ink);
+  --work-muted: var(--muted);
+  --work-line: var(--line);
+  background: var(--bg);
+  color: var(--work-ink);
+  padding: clamp(72px, 12vw, 160px) var(--gutter);
+}
+
+.work--kinu     { --bg: #1b1a19; --work-ink: #efe9de; --work-muted: #a9a195; --work-line: #3b3936; }
+.work--seoto    { --bg: #e8e3d6; --work-ink: #25231f; --work-muted: #655f54; --work-line: #cdc6b5; }
+.work--asagiri  { --bg: #f3f0e8; --work-ink: #1f2a3d; --work-muted: #5d6676; --work-line: #d7d5ce; }
+.work--sumikawa { --bg: #3d281d; --work-ink: #f0e5d3; --work-muted: #bcab97; --work-line: #5b4434; }
+.work--grill    { --bg: #efe6d8; --work-ink: #2a2420; --work-muted: #6a6056; --work-line: #d8ccba; }
+
+.work__inner {
+  max-width: 1240px;
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(28px, 5vw, 56px);
+}
+
+.work__no {
+  font-family: var(--font-num);
+  font-weight: 300;
+  font-size: clamp(3.6rem, 10vw, 7rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--work-muted);
+}
+
+.work__name {
+  margin-top: 12px;
+  font-family: var(--font-title);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+}
+
+.work__kind {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--work-muted);
+}
+
+.work__lead {
+  margin-top: clamp(20px, 3vw, 32px);
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.work__point {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--work-muted);
+}
+
+.work__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: 20px;
+  padding-block: 8px;
+  border-bottom: 1px solid var(--work-line);
+  text-decoration: none;
+}
+
+.work__link:hover { border-bottom-color: var(--work-ink); }
+.work__arrow { transition: transform 0.2s ease; }
+.work__link:hover .work__arrow { transform: translateX(4px); }
+
+.work__pc img,
+.work__sp img {
+  width: 100%;
+  border: 1px solid var(--work-line);
+}
+
+/* スマホ：文章 → パソコン画面 → スマホ画面 の順 */
+.work__sp { width: min(46%, 220px); }
+
+/* ---------- 広い画面：文章・パソコン画面・スマホ画面を横に並べる ---------- */
+
+@media (min-width: 1024px) {
+  .work__inner {
+    grid-template-columns: minmax(230px, 3fr) 7fr 2fr;
+    align-items: end;
+    column-gap: clamp(28px, 4vw, 56px);
+  }
+
+  .work__text { align-self: center; }
+  .work__sp { width: 100%; }
+
+  .work--seoto .work__inner,
+  .work--sumikawa .work__inner {
+    grid-template-columns: 2fr 7fr minmax(230px, 3fr);
+  }
+  .work--seoto .work__text,
+  .work--sumikawa .work__text { grid-column: 3; grid-row: 1; }
+  .work--seoto .work__pc,
+  .work--sumikawa .work__pc   { grid-column: 2; grid-row: 1; }
+  .work--seoto .work__sp,
+  .work--sumikawa .work__sp   { grid-column: 1; grid-row: 1; }
+}
+
+/* ---------- 終わり ---------- */
+
+.foot {
+  padding: clamp(48px, 8vw, 96px) var(--gutter);
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  max-width: calc(1240px + var(--gutter) * 2);
+  margin-inline: auto;
+}
+
+.foot__note { font-size: 0.85rem; color: var(--muted); }
+
+.foot__top {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+/* ---------- 場面が現れる動き（JSが動くときだけ。動きを減らす設定では止める） ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .work__arrow { transition: none; }
+}
+
+@media (max-width: 380px) {
+  .bar__index a { min-width: 40px; }
+}
+
+.nw { white-space: nowrap; }
