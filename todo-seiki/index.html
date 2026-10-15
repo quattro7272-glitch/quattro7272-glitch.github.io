@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>藤堂精機 | 1個から削り出す町工場（架空）</title>
+<meta name="description" content="試作部品の削り出しを、1個から。0.01ミリの世界を数字で見せる、愛知県の町工場「藤堂精機」。架空のサイトです。">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">本文へ</a>
+
+<header class="gnav">
+  <div class="gnav__bar">
+    <a class="gnav__logo" href="#top" aria-label="藤堂精機 トップへ"><span class="gnav__mark" aria-hidden="true">T</span>藤堂精機</a>
+    <p class="gnav__here" aria-live="polite"><span class="gnav__num">00</span><span class="gnav__label">表紙</span></p>
+    <a class="gnav__cta" href="#contact">問い合わせ</a>
+  </div>
+  <nav class="gnav__toc" aria-label="ページ内の目次">
+    <ol>
+      <li><a href="#top"><span>00</span>表紙</a></li>
+      <li><a href="#can"><span>01</span>できること</a></li>
+      <li><a href="#estimate"><span>02</span>見積もりの目安</a></li>
+      <li><a href="#parts"><span>03</span>部品標本</a></li>
+      <li><a href="#numbers"><span>04</span>工場の数字</a></li>
+      <li><a href="#flow"><span>05</span>図面から納品まで</a></li>
+      <li><a href="#contact"><span>06</span>問い合わせ</a></li>
+    </ol>
+  </nav>
+</header>
+
+<main id="main">
+
+<section id="top" class="cover" data-label="表紙" data-num="00">
+  <div class="cover__text">
+    <p class="cover__eyebrow">試作部品の削り出し ／ 1個から</p>
+    <h1 class="cover__title"><span class="cover__num" aria-hidden="true">0.01</span><span class="cover__name">藤堂精機</span></h1>
+    <p class="cover__lead">0.01ミリの、その先まで。</p>
+    <p class="cover__sub">図面1枚から、アルミ・ステンレス・真鍮の部品を1個だけでも削り出します。</p>
+    <div class="cover__actions">
+      <a class="btn btn--primary" href="#estimate">日数の目安を出す</a>
+      <a class="btn" href="#parts">部品を見る</a>
+    </div>
+  </div>
+  <figure class="cover__figure">
+    <picture>
+      <source media="(max-width: 720px)" srcset="assets/images/hero/hero-sp.webp" width="832" height="1216">
+      <img src="assets/images/hero/hero-pc.webp" width="1216" height="832" alt="紺色の図面の上に置かれた、削り出しのアルミのフランジ部品。図面の円と穴の位置が実物と合っている。">
+    </picture>
+    <span class="cover__dim cover__dim--h" aria-hidden="true"></span>
+    <span class="cover__dim cover__dim--v" aria-hidden="true"></span>
+  </figure>
+</section>
+
+<section id="can" class="sec" data-label="できること" data-num="01">
+  <div class="sec__head">
+    <p class="sec__num">01</p>
+    <h2 class="sec__title">できること</h2>
+  </div>
+  <p class="sec__lead">素材と加工の組み合わせです。○は得意、△は相談、—はお受けしていません。</p>
+  <div class="matrix-wrap">
+    <table class="matrix">
+      <caption class="u-sr">素材ごとの加工の可否</caption>
+      <thead>
+        <tr><th scope="col">素材</th><th scope="col">旋削</th><th scope="col">フライス</th><th scope="col">穴あけ・ねじ</th><th scope="col">仕上げ</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">アルミ</th><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+        <tr><th scope="row">真鍮</th><td>○</td><td>○</td><td>○</td><td>△</td></tr>
+        <tr><th scope="row">ステンレス</th><td>○</td><td>△</td><td>○</td><td>○</td></tr>
+        <tr><th scope="row">チタン</th><td>△</td><td>△</td><td>△</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">架空の会社の設定です。実在の工場ではありません。</p>
+  <a class="next" href="#estimate"><span class="next__label">次へ<b>02</b></span><span class="next__title">見積もりの目安</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+</section>
+
+<section id="estimate" class="sec sec--tool" data-label="見積もりの目安" data-num="02">
+  <div class="sec__head">
+    <p class="sec__num">02</p>
+    <h2 class="sec__title">見積もりの目安</h2>
+  </div>
+  <p class="sec__lead">素材・大きさ・個数を選ぶと、加工の流れと日数の目安が出ます。金額は出しません。</p>
+
+  <div class="tool">
+    <form class="tool__form" id="estimate-form" novalidate>
+      <fieldset class="field">
+        <legend class="field__label">素材</legend>
+        <div class="choice">
+          <label class="choice__item"><input type="radio" name="material" value="aluminum" checked><span>アルミ</span></label>
+          <label class="choice__item"><input type="radio" name="material" value="brass"><span>真鍮</span></label>
+          <label class="choice__item"><input type="radio" name="material" value="stainless"><span>ステンレス</span></label>
+          <label class="choice__item"><input type="radio" name="material" value="titanium"><span>チタン</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend class="field__label">大きさ（ミリ）</legend>
+        <div class="size">
+          <label class="size__item">縦<input type="number" name="w" value="40" min="1" max="300" inputmode="numeric"></label>
+          <label class="size__item">横<input type="number" name="d" value="20" min="1" max="300" inputmode="numeric"></label>
+          <label class="size__item">厚み<input type="number" name="h" value="12" min="1" max="300" inputmode="numeric"></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend class="field__label">加工</legend>
+        <div class="choice choice--check">
+          <label class="choice__item"><input type="checkbox" name="proc" value="lathe"><span>旋削</span></label>
+          <label class="choice__item"><input type="checkbox" name="proc" value="mill" checked><span>フライス</span></label>
+          <label class="choice__item"><input type="checkbox" name="proc" value="drill" checked><span>穴あけ・ねじ</span></label>
+          <label class="choice__item"><input type="checkbox" name="proc" value="finish"><span>仕上げ</span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label class="field__label" for="qty">個数</label>
+        <div class="qty">
+          <input id="qty" type="number" name="qty" value="1" min="1" max="1000" inputmode="numeric">
+          <span>個（1個からお受けします）</span>
+        </div>
+      </div>
+    </form>
+
+    <div class="tool__result" aria-live="polite">
+      <p class="tool__days"><span class="tool__days-num" id="result-days">—</span><span class="tool__days-unit">営業日ほど</span></p>
+      <ol class="tool__steps" id="result-steps"></ol>
+      <p class="tool__note">目安・仮の数字です。実際の日数は図面を見て決めます。</p>
+      <a class="btn btn--primary" href="#contact" id="result-send">この条件で問い合わせる</a>
+    </div>
+  </div>
+  <a class="next" href="#parts"><span class="next__label">次へ<b>03</b></span><span class="next__title">部品標本</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+</section>
+
+<section id="parts" class="sec" data-label="部品標本" data-num="03">
+  <div class="sec__head">
+    <p class="sec__num">03</p>
+    <h2 class="sec__title">部品標本</h2>
+  </div>
+  <p class="sec__lead">1個から削り出した部品の例です。寸法は例です。</p>
+
+  <ul class="specimens">
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-bracket.webp" width="832" height="1024" loading="lazy" alt="削り出しのアルミのブラケット。穴と面取りと、窪みが付いている。"><figcaption><span class="specimen__no">P-01</span>ブラケット／アルミ／40×20×12</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-fittings.webp" width="832" height="1024" loading="lazy" alt="六角の真鍮の継手と、ねじを切ったプラグが石の板に並んでいる。"><figcaption><span class="specimen__no">P-02</span>継手・プラグ／真鍮</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-steel.webp" width="832" height="1024" loading="lazy" alt="ステンレスのボルト、フランジ付きブッシュ、ねじ付きスペーサーが並んでいる。"><figcaption><span class="specimen__no">P-03</span>ブッシュ・スペーサー／ステンレス</figcaption></figure>
+    </li>
+    <li class="specimen specimen--video">
+      <figure>
+        <video class="js-loop" muted loop playsinline preload="none" poster="assets/images/parts/part-brass.webp" width="640" height="800" aria-hidden="true" tabindex="-1">
+          <source src="assets/video/parts-slide.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="specimen__no">P-04</span>歯車・つまみ・カラー／真鍮ほか（動画）</figcaption>
+      </figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-aluminum.webp" width="832" height="1024" loading="lazy" alt="大きさの違うアルミのローレットつまみが3つ並んでいる。"><figcaption><span class="specimen__no">P-05</span>つまみ／アルミ</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-copper.webp" width="832" height="1024" loading="lazy" alt="フィン付きの銅のブロック、銅のワッシャー、銅の継手が並んでいる。"><figcaption><span class="specimen__no">P-06</span>放熱ブロック・継手／銅</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-gears.webp" width="832" height="1024" loading="lazy" alt="鋼の平歯車、小さな歯車、軸が石の板の上に並んでいる。"><figcaption><span class="specimen__no">P-07</span>歯車・軸／鋼</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-jig.webp" width="832" height="1024" loading="lazy" alt="穴とスロットが開いたアルミの治具の板と、2つのクランプブロック。"><figcaption><span class="specimen__no">P-08</span>治具の板／アルミ</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-handwheel.webp" width="832" height="1024" loading="lazy" alt="真鍮のハンドホイールとステンレスのレバーと真鍮のナット。"><figcaption><span class="specimen__no">P-09</span>ハンドホイール・レバー／真鍮ほか</figcaption></figure>
+    </li>
+    <li class="specimen">
+      <figure><img src="assets/images/parts/part-titanium.webp" width="832" height="1024" loading="lazy" alt="チタンのボルトとスリーブと、キー溝の付いた小さな軸。"><figcaption><span class="specimen__no">P-10</span>スリーブ・軸／チタン</figcaption></figure>
+    </li>
+  </ul>
+  <a class="next" href="#numbers"><span class="next__label">次へ<b>04</b></span><span class="next__title">工場の数字</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+</section>
+
+<section id="numbers" class="sec sec--navy" data-label="工場の数字" data-num="04">
+  <div class="sec__head">
+    <p class="sec__num">04</p>
+    <h2 class="sec__title">工場の数字</h2>
+  </div>
+  <dl class="numbers">
+    <div class="numbers__item"><dt>創業</dt><dd><span class="js-count" data-to="1968">1968</span><small>年</small></dd></div>
+    <div class="numbers__item"><dt>人数</dt><dd><span class="js-count" data-to="12">12</span><small>名</small></dd></div>
+    <div class="numbers__item"><dt>加工機</dt><dd><span class="js-count" data-to="9">9</span><small>台</small></dd></div>
+    <div class="numbers__item"><dt>最小の個数</dt><dd><span class="js-count" data-to="1">1</span><small>個</small></dd></div>
+    <div class="numbers__item"><dt>仕上がりの目標</dt><dd>±0.01<small>ミリ</small></dd></div>
+  </dl>
+  <p class="note">架空の会社の設定です。数字はすべて例です。</p>
+  <figure class="numbers__photo">
+    <img src="assets/images/parts/cut-chips.webp" width="1216" height="832" loading="lazy" alt="超硬の刃がアルミのブロックを削り、巻いた銀色の切粉が出ている。">
+    <figcaption>刃が当たる場所には、巻いた銀色の切粉が出ます。</figcaption>
+  </figure>
+  <a class="next" href="#flow"><span class="next__label">次へ<b>05</b></span><span class="next__title">図面から納品まで</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+</section>
+
+<section id="flow" class="sec" data-label="図面から納品まで" data-num="05">
+  <div class="sec__head">
+    <p class="sec__num">05</p>
+    <h2 class="sec__title">図面から納品まで</h2>
+  </div>
+  <ol class="flow">
+    <li class="flow__item"><span class="flow__no">01</span><h3 class="flow__title">図面</h3><p>図面か、スケッチと寸法をお送りください。</p></li>
+    <li class="flow__item"><span class="flow__no">02</span><h3 class="flow__title">段取り</h3><p>削る順番と、固定のしかたを決めます。</p></li>
+    <li class="flow__item"><span class="flow__no">03</span><h3 class="flow__title">加工</h3><p>旋盤とマシニングで削り出します。</p></li>
+    <li class="flow__item"><span class="flow__no">04</span><h3 class="flow__title">検査</h3><p>ノギスと測定機で、寸法を確かめます。</p></li>
+    <li class="flow__item"><span class="flow__no">05</span><h3 class="flow__title">出荷</h3><p>傷が付かないよう、1個ずつ包んで送ります。</p></li>
+  </ol>
+  <a class="next" href="#contact"><span class="next__label">次へ<b>06</b></span><span class="next__title">問い合わせ</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+</section>
+
+<section id="contact" class="sec sec--contact" data-label="問い合わせ" data-num="06">
+  <div class="sec__head">
+    <p class="sec__num">06</p>
+    <h2 class="sec__title">問い合わせ</h2>
+  </div>
+  <p class="sec__lead">図面がまだなくても大丈夫です。作りたい物を教えてください。</p>
+  <form class="contact" id="contact-form" novalidate>
+    <div class="field">
+      <label class="field__label" for="c-name">お名前</label>
+      <input id="c-name" name="name" type="text" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label class="field__label" for="c-mail">メールアドレス</label>
+      <input id="c-mail" name="mail" type="email" autocomplete="email" inputmode="email" required>
+    </div>
+    <div class="field">
+      <label class="field__label" for="c-body">作りたい物</label>
+      <textarea id="c-body" name="body" rows="6" required></textarea>
+    </div>
+    <button class="btn btn--primary" type="submit">送信する</button>
+    <p class="contact__status" id="contact-status" role="status" hidden></p>
+  </form>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer__name">藤堂精機</p>
+  <p class="footer__note">このサイトは架空の会社「藤堂精機」を題材にした制作サンプルです。会社・数字・部品の寸法はすべて例で、実在しません。画像は画像生成AIで作成しました。</p>
+  <p class="footer__copy"><small>© 藤堂精機（架空）</small></p>
+</footer>
+
+<a class="totop" href="#top" aria-label="ページの先頭へ戻る">↑</a>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
