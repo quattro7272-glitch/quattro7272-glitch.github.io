@@ -153,6 +153,7 @@ a:focus-visible {
 .work--asagiri  { --bg: #f3f0e8; --work-ink: #1f2a3d; --work-muted: #5d6676; --work-line: #d7d5ce; }
 .work--sumikawa { --bg: #3d281d; --work-ink: #f0e5d3; --work-muted: #bcab97; --work-line: #5b4434; }
 .work--grill    { --bg: #efe6d8; --work-ink: #2a2420; --work-muted: #6a6056; --work-line: #d8ccba; }
+.work--waza     { --bg: #f4f2ea; --work-ink: #2f2c27; --work-muted: #66604f; --work-line: #d9d4c4; }
 
 .work__inner {
   max-width: 1240px;
@@ -235,15 +236,19 @@ a:focus-visible {
   .work__sp { width: 100%; }
 
   .work--seoto .work__inner,
-  .work--sumikawa .work__inner {
+  .work--sumikawa .work__inner,
+  .work--waza .work__inner {
     grid-template-columns: 2fr 7fr minmax(230px, 3fr);
   }
   .work--seoto .work__text,
-  .work--sumikawa .work__text { grid-column: 3; grid-row: 1; }
+  .work--sumikawa .work__text,
+  .work--waza .work__text { grid-column: 3; grid-row: 1; }
   .work--seoto .work__pc,
-  .work--sumikawa .work__pc   { grid-column: 2; grid-row: 1; }
+  .work--sumikawa .work__pc,
+  .work--waza .work__pc   { grid-column: 2; grid-row: 1; }
   .work--seoto .work__sp,
-  .work--sumikawa .work__sp   { grid-column: 1; grid-row: 1; }
+  .work--sumikawa .work__sp,
+  .work--waza .work__sp   { grid-column: 1; grid-row: 1; }
 }
 
 /* ---------- 終わり ---------- */
