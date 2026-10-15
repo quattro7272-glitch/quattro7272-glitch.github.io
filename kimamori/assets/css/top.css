@@ -1,0 +1,207 @@
+/* 木守工務店：トップ。築年数ごとの章と、木の色見本 */
+
+.section {
+  padding: 4.5rem var(--gutter);
+  border-top: 1px solid var(--rule);
+}
+.section__inner { max-width: var(--measure); }
+.section--wide .section__inner { max-width: 62rem; }
+
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.25em; color: var(--ink-soft); }
+
+.heading {
+  margin-top: 0.4rem;
+  font-size: clamp(1.45rem, 4.2vw, 2rem);
+  font-weight: 400; line-height: 1.55; letter-spacing: 0.1em;
+}
+.heading__year { display: block; font-size: 0.8rem; letter-spacing: 0.25em; color: var(--accent-ink); }
+.heading__sub { display: block; margin-top: 0.4rem; font-size: 0.95rem; color: var(--ink-soft); letter-spacing: 0.08em; }
+
+.prose { margin-top: 1.6rem; }
+.prose p + p { margin-top: 1.1em; }
+
+/* ---- 表紙 ---- */
+.cover { padding: 3.5rem var(--gutter) 4.5rem; border-top: 0; }
+.cover__grid { display: grid; gap: 2.5rem; max-width: 62rem; }
+.cover__title {
+  margin-top: 0.8rem;
+  font-size: clamp(1.9rem, 6.4vw, 3.3rem);
+  font-weight: 400; line-height: 1.6; letter-spacing: 0.08em;
+}
+.nw { display: inline-block; } /* 句のまとまりで折り返す（語の途中で切らない） */
+.cover__lead { margin-top: 1.6rem; max-width: 30rem; color: var(--ink-soft); }
+.cover__figure { max-width: 20rem; }
+
+@media (min-width: 900px) {
+  .cover { padding-top: 5rem; }
+  .cover__grid { grid-template-columns: 1.15fr 0.85fr; align-items: end; gap: 4rem; }
+}
+
+/* 図（SVG） */
+.figure__caption { margin-top: 0.7rem; font-size: 0.78rem; letter-spacing: 0.15em; color: var(--ink-soft); }
+.drawing { width: 100%; }
+.drawing text { font-family: var(--serif); font-size: 11px; fill: var(--ink); letter-spacing: 0.04em; }
+.drawing .line { stroke: var(--ink); stroke-width: 1.1; fill: none; stroke-linejoin: round; }
+.drawing .leader { stroke: var(--ink-soft); stroke-width: 0.6; fill: none; }
+.drawing .fill-wood { fill: #e0cba0; }
+.drawing .fill-wood-deep { fill: #c7ab78; }
+.drawing .fill-concrete { fill: #d9d3c5; }
+.drawing .fill-warm { fill: #efe3c4; }
+
+.ring-figure { max-width: 14rem; margin-top: 2rem; }
+
+/* ---- 築年数の章：木の色見本 ---- */
+.era {
+  --floor: #e4d2ab; --post: #d9c294; --beam: #c8ab76;
+}
+.era--y10 { --floor: #c99552; --post: #b98443; --beam: #9d6a35; }
+.era--y30 { --floor: #6f4c2d; --post: #5b3f27; --beam: #3f2a19; }
+
+.swatches { margin-top: 2rem; display: grid; gap: 0.7rem; max-width: 26rem; }
+.swatch { display: grid; grid-template-columns: 3.2rem 1fr; align-items: center; gap: 0.8rem; font-size: 0.82rem; letter-spacing: 0.15em; color: var(--ink-soft); }
+.swatch__band {
+  display: block; height: 2.6rem;
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.06) 0 1px, transparent 1px 9px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.08)),
+    var(--swatch-color);
+  border: 1px solid rgba(47, 42, 36, 0.25);
+}
+.swatch--floor { --swatch-color: var(--floor); }
+.swatch--post { --swatch-color: var(--post); }
+.swatch--beam { --swatch-color: var(--beam); }
+
+.voice { margin-top: 2rem; padding-left: 1.1rem; border-left: 2px solid var(--accent); }
+.voice__who { display: block; margin-top: 0.4rem; font-size: 0.8rem; color: var(--ink-soft); letter-spacing: 0.1em; }
+
+/* ---- 必ず読める注記（あつやの条件：経年変化はイメージ） ---- */
+.notice {
+  margin-top: 1.4rem; max-width: 30rem; padding: 0.8rem 1rem;
+  font-size: 0.95rem; line-height: 1.8; letter-spacing: 0.04em;
+  background: var(--paper-deep); border-left: 3px solid var(--accent);
+}
+.notice--inline { font-size: 0.88rem; padding: 0.55rem 0.8rem; }
+
+/* ---- 年数をかさねる ---- */
+.compare { margin-top: 2rem; max-width: 30rem; }
+.compare__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.compare__label { font-size: 0.9rem; letter-spacing: 0.15em; }
+.compare__output { font-size: 1.5rem; letter-spacing: 0.1em; }
+.compare__range { width: 100%; height: 44px; margin: 0.6rem 0 0; accent-color: var(--ink); cursor: pointer; }
+.compare__scale { display: flex; justify-content: space-between; font-size: 0.75rem; letter-spacing: 0; color: var(--ink-soft); }
+.compare .swatches { max-width: none; }
+
+/* ---- 点検の年表 ---- */
+.repair { list-style: none; margin: 2rem 0 0; padding: 0; max-width: 40rem; border-top: 1px solid var(--rule); }
+.repair__item {
+  display: grid; gap: 0.2rem 1.2rem; padding: 1rem 0; border-bottom: 1px solid var(--rule);
+  grid-template-columns: 4rem 1fr;
+}
+.repair__year { grid-row: span 2; font-size: 1.15rem; letter-spacing: 0.08em; color: var(--accent-ink); }
+.repair__what { }
+.repair__cost { font-size: 0.85rem; color: var(--ink-soft); }
+
+/* ---- 入口 ---- */
+.entries { margin-top: 2rem; display: grid; gap: 1.5rem; max-width: 62rem; }
+.entry { padding: 1.4rem 1.2rem; border: 1px solid var(--ink); }
+.entry__title { font-size: 1.2rem; font-weight: 400; letter-spacing: 0.1em; }
+.entry__text { margin-top: 0.7rem; font-size: 0.95rem; }
+.entry__fact { margin-top: 0.9rem; font-size: 0.88rem; color: var(--ink-soft); }
+@media (min-width: 900px) { .entries { grid-template-columns: 1fr 1fr; } }
+
+/* ---- 奥付 ---- */
+.colophon { padding: 3rem var(--gutter) 5rem; border-top: 1px solid var(--rule); font-size: 0.85rem; color: var(--ink-soft); }
+.colophon__inner { max-width: var(--measure); }
+.colophon p + p { margin-top: 0.8em; }
+
+/* ---- 図譜の絵（木版彩色。紙の色になじませる） ---- */
+.plate { margin-top: 2rem; max-width: 30rem; }
+.plate img { width: 100%; height: auto; mix-blend-mode: multiply; }
+.plate--tall { max-width: 18rem; }
+.plate--square { max-width: 18rem; margin-bottom: 0.5rem; }
+
+/* JS が使えないときの、年の重ね方の色（築1年） */
+.swatches { --floor: #e4d2ab; --post: #d9c294; --beam: #c8ab76; }
+
+/* ================= 下層ページ ================= */
+.heading--page { font-size: clamp(1.7rem, 5.4vw, 2.6rem); line-height: 1.6; letter-spacing: 0.1em; }
+.subheading { margin-top: 2.2rem; font-size: 1.05rem; font-weight: 400; letter-spacing: 0.12em; }
+
+/* 家のつくり：断面図と材の一覧 */
+.parts { margin-top: 2rem; display: grid; gap: 2rem; }
+.parts__figure { max-width: 22rem; }
+.drawing .part { transition: opacity 0.3s; }
+.drawing.has-active .part:not(.is-active) { opacity: 0.3; }
+.drawing .part.is-active .line { stroke: var(--accent); stroke-width: 2.2; }
+.parts__list { border-top: 1px solid var(--rule); }
+.part-item { border-bottom: 1px solid var(--rule); }
+.part-item > summary {
+  display: flex; align-items: center; min-height: 48px; padding: 0.5rem 0; cursor: pointer; list-style: none;
+  font-size: 1.02rem; letter-spacing: 0.1em;
+}
+.part-item > summary::-webkit-details-marker { display: none; }
+.part-item > summary::after { content: "＋"; margin-left: auto; color: var(--ink-soft); }
+.part-item[open] > summary::after { content: "－"; }
+.part-item[open] > summary { color: var(--accent-ink); }
+.part-item__body { margin: 0 0 1.1rem; display: grid; grid-template-columns: 4rem 1fr; gap: 0.35rem 0.8rem; font-size: 0.95rem; }
+.part-item__body dt { color: var(--ink-soft); font-size: 0.8rem; padding-top: 0.2rem; }
+.part-item__body dd { margin: 0; }
+@media (min-width: 900px) {
+  .parts { grid-template-columns: 22rem 1fr; gap: 3.5rem; align-items: start; }
+  .parts__figure { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+}
+
+/* 約束・お断りなどの番号つきの文 */
+.rules { margin: 1.8rem 0 0; padding: 0; list-style: none; counter-reset: rule; max-width: var(--measure); }
+.rules li { counter-increment: rule; position: relative; padding: 0.9rem 0 0.9rem 2.6rem; border-bottom: 1px solid var(--rule); }
+.rules li::before { content: counter(rule); position: absolute; left: 0.4rem; top: 0.95rem; color: var(--accent-ink); font-size: 1.1rem; }
+.rules strong { display: block; font-weight: 500; letter-spacing: 0.08em; }
+
+/* 家の概要・点検の項目 */
+.facts { margin: 1.6rem 0 0; display: grid; grid-template-columns: 7.2rem 1fr; gap: 0.5rem 1rem; max-width: 36rem; font-size: 0.95rem; }
+.facts dt { color: var(--ink-soft); font-size: 0.85rem; padding-top: 0.12rem; }
+.facts dd { margin: 0; }
+.facts--wide { max-width: 44rem; }
+
+/* 直したことの記録・会社の年表 */
+.record { margin: 0.8rem 0 0; padding: 0; list-style: none; max-width: 38rem; border-top: 1px solid var(--rule); }
+.record li { display: grid; grid-template-columns: 4.2rem 1fr; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule); }
+.record__when { color: var(--accent-ink); letter-spacing: 0.05em; }
+
+/* 表 */
+.table-wrap { margin-top: 1.6rem; overflow-x: auto; }
+.compare-table { width: 100%; min-width: 30rem; border-collapse: collapse; font-size: 0.92rem; }
+.compare-table th, .compare-table td { padding: 0.75rem 0.7rem; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.compare-table thead th { font-weight: 500; color: var(--accent-ink); border-bottom: 1px solid var(--ink); }
+.compare-table tbody th { font-weight: 400; color: var(--ink-soft); white-space: nowrap; }
+
+/* フォーム（デモ） */
+.form { margin-top: 2rem; max-width: 30rem; }
+.form__group { margin: 0 0 1.4rem; padding: 0; border: 0; }
+.form__group legend, .form__label { display: block; margin-bottom: 0.5rem; padding: 0; font-size: 0.9rem; letter-spacing: 0.1em; }
+.form__control {
+  display: block; width: 100%; min-height: 48px; padding: 0.55rem 0.8rem;
+  font: inherit; font-size: 1rem; color: var(--ink); background: #fffdf7; border: 1px solid var(--ink-soft); border-radius: 0;
+}
+.choice { display: flex; align-items: center; gap: 0.7rem; min-height: 48px; padding: 0.2rem 0; cursor: pointer; }
+.choice input { width: 1.2rem; height: 1.2rem; accent-color: var(--ink); }
+.button {
+  min-height: 48px; padding: 0.7rem 1.4rem; font: inherit; font-size: 0.95rem; letter-spacing: 0.1em;
+  color: var(--paper); background: var(--ink); border: 1px solid var(--ink); cursor: pointer;
+}
+.button:hover { background: var(--accent); border-color: var(--accent-ink); }
+.form__result { margin-top: 1rem; min-height: 1.9em; font-size: 0.92rem; color: var(--accent-ink); }
+
+/* よくある質問 */
+.faq { margin-top: 2rem; max-width: 40rem; border-top: 1px solid var(--rule); }
+.faq__item { border-bottom: 1px solid var(--rule); }
+.faq__item > summary { display: flex; align-items: center; gap: 1rem; min-height: 52px; padding: 0.5rem 0; cursor: pointer; list-style: none; }
+.faq__item > summary::-webkit-details-marker { display: none; }
+.faq__item > summary::after { content: "＋"; margin-left: auto; color: var(--ink-soft); }
+.faq__item[open] > summary::after { content: "－"; }
+.faq__item > p { margin: 0 0 1rem; font-size: 0.95rem; }
+
+@media (prefers-reduced-motion: reduce) { .drawing .part { transition: none; } }
+
+/* 見出しは、語の途中で切らず、行の長さをそろえる */
+.heading, .heading--page, .entry__title { word-break: auto-phrase; text-wrap: balance; }

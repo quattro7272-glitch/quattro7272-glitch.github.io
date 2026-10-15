@@ -1,0 +1,154 @@
+/* 木守工務店：共通（変数・土台・ヘッダー・年数のものさし）。ページ固有は top.css */
+
+:root {
+  --serif: "Shippori Mincho", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+
+  /* 紙と墨（真っ白・真っ黒にしない） */
+  --paper: #f4efe4;
+  --paper-deep: #ebe4d3;
+  --ink: #2f2a24;
+  --ink-soft: #5d554a;
+  --rule: rgba(47, 42, 36, 0.22);
+
+  /* 木の色：築0年（白木）→ 築10年前後（飴色）→ 築30年（黒茶） */
+  --wood-0: #e9dabb;
+  --wood-10: #c9954f;
+  --wood-30: #5b3f27;
+  --era: 0; /* 0〜1。スクロールで era.js が更新する */
+  --accent: color-mix(in srgb, var(--wood-10) calc((1 - var(--era)) * 100%), var(--wood-30));
+  /* 小さい文字に使う濃いほう（紙の上で 4.5:1 以上） */
+  --accent-ink: color-mix(in srgb, #86561c calc((1 - var(--era)) * 100%), #4a3220);
+
+  --header-h: 3.5rem;
+  --ruler-w: 2.75rem;
+  --gutter: 1.25rem;
+  --measure: 38rem;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem); -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+  padding-right: var(--ruler-w); /* ものさしと重ならない */
+}
+
+img, svg { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, figure { margin: 0; }
+a { color: inherit; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+.u-visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ---- ヘッダー：今どこか・目次・先頭へ ---- */
+.site-header {
+  position: sticky; top: 0; z-index: 30;
+  height: var(--header-h);
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0 0 0 var(--gutter);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header__logo {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 1.15rem; letter-spacing: 0.3em; text-decoration: none; white-space: nowrap;
+}
+
+.site-header__here {
+  flex: 1; min-width: 0;
+  font-size: 0.82rem; letter-spacing: 0.08em; color: var(--ink-soft);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.site-header__here strong { font-weight: 500; color: var(--ink); }
+
+.site-header__menu {
+  min-height: 44px; min-width: 44px; padding: 0 0.9rem;
+  font: inherit; font-size: 0.85rem; letter-spacing: 0.2em; color: var(--ink);
+  background: none; border: 0; border-left: 1px solid var(--rule); cursor: pointer;
+}
+
+/* ---- 目次（1タップで開く） ---- */
+.site-nav {
+  position: fixed; inset: var(--header-h) 0 auto 0; z-index: 29;
+  max-height: calc(100svh - var(--header-h)); overflow-y: auto;
+  padding: 1rem var(--gutter) 1.5rem;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.site-nav[hidden] { display: none; }
+.site-nav ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.site-nav a {
+  display: flex; align-items: baseline; gap: 1rem; min-height: 48px; padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule); text-decoration: none;
+}
+.site-nav__year { flex: none; width: 5.8rem; font-size: 0.8rem; color: var(--ink-soft); white-space: nowrap; }
+.site-nav a[aria-current="true"] { color: var(--ink); font-weight: 500; }
+.site-nav a[aria-current="true"]::after { content: "いま"; margin-left: auto; font-size: 0.75rem; color: var(--accent-ink); }
+.site-nav a[aria-current="true"] .site-nav__year { color: var(--accent-ink); }
+
+/* ---- 年数のものさし（画面の右端に常に出る） ---- */
+.ruler {
+  position: fixed; top: var(--header-h); right: 0; bottom: 0; z-index: 20;
+  width: var(--ruler-w);
+  border-left: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+}
+.ruler__unit { position: absolute; top: 0.45rem; left: 0; width: 100%; text-align: center; font-size: 0.8rem; letter-spacing: 0; color: var(--ink-soft); }
+.ruler__track { position: absolute; top: 2.4rem; bottom: 4.6rem; left: 0; right: 0; }
+.ruler__tick {
+  position: absolute; left: 0; width: 100%; height: 0;
+  display: flex; align-items: center; justify-content: flex-end; gap: 0.3rem; padding-right: 0.25rem;
+  font-size: 0.68rem; letter-spacing: 0; color: var(--ink-soft);
+}
+.ruler__tick.is-current { color: transparent; }
+.ruler__tick::before { content: ""; order: 2; width: 0.55rem; height: 1px; background: var(--ink-soft); }
+.ruler__mark {
+  position: absolute; left: 0; width: 100%; height: 0; top: var(--mark-y, 0%);
+  transition: top 0.5s cubic-bezier(0.65, 0, 0.25, 1);
+}
+.ruler__mark::before {
+  content: ""; position: absolute; left: -1px; top: -0.3rem; width: 0.6rem; height: 0.6rem; border-radius: 50%;
+  background: var(--accent); border: 1px solid var(--ink);
+}
+.ruler__label {
+  position: absolute; left: 0.8rem; top: -0.75rem; width: calc(var(--ruler-w) - 0.9rem);
+  font-size: 0.72rem; line-height: 1.2; letter-spacing: 0; color: var(--ink); font-weight: 500;
+}
+
+.page-top {
+  position: fixed; right: 0; bottom: 0; z-index: 21; width: var(--ruler-w); height: 2.75rem;
+  display: grid; place-items: center; font-size: 0.7rem; letter-spacing: 0; text-decoration: none;
+  background: var(--paper); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule);
+}
+
+@media (min-width: 900px) {
+  :root { --gutter: 2.5rem; --ruler-w: 4.5rem; }
+  .ruler__tick { font-size: 0.78rem; }
+  .ruler__label { font-size: 0.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ruler__mark { transition: none; }
+}
+
+/* ---- ヘッダー：いまのページ名 ---- */
+.site-header__page { flex: none; font-size: 0.74rem; letter-spacing: 0.08em; color: var(--accent-ink); white-space: nowrap; }
+
+/* ---- 目次：ページ一覧と、このページの章 ---- */
+.site-nav__heading { margin: 0.6rem 0 0.2rem; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--ink-soft); }
+.site-nav__heading:first-child { margin-top: 0; }
+.site-nav__pages a[aria-current="page"] { font-weight: 500; }
+.site-nav__pages a[aria-current="page"]::after { content: "いま"; margin-left: auto; font-size: 0.75rem; color: var(--accent-ink); }

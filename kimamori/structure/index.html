@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>家のつくり｜木守工務店（サンプル）</title>
+  <meta name="description" content="壁の断面に触れて、柱・梁・床・断熱が「なぜその材か」を読む頁。社名・数値はすべて架空のサンプルです。">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/top.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-header__logo" href="../index.html" aria-label="木守工務店　トップへ">木守</a>
+    <span class="site-header__page">つくり</span>
+    <p class="site-header__here"></p>
+    <button class="site-header__menu" type="button" aria-expanded="false" aria-controls="site-nav">目次</button>
+  </header>
+
+  <nav class="site-nav" id="site-nav" aria-label="サイトの目次" hidden>
+    <p class="site-nav__heading">ページ</p>
+    <ol class="site-nav__pages"><li><a href="../index.html">トップ</a></li><li><a href="../structure/" aria-current="page">家のつくり</a></li><li><a href="../houses/">住んでからの家</a></li><li><a href="../care/">点検と手入れ</a></li><li><a href="../company/">人と会社</a></li><li><a href="../visit/">見学とご相談</a></li></ol>
+    <p class="site-nav__heading">このページの章</p>
+    <ol class="js-sections"></ol>
+  </nav>
+
+  <div class="ruler" aria-hidden="true">
+    <span class="ruler__unit">築</span>
+    <div class="ruler__track">
+      <div class="ruler__mark"><span class="ruler__label">0年</span></div>
+    </div>
+  </div>
+  <a class="page-top" href="#top">先頭へ</a>
+
+  <main id="main">
+    <section class="section" id="top" data-era-section data-year="0" data-ruler="0年" data-here="壁の中" data-nav-title="家のつくり" aria-labelledby="structure-title">
+      <div class="section__inner">
+        <p class="eyebrow">家のつくり</p>
+        <h1 class="heading heading--page" id="structure-title">壁の中の話。</h1>
+        <div class="prose">
+          <p>見えなくなる所ほど、先に決めます。壁の中は、建てたあとの三十年のあいだ、誰も見ないからです。</p>
+          <p>ここでは、壁の断面の図に触れながら、柱や梁、床や断熱を、なぜその材にしたかを読めます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--wide" id="parts" data-era-section data-year="0" data-ruler="0年" data-here="断面図" data-nav-title="断面図に触れる" aria-labelledby="parts-title">
+      <div class="section__inner">
+        <h2 class="heading" id="parts-title">壁の断面に、さわってみる<span class="heading__sub">名前を選ぶと、図のその部分が濃くなります</span></h2>
+        <div class="parts">
+          <figure class="parts__figure js-parts-figure">
+            <svg class="drawing" viewBox="0 0 360 500" role="img" aria-labelledby="drawing-title">
+            <title id="drawing-title">壁の断面を示した模式図。基礎、土台、柱、梁、屋根の垂木、断熱材、床下の束と大引の位置を示す。</title>
+            <defs>
+              <pattern id="soil" width="12" height="12" patternUnits="userSpaceOnUse">
+                <path d="M0 12L12 0" stroke="#8b8372" stroke-width="0.6"/>
+              </pattern>
+              <pattern id="insulation" width="8" height="8" patternUnits="userSpaceOnUse">
+                <path d="M0 8L8 0M-2 2L2 -2M6 10L10 6" stroke="#9a8d6b" stroke-width="0.7"/>
+              </pattern>
+            </defs>
+            <rect x="10" y="380" width="340" height="68" fill="url(#soil)" opacity="0.55"/>
+            <path class="line" d="M10 380H350"/>
+            <g class="part" data-part="foundation">
+              <rect class="line fill-concrete" x="62" y="380" width="56" height="58"/>
+              <rect class="line fill-concrete" x="44" y="436" width="92" height="14"/>
+            </g>
+            <g class="part" data-part="sill">
+              <rect class="line fill-wood-deep" x="60" y="366" width="60" height="14"/>
+            </g>
+            <g class="part" data-part="joist">
+              <rect class="line fill-concrete" x="42" y="374" width="16" height="6"/>
+              <rect class="line fill-wood" x="46" y="356" width="8" height="18"/>
+              <rect class="line fill-wood-deep" x="20" y="344" width="56" height="12"/>
+            </g>
+            <g class="part" data-part="floor">
+              <rect class="line fill-wood" x="20" y="334" width="56" height="10"/>
+              <rect class="line fill-warm" x="20" y="326" width="56" height="8"/>
+            </g>
+            <g class="part" data-part="plaster">
+              <rect class="line fill-warm" x="70" y="140" width="6" height="186"/>
+              <rect class="line fill-warm" x="20" y="128" width="56" height="8"/>
+            </g>
+            <g class="part" data-part="post">
+              <rect class="line fill-wood" x="76" y="118" width="28" height="248"/>
+            </g>
+            <g class="part" data-part="wall">
+              <rect class="line" x="104" y="130" width="16" height="236" fill="url(#insulation)"/>
+              <rect class="line fill-wood-deep" x="120" y="130" width="8" height="236"/>
+            </g>
+            <g class="part" data-part="beam">
+              <rect class="line fill-wood-deep" x="20" y="98" width="120" height="22"/>
+            </g>
+            <g class="part" data-part="roof">
+              <path class="line" d="M-4 112L150 36L304 112"/>
+              <path class="line" d="M-4 102L150 26L304 102"/>
+              <path class="line fill-wood" d="M44 104L44 88L150 36"/>
+              <path class="line fill-wood" d="M10 106L10 98L-4 102"/>
+            </g>
+            <path class="leader" d="M214 66H238M150 130H238M104 240H238M70 240H20"/>
+            <path class="leader" d="M140 109H238M76 132H20M128 200H238M120 373H238M136 443H238M54 340H20"/>
+            <text x="244" y="70">屋根（垂木）</text>
+            <text x="244" y="113">梁</text>
+            <text x="244" y="134">外壁・断熱</text>
+            <text x="244" y="204">外壁の板</text>
+            <text x="244" y="244">柱</text>
+            <text x="244" y="377">土台</text>
+            <text x="244" y="447">基礎</text>
+            <text x="14" y="236">内壁（漆喰）</text>
+            <text x="14" y="128">天井</text>
+            <text x="14" y="322">床（杉の無垢）</text>
+            <text x="14" y="368">大引・束</text>
+          </svg>
+            <figcaption class="figure__caption">図　壁の断面（模式図）</figcaption>
+          </figure>
+          <div class="parts__list">
+            <details class="part-item" name="part" data-part="roof">
+              <summary>屋根（垂木）</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>国産の杉</dd>
+                <dt>なぜ</dt><dd>雨と日が最初に当たる所は、取り替えやすい材で。傷んだら、そこだけ替えられる作りにします。</dd>
+                <dt>手入れ</dt><dd>10年目の点検で、屋根の面を目で見ます。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="beam">
+              <summary>梁</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>松</dd>
+                <dt>なぜ</dt><dd>梁は、重さを受けて曲がろうとする力に耐える材です。粘りのある松を、昔から梁に使ってきました。</dd>
+                <dt>手入れ</dt><dd>基本は、何もしません。30年目に、傷みの有無を確かめます。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="post">
+              <summary>柱</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>檜（太さ105mm角・サンプル値）</dd>
+                <dt>なぜ</dt><dd>檜は、湿気や虫に比較的強い材として、昔から柱に使われてきました。数字は、効能をうたうためでなく、断面の大きさを示すためのものです。</dd>
+                <dt>手入れ</dt><dd>家の中から触って確かめられる所は、点検のたびに触ります。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="wall">
+              <summary>外壁・断熱</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>板張りの外壁、中に断熱材（厚み100mm・サンプル値）</dd>
+                <dt>なぜ</dt><dd>冬の足元を冷やさないため。外側の板は、傷んだら外から張り替えられます。</dd>
+                <dt>手入れ</dt><dd>5年目に外壁を目で見て、雨じまいを確かめます。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="plaster">
+              <summary>内壁・天井（漆喰）</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>漆喰</dd>
+                <dt>なぜ</dt><dd>明るい白で、部屋の光をやわらげます。細かなひびは、塗り直しで直せます。</dd>
+                <dt>手入れ</dt><dd>汚れは、乾いた布でたたきます。数字で効能をうたうことはしません。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="floor">
+              <summary>床（杉の無垢）</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>杉の無垢板</dd>
+                <dt>なぜ</dt><dd>やわらかく、足の裏が温かい。傷がつくのは、木が受け止めた証拠として残ります。</dd>
+                <dt>手入れ</dt><dd>10年に一度、表面を削り直すかどうかを相談します。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="joist">
+              <summary>大引・束</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>檜の大引、束は石の上に立てる</dd>
+                <dt>なぜ</dt><dd>床下に風が通る高さを取り、湿気をためません。束は、取り替えられる位置に置きます。</dd>
+                <dt>手入れ</dt><dd>10年目の点検で、床下にもぐって確かめます。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="sill">
+              <summary>土台</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>檜</dd>
+                <dt>なぜ</dt><dd>地面にいちばん近い木は、水と虫に会いやすい場所です。いちばん強い材を、いちばん下に置きます。</dd>
+                <dt>手入れ</dt><dd>10年目に、防蟻の確認をします（点検の年表に費用の目安）。</dd>
+              </dl>
+            </details>
+            <details class="part-item" name="part" data-part="foundation">
+              <summary>基礎</summary>
+              <dl class="part-item__body">
+                <dt>材</dt><dd>鉄筋コンクリート</dd>
+                <dt>なぜ</dt><dd>木を地面から離し、家の重さを地面に渡します。ここだけは、木でなく石の仕事です。</dd>
+                <dt>手入れ</dt><dd>5年目から、ひびの有無を目で見ます。</dd>
+              </dl>
+            </details>
+          </div>
+        </div>
+        <p class="notice notice--inline">材・厚み・手入れの内容は、サンプルです。実際の工務店では、設計に合わせて決めます。</p>
+      </div>
+    </section>
+
+    <section class="section" id="promise" data-era-section data-year="30" data-ruler="30年" data-here="三十年のために" data-nav-title="三十年のために" aria-labelledby="promise-title">
+      <div class="section__inner">
+        <h2 class="heading" id="promise-title">三十年のために、先に決めること</h2>
+        <ol class="rules">
+          <li><strong>取り替えやすい順に、外側へ。</strong>傷みやすい材ほど、外から手が届く所に置きます。</li>
+          <li><strong>見えなくなる所ほど、残しておく。</strong>壁を閉じる前の様子は、図と記録に残します（点検の記録帳）。</li>
+          <li><strong>材の産地と、伐った年を控える。</strong>あとで直すとき、同じ木を探せるようにします。</li>
+        </ol>
+        <p class="prose"><a href="../care/">点検の年表を見る</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon__inner">
+      <p>木守工務店（サンプル）　所在地：架空の木守町</p>
+      <p>このサイトは Web 制作の見本です。社名・所在地・人物・事例・費用はすべて架空です。図は模式図で、築年数ごとの木の色は経年を想像して描いたイメージです。実際の制作では、施工した家の写真と、実際の点検記録を使います。</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/era.js"></script>
+  <script src="../assets/js/parts.js"></script>
+</body>
+</html>
