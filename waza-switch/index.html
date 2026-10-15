@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技のスイッチ | 説明は、しません。押して、見比べてください。</title>
+<meta name="description" content="同じ部品の上にスイッチを置いて、技なし／技ありを切り替える見本帳。最後のスイッチで、このページそのものが変わります。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;700&family=Shippori+Mincho:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=16">
+</head>
+<body>
+<a class="skip" href="#main">本文へ</a>
+
+<header class="gnav">
+  <div class="gnav__bar">
+    <a class="gnav__logo" href="#top">技のスイッチ</a>
+    <p class="gnav__here" aria-live="polite"><span class="gnav__num">00</span><span class="gnav__label">表紙</span></p>
+    <button class="gnav__ba js-ba" type="button" aria-pressed="true" hidden><span class="gnav__ba-off">ビフォー</span><span class="gnav__ba-on">アフター</span></button>
+  </div>
+  <nav class="gnav__toc" aria-label="ページ内の目次">
+    <ol>
+      <li><a href="#top"><span>00</span>表紙</a></li>
+      <li><a href="#ex01"><span>01</span>紙の色</a></li>
+      <li><a href="#ex02"><span>02</span>行間と字間</a></li>
+      <li><a href="#ex03"><span>03</span>ボタン</a></li>
+      <li><a href="#ex04"><span>04</span>行リンク</a></li>
+      <li><a href="#ex05"><span>05</span>文字の出方</a></li>
+      <li><a href="#ex06"><span>06</span>カードの縁</a></li>
+      <li><a href="#ex07"><span>07</span>貼り付く見出し</a></li>
+      <li><a href="#ex08"><span>08</span>迷子にならない</a></li>
+      <li><a href="#ex09"><span>09</span>AI画像の裏技</a></li>
+      <li><a href="#finale"><span>10</span>全部の技</a></li>
+    </ol>
+  </nav>
+</header>
+
+<main id="main">
+
+<section id="top" class="cover" data-label="表紙" data-num="00">
+  <p class="cover__eyebrow">ウェブ技術図鑑　見た目の見本帳</p>
+  <h1 class="cover__title js-phrases"><span>技の</span><span>スイッチ</span></h1>
+  <p class="cover__lead js-phrases"><span>説明は、</span><span>しません。</span><span>押して、</span><span>見比べてください。</span></p>
+  <p class="cover__sub">同じ部品の上に、スイッチが1つ。なし／ありを切り替えるだけです。全部で9つ。最後に、もう1つ。</p>
+  <p class="cover__actions"><a class="btn" href="#ex01">見本へ</a></p>
+  <figure class="cover__photo" aria-hidden="true">
+    <img src="assets/images/cover-switch.webp" width="832" height="1216" alt="" loading="lazy">
+    <figcaption class="cover__caption">真鍮のトグルスイッチと鉛筆。写真は画像生成AIで作成。</figcaption>
+  </figure>
+</section>
+
+<!-- 01 紙の色 -->
+<section id="ex01" class="ex" data-label="紙の色" data-num="01">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">01</span>紙の色</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage01"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--paper" id="stage01" data-plate="01">
+    <span class="swatches" aria-hidden="true"><span class="swatch swatch--bg"><i></i><b class="swatch__bg">#FFFFFF</b></span><span class="swatch swatch--ink"><i></i><b class="swatch__ink">#000000</b></span></span>
+    <p class="ex__sample-title">朝の光は、窓の左から入る。</p>
+    <p>白い紙に黒い文字。それが一番はっきりして見える、と思っていました。けれど雑誌をめくると、紙は少し生成りで、文字は少しだけ墨の色をしています。画面でも同じことができます。色を2つ変えるだけです。</p>
+  </div>
+  <p class="ex__diff">白 → 生成り（#F7F6EF）、黒 → 墨（#363531）。画像もテクスチャも使っていません。</p>
+</section>
+<a class="next" href="#ex02"><span class="next__label">次へ<b>02</b></span><span class="next__title">行間と字間</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 02 行間と字間 -->
+<section id="ex02" class="ex" data-label="行間と字間" data-num="02">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">02</span>行間と字間</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage02"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--type" id="stage02" data-plate="02">
+    <p>日本語は、行と行のあいだを広く取ると、読むときの息つぎが楽になります。文字と文字のあいだも、ほんの少しだけあけます。目安は、行間が文字の1.9倍、字間が文字の0.05倍。同じ文章なのに、読み終わるまでの疲れ方が変わります。これは、ほぼ日の本文を実際に測った数字です。</p>
+  </div>
+  <p class="ex__diff">行間 1.5 → 1.9、字間 0 → 0.05em。文章は一文字も変えていません。</p>
+</section>
+<a class="next" href="#ex03"><span class="next__label">次へ<b>03</b></span><span class="next__title">ボタン</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 03 ボタン -->
+<section id="ex03" class="ex" data-label="ボタン" data-num="03">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">03</span>ボタン</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage03"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--btn" id="stage03" data-plate="03">
+    <a class="demo-btn demo-btn--primary" href="#ex03">日数の目安を出す</a>
+    <a class="demo-btn" href="#ex03">部品を見る</a>
+  </div>
+  <p class="ex__diff">角を2つ面取りして、矢印を枠で区切ったセルに。触れると矢印だけ色が変わります。</p>
+</section>
+<a class="next" href="#ex04"><span class="next__label">次へ<b>04</b></span><span class="next__title">行リンク</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 04 行リンク -->
+<section id="ex04" class="ex" data-label="行リンク" data-num="04">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">04</span>行リンク</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage04"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--row" id="stage04" data-plate="04">
+    <a class="demo-row" href="#ex04"><span class="demo-row__label">次へ<b>05</b></span><span class="demo-row__title">図面から納品まで</span><span class="demo-row__dim" aria-hidden="true"></span><span class="demo-row__arrow" aria-hidden="true">→</span></a>
+  </div>
+  <p class="ex__diff">番号・題・寸法線・矢印を一列に。製図の寸法線のように、両端に目盛があります。</p>
+</section>
+<a class="next" href="#ex05"><span class="next__label">次へ<b>05</b></span><span class="next__title">文字の出方</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 05 文字の出方 -->
+<section id="ex05" class="ex" data-label="文字の出方" data-num="05">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">05</span>文字の出方</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage05"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--text" id="stage05" data-plate="05">
+    <p class="demo-phrases js-demo-phrases"><span data-t="0.1s">霧がうすれて、</span><span data-t="0.45s">川が見えて、</span><span data-t="0.8s">湯気が立つ。</span></p>
+    <button class="replay js-replay" type="button">もう一度</button>
+  </div>
+  <p class="ex__diff">句ごとに0.35秒ずつ遅らせて、透明から現れます。1文字ずつにはしません。</p>
+</section>
+<a class="next" href="#ex06"><span class="next__label">次へ<b>06</b></span><span class="next__title">カードの縁</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 06 カードの縁 -->
+<section id="ex06" class="ex" data-label="カードの縁" data-num="06">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">06</span>カードの縁</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage06"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--card" id="stage06" data-plate="06">
+    <a class="demo-card" href="#ex06">
+      <img src="assets/images/kids-plain.webp" width="832" height="1216" alt="木陰の砂場で遊ぶ3人の子ども" loading="lazy">
+      <span class="demo-card__body"><span class="demo-card__title">公園の砂場</span><span class="demo-card__text">触れてみてください（スマホはタップ）</span></span>
+    </a>
+  </div>
+  <p class="ex__diff">カードの外側に隠した縁の層を、触れたときだけ clip-path でじわっと広げます。カードの大きさは変わりません。</p>
+</section>
+<a class="next" href="#ex07"><span class="next__label">次へ<b>07</b></span><span class="next__title">貼り付く見出し</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 07 貼り付く見出し -->
+<section id="ex07" class="ex" data-label="貼り付く見出し" data-num="07">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">07</span>貼り付く見出し</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage07"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--sticky" id="stage07" data-plate="07">
+    <div class="scrollbox" tabindex="0" aria-label="枠の中をスクロールしてください">
+      <h3 class="demo-sticky">お食事</h3>
+      <p>夕食は、囲炉裏のある座敷で。川魚は炭火でゆっくり焼きます。</p>
+      <p>山菜は朝に摘んだものを、その日のうちに。味付けは塩と、少しの醤油だけです。</p>
+      <p>ご飯は土鍋で炊きます。おこげができたら、それも一緒にお出しします。</p>
+      <p>朝食は、湯豆腐と、焼いた干物と、漬物。それから、庭の畑の野菜の味噌汁です。</p>
+      <p>食べきれないときは、言ってください。おにぎりにして、お部屋にお持ちします。</p>
+      <p>この枠の中をスクロールしてみてください。見出しが、上に残るかどうか。</p>
+    </div>
+  </div>
+  <p class="ex__diff">position: sticky を見出しに1行。長い文章の間、見出しが枠の上に貼り付いて、今どこを読んでいるか分かります。</p>
+</section>
+<a class="next" href="#ex08"><span class="next__label">次へ<b>08</b></span><span class="next__title">迷子にならない</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 08 迷子にならない -->
+<section id="ex08" class="ex" data-label="迷子にならない" data-num="08">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">08</span>迷子にならない</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage08"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--nav" id="stage08" data-plate="08">
+    <div class="scrollbox scrollbox--nav js-minipage" tabindex="0" aria-label="小さなページ。枠の中をスクロールしてください">
+      <div class="mini-bar">
+        <span class="mini-bar__here"><b class="js-mini-num">1</b><span class="js-mini-label">湯</span></span>
+        <span class="mini-bar__toc"><a href="#m1" class="js-mini-link">湯</a><a href="#m2" class="js-mini-link">部屋</a><a href="#m3" class="js-mini-link">料理</a></span>
+        <a class="mini-bar__top js-mini-top" href="#m1">↑</a>
+      </div>
+      <section class="mini-sec" id="m1" data-mini="1" data-minilabel="湯"><h3>湯</h3><p>源泉は裏山から引いています。朝一番は少し熱め。</p><p>露天は夜十時まで。雪の日は、湯気で何も見えません。</p><p>内湯は檜。香りが強い日と弱い日があります。</p></section>
+      <section class="mini-sec" id="m2" data-mini="2" data-minilabel="部屋"><h3>部屋</h3><p>八畳の和室が四つ。川側の二部屋は、水の音が近いです。</p><p>布団は夕食のあいだに敷きます。</p><p>テレビはありません。本棚があります。</p></section>
+      <section class="mini-sec" id="m3" data-mini="3" data-minilabel="料理"><h3>料理</h3><p>夕食は六時半から。囲炉裏の座敷で。</p><p>川魚は炭火で。山菜は朝に摘んだもの。</p><p>朝食は湯豆腐と干物と味噌汁です。</p><p>ここが一番下です。上の「↑」で先頭へ戻れます。</p></section>
+    </div>
+  </div>
+  <p class="ex__diff">現在地（番号＋題）を常に表示、目次は1タップ、先頭へ戻るボタン。長いページでも、今どこにいるか分かります。</p>
+</section>
+<a class="next" href="#ex09"><span class="next__label">次へ<b>09</b></span><span class="next__title">AI画像の裏技</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 09 AI画像の裏技 -->
+<section id="ex09" class="ex" data-label="AI画像の裏技" data-num="09">
+  <div class="ex__head">
+    <h2 class="ex__title"><span class="ex__num">09</span>AI画像の裏技</h2>
+    <button class="switch" type="button" aria-pressed="false" aria-controls="stage09"><span class="switch__off">なし</span><span class="switch__knob" aria-hidden="true"></span><span class="switch__on">あり</span></button>
+  </div>
+  <div class="ex__stage ex__stage--img" id="stage09" data-plate="09">
+    <div class="pair">
+      <figure class="pair__item">
+        <img class="pair__off" src="assets/images/bread-highkey.webp" width="832" height="1216" alt="窓辺の裂いたパンと無花果。明るく、くっきりした写真" loading="lazy">
+        <img class="pair__on" src="assets/images/bread-plain.webp" width="832" height="1216" alt="窓辺の裂いたパンと無花果。フィルム写真のような、少しくすんだ写真" loading="lazy">
+        <figcaption>パン（seed 83）</figcaption>
+      </figure>
+      <figure class="pair__item">
+        <img class="pair__off" src="assets/images/kids-highkey.webp" width="832" height="1216" alt="公園の砂場で遊ぶ子ども。明るく、くっきりした写真" loading="lazy">
+        <img class="pair__on" src="assets/images/kids-plain.webp" width="832" height="1216" alt="公園の砂場で遊ぶ子ども。フィルム写真のような、少しくすんだ写真" loading="lazy">
+        <figcaption>公園（seed 72）</figcaption>
+      </figure>
+    </div>
+    <p class="prompt"><span class="prompt__label">指示文の末尾</span><code lang="en">soft bright daylight from a window on the left, <mark class="prompt__cut">airy and light, high-key,</mark> pale cream and white tones, gentle soft shadows, film still, fine film grain</code><span class="prompt__ja">左の窓からの、やわらかく明るい昼の光、<mark class="prompt__cut">風通しよく軽やかに、ハイキー（明るく飛ばした調子）、</mark>淡いクリームと白の色調、やわらかな影、映画の1コマ、細かいフィルムの粒子</span></p>
+  </div>
+  <p class="ex__diff">変えたのは「airy and light, high-key」の2語だけ。seed も構図も同じです。指示文の言葉ひとつで、写真の空気はこれだけ変わります。どちらが好みかは、人それぞれ。この見本帳では、外した方を使っています。</p>
+</section>
+<a class="next" href="#finale"><span class="next__label">次へ<b>10</b></span><span class="next__title">全部の技</span><span class="next__dim" aria-hidden="true"></span><span class="next__arrow" aria-hidden="true">→</span></a>
+
+<!-- 10 finale -->
+<section id="finale" class="finale" data-label="全部の技" data-num="10">
+  <h2 class="finale__title">ここまでのページは、<br>わざと技なしで組んでありました。</h2>
+  <p class="finale__lead">最後のスイッチです。今見ていたこのページに、9つの技を全部かけます。</p>
+  <button class="btn btn--big js-finale" type="button" aria-pressed="false">この頁に、全部の技を使う</button>
+  <p class="finale__note">表紙に戻って、技が1つずつ重なります。もう一度押すと、素朴なページに戻ります。</p>
+  <p class="finale__note">最後にもう1つ。スイッチにできない技が、余白と配置。これだけは、ページ全体にしかかけられません。</p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer__name">技のスイッチ</p>
+  <p class="footer__note">このページは、実際のサイトで測って試した技を、見た目の違いだけで見せる見本帳です。文章・写真はすべて架空で、写真は画像生成AIで作成しました。</p>
+</footer>
+
+<a class="totop" href="#top" aria-label="ページの先頭へ戻る">↑</a>
+<p class="stamp" aria-live="polite" hidden></p>
+
+<script src="assets/js/main.js?v=16" defer></script>
+</body>
+</html>

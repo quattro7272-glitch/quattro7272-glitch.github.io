@@ -51,6 +51,18 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach((section) => currentObserver.observe(section));
 
+  /* ページの中の移動は履歴に積まない（Safari の端スワイプで同じページの中を行き来してしまうため） */
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+    const hash = link.getAttribute('href');
+    const target = hash.length > 1 ? document.querySelector(hash) : null;
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+    history.replaceState(null, '', hash);
+  });
+
   /* ---------- 目次 ---------- */
   const tocButton = document.querySelector('.gnav__toggle');
   const toc = document.getElementById('toc');
