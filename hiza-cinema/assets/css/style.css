@@ -149,6 +149,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .film__still { margin-top: 2.4rem; width: min(100%, 320px); }
 .film__still img, .seats__fabric img, .about__photo img { display: block; width: 100%; height: auto; }
 .film__still img { filter: grayscale(.2) contrast(1.02); }
+.film__still { display: grid; }
+.film__still > * { grid-area: 1 / 1; }
+.film__video { display: block; width: 100%; height: auto; filter: grayscale(.2) contrast(1.02); }
+@media (prefers-reduced-motion: reduce) { .film__video { display: none; } }
 
 .reveal { opacity: .12; transition: opacity 1.4s ease; }
 .reveal.is-in { opacity: 1; }
