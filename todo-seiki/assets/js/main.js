@@ -35,6 +35,27 @@
   }, { rootMargin: '-30% 0px -60% 0px' });
   sections.forEach((section) => currentObserver.observe(section));
 
+  /* 「次へ」行の矢印と重なる間は、先頭へ戻るボタンをよける */
+  const nextRows = Array.from(document.querySelectorAll('.next'));
+  const covering = new Set();
+  let nextObserver = null;
+  function watchNextRows() {
+    if (!totop || !nextRows.length) return;
+    if (nextObserver) nextObserver.disconnect();
+    covering.clear();
+    const strip = Math.max(window.innerHeight - 84, 0);
+    nextObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) covering.add(entry.target);
+        else covering.delete(entry.target);
+      });
+      totop.classList.toggle('is-covering', covering.size > 0);
+    }, { rootMargin: `-${strip}px 0px 0px 0px` });
+    nextRows.forEach((row) => nextObserver.observe(row));
+  }
+  watchNextRows();
+  window.addEventListener('resize', watchNextRows);
+
   function updateTotop() {
     if (totop) totop.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
   }
