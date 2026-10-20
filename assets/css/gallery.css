@@ -152,7 +152,8 @@ a:focus-visible {
 .work--seoto    { --bg: #e8e3d6; --work-ink: #25231f; --work-muted: #655f54; --work-line: #cdc6b5; }
 .work--asagiri  { --bg: #f3f0e8; --work-ink: #1f2a3d; --work-muted: #5d6676; --work-line: #d7d5ce; }
 .work--sumikawa { --bg: #3d281d; --work-ink: #f0e5d3; --work-muted: #bcab97; --work-line: #5b4434; }
-.work--grill    { --bg: #efe6d8; --work-ink: #2a2420; --work-muted: #6a6056; --work-line: #d8ccba; }
+.work--noctiluca { --bg: #0b0e12; --work-ink: #eef1f4; --work-muted: #aab3bd; --work-line: #2a3340; }
+.work--toiro    { --bg: #f6f3ee; --work-ink: #2a2724; --work-muted: #6f6a64; --work-line: #d9d3ca; }
 .work--waza     { --bg: #f4f2ea; --work-ink: #2f2c27; --work-muted: #66604f; --work-line: #d9d4c4; }
 
 .work__inner {
@@ -178,6 +179,12 @@ a:focus-visible {
   font-size: clamp(1.7rem, 3.6vw, 2.5rem);
   line-height: 1.4;
   letter-spacing: 0.06em;
+}
+
+/* 長い英字の名前は、列の幅に収まる大きさにする（途中で折れない） */
+.work--noctiluca .work__name {
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  letter-spacing: 0.04em;
 }
 
 .work__kind {
@@ -236,19 +243,19 @@ a:focus-visible {
   .work__sp { width: 100%; }
 
   .work--seoto .work__inner,
-  .work--sumikawa .work__inner,
-  .work--waza .work__inner {
+  .work--noctiluca .work__inner,
+  .work--sumikawa .work__inner {
     grid-template-columns: 2fr 7fr minmax(230px, 3fr);
   }
   .work--seoto .work__text,
-  .work--sumikawa .work__text,
-  .work--waza .work__text { grid-column: 3; grid-row: 1; }
+  .work--noctiluca .work__text,
+  .work--sumikawa .work__text { grid-column: 3; grid-row: 1; }
   .work--seoto .work__pc,
-  .work--sumikawa .work__pc,
-  .work--waza .work__pc   { grid-column: 2; grid-row: 1; }
+  .work--noctiluca .work__pc,
+  .work--sumikawa .work__pc   { grid-column: 2; grid-row: 1; }
   .work--seoto .work__sp,
-  .work--sumikawa .work__sp,
-  .work--waza .work__sp   { grid-column: 1; grid-row: 1; }
+  .work--noctiluca .work__sp,
+  .work--sumikawa .work__sp   { grid-column: 1; grid-row: 1; }
 }
 
 /* ---------- 終わり ---------- */
