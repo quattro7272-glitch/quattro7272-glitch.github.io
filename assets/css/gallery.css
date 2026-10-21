@@ -155,6 +155,7 @@ a:focus-visible {
 .work--noctiluca { --bg: #0b0e12; --work-ink: #eef1f4; --work-muted: #aab3bd; --work-line: #2a3340; }
 .work--toiro    { --bg: #f6f3ee; --work-ink: #2a2724; --work-muted: #6f6a64; --work-line: #d9d3ca; }
 .work--waza     { --bg: #f4f2ea; --work-ink: #2f2c27; --work-muted: #66604f; --work-line: #d9d4c4; }
+.work--zenith   { --bg: #07060f; --work-ink: #f4f2ff; --work-muted: #a9a3c4; --work-line: #2a2340; }
 
 .work__inner {
   max-width: 1240px;
@@ -244,18 +245,22 @@ a:focus-visible {
 
   .work--seoto .work__inner,
   .work--noctiluca .work__inner,
-  .work--sumikawa .work__inner {
+  .work--sumikawa .work__inner,
+  .work--zenith .work__inner {
     grid-template-columns: 2fr 7fr minmax(230px, 3fr);
   }
   .work--seoto .work__text,
   .work--noctiluca .work__text,
-  .work--sumikawa .work__text { grid-column: 3; grid-row: 1; }
+  .work--sumikawa .work__text,
+  .work--zenith .work__text { grid-column: 3; grid-row: 1; }
   .work--seoto .work__pc,
   .work--noctiluca .work__pc,
-  .work--sumikawa .work__pc   { grid-column: 2; grid-row: 1; }
+  .work--sumikawa .work__pc,
+  .work--zenith .work__pc   { grid-column: 2; grid-row: 1; }
   .work--seoto .work__sp,
   .work--noctiluca .work__sp,
-  .work--sumikawa .work__sp   { grid-column: 1; grid-row: 1; }
+  .work--sumikawa .work__sp,
+  .work--zenith .work__sp   { grid-column: 1; grid-row: 1; }
 }
 
 /* ---------- 終わり ---------- */
