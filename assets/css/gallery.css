@@ -94,24 +94,9 @@ a:focus-visible {
 .intro__title {
   font-family: var(--font-title);
   font-weight: 500;
-  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-  letter-spacing: 0.4em;
-  color: var(--muted);
-}
-
-.intro__lead {
-  margin-top: clamp(24px, 4vw, 48px);
-  font-family: var(--font-title);
   font-size: clamp(2rem, 6.4vw, 4.6rem);
   line-height: 1.5;
-  letter-spacing: 0.06em;
-}
-
-.intro__note {
-  margin-top: clamp(28px, 4vw, 48px);
-  max-width: 30em;
-  color: var(--muted);
-  font-size: 0.95rem;
+  letter-spacing: 0.2em;
 }
 
 .intro__list {
