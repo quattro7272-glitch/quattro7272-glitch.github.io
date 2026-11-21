@@ -1,0 +1,234 @@
+/* ---------- 表紙 ---------- */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  background: var(--color-sumi);
+  color: var(--color-paper-text);
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 60%;
+  animation: hero-settle 6s var(--ease) both;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(21, 20, 18, 0.15) 40%, rgba(21, 20, 18, 0.55));
+}
+
+.hero__copy {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: clamp(24px, 9vw, 140px);
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+.hero__tagline {
+  margin-right: clamp(1.4rem, 3vw, 2.6rem);
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: 0.5em;
+  line-height: 1;
+}
+
+.hero__title small {
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.24em;
+  letter-spacing: 0.6em;
+  color: var(--color-paper-muted);
+}
+
+.hero__tagline {
+  font-family: var(--font-mincho);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  letter-spacing: 0.5em;
+  line-height: 2.4;
+}
+
+.hero__scroll {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  font-family: var(--font-latin);
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  color: var(--color-paper-muted);
+}
+
+@keyframes hero-settle {
+  from { transform: scale(1.06); opacity: 0.4; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ---------- 霧音について ---------- */
+.concept {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.concept__title {
+  writing-mode: vertical-rl;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: 0.4em;
+  line-height: 1.8;
+}
+
+.concept__body {
+  padding-top: 0.6rem;
+}
+
+.concept__body p {
+  max-width: 30em;
+  font-family: var(--font-mincho);
+  font-size: 1rem;
+  line-height: 2.4;
+}
+
+.concept__numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-lg);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-line-light);
+}
+
+.concept__numbers dt {
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  color: var(--color-ink-muted);
+}
+
+.concept__numbers dd {
+  font-family: var(--font-mincho);
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+}
+
+.concept__numbers dd small {
+  font-size: 0.5em;
+  margin-left: 0.3em;
+}
+
+/* ---------- 入口の並び（客室・料理・湯） ---------- */
+.gateways {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.gateway {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.gateway--reverse .gateway__figure {
+  order: 2;
+}
+
+.gateway__image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.gateway__number {
+  font-family: var(--font-latin);
+  font-size: 0.8rem;
+  letter-spacing: 0.36em;
+  color: var(--color-kincha);
+}
+
+.gateway__title {
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  margin-block: 0.6rem 1.2rem;
+}
+
+.gateway__text {
+  font-size: 0.92rem;
+  color: var(--color-paper-muted);
+}
+
+/* ---------- 交通の帯 ---------- */
+.access-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--color-line-light);
+}
+
+.access-strip__item {
+  padding: var(--space-md) var(--space-sm) var(--space-md) 0;
+  border-bottom: 1px solid var(--color-line-light);
+}
+
+.access-strip__item + .access-strip__item {
+  padding-left: var(--space-md);
+  border-left: 1px solid var(--color-line-light);
+}
+
+.access-strip__label {
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  color: var(--color-kincha);
+}
+
+.access-strip__value {
+  margin-top: 0.4rem;
+  font-family: var(--font-mincho);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .hero__copy {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
+  .concept {
+    grid-template-columns: 1fr;
+  }
+
+  .concept__title {
+    writing-mode: horizontal-tb;
+    letter-spacing: 0.2em;
+  }
+
+  .gateway {
+    grid-template-columns: 1fr;
+  }
+
+  .gateway--reverse .gateway__figure {
+    order: 0;
+  }
+
+  .access-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .access-strip__item + .access-strip__item {
+    padding-left: 0;
+    border-left: 0;
+  }
+}

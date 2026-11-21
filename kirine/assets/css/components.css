@@ -1,0 +1,182 @@
+/* ---------- 見出し ---------- */
+.section-heading {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: var(--space-lg);
+}
+
+.section-heading__en {
+  font-family: var(--font-latin);
+  font-size: 0.82rem;
+  letter-spacing: 0.4em;
+  color: var(--color-kincha);
+  text-transform: uppercase;
+}
+
+.section-heading__title {
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+}
+
+.section-heading--center {
+  text-align: center;
+  justify-items: center;
+}
+
+.lead {
+  max-width: 34em;
+  color: inherit;
+}
+
+.band--sumi .lead,
+.band--sumi .media-row__text {
+  color: var(--color-paper-muted);
+}
+
+/* ---------- 左に文、右に大写真＋小写真を重ねる（料理・客室で共通） ---------- */
+.media-row {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.media-row + .media-row {
+  margin-top: var(--space-xl);
+}
+
+.media-row--reverse .media-row__body {
+  order: 2;
+}
+
+.media-row__body {
+  position: sticky;
+  top: calc(var(--header-height) + 5rem);
+}
+
+.media-row__label {
+  font-family: var(--font-latin);
+  font-size: 0.8rem;
+  letter-spacing: 0.36em;
+  color: var(--color-kincha);
+}
+
+.media-row__title {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  margin-block: 0.6rem 1.4rem;
+}
+
+.media-row__text {
+  font-size: 0.92rem;
+  color: var(--color-ink-muted);
+}
+
+.media-row__figures {
+  position: relative;
+  padding-bottom: 18%;
+}
+
+.media-row__main {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.media-row__sub {
+  position: absolute;
+  width: 46%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  left: -8%;
+  bottom: 0;
+  border: 6px solid var(--color-washi);
+}
+
+.band--deep .media-row__sub {
+  border-color: var(--color-washi-deep);
+}
+
+.band--sumi .media-row__sub {
+  border-color: var(--color-sumi);
+}
+
+.media-row--reverse .media-row__sub {
+  left: auto;
+  right: -8%;
+}
+
+/* ---------- 項目表（広さ・定員・料金など） ---------- */
+.spec {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.6rem;
+  margin-top: var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-line-light);
+  font-size: 0.86rem;
+}
+
+.spec dt {
+  color: var(--color-kincha);
+  letter-spacing: 0.2em;
+}
+
+.band--sumi .spec {
+  border-top-color: var(--color-line-dark);
+}
+
+/* ---------- 文字のリンク ---------- */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: var(--space-md);
+  font-size: 0.82rem;
+  letter-spacing: 0.24em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--color-kincha);
+}
+
+.text-link::after {
+  content: "";
+  width: 2.4em;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s var(--ease);
+}
+
+.text-link:hover::after {
+  width: 3.6em;
+}
+
+/* ---------- 注記 ---------- */
+.note {
+  font-size: 0.74rem;
+  color: var(--color-ink-muted);
+  line-height: 1.9;
+}
+
+/* ---------- スマホ ---------- */
+@media (max-width: 900px) {
+  .media-row {
+    grid-template-columns: 1fr;
+  }
+
+  .media-row__body {
+    position: static;
+  }
+
+  .media-row--reverse .media-row__body {
+    order: 0;
+  }
+
+  .media-row__sub {
+    left: auto;
+    right: 0;
+    width: 52%;
+  }
+
+  .media-row--reverse .media-row__sub {
+    right: auto;
+    left: 0;
+  }
+}

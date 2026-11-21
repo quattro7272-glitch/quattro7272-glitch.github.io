@@ -141,6 +141,7 @@ a:focus-visible {
 .work--toiro    { --bg: #f6f3ee; --work-ink: #2a2724; --work-muted: #6f6a64; --work-line: #d9d3ca; }
 .work--waza     { --bg: #f4f2ea; --work-ink: #2f2c27; --work-muted: #66604f; --work-line: #d9d4c4; }
 .work--zenith   { --bg: #07060f; --work-ink: #f4f2ff; --work-muted: #a9a3c4; --work-line: #2a2340; }
+.work--kirine   { --bg: #ece6da; --work-ink: #2b2723; --work-muted: #6b645a; --work-line: #d3cbbb; }
 
 .work__inner {
   max-width: 1240px;

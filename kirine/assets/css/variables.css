@@ -1,0 +1,31 @@
+:root {
+  /* 地色：真っ白を避け、和紙の生成りと墨の二色で組む */
+  --color-washi: #ece6da;
+  --color-washi-deep: #e2dacb;
+  --color-sumi: #151412;
+  --color-sumi-soft: #211f1c;
+  --color-ink: #2b2723;
+  --color-ink-muted: #6b645a;
+  --color-paper-text: #e9e3d6;
+  --color-paper-muted: #a49c8f;
+  /* 差し色：くすんだ金茶。細い線と小さな文字だけに使う */
+  --color-kincha: #a98a5c;
+  --color-line-light: rgba(43, 39, 35, 0.18);
+  --color-line-dark: rgba(233, 227, 214, 0.18);
+
+  --font-mincho: "Shippori Mincho B1", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-latin: "Cormorant Garamond", "Shippori Mincho B1", serif;
+
+  --container-width: 1200px;
+  --gutter: clamp(20px, 6vw, 80px);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: clamp(3rem, 6vw, 5rem);
+  --space-xl: clamp(5rem, 11vw, 9rem);
+
+  --header-height: 72px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
